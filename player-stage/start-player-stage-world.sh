@@ -2,7 +2,7 @@
 
 
 PLAYER_BIN="player"
-PLAYER_DIR="$SMART_ROOT_ACE/src/ComponentRepository/ComponentPlayerStageSimulator/player_stage"
+PLAYER_DIR="$SMART_ROOT_ACE/repos/DataRepository/player-stage"
 
 world=$1
 
