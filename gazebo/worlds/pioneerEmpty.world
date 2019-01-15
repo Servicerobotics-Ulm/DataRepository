@@ -17,11 +17,11 @@
       </include>
 
       <!-- Attach the plugin to this model -->
-      <plugin name="NewDiffDrivePlugin" filename="libNewDiffDrivePlugin.so">
+      <plugin name="NewDiffDrivePlugin" filename="plugins/libNewDiffDrivePlugin.so">
       </plugin>
 	
 	  <!-- Attach the plugin to this model -->
-      <plugin name="PubBasePosePlugin" filename="libPubBasePosePlugin.so">
+      <plugin name="PubBasePosePlugin" filename="plugins/libPubBasePosePlugin.so">
       </plugin>
 
     </model>

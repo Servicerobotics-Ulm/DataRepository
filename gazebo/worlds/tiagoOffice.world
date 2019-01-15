@@ -291,19 +291,22 @@
     </include>
 
 	<!-- Add ikea_cup_yellow -->
+    <!-- 
 	<include>
       <name>ikea_cup_yellow</name>
       <uri>model://ikea_cup_yellow</uri>
       <pose>2.200000 -2.900000 0.704000 0.000000 0.000000 0.000000</pose>
     </include>
 
+-->
 	<!-- Add ikea_cup_blue -->
+    <!-- 
 	<include>
       <name>ikea_cup_blue</name>
       <uri>model://ikea_cup_blue</uri>
       <pose>2.200000 -2.700000 0.704000 0.000000 0.000000 0.000000</pose>
     </include>
-
+-->
     <!-- Change the gazebo camera point of view -->
     <gui fullscreen="0">
       <camera name="user_camera">
@@ -326,12 +329,13 @@
       <plugin name="PubBasePosPlugin" filename="libPubBasePosePlugin.so">
       </plugin>
 	 
+<!-- 
       <plugin name="CameraPoseControl" filename="libCameraPoseControl.so">
       </plugin>
 	  
       <plugin name="ArmPoseControl" filename="libArmPoseControl.so">
       </plugin>
-
+-->
     </model>
 	
   </world>

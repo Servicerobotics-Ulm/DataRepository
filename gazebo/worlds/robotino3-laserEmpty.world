@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Add a wardrobe -->
+
+	<!-- Strange bug: If not at least one object is present, laser is not mounted correctly ????? -->
+    <include>
+      <uri>model://wardrobe</uri>
+      <pose>2.000000 9.000000 0.000000 0.000000 0.000000 0.000000</pose>
+    </include>
+   
+    <model name="robot">
+      <include>
+        <uri>models/robotino3-laser</uri>
+      </include>
+
+    </model>
+	
+  </world>
+</sdf>
