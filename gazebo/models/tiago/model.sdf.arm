@@ -40,7 +40,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_1_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_1_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -60,7 +60,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_1.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -125,7 +125,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_2_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_2_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -145,7 +145,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_2.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_2.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -209,7 +209,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_3_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_3_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -229,7 +229,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_3.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -293,7 +293,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_4_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_4_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -313,7 +313,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_4.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_4.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -377,7 +377,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_5_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_5_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -397,7 +397,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_5.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_5.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -461,7 +461,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_6_collision.dae</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_6_collision.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -481,7 +481,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/tiago_description/meshes/arm/arm_6.stl</uri>
+            <uri>model://tiago/tiago_description/meshes/arm/arm_6.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -554,7 +554,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/pal_gripper_description/meshes/gripper_link_collision.stl</uri>
+            <uri>model://tiago/pal_gripper_description/meshes/gripper_link_collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -580,7 +580,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/pal_gripper_description/meshes/gripper_link.stl</uri>
+            <uri>model://tiago/pal_gripper_description/meshes/gripper_link.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -672,7 +672,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/pal_gripper_description/meshes/gripper_finger_link.stl</uri>
+            <uri>model://tiago/pal_gripper_description/meshes/gripper_finger_link.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -764,7 +764,7 @@
         <geometry>
           <mesh>
             <scale>-1 -1 1</scale>
-            <uri>models/tiago/pal_gripper_description/meshes/gripper_finger_link.stl</uri>
+            <uri>model://tiago/pal_gripper_description/meshes/gripper_finger_link.stl</uri>
           </mesh>
         </geometry>
         <material>
