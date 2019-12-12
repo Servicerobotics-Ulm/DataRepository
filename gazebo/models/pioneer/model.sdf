@@ -20,7 +20,7 @@
         <pose>0 0 0.0985 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.455 0.381 0.01</size>
+            <size>0.05 0.381 0.01</size>
           </box>
         </geometry>
       </collision>
@@ -31,7 +31,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/chassis.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/chassis.stl</uri>
           </mesh>
         </geometry>
 		<!-- Adapted color -->
@@ -48,7 +48,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/right_hubcap.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/right_hubcap.stl</uri>
           </mesh>
         </geometry>
 		<!-- Adapted color -->
@@ -65,7 +65,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/left_hubcap.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/left_hubcap.stl</uri>
           </mesh>
         </geometry>
 		<!-- Timo -->
@@ -82,7 +82,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/caster_swivel.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/caster_swivel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -98,7 +98,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/caster_wheel.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/caster_wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -114,7 +114,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/back_sonar.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/back_sonar.stl</uri>
           </mesh>
         </geometry>
 		<!-- Adapted color -->
@@ -131,7 +131,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/front_sonar.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/front_sonar.stl</uri>
           </mesh>
         </geometry>
 		<!-- Adapted color -->
@@ -148,7 +148,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/top.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/top.stl</uri>
           </mesh>
         </geometry>
 		<!-- Adapted color -->
@@ -214,7 +214,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/tiago/pmb2_description/meshes/sensors/sick_tim551.stl</uri>
+            <uri>model://tiago/pmb2_description/meshes/sensors/sick_tim551.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -278,7 +278,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/left_wheel.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/left_wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -353,7 +353,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>models/pioneer/description/meshes/p3dx_meshes/right_wheel.stl</uri>
+            <uri>model://pioneer/description/meshes/p3dx_meshes/right_wheel.stl</uri>
           </mesh>
         </geometry>
         <material>

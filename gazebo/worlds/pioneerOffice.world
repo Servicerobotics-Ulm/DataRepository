@@ -318,7 +318,7 @@
     <!--  -->
     <model name="robot">
       <include>
-        <uri>models/pioneer</uri>
+        <uri>model://pioneer</uri>
       </include>
 
       <!-- Attach the plugins to this model -->

@@ -318,7 +318,7 @@
     <!--  -->
     <model name="robot">
       <include>
-        <uri>models/tiago_nav</uri>
+        <uri>model://tiago_nav</uri>
       </include>
 
       <!-- Attach the plugins to this model -->

@@ -13,15 +13,15 @@
     <!--  -->
     <model name="robot">
       <include>
-        <uri>models/pioneer</uri>
+        <uri>model://pioneer</uri>
       </include>
 
       <!-- Attach the plugin to this model -->
-      <plugin name="NewDiffDrivePlugin" filename="plugins/libNewDiffDrivePlugin.so">
+      <plugin name="NewDiffDrivePlugin" filename="libNewDiffDrivePlugin.so">
       </plugin>
 	
 	  <!-- Attach the plugin to this model -->
-      <plugin name="PubBasePosePlugin" filename="plugins/libPubBasePosePlugin.so">
+      <plugin name="PubBasePosPlugin" filename="libPubBasePosePlugin.so">
       </plugin>
 
     </model>
