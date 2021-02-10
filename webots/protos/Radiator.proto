@@ -1,0 +1,53 @@
+#VRML_SIM R2021a utf8
+# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+# license url: https://cyberbotics.com/webots_assets_license
+
+# A green radiator with a variable number of fins and optional bounding object. Simplified and faster version of webots radiator.
+
+PROTO Radiator [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 1 0 0
+  field SFInt32    numberOfFins          30
+  field SFBool     enableBoundingObject  TRUE                                                           # Defines whether the radiator should have a bounding object.
+  field SFBool     locked                FALSE
+]
+{
+  %{
+    local numberOfFins = fields.numberOfFins.value
+    if numberOfFins <= 0 then
+      numberOfFins = fields.numberOfFins.defaultValue
+      io.stderr:write("'numberOfFins' should be strictly positive.\n")
+    end
+  }%
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Transform {
+        translation -0.02 0 %{= -0.03 * (numberOfFins - 2) }%
+        children [
+          DEF BOX Shape {
+            appearance Roughcast { 
+              colorOverride 0 0.3 0
+              textureTransform TextureTransform { scale 3 3 } }
+            geometry Box {
+              size 0.24 0.58 %{= 0.15 + 0.06 * numberOfFins }%
+            }
+          }
+        ]
+      }
+    ]
+    name %{= '"' .. "radiator" .. context.id .. '"' }%
+    model "radiator"
+    %{ if fields.enableBoundingObject.value then }%
+    boundingObject Transform {
+      translation -0.02 0 %{= -0.03 * (numberOfFins - 2) }%
+      children [
+        Box {
+          size 0.24 0.58 %{= 0.15 + 0.06 * numberOfFins }%
+        }
+      ]
+    }
+    %{ end }%
+  }
+}

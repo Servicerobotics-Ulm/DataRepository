@@ -1,0 +1,73 @@
+#VRML_SIM R2020b utf8
+# Cai Wenzheng
+# 09.12.2020
+# tags: sdynamic
+# SmallBox with coordinate system (x front, y right, z up)
+# box in frame: size (0.04 0.07 0.104), mass 0.04
+# in shelf: box_down size (0.05 0.06 0.135), mass 0.015; box_up size (0.08 0.04 0.09), mass 0.01
+
+PROTO SmallBox [
+  field SFVec3f      translation     0 0 0
+  field SFRotation   rotation        1 0 0 -1.5708
+  field SFVec3f      size            0.04 0.07 0.104                # Defines the size of the box.
+  field SFString     name            "SmallBox"
+  field SFString     model           "SmallBox"
+  field SFColor      baseColor       1 1 1
+  field SFString     contactMaterial "SmallBox"
+  field SFFloat      mass            0.04                           # Defines the mass of the box in kg.
+  field SFBool       locked          FALSE
+]
+{
+  %{
+    local size = fields.size.value
+    if size.x < 0 or size.y < 0 or size.z < 0 then
+      io.stderr:write("'size' must be strictly positive\n")
+      size = fields.size.defaultValue
+    end
+  }%
+Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      translation 0 0 %{= size.z / 2}%
+      rotation 1 0 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor IS baseColor
+            metalness 0
+            roughness 0.2
+          }
+          geometry Box {
+          size %{= size.x }% %{= size.z }% %{= size.y }%
+        }
+        }
+      ]
+    }
+  ]
+  name IS name
+  model IS model
+  contactMaterial IS contactMaterial
+  boundingObject Transform {
+    translation 0 0 %{= size.z / 2 }%
+    children [
+      Shape {
+        geometry Box {
+          size %{= size.x }% %{= size.y }% %{= size.z }%
+        }
+      }
+    ]
+  }
+  %{ if fields.mass.value > 0 then }%
+    physics Physics {
+      density -1
+      mass IS mass
+      centerOfMass [
+      0 0 0.02
+    ]
+    }
+  %{ end }%
+  locked IS locked
+}
+}

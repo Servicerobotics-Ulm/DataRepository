@@ -1,0 +1,167 @@
+#VRML_SIM R2021a utf8
+# license: Apache License 2.0
+# license url: https://cyberbotics.com/webots_assets_license
+# This is a PROTO file for Webots for a customizable tool shelf.
+# tags: static
+#
+# made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
+
+PROTO ToolShelf [
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 1 0 0
+  field SFString   name                "ToolShelf"
+  field SFVec3f    size                0.8 1.4 0.4                  # Defines the size of the shelf
+  field SFInt32    layers               3                           # Defines the number of the layers in shelf
+  
+  field SFFloat    railWidth           0.03                         # Defines the width of the rail
+  field SFColor    railColor           0 0 0.5
+  
+  field SFFloat    plateAngle          0.278                   # Defines the angle of the plate
+  field SFFloat    plateStart          0.2                          # Defines the height start of the plate
+  field SFFloat    plateDepth          0.005                        # Defines the rand of the plate
+  field SFColor    plateColor          0.827451 0.843137 0.811765
+  
+  field SFFloat    plateFrameWidth     0.015                        # Defines the frame of the plate
+  field SFColor    plateFrameColor     0.827451 0.843137 0.811765
+  
+  field SFString   contactMaterial     "default"
+  field SFBool     locked              FALSE
+]
+{
+  %{
+    local wbrotation = require('wbrotation')
+
+    -- check inputs
+    if fields.size.value.x <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.x
+    end
+    if fields.size.value.y <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.y
+    end
+    if fields.size.value.z <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.z
+    end
+    
+    if fields.layers.value <= 1 then
+      io.stderr:write("'layers' must be integer and bigger than 1\n")
+      layers = fields.layers.defaultValue
+    end
+    
+    if fields.railWidth.value <= 0.0 then
+      io.stderr:write("'railWidth' must be positive\n")
+      railWidth = fields.railWidth.defaultValue
+    end
+    
+    if fields.plateStart.value <= 0.0 then
+      io.stderr:write("'plateStart' must be positive\n")
+      plateStart = fields.plateStart.defaultValue
+    end
+    if fields.plateDepth.value <= 0.0 then
+      io.stderr:write("'plateDepth' must be positive\n")
+      plateDepth = fields.plateDepth.defaultValue
+    end
+    if fields.plateFrameWidth.value <= 0.0 then
+      io.stderr:write("'plateFrameWidth' must be positive\n")
+      plateFrameWidth = fields.plateFrameWidth.defaultValue
+    end
+
+    local deltaY = (fields.size.value.y - fields.plateStart.value - fields.size.value.z * math.tan(fields.plateAngle.value)) / (fields.layers.value - 1)
+    --io.write("deltaY = ", deltaY, "\n")
+  }%
+  
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+    %{
+    for m = 0, 1 do  
+      for n = 0, 1 do
+      }%
+        Solid {
+          translation %{= - math.pow(-1, m) * 0.5 * (fields.size.value.z + fields.railWidth.value)}% 
+                      %{= 0.5 * (fields.size.value.y - m * fields.size.value.z * math.tan(fields.plateAngle.value)) }% 
+                      %{= -math.pow(-1, n) * 0.5 * (fields.size.value.x + fields.railWidth.value)}%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor IS railColor
+                roughness 0.2
+                metalness 0
+              }
+              geometry DEF RAIL Box {
+                size %{= fields.railWidth.value}%  
+                     %{= fields.size.value.y - m * fields.size.value.z * math.tan(fields.plateAngle.value) }%
+                     %{= fields.railWidth.value }%
+              }
+            }
+          ]
+          name %{= "\"Railing " .. m .. "x" .. n .. "\""}%
+          boundingObject USE RAIL
+        }
+      %{
+      end
+    end
+    }%
+    %{
+    for l = 0, (fields.layers.value-1) do
+      }%
+        Solid {
+          translation 0 %{= l * deltaY + fields.plateStart.value + 0.5 * (fields.size.value.z * math.tan(fields.plateAngle.value) - fields.plateDepth.value) }% 0
+          rotation 0 0 -1 %{= fields.plateAngle.value}%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor IS plateColor
+                roughness 0.2
+                metalness 0
+              }
+              geometry DEF plate Box {
+                size %{= fields.size.value.z / math.cos(fields.plateAngle.value) }% %{= fields.plateDepth.value }% %{= fields.size.value.x }%
+              }
+            }
+          ]
+          name %{= "\"plate " .. l .. "\""}%
+          contactMaterial IS contactMaterial
+          boundingObject USE plate
+        }
+        %{
+	for j = 0, 1 do  
+	  for k = 0, 1 do
+	    }%
+	      Solid {
+	        translation %{= -j * math.pow(-1, k) * 0.5 * (fields.size.value.z + fields.plateFrameWidth.value)}% 
+	                    %{= l * deltaY + fields.plateStart.value + 0.5 * (fields.size.value.z * math.tan(fields.plateAngle.value) - fields.plateDepth.value) + j * math.pow(-1, k) * 0.5 * (fields.size.value.z + fields.plateFrameWidth.value) * math.tan(fields.plateAngle.value) }% 
+	                    %{= (j - 1) * math.pow(-1, k) * 0.5 * (fields.size.value.x + fields.plateFrameWidth.value)}%
+	        rotation 0 0 -1 %{= fields.plateAngle.value}%
+	        children [
+	          Shape {
+		    appearance PBRAppearance {
+		      baseColor IS plateFrameColor
+		      roughness 0.2
+		      metalness 0
+		    }
+		    geometry DEF PLATEFRAME Box {
+		       size %{= j * fields.plateFrameWidth.value - ((j - 1) * (fields.size.value.z + 2 * fields.plateFrameWidth.value) / math.cos(fields.plateAngle.value))}% 
+		            %{= 2 * fields.plateFrameWidth.value }% 
+		            %{= j * fields.size.value.x - (j - 1) * fields.plateFrameWidth.value }%
+		    }
+		 }
+	     ]
+	  name %{= "\"PLATEFRAME " .. j .. "x" .. l .. "x" .. k .. "\""}%
+	  boundingObject USE PLATEFRAME
+	  }
+	 %{
+	 end
+         end
+      end
+      }% 
+    ]
+    name IS name
+    model "ToolShelf"
+    locked IS locked
+  }
+}
+

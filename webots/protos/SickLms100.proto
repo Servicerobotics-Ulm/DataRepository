@@ -1,0 +1,107 @@
+#VRML_SIM R2020b utf8
+# Model of the Lidar Device LMS100 from Sick.
+# 'resolution' should be 540 (precision of 0.5°) or 1080 (precision of 0.25°)
+
+PROTO SickLms100 [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 1 0 0
+  field SFString   name                  "Sick LMS 100"
+  field SFInt32    horizontalResolution  540
+  field SFFloat    fieldOfView           4.71239
+  field SFFloat    minRange              0.01
+  field SFFloat    maxRange              20
+  field SFFloat    noise                 0.0
+  field SFFloat    defaultFrequency      10
+]
+{
+  Transform {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Lidar {
+        rotation -0.57735 0.57735 0.57735 -2.0944
+        children [
+          Transform {
+            translation 0 -0.065 0.027
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0.5 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.102 0.1 0.054
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 -0.065 0
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0.5 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.1
+                  radius 0.051
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 -0.045 0
+            rotation 1 0 0 3.14159
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.0 0.0 0.0
+                  roughness 0
+                  metalness 1
+                }
+                geometry Cone {
+                  bottomRadius 0.047
+                  height 0.12
+                  subdivision 32
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 0.025 0
+            rotation 1 0 0 3.14159
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.15 0.15 0.15
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.047
+                }
+              }
+            ]
+          }
+        ]
+        name IS name
+        model "Sick LMS100"
+        fieldOfView IS fieldOfView
+        horizontalResolution IS horizontalResolution
+        verticalFieldOfView %{= 4.71239 / fields.horizontalResolution.value }%
+        numberOfLayers 1
+        spherical TRUE
+        minRange IS minRange
+        maxRange IS maxRange
+        noise IS noise
+        minFrequency 1
+        maxFrequency 1000
+        defaultFrequency IS defaultFrequency
+      }
+    ]
+  }
+}

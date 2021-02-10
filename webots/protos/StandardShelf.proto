@@ -1,0 +1,132 @@
+#VRML_SIM R2021a utf8
+# license: Apache License 2.0
+# license url: https://cyberbotics.com/webots_assets_license
+# This is a PROTO file for Webots for a customizable standard shelf.
+# The shelf layout is a grid in which the elements can be inserted.
+# tags: static
+#
+# made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
+
+PROTO StandardShelf [
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 1 0 0
+  field SFString   name                "StandardShelf"
+  field SFVec3f    size                4.0 1.8 0.8                  # Defines the size of the shelf
+  field SFVec3f    matrix              5 5 3                        # Defines the run layout of the shelf
+  field SFFloat    railWidth           0.03                         # Defines the width of the rail
+  field SFColor    railColor           0 0 0.5
+  field SFFloat    plattStart          0.1                          # Defines the height start of the platt
+  field SFFloat    plattDepth          0.02                         # Defines the depth of the platt
+  field SFColor    plattColor          0.827451 0.843137 0.811765
+  field SFString   contactMaterial     "default"
+  field SFBool     locked              FALSE
+]
+{
+  %{
+    local wbrotation = require('wbrotation')
+
+    -- check inputs
+    if fields.size.value.x <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.x
+    end
+    if fields.size.value.y <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.y
+    end
+    if fields.size.value.z <= 0.0 then
+      io.stderr:write("'size' must be positive\n")
+      size = fields.size.defaultValue.z
+    end
+    
+    if fields.matrix.value.x <= 1 then
+      io.stderr:write("'matrix' must be integer and bigger than 1\n")
+      matrix = fields.matrix.defaultValue.x
+    end
+    if fields.matrix.value.y <= 1 then
+      io.stderr:write("'matrix' must be integer and bigger than 1\n")
+      matrix = fields.matrix.defaultValue.y
+    end
+    if fields.matrix.value.z <= 1 then
+      io.stderr:write("'matrix' must be integer and bigger than 1\n")
+      matrix = fields.matrix.defaultValue.z
+    end
+    
+    if fields.railWidth.value <= 0.0 then
+      io.stderr:write("'railWidth' must be positive\n")
+      railWidth = fields.railWidth.defaultValue
+    end
+    if fields.plattStart.value <= 0.0 then
+      io.stderr:write("'plattStart' must be positive\n")
+      plattStart = fields.plattStart.defaultValue
+    end
+    if fields.plattDepth.value <= 0.0 then
+      io.stderr:write("'plattDepth' must be positive\n")
+      plattDepth = fields.plattDepth.defaultValue
+    end
+
+    local deltaX = fields.size.value.z / (fields.matrix.value.z - 1)
+    local deltaY = (fields.size.value.y - fields.plattStart.value) / (fields.matrix.value.y - 1)
+    local deltaZ = fields.size.value.x / (fields.matrix.value.x - 1)
+  }%
+  
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+    %{
+    for m = 0, (fields.matrix.value.x - 1) do
+      for n = 0, (fields.matrix.value.z - 1) do
+      }%
+        Solid {
+          translation %{= n * deltaX }% %{= 0.5 * fields.size.value.y }% %{= m * deltaZ }%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor IS railColor
+                roughness 0.2
+                metalness 0
+              }
+              geometry DEF RAIL Box {
+                size %{= fields.railWidth.value }% %{= fields.size.value.y }% %{= fields.railWidth.value }%
+              }
+            }
+          ]
+          name %{= "\"Railing " .. m .. "x" .. n .. "\""}%
+          boundingObject USE RAIL
+        }
+      %{
+      end
+    end
+    }%
+    %{
+    for l = 0, (fields.matrix.value.y - 1) do
+      }%
+        Solid {
+          translation %{= 0.5 * fields.size.value.z }% %{= l * deltaY + fields.plattStart.value - 0.5 * fields.plattDepth.value }% %{= 0.5 * fields.size.value.x }%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor IS plattColor
+                roughness 0.2
+                metalness 0
+              }
+              geometry DEF PLATT Box {
+                size %{= fields.size.value.z }% %{= fields.plattDepth.value }% %{= fields.size.value.x }%
+              }
+            }
+          ]
+          name %{= "\"Platt " .. l .. "\""}%
+          contactMaterial IS contactMaterial
+          boundingObject USE PLATT
+        }
+      %{
+      end
+      }% 
+    ]
+    name IS name
+    model "StandardShelf"
+    locked IS locked
+  }
+}
+

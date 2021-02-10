@@ -1,0 +1,32 @@
+#VRML_OBJ R2021a utf8
+# a navigation point: a cross on the floor marks the points where the robot should go to
+
+PROTO NavigationPoint [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 1 0 0
+  field SFColor    color       0 0 0          # Defines the color of the cross on the floor
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Shape {
+      appearance DEF X PBRAppearance {
+        baseColor IS color
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.6 0.01
+      }
+    }
+    Shape {
+      appearance USE X
+      geometry Box {
+        size 0.6 0.1 0.01
+      }
+    }
+  ]
+}
+}
