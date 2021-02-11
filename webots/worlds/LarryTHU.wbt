@@ -34,7 +34,7 @@ Larry {
   bodySlot [
     UR5e {
       rotation 0.9999999999999999 0 0 4.712388966
-      controller "UR5e"
+      controller ""
       toolSlot [
         DEF sutionTool Solid {
           translation 0 0.025 0

@@ -15,8 +15,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.522244129546838 0.6482413883633453 0.5541156662346122 4.2384654907686325
-  position -3.772237897037667 17.594949601886356 0.769402168822145
+  orientation 0.5053652693515222 0.688366557226602 0.5203435667184314 4.320205568796056
+  position -4.302208587312181 11.080569594827663 0.3460813543819023
 }
 TexturedBackground {
   texture "entrance_hall"
@@ -164,6 +164,22 @@ Larry {
       ]
       name "Sick LMS 100_Back"
       controller ""
+    }
+  ]
+}
+DEF NavigationPoints Transform {
+  rotation 1 0 0 -1.5708
+  children [
+    DEF home NavigationPoint {
+    }
+    DEF Blackboard NavigationPoint {
+      translation 1.5 -4.8 0
+    }
+    DEF pose1 NavigationPoint {
+      translation -1 2 0
+    }
+    DEF pose2 NavigationPoint {
+      translation 0.8 0 0
     }
   ]
 }
@@ -1468,7 +1484,7 @@ Transform {
       }
     }
     OfficeChair {
-      translation 2.56 0 -2.55
+      translation 2.40544 0 -2.50856
       rotation 0 -1 0 1.309
       legAppearance BrushedAluminium {
         colorOverride 0.180392 0.203922 0.211765
@@ -1486,7 +1502,7 @@ Transform {
       }
     }
     OfficeChair {
-      translation 2.44356 0 -0.770847
+      translation 2.39526 0 -0.783787
       rotation 0 1 0 -1.8325953071795862
       name "office chair(1)"
       legAppearance BrushedAluminium {
@@ -1505,7 +1521,7 @@ Transform {
       }
     }
     OfficeChair {
-      translation 2.36646 0 0.631541
+      translation 2.32646 0 0.631541
       rotation 0 1 0 -1.5707953071795862
       name "office chair(2)"
       legAppearance BrushedAluminium {

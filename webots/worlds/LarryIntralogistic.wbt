@@ -15,8 +15,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.7026369988298204 0.6337968859190771 0.3234234921503123 0.954598954284994
-  position 15.399336304038282 20.053538722013993 26.676520075998663
+  orientation -0.5699564511413845 0.7268518963452019 0.3831918117362408 1.2645571658234847
+  position 15.055483816182877 19.6716528563057 18.61277792721597
 }
 TexturedBackground {
 }
@@ -163,6 +163,23 @@ Larry {
       ]
       name "Sick LMS 100_Back"
       controller ""
+    }
+  ]
+}
+Robotino3 {
+  translation 5.28998 2.06727e-05 12
+  rotation -5.085758426212298e-09 0.707107781185531 0.70710578118615 3.14159
+  controller ""
+  bodySlot [
+    RobotinoConveyorBelt {
+      translation -1.87509e-14 3.67802e-08 0.01
+      rotation 1.8390099999937804e-06 1.8390099999937804e-06 0.999999999996618 -1.5707953071795862
+    }
+  ]
+  cameraSlot [
+    SickLms100 {
+      translation 4.07848e-08 -0.17 0.2
+      rotation 0 0 1 -1.5707953071795862
     }
   ]
 }
@@ -353,8 +370,8 @@ DEF Shelf Group {
   ]
 }
 ConveyorBelt {
-  translation -1.5 0 12
-  size 17 0.72 0.5
+  translation -2.49 0 12
+  size 15 0.72 0.5
   borderThickness 0.001
   borderHeight 0
 }
@@ -368,7 +385,7 @@ ConveyorBelt {
   speed 2.5
 }
 ConveyorBelt {
-  translation 0 0 14.05
+  translation 0.8 0 14.05
   rotation 0 1 0 1.5708
   name "conveyor belt(2)"
   size 3.6 0.72 0.5
@@ -376,17 +393,8 @@ ConveyorBelt {
   borderHeight 0
   speed 2
 }
-ConveyorBelt {
-  translation 2.75 0 14.05
-  rotation 0 1 0 1.5708
-  name "conveyor belt(3)"
-  size 3.6 0.72 0.5
-  borderThickness 0.001
-  borderHeight 0
-  speed 1.5
-}
 Table {
-  translation 8.07 0 10.09
+  translation 8.36 0 10.09
   rotation 0 1 0 -1.5707953071795862
   feetSize 0.05 0.05
   trayAppearance VarnishedPine {
@@ -402,7 +410,7 @@ Table {
   }
 }
 Table {
-  translation 5.98 0 14
+  translation 5.25 0 14.34
   rotation 0 1 0 3.14159
   name "table(1)"
   feetSize 0.05 0.05
@@ -419,7 +427,7 @@ Table {
   }
 }
 OfficeChair {
-  translation 9.1 0 10.09
+  translation 9.25456 0 10.0484
   rotation 0 -1 0 1.309
   legAppearance BrushedAluminium {
     colorOverride 0.333333 0.341176 0.32549
@@ -437,7 +445,7 @@ OfficeChair {
   }
 }
 OfficeChair {
-  translation 5.98 0 14.96
+  translation 5.3297 0 15.2388
   rotation 0 1 0 -2.8797953071795863
   name "office chair(1)"
   legAppearance BrushedAluminium {
@@ -456,41 +464,41 @@ OfficeChair {
   }
 }
 Monitor {
-  translation 7.80169 0.74 9.92861
+  translation 8.20104 0.74 9.98388
   rotation 0 1 0 -1.8325953071795862
 }
 Monitor {
-  translation 5.78155 0.74 13.7044
+  translation 5.03178 0.74 14.269
   rotation 0 1 0 -2.8797953071795863
   name "monitor(2)"
 }
 Monitor {
-  translation 7.8082 0.74 10.3892
+  translation 8.20447 0.74 10.4385
   rotation 0 1 0 -1.3089953071795861
   name "monitor(1)"
   color 0.827451 0.843137 0.811765
 }
 Monitor {
-  translation 6.24383 0.74 13.704
+  translation 5.51392 0.74 14.2644
   rotation 0 1 0 2.87979
   name "monitor(3)"
   color 0.827451 0.843137 0.811765
 }
 Keyboard {
-  translation 8.11169 0.74 10.1786
+  translation 8.60169 0.74 10.1786
   rotation 0 1 0 -1.5707953071795862
 }
 Keyboard {
-  translation 5.95383 0.74 14.014
+  translation 5.30383 0.74 14.604
   rotation 0 1 0 3.14159
   name "keyboard(1)"
 }
 ComputerMouse {
-  translation 8.27221 0.74 9.77298
+  translation 8.58133 0.74 9.6901
   rotation 0 1 0 -1.3089953071795861
 }
 ComputerMouse {
-  translation 6.31097 0.74 14.1882
+  translation 5.72003 0.74 14.5342
   rotation 0 1 0 -2.8797953071795863
   name "computer mouse(1)"
 }
@@ -499,13 +507,13 @@ Pedestrian {
   rotation 0 1 0 0.785398
 }
 Pedestrian {
-  translation 1.01723 1.27 15.441
+  translation 1.74523 1.27 15.1796
   rotation 0 1 0 -2.094395307179586
   name "pedestrian(2)"
 }
 Pedestrian {
-  translation 7.34703 1.27 12.9146
-  rotation 0 1 0 -2.6179953071795863
+  translation 7.4284 1.27 9.13203
+  rotation 0 1 0 -1.3089953071795861
   name "pedestrian(1)"
 }
 DEF Pallet1 Group {
@@ -687,42 +695,8 @@ DEF Pallet2 Group {
 DEF Kisten Group {
   children [
     Kisten {
-      translation -8.9 0.72 12
+      translation -7 0.72 12
       name "Kisten(7)"
-      locked TRUE
-    }
-    Kisten {
-      translation -7.6 0.72 12
-      name "Kisten(6)"
-      baseColor 0.937255 0.160784 0.160784
-      locked TRUE
-    }
-    Kisten {
-      translation -6.3 0.72 12
-      name "Kisten(5)"
-      baseColor 0.533333 0.541176 0.521569
-      locked TRUE
-    }
-    Kisten {
-      translation -5 0.72 12
-      name "Kisten(4)"
-      locked TRUE
-    }
-    Kisten {
-      translation -2.75 0.72 15.58
-      name "Kisten(3)"
-      baseColor 0.937255 0.160784 0.160784
-      locked TRUE
-    }
-    Kisten {
-      translation 0 0.72 15.58
-      name "Kisten(1)"
-      baseColor 0.533333 0.541176 0.521569
-      locked TRUE
-    }
-    Kisten {
-      translation 2.75 0.72 15.58
-      name "Kisten(2)"
       locked TRUE
     }
     Kisten {
@@ -947,23 +921,127 @@ DEF Box Group {
     }
   ]
 }
-Transform {
-  translation 1.45 0.0199662 5.34
-  rotation -1 0 0 -5.307179586466759e-06
+DEF Logo Group {
   children [
-    Shape {
-      appearance PBRAppearance {
-        baseColorMap ImageTexture {
-          url [
-            "textures/logo_sr.png"
-          ]
+    Transform {
+      translation 3.5 0.8 15.941
+      rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
         }
-        roughness 1
-        metalness 0
-      }
-      geometry Plane {
-        size 4 1.5
-      }
+      ]
+    }
+    Transform {
+      translation 3.5 0.799984 -9.941
+      rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.5 0.8 15.941
+      rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.5 0.8 -9.941
+      rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -9.94 0.569999 10.17
+      rotation -0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo_sr.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 1.6 0.6
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 9.94 0.569999 10.17
+      rotation 0.5773516025189619 -0.5773516025189619 0.5773476025217157 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo_sr.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 1.6 0.6
+          }
+        }
+      ]
     }
   ]
 }

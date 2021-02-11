@@ -382,7 +382,7 @@ PROTO Larry [
   }
   physics Physics {
     density -1
-    mass 3
+    mass 30
     centerOfMass [
       0.1 0 -0.3
     ]

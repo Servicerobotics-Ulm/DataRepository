@@ -15,8 +15,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.28581550588716753 0.9237842675477831 0.2548178243876756 4.747902444459217
-  position -4.964813370486298 4.462587052301278 1.8667202268448166
+  orientation 0.4723683071906148 0.8282214439960383 0.3015251599236624 4.96992483111038
+  position -6.839321927838387 6.358232417592666 5.915827033513171
   follow "Robotino 3"
   followType "None"
 }
@@ -54,7 +54,6 @@ DEF NavigationPoints Transform {
   rotation 1 0 0 -1.5708
   children [
     DEF home NavigationPoint {
-      translation 0 0 0
     }
     DEF CorridorCenter NavigationPoint {
       translation 20 -12.5 0
@@ -3322,7 +3321,7 @@ Transform {
       }
     }
     OfficeChair {
-      translation 2.44356 0 -0.770847
+      translation 2.38551 0 -0.786373
       rotation 0 1 0 -1.8325953071795862
       name "office chair(1)"
       legAppearance BrushedAluminium {
@@ -3341,7 +3340,7 @@ Transform {
       }
     }
     OfficeChair {
-      translation 2.36646 0 0.631541
+      translation 2.32646 0 0.631541
       rotation 0 1 0 -1.5707953071795862
       name "office chair(2)"
       legAppearance BrushedAluminium {
@@ -3798,7 +3797,6 @@ Transform {
     DesktopComputer {
       translation -0.14 0 1.98
       rotation 0 1 0 3.14159
-      name "desktop computer"
     }
     DesktopComputer {
       translation -1.45 0 1.98
@@ -4093,7 +4091,6 @@ Transform {
       rotation 0 1 0 -1.5707953071795862
     }
     DEF Logo Solid {
-      name "logo"
       children [
         Transform {
           translation -4.39 2 -3.319
@@ -4316,6 +4313,7 @@ Transform {
           ]
         }
       ]
+      name "logo"
     }
   ]
 }
