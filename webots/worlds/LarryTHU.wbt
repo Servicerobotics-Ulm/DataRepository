@@ -12,6 +12,9 @@ WorldInfo {
       ]
       bounce 0
     }
+    ContactProperties {
+      softCFM 0.0000001
+    }
   ]
 }
 Viewpoint {

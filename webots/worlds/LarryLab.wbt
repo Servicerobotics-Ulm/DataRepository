@@ -6,6 +6,9 @@ WorldInfo {
   coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
+      softCFM 0.0000001
+    }
+    ContactProperties {
       material1 "SmallBox"
       coulombFriction [
         0.2

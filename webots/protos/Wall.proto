@@ -23,12 +23,12 @@ PROTO Wall [
     translation IS translation
     rotation IS rotation
     children [
-      Transform {
-        translation 0 %{= 0.5 * size.y }% 0
+      DEF BOX Transform {
+        translation 0 %{= 0.5 * size.y }% 0       
         children [
           Shape {
             appearance IS appearance
-            geometry DEF BOX Box {
+            geometry Box {
               size %{= size.x }% %{= size.y }% %{= size.z }%
             }
             isPickable FALSE

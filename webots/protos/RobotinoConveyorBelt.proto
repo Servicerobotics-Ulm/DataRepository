@@ -23,6 +23,18 @@ PROTO RobotinoConveyorBelt [
     rotation IS rotation
     scale IS scale
     children [
+        DEF IR10 SharpGP2Y0A41SK0F {
+          translation 0.207 0 0.33
+          name "ir10"
+        }
+        DEF IR11 SharpGP2Y0A41SK0F {
+          translation 0.207 -0.0825 0.375
+          name "ir11"
+        }
+        DEF IR12 SharpGP2Y0A41SK0F {
+          translation 0.207 0.0825 0.375
+          name "ir12"
+        }
         Transform {
           translation 0 0 -0.217
           rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
@@ -476,20 +488,6 @@ PROTO RobotinoConveyorBelt [
                         size 0.212 0.126 0.002
                       }
                     }
-                    Khepera3_GroundSensor {
-                      translation 0.1 0 0
-                      rotation 0 1 0 -1.5707953071795862
-                    }
-                    Khepera3_GroundSensor {
-                      translation -0.1 0 0
-                      rotation 0 1 0 -1.5707953071795862
-                      name "ds(1)"
-                    }
-                    Khepera3_GroundSensor {
-                      translation 0 -0.04 0
-                      rotation 0 1 0 -1.5707953071795862
-                      name "ds(2)"
-                    }
                     Transform {
                       translation 0.151 0.005 0
                       children [
@@ -519,7 +517,7 @@ PROTO RobotinoConveyorBelt [
                             Khepera3_DistanceSensor {
                               translation 0 0.01 0
                               rotation 0 1 0 -1.5707953071795862
-                              name "ds(3)"
+                              name "ir13"
                             }
                           ]
                         }
@@ -554,7 +552,7 @@ PROTO RobotinoConveyorBelt [
                             Khepera3_DistanceSensor {
                               translation 0 0.01 0
                               rotation 0 1 0 -1.5707953071795862
-                              name "ds(4)"
+                              name "ir14"
                             }
                           ]
                         }
@@ -565,7 +563,7 @@ PROTO RobotinoConveyorBelt [
               ]
             }
             DistanceSensor {
-              translation 0 0.64 -0.13
+              translation 0 0.65 -0.13
               rotation 0 0 1 1.5708
               children [
                 Transform {
