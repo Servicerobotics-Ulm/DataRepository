@@ -4,154 +4,159 @@
 # tags: static
 # documentation url: https://www.cyberbotics.com/doc/guide/range-finder-sensors#microsoft-kinect
 # Microsoft Kinect v2.
-# It contains a RangeFinder device called "<cameraName> + ' range'" and a Camera device called "<cameraName> + ' color'".
+# It contains a RangeFinder and a Camera device.
 
 PROTO kinect_v2 [
   field SFVec3f    translation         0 0.101 0
   field SFRotation rotation            0.577351 0.577351 0.577349 -2.0944
   field SFString   name                "kinect_v2"
   field SFString   controller          ""                # Is `Robot.controller`.
-  field SFBool     supervisor          FALSE             # Is `Robot.supervisor`. 
+  field SFBool     supervisor          FALSE             # Is `Robot.supervisor`.
   
-  field SFString   colorName           "kinect_v2 color"  # name of color camera
+  field SFString   colorName           "kinect_v2_color"  # name of color camera
   field SFVec3f    colorTranslation    0.0331 -0.096 0    # relative position
   field SFRotation colorRotation       -0.57735 0.57735 0.577351 -2.0944
   field SFInt32    colorWidth          1920               # Defines the `width` field of the `Camera` nodes.
+  field SFInt32    colorHeight         1080               # Defines the `width` field of the `Camera` nodes.  
   field SFFloat    colorFieldOfView    1.4678219009       # horizontal field of view [radians]
-  field SFFloat    colorVerticalFoV    0.9389871375       # vertical field of view [radians]
   field SFFloat    colorNoise          0.0                # Defines the `noise` field of the `Camera`.
   
-  field SFString   rangeName           "kinect_v2 range"  # name of rangefinder camera
+  field SFString   rangeName           "kinect_v2_range"  # name of rangefinder camera
   field SFVec3f    rangeTranslation    0.0331 -0.096 0    # relative position
   field SFRotation rangeRotation       -0.57735 0.57735 0.577351 -2.0944
   field SFInt32    rangeWidth          512                # Defines the `width` field of the `RangeFinder` nodes.
+  field SFInt32    rangeHeight         424                # Defines the `height` field of the `RangeFinder` nodes.  
   field SFFloat    rangeFieldOfView    1.2217304764       # horizontal field of view [radians]
-  field SFFloat    rangeVerticalFoV    1.0471975512       # vertical field of view [radians]
-  field SFFloat    maxRange            3.5                # Defines the `maxRange` field of the `RangeFinder`.
+  field SFFloat    minRange            0.5                # Defines the `minRange` field of the `RangeFinder`.
+  field SFFloat    maxRange            8.0                # Defines the `maxRange` field of the `RangeFinder`.
   field SFFloat    rangeNoise          0.0                # Defines the `noise` field of the `RangeFinder`.
 ]{
   Robot {
     translation IS translation
     rotation IS rotation
     children [
-    Transform {
-      rotation 0.577351 0.577351 0.577349 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-            roughness 0.2
-            metalness 0
-          }
-          geometry Box {
-            size 0.249 0.043 0.066
-          }
+      DEF %{= fields.colorName.value }% Camera {
+        translation IS colorTranslation
+        rotation IS colorRotation
+        name IS colorName
+        fieldOfView IS colorFieldOfView
+        width IS colorWidth
+        height IS colorHeight
+        antiAliasing TRUE
+        noise IS colorNoise
+        recognition Recognition {
+          maxRange 500
+          frameThickness 3
+          segmentation TRUE
         }
-      ]
-    }
-    Transform {
-      translation 0.0331 0 0
-      rotation 0.707106 0.707107 0 3.14159
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/kinect_v2_front.png"
-              ]
-            }
-          }
-          geometry Plane {
-            size 0.249 0.043
-          }
-        }
-      ]
-    }
-    Transform {
-      translation 0.025 0 -0.024
-      rotation 0.577351 0.577351 0.577349 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-            roughness 0.2
-            metalness 0
-          }
-          geometry Box {
-            size 0.11 0.005 0.008
-          }
-        }
-      ]
-    }
-    Transform {
-      translation 0.0265 0 -0.0335
-      rotation 0.577351 0.577351 0.577349 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-            roughness 0.2
-            metalness 0
-          }
-          geometry Box {
-            size 0.249 0.014 0.013
-          }
-        }
-      ]
-    }
-    Transform {
-      translation -0.015 0 -0.037
-      rotation 0 1 0 0.02
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-            roughness 0.2
-            metalness 0
-          }
-          geometry Box {
-            size 0.07 0.11 0.007
-          }
-        }
-      ]
-    }
-        Camera {
-          translation IS colorTranslation
-          rotation IS colorRotation
-          name IS colorName
-          fieldOfView IS colorFieldOfView
-          width IS colorWidth
-          height %{= math.floor(fields.colorWidth.value * fields.colorVerticalFoV.value / fields.colorFieldOfView.value) }%
-          antiAliasing TRUE
-          noise IS colorNoise
-          recognition Recognition {
-            maxRange 500
-            frameThickness 3
-            segmentation TRUE
-          }
-        }
-        RangeFinder {
-          translation IS rangeTranslation
-          rotation IS rangeRotation
-          name IS rangeName
-          fieldOfView IS rangeFieldOfView
-          width IS rangeWidth
-          height %{= math.floor(fields.rangeWidth.value * fields.rangeVerticalFoV.value / fields.rangeFieldOfView.value) }%
-          maxRange IS maxRange
-          noise IS rangeNoise
-        }
-      ]
-      name IS name
-      model "kinect_v2"
-      controller IS controller
-      supervisor IS supervisor
-      boundingObject Transform {
-        translation 0 0 -0.01
+      }
+      DEF %{= fields.rangeName.value }% RangeFinder {
+        translation IS rangeTranslation
+        rotation IS rangeRotation
+        name IS rangeName
+        fieldOfView IS rangeFieldOfView
+        width IS rangeWidth
+        height IS rangeHeight
+        minRange IS minRange
+        maxRange IS maxRange
+        noise IS rangeNoise
+      }
+
+      Transform {
+        rotation 0.577351 0.577351 0.577349 2.0944
         children [
-          Box {
-            size 0.067 0.249 0.064 
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 0.2
+              metalness 0
+            }
+            geometry Box {
+              size 0.249 0.043 0.066
+            }
           }
         ]
       }
+      Transform {
+        translation 0.0331 0 0
+        rotation 0.707106 0.707107 0 3.14159
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/kinect_v2_front.png"
+                ]
+              }
+            }
+            geometry Plane {
+              size 0.249 0.043
+            }
+          }
+        ]
+      }
+      Transform {
+        translation 0.025 0 -0.024
+        rotation 0.577351 0.577351 0.577349 2.0944
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 0.2
+              metalness 0
+            }
+            geometry Box {
+              size 0.11 0.005 0.008
+            }
+          }
+        ]
+      }
+      Transform {
+        translation 0.0265 0 -0.0335
+        rotation 0.577351 0.577351 0.577349 2.0944
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 0.2
+              metalness 0
+            }
+            geometry Box {
+              size 0.249 0.014 0.013
+            }
+          }
+        ]
+      }
+      Transform {
+        translation -0.015 0 -0.037
+        rotation 0 1 0 0.02
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 0.2
+              metalness 0
+            }
+            geometry Box {
+              size 0.07 0.11 0.007
+            }
+          }
+        ]
+      }
+    ]
+    name IS name
+    model "kinect_v2"
+    controller IS controller
+    supervisor IS supervisor
+    physics Physics {
     }
+    boundingObject Transform {
+      translation 0 0 -0.01
+      children [
+        Box {
+          size 0.067 0.249 0.064 
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,83 @@
+PROTO SimpleConveyorBelt [
+  field SFVec3f    translation      0 0 0
+  field SFRotation rotation         0 1 0 0
+  field SFString   name             "ConveyorBelts"
+  field SFString   motorName        "belt_motor"
+  field SFVec3f    size             1.0 0.05 0.1
+  field SFFloat    speed            0.3
+  field SFFloat    acceleration     -1
+  field SFFloat    mass             1.0
+]
+{
+Track {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    DEF BO Group {
+      children [
+        Shape {
+          appearance Rubber {
+            type "dotted"
+            textureTransform TextureTransform {
+              scale %{=4.0 * fields.size.value.x}% %{=4.0 * fields.size.value.z}%
+            }
+          }
+          geometry Box {
+            size IS size
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.93 0.93 0.93
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size %{=fields.size.value.x}% %{=fields.size.value.y-0.001}% %{=fields.size.value.z+0.01}%
+          }
+        }
+        Transform {
+          translation %{= fields.size.value.x / 2 }% 0 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF CYLINDER  Shape {
+              appearance Rubber {
+                type "dotted"
+                textureTransform TextureTransform {
+                  scale %{=4.0 * 2 * 3.14 * fields.size.value.y / 2}% %{=4.0 * fields.size.value.z}%
+                }
+              }
+              geometry Cylinder {
+                height %{= fields.size.value.z }%
+                radius %{= fields.size.value.y / 2 }%
+              }
+            }
+          ]
+        }
+        Transform {
+          translation %{= - fields.size.value.x / 2 }% 0 0
+          rotation 1 0 0 1.5708
+          children [
+            USE CYLINDER
+          ]
+        }
+      ]
+    }
+  ]
+  boundingObject USE BO
+  physics Physics {
+    density -1
+    mass 1
+  }
+  device [
+    LinearMotor {
+      name IS motorName
+      acceleration IS acceleration
+      maxVelocity IS speed
+      sound ""
+    }
+  ]
+  textureAnimation %{= 1 / fields.size.value.x}% 0
+}
+}

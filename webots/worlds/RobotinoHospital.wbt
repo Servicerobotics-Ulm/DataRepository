@@ -3,14 +3,15 @@ WorldInfo {
   info [
     ""
   ]
+  basicTimeStep 8
   coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
-      material1 "SmallBox"
+      material1 "WheelMat"
       coulombFriction [
-        0.2
+        0, 2, 0
       ]
-      bounce 0.3
+      bounce 0
     }
   ]
 }

@@ -1,0 +1,87 @@
+#VRML_SIM R2020b utf8
+#
+# a passive Connector device which can connect to an active Connector device of same model.
+# it has the shape of an box. it can only connect in the middle of one side.
+# this side is in positive direction of z-axis.
+# to connect, this passive device and the other active device must be close to each other
+# and their z-axis must point to each other.
+# this device needs an robot controller to turn it on by calling enable(timeStep).
+
+PROTO ConnectorBox [
+  field SFVec3f      translation      0 0 0
+  field SFRotation   rotation         1 0 0 0
+  field SFVec3f      size             0.1 0.1 0.1
+  field SFString     name             "ConnectorBox"
+  field SFString     model            "VacuumGripperConnectorModel"
+  field SFColor      color            1 1 1
+  field SFString     contactMaterial  "SmallBox"
+  field SFFloat      connectDistance  0.02
+]
+{
+%{
+  local size = fields.size.value
+  if size.x < 0 or size.y < 0 or size.z < 0 then
+    io.stderr:write("'size' must be strictly positive\n")
+    size = fields.size.defaultValue
+  end
+}%
+Robot {
+  translation IS translation
+  rotation IS rotation
+  name "ConnectorBox"
+  controller "ConnectorBox"
+  children [
+    DEF RobotBox Transform {
+      translation 0 0 %{= -size.z *3/4}%
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            metalness 0
+            roughness 1
+          }
+          geometry Box {
+            size %{= size.x }% %{= size.y }% %{= size.z/2 }%
+          }
+        }
+      ]
+    }
+    Connector {
+      name IS name
+      model IS model
+      contactMaterial IS contactMaterial
+      children [
+        DEF BOX Transform {
+          translation 0 0 %{= -size.z / 4}%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor IS color
+                metalness 0
+                roughness 1
+              }
+              geometry Box {
+                size %{= size.x }% %{= size.y }% %{= size.z/2 }%
+              }
+            }
+          ]
+        }
+      ]
+      boundingObject USE BOX
+      physics Physics { }
+      type "passive"
+    #  distanceTolerance 0.02
+    # debug only
+      distanceTolerance 2
+      axisTolerance 3.14159
+      
+      rotationTolerance 3.14159
+      numberOfRotations 0
+      snap TRUE
+    }
+  ]
+  boundingObject USE RobotBox
+  physics Physics { }
+}
+}
+

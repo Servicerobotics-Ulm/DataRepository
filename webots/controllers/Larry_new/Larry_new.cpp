@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
     motors[i] = robot->getMotor(motors_names[i]);
     motors[i]->setPosition(INFINITY);
     motors[i]->setVelocity(0.0);
+    motors[i]->setAcceleration(5);
   }
   
   /*Lidar *lidar_front;
