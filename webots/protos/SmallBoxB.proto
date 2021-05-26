@@ -6,17 +6,16 @@ PROTO SmallBoxB [
   field SFString     name             "SmallBoxB"
 ]
 {
-
-ConnectorBox
-{
+#SmallBox {
+CerealBox {
   translation IS translation
   rotation IS rotation
   name IS name
-  color 0.458824 0.313725 0.482353
-  size 0.06 0.135 0.05
-  mass 0.04
+#  size 0.05 0.062 0.135
+  size 0.05 0.135 0.062
+  textureUrl "textures/cereal_box_1.jpg"
+#  baseColor 0.458824 0.313725 0.482353
+  mass 0.1
 }
-
 }
-
 

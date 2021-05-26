@@ -2,13 +2,22 @@
 # (c) 2021 Thomas Feldmeier, http://www.servicerobotik-ulm.de, GPL 2.0
 
 PROTO VacuumGripper [
-  field SFVec3f    translation         0 0.025 0
+  field SFVec3f    translation         0 0.11 0
   field SFRotation rotation            0 1 0 0
   field SFString   name                "VacuumGripper"
-  field SFString   DistanceSensorName  "VacuumGripperDistanceSensor"
-  field SFString   ConnectorName       "VacuumGripperConnectorName"
-  field SFString   ConnectorModel      "VacuumGripperConnectorModel"
-  
+  field MFNode     toolSlot
+    [
+      DistanceSensor {
+        # 0.001m in front of bounding object gripper
+        translation 0 0.001 0
+        rotation 0 0 1 1.5708
+        name "VacuumGripperDistanceSensor"
+        lookupTable [
+          0 0 0
+          0.1 0.1 0
+        ]
+      }
+    ]
 ]
 {
 Solid {
@@ -17,7 +26,7 @@ Solid {
   name IS name
   children [
     Transform {
-      translation 0 0.015 0
+      translation 0 -0.08 0
       children [
         Shape {
           appearance PBRAppearance {
@@ -26,14 +35,14 @@ Solid {
             metalness 0
           }
           geometry Cylinder {
-            height 0.08
+            height 0.06
             radius 0.03
           }
         }
       ]
     }
     Transform {
-      translation 0 0.045 0
+      translation 0 -0.06 0
       rotation 0 0 1 -1.5707953071795862
       scale 0.5 0.5 0.5
       children [
@@ -79,43 +88,36 @@ Solid {
         }
       ]
     }
-    DistanceSensor {
-      translation 0 0.095 0
-      rotation 0.707104781184338 0.7071087811831002 0 -3.1415853071795863
-      name IS DistanceSensorName
-      lookupTable [
-        0 0 0
-        0.1 0.1 0
-      ]
+    Transform {
+      children IS toolSlot
     }
     Transform {
-      translation 0 0.105 0
       rotation 1 0 0 -1.5707953071795862
       children [
         Connector {
-          name IS ConnectorName
-          model IS ConnectorModel
+          name "VacuumGripperConnectorName"
+          model "VacuumGripperConnectorModel"
           boundingObject Transform {
             translation 0 0 -0.005
             rotation 1 0 0 1.5707953071795862
             children [
-               Cylinder {
-                 height 0.01
-                 radius 0.015
+              Cylinder {
+                height 0.01
+                radius 0.015
               }
             ]
           }
           physics Physics {
           }
           type "active"
-#          distanceTolerance 0.02
-          #debug only
-          distanceTolerance 2
-          axisTolerance 3.14
-          
+          distanceTolerance 0.1
+          axisTolerance 0.5
           rotationTolerance 3.14159
           numberOfRotations 0
           snap TRUE
+          # 50N = 1kg
+          tensileStrength 50
+          shearStrength 50
         }
       ]
     }
@@ -123,16 +125,16 @@ Solid {
   boundingObject Group {
     children [
       Transform {
-        translation 0 0.015 0
+        translation 0 -0.08 0
         children [
           Cylinder {
-            height 0.08
+            height 0.06
             radius 0.03
           }
         ]
       }
       Transform {
-        translation 0 0.075 0
+        translation 0 -0.03 0
         children [
           Cylinder {
             height 0.04

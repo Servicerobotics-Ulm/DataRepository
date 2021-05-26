@@ -7,14 +7,14 @@
 # It contains a RangeFinder and a Camera device.
 
 PROTO kinect_v2 [
-  field SFVec3f    translation         0 0.101 0
+  field SFVec3f    translation         0 0.095 0
   field SFRotation rotation            0.577351 0.577351 0.577349 -2.0944
   field SFString   name                "kinect_v2"
   field SFString   controller          ""                # Is `Robot.controller`.
   field SFBool     supervisor          FALSE             # Is `Robot.supervisor`.
   
   field SFString   colorName           "kinect_v2_color"  # name of color camera
-  field SFVec3f    colorTranslation    0.0331 -0.096 0    # relative position
+  field SFVec3f    colorTranslation    0.021 -0.098 0     # relative position
   field SFRotation colorRotation       -0.57735 0.57735 0.577351 -2.0944
   field SFInt32    colorWidth          1920               # Defines the `width` field of the `Camera` nodes.
   field SFInt32    colorHeight         1080               # Defines the `width` field of the `Camera` nodes.  
@@ -22,7 +22,7 @@ PROTO kinect_v2 [
   field SFFloat    colorNoise          0.0                # Defines the `noise` field of the `Camera`.
   
   field SFString   rangeName           "kinect_v2_range"  # name of rangefinder camera
-  field SFVec3f    rangeTranslation    0.0331 -0.096 0    # relative position
+  field SFVec3f    rangeTranslation    0.021 -0.098 0     # relative position
   field SFRotation rangeRotation       -0.57735 0.57735 0.577351 -2.0944
   field SFInt32    rangeWidth          512                # Defines the `width` field of the `RangeFinder` nodes.
   field SFInt32    rangeHeight         424                # Defines the `height` field of the `RangeFinder` nodes.  

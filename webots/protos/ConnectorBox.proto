@@ -28,59 +28,51 @@ PROTO ConnectorBox [
 Robot {
   translation IS translation
   rotation IS rotation
-  name "ConnectorBox"
-  controller "ConnectorBox"
+  name IS name
+  controller "ConnectorBox"      
+  contactMaterial IS contactMaterial  
   children [
-    DEF RobotBox Transform {
-      translation 0 0 %{= -size.z *3/4}%
+    Transform {
+      translation 0 0 %{= -size.z *1/2}%
       children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 1 0
-            metalness 0
-            roughness 1
-          }
-          geometry Box {
-            size %{= size.x }% %{= size.y }% %{= size.z/2 }%
-          }
+        CerealBox2 {
+          size %{= size.z }% %{= size.y }% %{= size.x }%
+          mass -1
+          textureUrl "textures/cereal_box_1.jpg"
         }
       ]
     }
     Connector {
-      name IS name
+      name "SmallBox0"
       model IS model
       contactMaterial IS contactMaterial
-      children [
-        DEF BOX Transform {
+      boundingObject Transform {
           translation 0 0 %{= -size.z / 4}%
           children [
-            Shape {
-              appearance PBRAppearance {
-                baseColor IS color
-                metalness 0
-                roughness 1
-              }
+            Shape {              
               geometry Box {
                 size %{= size.x }% %{= size.y }% %{= size.z/2 }%
               }
             }
           ]
         }
-      ]
-      boundingObject USE BOX
       physics Physics { }
       type "passive"
-    #  distanceTolerance 0.02
-    # debug only
-      distanceTolerance 2
-      axisTolerance 3.14159
-      
       rotationTolerance 3.14159
       numberOfRotations 0
       snap TRUE
     }
   ]
-  boundingObject USE RobotBox
+  boundingObject Transform {
+      translation 0 0 %{= -size.z *3/4}%
+      children [
+        Shape {
+          geometry Box {
+            size %{= size.x }% %{= size.y }% %{= size.z/2 }%
+          }
+        }
+      ]
+    }
   physics Physics { }
 }
 }

@@ -37,7 +37,7 @@ Solid {
           appearance PBRAppearance {
             baseColor IS baseColor
             metalness 0
-            roughness 0.2
+            roughness 1
           }
           geometry Box {
           size %{= size.x }% %{= size.z }% %{= size.y }%

@@ -14,7 +14,6 @@ PROTO A-Frame [
   field SFString      name            "A-Frame Station"
   field SFString      model           "A-Frame Station"
   field SFFloat       Friction        50
-  field SFFloat       mass            20 
   field SFBool        locked          FALSE
 ] 
 {
@@ -164,8 +163,8 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
+#                      physics Physics {
+#                      }
                     }
                   }
                 ]
@@ -179,8 +178,8 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
+#                physics Physics {
+#                }
               }
             }
           ]
@@ -193,8 +192,8 @@ Solid {
               }
             ]
           }
-          physics Physics {
-          }
+#          physics Physics {
+#          }
         }
         DEF Lenkrolle2 Solid {
           translation 0.321 0.1828 0.19
@@ -309,8 +308,8 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
+#                      physics Physics {
+#                      }
                     }
                   }
                 ]
@@ -324,8 +323,8 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
+#                physics Physics {
+#                }
               }
             }
           ]
@@ -338,8 +337,8 @@ Solid {
               }
             ]
           }
-          physics Physics {
-          }
+#          physics Physics {
+#          }
         }
         DEF Lenkrolle3 Solid {
           translation -0.3182 0.1828 0.1908
@@ -454,8 +453,8 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
+#                      physics Physics {
+#                      }
                     }
                   }
                 ]
@@ -469,8 +468,8 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
+#                physics Physics {
+#                }
               }
             }
           ]
@@ -483,8 +482,8 @@ Solid {
               }
             ]
           }
-          physics Physics {
-          }
+#          physics Physics {
+#          }
         }
         DEF Lenkrolle4 Solid {
           translation -0.3188 0.1828 -0.188
@@ -599,8 +598,8 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
+#                      physics Physics {
+#                      }
                     }
                   }
                 ]
@@ -614,8 +613,8 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
+#                physics Physics {
+#                }
               }
             }
           ]
@@ -628,8 +627,8 @@ Solid {
               }
             ]
           }
-          physics Physics {
-          }
+#          physics Physics {
+#          }
         }
       ]
     }
@@ -960,17 +959,17 @@ Solid {
       }
     ]
   }
-  physics Physics {
-    density -1
-    mass IS mass
-    centerOfMass [
-      0 0 0
-    ]
-    inertiaMatrix [
-      1 1 1
-      0 0 0
-    ]
-  }
+#  physics Physics {
+#    density -1
+#    mass IS mass
+#    centerOfMass [
+#      0 0 0
+#    ]
+#    inertiaMatrix [
+#      1 1 1
+#      0 0 0
+#    ]
+#  }
   locked IS locked
 }
 }

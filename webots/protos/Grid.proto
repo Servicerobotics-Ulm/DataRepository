@@ -1,0 +1,69 @@
+#VRML_SIM R2021a utf8
+#
+# a rectangular grid of (rows+1)*(columns+1) lines
+
+PROTO Grid [
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 1 0 0
+  field SFFloat    rows                5          # grid rows
+  field SFFloat    columns             5          # grid columns
+  field SFFloat    length              1          # distance between two rows or columns in meter
+  field SFFloat    radius              0.01       # radius of lines in meter
+  field SFColor    color               1 1 1      # color of lines
+  field SFFloat    transparency        0          # transparency of lines
+]
+{
+  %{
+     rows = fields.rows.value
+     columns = fields.columns.value
+     length = fields.length.value
+  }%
+  Transform {
+    translation IS translation
+    rotation IS rotation
+    children [
+    %{ for x = 0, rows do }%
+      Transform {
+        translation %{= length * (x - rows/2) }% 0 0
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              transparency IS transparency
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height %{= length * columns }%
+              radius IS radius
+            }
+          }
+        ]
+      }
+    %{ end }%
+    %{ for y = 0, columns do }%
+      Transform {
+        translation 0 0 %{= length * (y - columns/2) }%
+        rotation 0 0 1 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              transparency IS transparency
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height %{= length * rows }%
+              radius IS radius
+            }
+          }
+        ]
+      }
+    %{ end }%
+   ]
+  }
+}
+
+
