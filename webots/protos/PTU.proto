@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This is a PROTO file for Webots for PTU-E46: https://www.flir.eu/products/ptu-e46/
@@ -13,6 +13,7 @@ PROTO PTU [
   field SFString   controller      ""                # Is `Robot.controller`.
   field SFBool     supervisor      FALSE             # Is `Robot.supervisor`.
   field MFNode     topSlot         []                # Extend the robot with new nodes at the end of the arm.
+  field SFBool     locked          FALSE
 ]
 {
   Robot {
@@ -232,5 +233,6 @@ PROTO PTU [
       selfCollision TRUE
       physics Physics {
       }
+      locked IS locked
     }
   }

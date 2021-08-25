@@ -1,23 +1,13 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
-  basicTimeStep 8
   info [
     ""
   ]
-  coordinateSystem "NUE"
-  contactProperties [
-    ContactProperties {
-      material1 "SmallBox"
-      coulombFriction [
-        0.2
-      ]
-      bounce 0.3
-    }
-  ]
+  basicTimeStep 8
 }
 Viewpoint {
-  orientation -0.9985152708712712 -0.041902708078608436 0.03480541470160693 1.5550489069867408
-  position -3.131023677087927 55.01717258243124 2.531182136154209
+  orientation 0 1 0 0
+  position 0 0 25
 }
 TexturedBackground {
 }
@@ -26,12 +16,14 @@ TexturedBackgroundLight {
   castShadows FALSE
 }
 Floor {
+  rotation 1 0 0 1.5707963267948966
   size 45.25 18.45
+  tileSize 45.3 18.4
   appearance PBRAppearance {
-    baseColor 0.729412 0.741176 0.713725
+    baseColor 0.827451 0.843137 0.811765
     baseColorMap ImageTexture {
       url [
-        "textures/marble.jpg"
+        "textures/hospital_section_rooms.png"
       ]
     }
     roughness 0.5
@@ -39,7 +31,7 @@ Floor {
   }
 }
 Pioneer3dx {
-  rotation -0.016407362540033273 0.9997307594905208 -0.016407528241224358 -1.5710645694942373
+  rotation 0.583564092075253 -0.583563593541097 -0.564718055965795 2.113446016965717
   controller "<extern>"
   supervisor TRUE
   extensionSlot [
@@ -62,6 +54,7 @@ Pioneer3dx {
   ]
 }
 Solid {
+  rotation 1 0 0 1.5707963267948966
   children [
     DEF Hospital Transform {
       translation 0 0.5 0

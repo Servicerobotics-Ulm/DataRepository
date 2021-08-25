@@ -1,6 +1,11 @@
-#VRML_SIM R2020b utf8
+#VRML_SIM R2021b utf8
+# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+# license url: https://cyberbotics.com/webots_assets_license
+# tags: static
+# documentation url: https://www.sick.com/de/en/detection-and-ranging-solutions/2d-lidar-sensors/lms1xx/lms100-10000/p/p109841
 # Model of the Lidar Device LMS100 from Sick.
 # 'resolution' should be 540 (precision of 0.5°) or 1080 (precision of 0.25°)
+# made by Wenzheng Cai 2020, www.servicerobotik-ulm.de.
 
 PROTO SickLms100 [
   field SFVec3f    translation           0 0 0
@@ -12,6 +17,7 @@ PROTO SickLms100 [
   field SFFloat    maxRange              20
   field SFFloat    noise                 0.0
   field SFFloat    defaultFrequency      10
+  field SFBool     locked                FALSE
 ]
 {
   Transform {
@@ -101,6 +107,7 @@ PROTO SickLms100 [
         minFrequency 1
         maxFrequency 1000
         defaultFrequency IS defaultFrequency
+        locked IS locked
       }
     ]
   }

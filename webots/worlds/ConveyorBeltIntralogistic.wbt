@@ -1,9 +1,8 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     ""
   ]
-  coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
       material1 "WheelMat"
@@ -22,8 +21,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 1 0 0 4.71238898038469
-  position 0.046704262239089286 8.520619160963255 0.0016371768224304722
+  orientation 0.3919914326858568 -0.19177661792753187 -0.8997579927498099 0.9960527637195461
+  position -4.224190747271272 -4.820599556200507 13.438135525966995
 }
 TexturedBackground {
 }
@@ -32,6 +31,7 @@ TexturedBackgroundLight {
   castShadows FALSE
 }
 Robotino3 {
+  rotation 1 0 0 0
   controller "<extern>"
   supervisor TRUE
   bodySlot [
@@ -80,8 +80,8 @@ Robotino3 {
   ]
 }
 DEF MPS0 OPC_UA_Station {
-  translation 1.85 0 -2.07
-  rotation 0.42390326159205516 0.6404313952122572 0.6404323952128744 -2.339705307179586
+  translation 1.85 2.07 0
+  rotation 2.154894315e-06 7.80723621e-07 -0.999999999997374 1.972195958823371
   name "MPS0"
   controller "OPC_UA_Station"
   controllerArgs [
@@ -112,8 +112,8 @@ DEF MPS0 OPC_UA_Station {
   ]
 }
 DEF MPS1 OPC_UA_Station {
-  translation -1.85 0 -2.07
-  rotation 0.8172768337221846 0.407466917099438 0.407466917099438 -1.7712153071795864
+  translation -1.85 2.07 0
+  rotation 3.064844671e-06 0 -0.999999999995303 0.924999213286583
   name "MPS1"
   controller "OPC_UA_Station"
   controllerArgs [
@@ -144,8 +144,8 @@ DEF MPS1 OPC_UA_Station {
   ]
 }
 DEF MPS2 OPC_UA_Station {
-  translation -1.85 0 2.07
-  rotation -0.7300562202386485 0.48322614577654466 0.48322914577744974 1.88036
+  translation -1.85 -2.07 0
+  rotation 3.005555705e-06 -3.104127973e-06 0.999999999990665 1.169395388730041
   name "MPS2"
   controller "OPC_UA_Station"
   controllerArgs [
@@ -176,8 +176,8 @@ DEF MPS2 OPC_UA_Station {
   ]
 }
 DEF MPS3 MPS_Station {
-  translation 1.85 0 2.07
-  rotation -0.3324829756324898 0.6668769511249235 0.6668809511246302 2.49962
+  translation 1.85 -2.07 0
+  rotation 1.073668118e-06 -2.999044804e-06 0.999999999994927 2.216591901190546
   name "MPS3"
   dockingSlot [
     Transform {
@@ -203,24 +203,26 @@ DEF MPS3 MPS_Station {
   ]
 }
 Kasten {
-  translation 0 0.73 0
+  translation 0 0 0.73
+  rotation 1 0 0 1.5707963267948966
   name "Kasten(2)"
 }
 Kasten {
-  translation -1.89214 0.73 -2.12593
-  rotation 3.0600399999856735e-06 -0.9999999999953182 -2.3974499999887754e-09 0.924999
+  translation -1.89214 2.12593 0.73
+  rotation 0.817277734912021 -0.407466012340229 -0.407466014293988 1.77122021164267
   name "Kasten(1)"
   baseColor 0.937255 0.160784 0.160784
 }
 ConveyorBelt {
-  translation -2.49 0 4.5
+  translation -2.49 -4.5 0
+  rotation 1 0 0 1.5707963267948966
   size 15 0.72 0.5
   borderThickness 0.001
   borderHeight 0
 }
 ConveyorBelt {
-  translation -2.75 0 6.55
-  rotation 0 1 0 1.5708
+  translation -2.75 -6.55 0
+  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
   name "conveyor belt(1)"
   size 3.6 0.72 0.5
   borderThickness 0.001
@@ -228,8 +230,8 @@ ConveyorBelt {
   speed 2.5
 }
 ConveyorBelt {
-  translation 0.8 0 6.55
-  rotation 0 1 0 1.5708
+  translation 0.8 -6.55 0
+  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
   name "conveyor belt(2)"
   size 3.6 0.72 0.5
   borderThickness 0.001
@@ -237,14 +239,15 @@ ConveyorBelt {
   speed 2
 }
 DEF NavigationPoints Transform {
-  rotation 1 0 0 -1.5708
+  rotation -1 0 0 3.673189128e-06
   children [
     DEF home NavigationPoint {
     }
   ]
 }
 Transform {
-  translation 0 0 -7.5
+  translation 0 7.5 0
+  rotation 1 0 0 1.5707963267948966
   children [
     Floor {
       translation 0 0 2.93

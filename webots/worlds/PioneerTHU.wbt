@@ -1,9 +1,8 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     "THU Ulm"
   ]
-  coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
       material1 "WheelMat"
@@ -15,8 +14,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.4723683071906148 0.8282214439960383 0.3015251599236624 4.96992483111038
-  position -6.839321927838387 6.358232417592666 5.915827033513171
+  orientation 0.7471318641845889 -0.24345250238305405 -0.6184859388890664 0.9697926544602045
+  position -5.883464835225937 -6.269600859271112 9.573748997391325
   follow "Robotino 3"
   followType "None"
 }
@@ -24,11 +23,11 @@ TexturedBackground {
 }
 DirectionalLight {
   ambientIntensity 1
-  direction -0.2 -1 0.5
+  direction -0.2 -0.5 -1
   intensity 1.35
 }
 Pioneer3dx {
-  rotation -0.016407362540033273 0.9997307594905208 -0.016407528241224358 -1.5710645694942373
+  rotation 0.583564092075253 -0.583563593541097 -0.564718055965795 2.113446016965717
   controller "<extern>"
   supervisor TRUE
   extensionSlot [
@@ -51,7 +50,7 @@ Pioneer3dx {
   ]
 }
 DEF NavigationPoints Transform {
-  rotation 1 0 0 -1.5708
+  rotation -1 0 0 3.673189128e-06
   children [
     DEF home NavigationPoint {
     }
@@ -73,8 +72,8 @@ DEF NavigationPoints Transform {
   ]
 }
 Transform {
-  translation -1.08 0 1.25
-  rotation 0 1 0 4.71238898038
+  translation -1.08 -1.25 0
+  rotation -0.577350269187821 0.577350269190528 0.577350269190528 4.188790204783683
   children [
     Floor {
       translation -19.96 0 -12.65
@@ -4318,8 +4317,8 @@ Transform {
   ]
 }
 Table {
-  translation -0.84 0 19.04
-  rotation 0 1 0 -1.5707953071795862
+  translation -0.84 -19.04 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(15)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4335,8 +4334,8 @@ Table {
   }
 }
 Table {
-  translation 20.42 0 19.16
-  rotation 0 1 0 -1.5707953071795862
+  translation 20.42 -19.16 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(16)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4352,8 +4351,8 @@ Table {
   }
 }
 Table {
-  translation 17.9 0 19.16
-  rotation 0 1 0 -1.5707953071795862
+  translation 17.9 -19.16 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(21)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4369,8 +4368,8 @@ Table {
   }
 }
 Table {
-  translation 26.99 0 -44.38
-  rotation 0 1 0 -1.5707953071795862
+  translation 26.99 44.38 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(17)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4386,8 +4385,8 @@ Table {
   }
 }
 Table {
-  translation 29.34 0 -44.38
-  rotation 0 1 0 -1.5707953071795862
+  translation 29.34 44.38 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(19)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4403,8 +4402,8 @@ Table {
   }
 }
 Table {
-  translation 31.72 0 -44.38
-  rotation 0 1 0 -1.5707953071795862
+  translation 31.72 44.38 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(20)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4420,8 +4419,8 @@ Table {
   }
 }
 Table {
-  translation 34.39 0 -44.38
-  rotation 0 1 0 -1.5707953071795862
+  translation 34.39 44.38 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "table(18)"
   trayAppearance VarnishedPine {
     colorOverride 0.9648 0.9688 0.9688
@@ -4437,12 +4436,12 @@ Table {
   }
 }
 TrashBin {
-  translation 17.93 0.02 11.39
-  rotation 0 1 0 3.14159
+  translation 17.93 -11.39 0.02
+  rotation 9.38185669e-07 0.707106781186236 0.707106781186236 3.141590777218456
 }
 Cabinet {
-  translation -5.69 0 -39.99
-  rotation 0 1 0 -1.5707953071795862
+  translation -5.69 39.99 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   rowsHeights [
     0.24, 0.24, 0.2, 0.2, 0.4, 0.4
   ]
@@ -4455,8 +4454,8 @@ Cabinet {
   }
 }
 Cabinet {
-  translation -5.69 0 -39.18
-  rotation 0 1 0 -1.5707953071795862
+  translation -5.69 39.18 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "cabinet(5)"
   rowsHeights [
     0.24, 0.24, 0.2, 0.2, 0.4, 0.4
@@ -4470,8 +4469,8 @@ Cabinet {
   }
 }
 Cabinet {
-  translation -5.69 0 -37.31
-  rotation 0 1 0 -1.5707953071795862
+  translation -5.69 37.31 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "cabinet(6)"
   rowsHeights [
     0.24, 0.24, 0.2, 0.2, 0.4, 0.4
@@ -4485,8 +4484,8 @@ Cabinet {
   }
 }
 Cabinet {
-  translation -5.69 0 -36.48
-  rotation 0 1 0 -1.5707953071795862
+  translation -5.69 36.48 0
+  rotation 0.577350661639742 -0.577350072964468 -0.577350072964468 2.094394513718122
   name "cabinet(7)"
   rowsHeights [
     0.24, 0.24, 0.2, 0.2, 0.4, 0.4

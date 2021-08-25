@@ -6,7 +6,9 @@ PROTO SimpleConveyorBelt [
   field SFVec3f    size             1.0 0.05 0.1
   field SFFloat    speed            0.3
   field SFFloat    acceleration     -1
-  field SFFloat    mass             1.0
+  field SFFloat    maxForce         10
+  field SFFloat    mass             1
+  field SFVec3f    controlPID       10 0 0
 ]
 {
 Track {
@@ -68,14 +70,19 @@ Track {
   boundingObject USE BO
   physics Physics {
     density -1
-    mass 1
+    mass IS mass
   }
   device [
     LinearMotor {
       name IS motorName
       acceleration IS acceleration
       maxVelocity IS speed
+      maxForce IS maxForce
+      controlPID IS controlPID
       sound ""
+    }
+    PositionSensor {
+      name %{= "\"" .. fields.motorName.value .. "_PositionSensor\"" }%
     }
   ]
   textureAnimation %{= 1 / fields.size.value.x}% 0

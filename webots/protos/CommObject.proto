@@ -1,0 +1,17 @@
+#VRML_SIM R2021b utf8
+# should have DEF CommObject
+# only used for communication:
+# controller SimpleConveyorBelt: write isBoxPresent
+# controller <extern> ComponentWebotsRobotArm Palettizing: read isBoxPresent
+
+# controller <extern> ComponentWebotsRobotArm Palettizing: write boxesPickedPalletizing
+# controller <extern> ComponentWebotsRobotArm Depalettizing: read boxesPickedPalletizing
+
+PROTO CommObject [
+  field SFBool     isBoxPresent            FALSE
+  field SFBool     isBoxPresentStart       FALSE
+]
+{
+  %{ }%
+  Group{}
+}

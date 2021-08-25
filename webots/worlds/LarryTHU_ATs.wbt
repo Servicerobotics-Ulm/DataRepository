@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     "THU Ulm"
@@ -13,6 +13,7 @@ WorldInfo {
       bounce 0
     }
     ContactProperties {
+      material1 "LarryWheel"
       softCFM 1e-07
     }
   ]

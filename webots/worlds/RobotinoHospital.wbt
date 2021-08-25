@@ -1,10 +1,9 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     ""
   ]
   basicTimeStep 8
-  coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
       material1 "WheelMat"
@@ -16,8 +15,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.9985152708712712 -0.041902708078608436 0.03480541470160693 1.5550489069867408
-  position -3.131023677087927 55.01717258243124 2.531182136154209
+  orientation 0 1 0 0
+  position 0 0 25
 }
 TexturedBackground {
 }
@@ -26,12 +25,14 @@ TexturedBackgroundLight {
   castShadows FALSE
 }
 Floor {
+  rotation 1 0 0 1.5707963267948966
   size 45.25 18.45
+  tileSize 45.3 18.4
   appearance PBRAppearance {
-    baseColor 0.729412 0.741176 0.713725
+    baseColor 0.347066 0.351293 0.379995
     baseColorMap ImageTexture {
       url [
-        "textures/marble.jpg"
+        "textures/hospital_section_rooms.png"
       ]
     }
     roughness 0.5
@@ -39,7 +40,7 @@ Floor {
   }
 }
 Robotino3 {
-  rotation 1 0 0 -1.57081
+  rotation -1 0 0 1.3673193785e-05
   controller "<extern>"
   supervisor TRUE
   cameraSlot [
@@ -60,6 +61,7 @@ Robotino3 {
   ]
 }
 Solid {
+  rotation 1 0 0 1.5707963267948966
   children [
     DEF Hospital Transform {
       translation 0 0.5 0

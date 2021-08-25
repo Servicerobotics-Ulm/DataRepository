@@ -1,4 +1,4 @@
-#VRML_SIM R2020b utf8
+#VRML_SIM R2021b utf8
 
 PROTO SmallBoxB [
   field SFVec3f      translation      0 0 0
@@ -7,7 +7,8 @@ PROTO SmallBoxB [
 ]
 {
 #SmallBox {
-CerealBox {
+ConnectorBox {
+#CerealBox {
   translation IS translation
   rotation IS rotation
   name IS name
@@ -15,7 +16,6 @@ CerealBox {
   size 0.05 0.135 0.062
   textureUrl "textures/cereal_box_1.jpg"
 #  baseColor 0.458824 0.313725 0.482353
-  mass 0.1
 }
 }
 

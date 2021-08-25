@@ -1,14 +1,12 @@
-#VRML_SIM R2021a utf8
-# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
-# license url: https://cyberbotics.com/webots_assets_license
-
+#VRML_SIM R2021b utf8
+# tags: nonDeterministic
 # A green radiator with a variable number of fins and optional bounding object. Simplified and faster version of webots radiator.
 
 PROTO Radiator [
   field SFVec3f    translation           0 0 0
   field SFRotation rotation              0 1 0 0
   field SFInt32    numberOfFins          30
-  field SFBool     enableBoundingObject  TRUE                                                           # Defines whether the radiator should have a bounding object.
+  field SFBool     enableBoundingObject  TRUE 
   field SFBool     locked                FALSE
 ]
 {
@@ -37,7 +35,7 @@ PROTO Radiator [
         ]
       }
     ]
-    name %{= '"' .. "radiator" .. context.id .. '"' }%
+    name %{= "\"radiator" .. context.id .. "\"" }%
     model "radiator"
     %{ if fields.enableBoundingObject.value then }%
     boundingObject Transform {

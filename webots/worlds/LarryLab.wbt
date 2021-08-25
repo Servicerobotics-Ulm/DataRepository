@@ -1,11 +1,11 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
-    ""
+    "THU Ulm Servicerobotics Lab"
   ]
-  coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
+      material1 "LarryWheel"
       softCFM 1e-07
     }
     ContactProperties {
@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.4986893924436557 -0.7215557138296677 -0.48027725503498103 1.8555922623161702
-  position -9.062249712201394 20.8930298659034 0.5860546433705475
+  orientation -0.11439556887628706 -0.36386805217050283 -0.9243990991076932 3.7072502393228497
+  position 2.1885320288590107 3.7696140299131975 5.472596386338679
 }
 TexturedBackground {
   texture "entrance_hall"
@@ -30,42 +30,30 @@ TexturedBackgroundLight {
   texture "entrance_hall"
 }
 Larry {
-  hidden position_0_0 16.780752371705958
-  hidden position_0_1 9.500589722579518
-  hidden position_0_2 6.507843200494059
-  hidden linearVelocity_0 -3.875369743080902e-07 1.663996728547483e-07 3.200393927673766e-08
-  hidden angularVelocity_0 -1.5921944411560963e-07 6.41924462609596e-07 -4.8274998325345745e-06
-  hidden position_8_0 2.6915287864067086
-  hidden rotation_9 0 0 1 2.6915287864067086
-  hidden position_9_0 -2.3160088440683744
-  hidden rotation_10 0 -1 0 0.7452128440683728
-  hidden position_10_0 2.597269933145091
-  hidden rotation_11 0 1 0 2.597269933145091
-  hidden position_11_0 -1.4482743649140908
-  hidden rotation_12 0 1 0 0.12252163508590411
-  hidden position_12_0 -1.6009246735558114
-  hidden rotation_13 0 0 -1 1.6009246735558114
-  hidden position_13_0 -0.19797005687896416
-  hidden rotation_14 0 -1 0 0.1979700568789634
-  hidden rotation_22 0 0 1 4.179373320016338
-  hidden rotation_23 0 0 1 2.8981177861648155
-  hidden translation_24 0.0880628816032839 1.942890293094024e-16 0.01306094284581181
-  hidden rotation_24 0 0.9999999999999999 0 2.847111712449231
-  hidden position_24_0 -23.17439832244976
-  hidden rotation_25 0 0 1 1.9583429062685846
+  hidden rotation_2 0 0 1 2.69
+  hidden rotation_3 0 -1 0 0.749204
+  hidden rotation_4 0 1 0 2.6
+  hidden rotation_5 0 1 0 0.12079600000000115
+  hidden rotation_6 0 0 -1 1.6
+  hidden rotation_7 0 -1 0 0.1999999999999989
   controller "<extern>"
   supervisor TRUE
   bodySlot [
-    UR5e {
-      translation 0 -0.07 0
-      rotation 3.390498950813652e-09 -0.7071067811865476 -0.7071067811865476 3.14159
-      controller ""
+    UR5 {
+      rotation 0 0 1 3.106685
+      controller "<extern>"
       supervisor TRUE
+      staticBase FALSE
       toolSlot [
         VacuumGripper {
         }
       ]
-      staticBase FALSE
+      shoulder_pan_position 2.69
+      shoulder_lift_position -2.32
+      elbow_position 2.6
+      wrist_1_position -1.45
+      wrist_2_position -1.6
+      wrist_3_position -0.2
     }
   ]
   cameraSlot [
@@ -88,6 +76,9 @@ Larry {
                       children [
                         kinect_v2 {
                           supervisor TRUE
+                          rangeWidth 1920
+                          rangeHeight 1080
+                          rangeFieldOfView 1.4678219009
                         }
                         microphone {
                         }
@@ -125,7 +116,7 @@ Larry {
   ]
 }
 DEF NavigationPoints Transform {
-  rotation 1 0 0 -1.5708
+  rotation -1 0 0 3.673189128e-06
   children [
     DEF home NavigationPoint {
     }
@@ -141,8 +132,8 @@ DEF NavigationPoints Transform {
   ]
 }
 Transform {
-  translation -1.08 0 1.25
-  rotation 0 1 0 4.71238898038
+  translation -1.08 -1.25 0
+  rotation -0.577350269187821 0.577350269190528 0.577350269190528 4.188790204783683
   children [
     A-Frame {
       translation 0.89 -1.91552e-06 -1.5

@@ -9,6 +9,9 @@ Environments:
 
 ![robotics lab](doc/LarryLab.png)
 
+* Conveyor Belt Intralogistic
+![Conveyor Belt Intralogistic](doc/ConveyorBeltIntralogistic.png)
+
 * Larry Production Logistic
 
 ![Larry Production Logistic](doc/LarryProductionLogistic.png)
@@ -45,6 +48,9 @@ Robots:
 * Larry (made by THU Ulm, based on Segway RMP 50)
 
 ![Larry](doc/Larry.png)
+
+Robot arm UR5 with vacuum gripper:
+![UR5](doc/CoordinateSystemRobotArm.png)
 
 Webots is a free and open-source 3D robot simulator. Excellent documentation about webots can be found at [cyberbotics.com](https://cyberbotics.com/).
 

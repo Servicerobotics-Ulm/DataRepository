@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This is a PROTO file for Webots for a MPS Base station (0.7 x 0.35 x 0.7 m) with coordinate system (x front, y right, z up).
@@ -8,25 +8,26 @@
 # made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
 
 PROTO MPS_Base [
-  field SFVec3f        translation       0 0 0
-  field SFRotation     rotation          1 0 0 -1.5708
-  field SFVec3f        scale             1 1 1
-  field SFString       name              "MPS Base"
-  field SFString       model             "MPS Base"
-  field SFString       controller        ""
-  field MFString       controllerArgs    []
-  field SFVec2f        textureAnimation  0.5 0
-  field SFFloat        Friction          50
-  field SFFloat        mass              15
-  field SFBool         locked            FALSE
+  field SFVec3f        translation       0 0 0                           # any vector
+  field SFRotation     rotation          1 0 0 -1.5708                   # unit axis, (-inf, inf) angle
+  field SFVec3f        scale             1 1 1                           # any vector
+  field SFString       name              "MPS Base"                      # any string
+  field SFString       controller        ""                              # any string
+  field MFString       controllerArgs    []                              # any string
+  field SFBool         supervisor        FALSE                           # {TRUE, FALSE}
+  field SFVec2f        textureAnimation  0.5 0                           # any vector
+  field SFFloat        Friction          50                              # [0, inf)
+  field SFFloat        mass              15                              # {-1, [0, inf)}
+  field SFBool         locked            FALSE                           # {TRUE, FALSE}
 ] 
 {
 Robot {
   translation IS translation
   rotation IS rotation
+  scale IS scale
   controller IS controller
   controllerArgs IS controllerArgs
-  scale IS scale
+  supervisor IS supervisor
   children [
     DEF Body Transform {
       translation -0.175 -0.35 0.0774
@@ -1020,7 +1021,9 @@ Robot {
       }
       device [
         LinearMotor {
-          maxVelocity 0.3
+          name "belt_motor"
+#          controlPID 1 0 0
+          maxVelocity 1.0
           sound ""
         }
       ]
@@ -1053,16 +1056,177 @@ Robot {
                 ]
               }
               textureTransform TextureTransform {
-                scale 0.2 0.5
+                scale 0.07 0.33
               }
             }
             geometry Box {
-              size 0.003 0.002 0.031
+              size 0.005 0.002 0.031
             }
           }
         ]
       }
-      geometriesCount 1000
+      geometriesCount 150
+    }
+    DEF Switch Transform {
+      translation -0.176731 -0.327498 0.866
+      children [
+        Transform {
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.533333 0.541176 0.521569
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.03
+                radius 0.0175
+              }
+            }
+          ]
+        }
+        HingeJoint {
+          jointParameters DEF SwitchPara HingeJointParameters {
+            axis 0 0 1
+            minStop -0.05
+            maxStop 0.85
+          }
+          device [
+            RotationalMotor {
+            name "switch_motor"
+#            controlPID 1 0 0
+            minPosition 0.0
+            maxPosition 0.8
+            maxTorque 50
+            }
+          ]
+          endPoint Solid {
+            rotation 0 0 -1 0.52
+            children [
+              Transform {
+                translation 0 0 0.018
+                rotation 1 0 0 1.5708
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.180392 0.203922 0.211765
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Cylinder {
+                      height 0.006
+                      radius 0.002
+                    }
+                  }
+                ]
+              }
+              Transform {
+                translation 0 0 0.023
+                rotation 1 0 0 1.5708
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.933333 0.933333 0.92549
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Cylinder {
+                      height 0.004
+                      radius 0.012
+                    }
+                  }
+                  Transform {
+                    translation -0.014 0 0.008
+                    rotation 0.862857 -0.357407 0.357403 1.71778
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.933333 0.933333 0.92549
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Box {
+                          size 0.011 0.045 0.004
+                        }
+                      }
+                    ]
+                  }
+                  Transform {
+                    translation 0.014 0 0.008
+                    rotation -0.862857 -0.357407 0.357405 -1.71779
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.933333 0.933333 0.92549
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Box {
+                          size 0.011 0.045 0.004
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+            boundingObject Group {
+              children [
+                Transform {
+                  rotation 1 0 0 1.5708
+                  children [
+                    Cylinder {
+                      height 0.03
+                      radius 0.0175
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0 0.018
+                  rotation 1 0 0 1.5708
+                  children [
+                    Cylinder {
+                      height 0.006
+                      radius 0.002
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 0 0.023
+                  rotation 1 0 0 1.5708
+                  children [
+                    Cylinder {
+                      height 0.004
+                      radius 0.012
+                    }
+                  ]
+                }
+                Transform {
+                  translation -0.014 -0.008 0.023
+                  rotation 0 0 1 -0.785395
+                  children [
+                    Box {
+                      size 0.011 0.045 0.004
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0.014 -0.008 0.023
+                  rotation 0 0 1 0.785398
+                  children [
+                    Box {
+                      size 0.011 0.045 0.004
+                    }
+                  ]
+                }
+              ]
+            }
+            physics Physics {
+            }
+          }
+        } 
+      ]
     }
     DEF Sensor Group {
       children [
@@ -1098,6 +1262,7 @@ Robot {
               ]
             }
           ]
+          name "distance_sensor_back"
           boundingObject Transform {
             rotation 0 0 1 1.5708
             children [
@@ -1110,13 +1275,13 @@ Robot {
           physics Physics {
           }
           lookupTable [
-            0 1000 0
-            0.1 1000 0.1
+            0.0 1 0
+            0.1 0 0
           ]
         }
         DistanceSensor {
           translation -0.175 -0.401 0.882
-          rotation 0 0 1 1.8326
+          rotation 0 0 -1 -0.8891
           children [
             Transform {
               rotation 0 0 1 -1.5707953071795862
@@ -1146,7 +1311,7 @@ Robot {
               ]
             }
           ]
-          name "distance sensor(1)"
+          name "distance_sensor_middle"
           boundingObject Transform {
             rotation 0 0 1 1.5708
             children [
@@ -1159,13 +1324,13 @@ Robot {
           physics Physics {
           }
           lookupTable [
-            0 1000 0
-            0.1 1000 0.1
+            0.0 1 0
+            0.1 0 0
           ]
         }
         DistanceSensor {
           translation -0.05 -0.401 0.882
-          rotation 0 0 1 1.5708
+          rotation 0 0 -1 -1.0472
           children [
             Transform {
               rotation 0 0 1 -1.5707953071795862
@@ -1195,7 +1360,7 @@ Robot {
               ]
             }
           ]
-          name "distance sensor(2)"
+          name "distance_sensor_front"
           boundingObject Transform {
             rotation 0 0 1 1.5708
             children [
@@ -1208,8 +1373,8 @@ Robot {
           physics Physics {
           }
           lookupTable [
-            0 1000 0
-            0.1 1000 0.1
+            0.0 1 0
+            0.1 0 0
           ]
         }
       ]
@@ -1320,7 +1485,7 @@ Robot {
     }
   ]
   name IS name
-  model IS model
+  model "MPS Base"
   boundingObject Group {
     children [
       Transform {

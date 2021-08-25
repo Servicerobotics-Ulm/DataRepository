@@ -1,4 +1,4 @@
-#VRML_OBJ R2021a utf8
+#VRML_OBJ R2021b utf8
 # a navigation point: a cross on the floor marks the points where the robot should go to
 
 PROTO NavigationPoint [

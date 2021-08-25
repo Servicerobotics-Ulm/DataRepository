@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This is a PROTO file for Webots for a shelf (0.4 x 1 x 1.4 m) with coordinate system (x front, y right, z up).
@@ -14,7 +14,6 @@ PROTO Shelf [
   field SFString      name            "Shelf Station"
   field SFString      model           "Shelf Station"
   field SFFloat       Friction        50
-  field SFFloat       mass            30 
   field SFBool        locked          FALSE
 ] 
 {
@@ -163,8 +162,6 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
                     }
                   }
                 ]
@@ -178,8 +175,6 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
               }
             }
           ]
@@ -191,8 +186,6 @@ Solid {
                 size 0.06 0.0118 0.03
               }
             ]
-          }
-          physics Physics {
           }
         }
         DEF Lenkrolle2 Solid {
@@ -308,8 +301,6 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
                     }
                   }
                 ]
@@ -323,8 +314,6 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
               }
             }
           ]
@@ -336,8 +325,6 @@ Solid {
                 size 0.06 0.0118 0.03
               }
             ]
-          }
-          physics Physics {
           }
         }
         DEF Lenkrolle3 Solid {
@@ -453,8 +440,6 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
                     }
                   }
                 ]
@@ -468,8 +453,6 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
               }
             }
           ]
@@ -481,8 +464,6 @@ Solid {
                 size 0.06 0.0118 0.03
               }
             ]
-          }
-          physics Physics {
           }
         }
         DEF Lenkrolle4 Solid {
@@ -598,8 +579,6 @@ Solid {
                           }
                         ]
                       }
-                      physics Physics {
-                      }
                     }
                   }
                 ]
@@ -613,8 +592,6 @@ Solid {
                     }
                   ]
                 }
-                physics Physics {
-                }
               }
             }
           ]
@@ -626,8 +603,6 @@ Solid {
                 size 0.06 0.0118 0.03
               }
             ]
-          }
-          physics Physics {
           }
         }
       ]
@@ -894,17 +869,6 @@ Solid {
           }
         ]
       }
-    ]
-  }
-  physics Physics {
-    density -1
-    mass IS mass
-    centerOfMass [
-      0 0 0
-    ]
-    inertiaMatrix [
-      1 1 1
-      0 0 0
     ]
   }
   locked IS locked

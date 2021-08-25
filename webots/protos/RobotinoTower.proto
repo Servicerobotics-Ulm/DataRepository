@@ -1,0 +1,94 @@
+#VRML_SIM R2021b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# tags: static
+# Modified from https://www.cyberbotics.com/doc/guide/object-factory
+# made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
+
+PROTO RobotinoTower [
+  field  SFVec3f     translation      -0.04 0.03 0.075
+  field  SFRotation  rotation         0 1 0 0
+  field  SFVec3f     scale            1 1 1
+  field  SFString    name             "Robotino Tower"      # Is `Solid.name`.
+  field  SFString    model            "Robotino Tower"      # Is `Solid.model`.
+  field  MFNode      topSlot          []                    # Extends the tower platform.
+  field  SFBool      locked           FALSE
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    scale IS scale
+    children [
+        DEF EXT_top_pos Transform {
+        translation 0.04 -0.03 0.4185
+        children IS topSlot
+        }
+        Transform {
+          translation 0 0 0.239
+          rotation -0.9351132545462786 0.25056206820525934 0.25056306820553154 -1.6378353071795866
+          children [
+            Shape {
+              appearance BrushedAluminium {
+                textureTransform TextureTransform {
+                  rotation 3
+                  scale 1 10
+                }
+                IBLStrength 1.5
+              }
+              geometry Cylinder {
+                height 0.478
+                radius 0.055
+                subdivision 3
+              }
+            }
+            Transform {
+              translation 0 0.247 0
+              children [
+                Shape {
+                  appearance BrushedAluminium {
+                    textureTransform TextureTransform {
+                    }
+                    IBLStrength 1.5
+                  }
+                  geometry Cylinder {
+                    height 0.015
+                    radius 0.225
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      name IS name
+      model IS model
+      boundingObject Group {
+        children [
+          Transform {
+            translation 0 0 0.239
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.478
+                radius 0.055
+              }
+            ]
+          }
+          Transform {
+            translation 0 0 0.486
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.015
+                radius 0.225
+              }
+            ]
+          }
+        ]
+      }
+      physics Physics {
+      }
+      locked IS locked
+    }
+}

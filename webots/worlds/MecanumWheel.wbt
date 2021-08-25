@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     "Simulation of the KUKA youBot robot."
@@ -7,7 +7,6 @@ WorldInfo {
   ]
   title "KUKA youBot"
   basicTimeStep 16
-  coordinateSystem "NUE"
   contactProperties [
     ContactProperties {
       material1 "InteriorWheelMat"
@@ -28,8 +27,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.13763624164015673 0.9185089584793193 0.3706717660955695 3.8075263994367985
-  position -0.685756697349134 1.1512755564891275 -0.870125592197096
+  orientation 0.1320609354212676 -0.4041891238591763 -0.905091742029288 2.566539429412268
+  position -1.1507586561277736 1.6209044705503313 1.9403511632913164
   follow "youBot"
 }
 TexturedBackground {
@@ -37,17 +36,21 @@ TexturedBackground {
 TexturedBackgroundLight {
 }
 Floor {
+  rotation 1 0 0 1.5707963267948966
   size 100 100
 }
 WoodenBox {
-  translation 0.605448 0.2 -0.00121984
+  translation 0.605448 0.00121984 0.2
+  rotation 1 0 0 1.5707963267948966
   size 0.6 0.4 0.6
 }
 KukaBox {
-  translation 0.472629 0.41876 -0.00710068
+  translation 0.472629 0.00710068 0.41876
+  rotation 1 0 0 1.5707963267948966
 }
 Youbot {
-  translation 0 0.102838 0
+  translation 0 0 0.102838
+  rotation 1 0 0 0
   controller "<extern>"
   supervisor TRUE
   bodySlot [
