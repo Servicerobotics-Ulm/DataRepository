@@ -609,46 +609,6 @@ Solid {
     }
   ]
   }
-    Transform {
-      translation 0.00621666 -0.00299997 1.3514
-      rotation -0.6601926454165671 -0.6601926454165671 -0.3581778076259748 -2.453705307179586
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/logo_sr.png"
-              ]
-            }
-            roughness 0.1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.55 0.25
-          }
-        }
-      ]
-    }
-    Transform {
-      translation 0.00621666 -0.00299997 0.8164
-      rotation -0.6601926454165671 -0.6601926454165671 -0.3581778076259748 -2.453705307179586
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/logo.png"
-              ]
-            }
-            roughness 0.1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.297 0.42
-          }
-        }
-      ]
-    }
   ]
   name IS name
   model IS model

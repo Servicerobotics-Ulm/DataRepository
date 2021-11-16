@@ -1,0 +1,52 @@
+#VRML_OBJ R2021b utf8
+# A mobile robot can move from one waypoint to another waypoint if they are connected.
+# template language: javascript
+
+PROTO WaypointConnection [
+  hiddenField SFInt32  startId       0
+  hiddenField SFInt32  endId         0
+  hiddenField SFVec2f  startCoord    0.0 0.0
+  hiddenField SFVec2f  endCoord      1.0 1.0
+  hiddenField SFFloat  width         1.0
+  hiddenField SFBool   showWaypoints TRUE
+]
+{
+
+%< var x1 = fields.startCoord.value.x;
+   var y1 = fields.startCoord.value.y;
+   var x2 = fields.endCoord.value.x;
+   var y2 = fields.endCoord.value.y;
+   var width = fields.width.value;
+   var length = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+>%
+
+  Solid {
+    name %<= '"' + fields.startId.value + '_' + fields.endId.value + '"' >%
+    translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% 0
+    rotation 0 0 1 %<= Math.atan2(y2-y1, x2-x1) >%
+    children [
+      Transform {
+#        rotation 1 0 0 1.57079632679
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url "textures/Richtungstafel.png"
+              }
+              roughness 1
+              metalness 0
+              textureTransform TextureTransform {
+                scale %<= length >% 1
+              }
+              transparency %<= fields.showWaypoints.value ? 0.5 : 1.0 >%
+            }
+            geometry Box {
+              size %<= length >% %<= width >% 0.02
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+}

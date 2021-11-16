@@ -402,7 +402,7 @@ PROTO Larry [
           }
         }
         DEF piece2 Transform {
-          translation 2.03924e-08 -0.02 0
+          translation 0 -0.06 0
           rotation 0 0 1 -1.5707953071795862
           children [
             Shape {
@@ -534,9 +534,11 @@ PROTO Larry [
   }
   physics Physics {
     density -1
-    mass 30
+    # mass 30
+    mass 90
     centerOfMass [
-      0.1 0 -0.3
+      # 0.1 0 -0.3
+      0.1 0 -0.1
     ]
   }
 }

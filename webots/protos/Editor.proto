@@ -1,0 +1,13 @@
+#VRML_OBJ R2021b utf8
+
+PROTO Editor [
+  unconnectedField SFFloat    defaultWaypointWidth       1.0
+  unconnectedField SFBool     showWaypoints              TRUE
+]
+{
+  Robot {
+      name "Editor"
+      controller "<extern>"
+      supervisor TRUE
+  }
+}

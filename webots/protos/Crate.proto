@@ -1,0 +1,83 @@
+#VRML_SIM R2021b utf8
+# template language: javascript
+
+PROTO Crate [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "crate"
+  field SFVec3f    outerSize       0.6 0.6 0.6
+  field SFVec3f    innerSize       0.5 0.5 0.5
+  field SFNode     appearance      MattePaint { baseColor 0.9 0.2 0.2 }
+  field SFNode     appearanceBottom  MattePaint { baseColor 0.9 0.2 0.2 }  
+  field SFFloat    mass            0
+]
+{
+  %<
+    let outer = fields.outerSize.value;
+    let inner = fields.innerSize.value;
+    let bottom = outer.z - inner.z;
+  >%
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children [
+      DEF BOUNDING Group {
+        children [
+          Transform {
+            translation 0 0 %<= bottom/2 >%
+            children [
+              DEF BOTTOM Shape {
+                appearance IS appearanceBottom
+                geometry Box {
+                  size %<= outer.x >% %<= outer.y >% %<= bottom >%
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 %<= (outer.y+inner.y)/4 >% %<= (outer.z + bottom)/2 >%
+            children [
+              DEF LEFT Shape {
+                appearance IS appearance
+                geometry Box {
+                  size %<= outer.x >% %<= (outer.y-inner.y)/2 >% %<= inner.z >%
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 %<= -(outer.y+inner.y)/4 >% %<= (outer.z + bottom)/2 >%
+            children [
+              USE LEFT
+            ]
+          }        
+          Transform {
+            translation %<= (outer.x+inner.x)/4 >%  0 %<= (outer.z + bottom)/2 >%
+            children [
+              DEF FRONT Shape {
+                appearance IS appearance
+                geometry Box {
+                  size %<= (outer.x-inner.x)/2 >% %<= inner.y >%  %<= inner.z >%
+                }
+              }
+            ]
+          }
+          Transform {
+            translation %<= -(outer.x+inner.x)/4 >%  0 %<= (outer.z + bottom)/2 >%
+            children [
+              USE FRONT
+            ]
+          }
+        ]
+      }
+    ]
+    boundingObject USE BOUNDING
+    %< if (fields.mass.value > 0) { >%
+    physics Physics {
+      density -1
+      mass %<= fields.mass.value >%
+    }
+    %< } >%
+  }
+}

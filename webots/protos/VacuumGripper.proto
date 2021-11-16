@@ -2,11 +2,13 @@
 # (c) 2021 Thomas Feldmeier, http://www.servicerobotik-ulm.de, GPL 2.0
 
 PROTO VacuumGripper [
-  field SFVec3f    translation         0 0.11 0
+  field SFFloat    length              0.119
   field SFRotation rotation            0 1 0 0
   field SFString   name                "VacuumGripper"
-  field MFNode     toolSlot
-    [
+  field SFFloat    distanceTolerance   0.1
+  field SFFloat    axisTolerance       0.5
+  field SFFloat    strength            500  
+  field MFNode     toolSlot [
       DistanceSensor {
         # 0.001m in front of bounding object gripper
         translation 0 0.001 0
@@ -20,13 +22,15 @@ PROTO VacuumGripper [
     ]
 ]
 {
+%{ cylinderHeight = fields.length.value - 0.05;
+}%
 Solid {
-  translation IS translation
+  translation 0 %{= fields.length.value }% 0
   rotation IS rotation
   name IS name
   children [
-    Transform {
-      translation 0 -0.08 0
+    DEF CYLINDER Transform {
+      translation 0 %{= -0.05 - cylinderHeight/2 }% 0
       children [
         Shape {
           appearance PBRAppearance {
@@ -35,7 +39,7 @@ Solid {
             metalness 0
           }
           geometry Cylinder {
-            height 0.06
+            height %{= cylinderHeight }%
             radius 0.03
           }
         }
@@ -110,30 +114,22 @@ Solid {
           physics Physics {
           }
           type "active"
-          distanceTolerance 0.1
-          axisTolerance 0.5
+          distanceTolerance IS distanceTolerance
+          axisTolerance IS axisTolerance
 #          axisTolerance 3.14159
           rotationTolerance 3.14159
           numberOfRotations 0
           snap TRUE
           # 500N should be enough for 10kg to lift sideways
-          tensileStrength 500
-          shearStrength 500
+          tensileStrength IS strength
+          shearStrength IS strength
         }
       ]
     }
   ]
   boundingObject Group {
     children [
-      Transform {
-        translation 0 -0.08 0
-        children [
-          Cylinder {
-            height 0.06
-            radius 0.03
-          }
-        ]
-      }
+      USE CYLINDER
       Transform {
         translation 0 -0.03 0
         children [

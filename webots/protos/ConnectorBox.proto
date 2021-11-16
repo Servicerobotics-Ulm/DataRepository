@@ -16,7 +16,7 @@ PROTO ConnectorBox [
   field SFColor      color            1 1 1
   field SFString     contactMaterial  "SmallBox"
   field SFFloat      connectDistance  0.02
-  field MFString     textureUrl      "textures/cereal_box_1.jpg"
+  field MFString     textureUrl       "textures/CHOCO.jpg"
 ]
 {
 %{
@@ -36,8 +36,9 @@ Robot {
     Transform {
       translation 0 0 %{= -size.z *1/2}%
       children [
-        CerealBox2 {
-          size %{= size.z }% %{= size.y }% %{= size.x }%
+        CerealBox3 {
+           size IS size
+#          size %{= size.z }% %{= size.y }% %{= size.x }%
           mass -1
           textureUrl IS textureUrl
         }
@@ -57,7 +58,10 @@ Robot {
             }
           ]
         }
-      physics Physics { }
+      physics Physics { 
+        density -1
+        mass 0.05
+      }
       type "passive"
       rotationTolerance 3.14159
       numberOfRotations 0
@@ -74,7 +78,10 @@ Robot {
         }
       ]
     }
-  physics Physics { }
+  physics Physics { 
+    density -1
+    mass 0.05
+  }
 }
 }
 

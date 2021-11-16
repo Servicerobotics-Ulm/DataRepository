@@ -29,31 +29,81 @@ TexturedBackground {
 TexturedBackgroundLight {
   texture "entrance_hall"
 }
+DEF Locations Group {
+  children [
+    Location {
+      name "home"      
+    }
+    Location {
+      name "pose1"
+      translation -1 2 0      
+    }
+    Location {
+      name "pose2"
+      translation 0.8 0 0
+      rotation 0 0 1 3.14159
+    }
+    Location {
+      name "Blackboard"
+      translation 1.5 -4.8 0
+      rotation 0 0 1 -1.5707953071795862
+    }
+  ]
+}
+Editor {
+}
 Larry {
-  hidden rotation_2 0 0 1 2.69
-  hidden rotation_3 0 -1 0 0.749204
-  hidden rotation_4 0 1 0 2.6
-  hidden rotation_5 0 1 0 0.12079600000000115
-  hidden rotation_6 0 0 -1 1.6
-  hidden rotation_7 0 -1 0 0.1999999999999989
+  hidden position_0_0 -3.980340543238316e-06
+  hidden position_0_1 1.2783058412452275e-06
+  hidden position_0_2 -0.19500346341104313
+  hidden position_1_0 2.6899993460825558
+  hidden rotation_2 0 0 0.9999999999999999 2.6899993460825558
+  hidden position_2_0 -2.3200139814332714
+  hidden rotation_3 0 -1 0 0.7492179814332707
+  hidden position_3_0 2.6000160113374804
+  hidden rotation_4 0 0.9999999999999999 0 2.6000160113374804
+  hidden position_4_0 -1.449999800461311
+  hidden rotation_5 0 1 0 0.12079619953868956
+  hidden position_5_0 -1.5999999982087683
+  hidden rotation_6 0 0 -0.9999999999999999 1.5999999982087683
+  hidden position_6_0 -0.20000000257910944
+  hidden rotation_7 0 -1 0 0.20000000257910897
+  hidden rotation_23 0 0 -1 3.980367652694417e-06
+  hidden rotation_24 0 0 -1 1.2783772104696978e-06
+  hidden translation_25 0.0008528850697258616 0 -0.008719646972966656
+  hidden rotation_25 0 -0.9999999999999999 0 0.19500346341104316
+  hidden position_25_0 1.1680342251491502
+  hidden rotation_26 0 0 1 1.1680342251491502
+  translation -5.884679291565109e-06 -1.3285431063689984e-06 -0.004502566128925495
+  rotation -0.005698361361741201 0.9732287221112765 0.22976810730700353 0.010869681704835956
   controller "<extern>"
   supervisor TRUE
   bodySlot [
     UR5 {
       rotation 0 0 1 3.106685
-      controller "<extern>"
+      controller ""
       supervisor TRUE
       staticBase FALSE
       toolSlot [
         VacuumGripper {
+          distanceTolerance 0.1
+          axisTolerance 0.5
+          strength 200
+          toolSlot [
+            DistanceSensor {
+              translation 0 0.001 0
+              rotation 0 0 1 1.5708
+              name "VacuumGripperDistanceSensor"
+              lookupTable [
+                0 0 0
+                0.1 0.1 0
+              ]
+            }
+            Receiver {
+            }
+          ]
         }
       ]
-      shoulder_pan_position 2.69
-      shoulder_lift_position -2.32
-      elbow_position 2.6
-      wrist_1_position -1.45
-      wrist_2_position -1.6
-      wrist_3_position -0.2
     }
   ]
   cameraSlot [
@@ -112,22 +162,6 @@ Larry {
       ]
       name "Sick LMS 100_Back"
       controller ""
-    }
-  ]
-}
-DEF NavigationPoints Transform {
-  rotation -1 0 0 3.673189128e-06
-  children [
-    DEF home NavigationPoint {
-    }
-    DEF Blackboard NavigationPoint {
-      translation 1.5 -4.8 0
-    }
-    DEF pose1 NavigationPoint {
-      translation -1 2 0
-    }
-    DEF pose2 NavigationPoint {
-      translation 0.8 0 0
     }
   ]
 }

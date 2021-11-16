@@ -1,0 +1,42 @@
+#VRML_OBJ R2021b utf8
+# A mobile robot can move from one waypoint to another waypoint if they are connected.
+# template language: javascript
+
+PROTO Waypoint [
+  field SFInt32        id            0
+  field SFVec3f        translation   0 0 0
+  hiddenField SFFloat  width         1
+  hiddenField SFColor  color         0 1 0
+  hiddenField SFBool   showWaypoints TRUE
+]
+{
+
+%< var radius = fields.width.value / 2.0; 
+>%
+
+Solid {
+  translation IS translation
+  name %<= '"' + fields.id.value + '"' >%  
+  children [
+    Transform {
+      translation 0 0 0
+      rotation 1 0 0 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor IS color
+            roughness 1
+            metalness 0
+            transparency %<= fields.showWaypoints.value ? 0.5 : 1.0 >%
+          }
+          geometry Cylinder {
+            height 0.03
+            radius %<= radius >%
+          }
+        }
+      ]
+    }
+  ]
+}
+
+}

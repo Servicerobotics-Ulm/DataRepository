@@ -16,6 +16,7 @@ PROTO Kisten [
   field SFString     contactMaterial "default"
   field SFFloat      mass            0.92                         # Defines the mass of the box in kg.
   field SFBool       locked          FALSE
+  field SFBool       enablePhysics   TRUE                         # Defines whether it should have physics.  
 ]
 {
 Solid {
@@ -93,10 +94,12 @@ Solid {
       }
     ]
   }
+  %{ if fields.enablePhysics.value then }%
   physics Physics {
     density -1
     mass IS mass
   }
+  %{ end }%
   locked IS locked
 }
 }

@@ -8,23 +8,27 @@
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
 
 PROTO OPC_UA_Station [
-  field SFVec3f        translation       0 0 0
-  field SFRotation     rotation          1 0 0 -1.5708
-  field SFString       name              "OPC UA Station"
-  field SFString       controller        ""
-  field MFString       controllerArgs    []
-  field SFFloat        Friction          50
-  field SFFloat        mass              20
-  field SFBool         locked            FALSE
-  field MFNode         dockingSlot       []
-
+  field SFVec3f             translation       0 0 0
+  field SFRotation          rotation          1 0 0 -1.5708
+  field SFInt32             id                0
+  field SFInt32             port              -1
+  field SFInt32             waypointId        -1
+  field MFNode              dockingSlot       []
 ] 
 {
+
+# port is read in line below =>
+# if port is changed by user, proto regeneration is triggered, automatically reloading the controller
+%{ port = fields.port.value }%
+%{ name = "\"Station" .. fields.id.value .. "\"" }%
 Robot {
   translation IS translation
   rotation IS rotation
-  controller IS controller
-  controllerArgs IS controllerArgs
+  controller "OPC_UA_Station"
+  controllerArgs %{= "[" .. name .. "]" }%
+  supervisor TRUE
+  name %{= name }%
+  model "OPC UA Station"
   children [
     DEF DockingPoint Transform {
       translation 0.775 0 0
@@ -133,7 +137,7 @@ Robot {
                   HingeJoint {
                     jointParameters HingeJointParameters {
                       anchor 0 -0.04115 0.02007
-                      staticFriction IS Friction
+                      staticFriction 50
                     }
                     endPoint Solid {
                       translation 0 -1.3877787807814457e-17 3.469446951953614e-18
@@ -278,7 +282,7 @@ Robot {
                   HingeJoint {
                     jointParameters HingeJointParameters {
                       anchor 0 -0.04115 0.02007
-                      staticFriction IS Friction
+                      staticFriction 50
                     }
                     endPoint Solid {
                       translation 0 -1.3877787807814457e-17 3.469446951953614e-18
@@ -423,7 +427,7 @@ Robot {
                   HingeJoint {
                     jointParameters HingeJointParameters {
                       anchor 0 -0.04115 0.02007
-                      staticFriction IS Friction
+                      staticFriction 50
                     }
                     endPoint Solid {
                       translation 0 -1.3877787807814457e-17 3.469446951953614e-18
@@ -568,7 +572,7 @@ Robot {
                   HingeJoint {
                     jointParameters HingeJointParameters {
                       anchor 0 -0.04115 0.02007
-                      staticFriction IS Friction
+                      staticFriction 50
                     }
                     endPoint Solid {
                       translation 0 -1.3877787807814457e-17 3.469446951953614e-18
@@ -1184,8 +1188,7 @@ Robot {
       ]
     }
   ]
-  name IS name
-  model "OPC UA Station"
+
   boundingObject Group {
     children [
       Transform {
@@ -1508,7 +1511,7 @@ Robot {
   }
   physics Physics {
     density -1
-    mass IS mass
+    mass 20
     centerOfMass [
       0 0 0
     ]
@@ -1517,6 +1520,5 @@ Robot {
       0 0 0
     ]
   }
-  locked IS locked
 }
 }

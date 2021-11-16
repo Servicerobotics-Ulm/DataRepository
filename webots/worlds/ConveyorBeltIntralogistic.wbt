@@ -21,14 +21,138 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.3919914326858568 -0.19177661792753187 -0.8997579927498099 0.9960527637195461
-  position -4.224190747271272 -4.820599556200507 13.438135525966995
+  orientation 0.8773668323251946 -0.1326010275205839 -0.4611338298543487 0.6334288696533728
+  position -1.3759887189177773 -6.200085500485765 9.878483942596073
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
   luminosity 0.7
   castShadows FALSE
+}
+DEF Locations Group {
+  children [
+    Location {
+      name "home"
+    }
+  ]
+}
+DEF Stations Group {
+  children [
+    OPC_UA_Station {
+      translation 1.85 2.07 0
+      rotation 2.154894315e-06 7.80723621e-07 -0.999999999997374 1.972195958823371
+      id 0
+      port 4840
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/0.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    OPC_UA_Station {
+      translation -1.85 2.07 0
+      rotation 3.064844671e-06 0 -0.999999999995303 0.924999213286583
+      id 1
+      port 4841
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/1.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    OPC_UA_Station {
+      translation -1.85 -2.07 0
+      rotation 3.005555705e-06 -3.104127973e-06 0.999999999990665 1.169395388730041
+      id 2
+      port 4842
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/2.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    RollerConveyorStation {
+      translation 1.85 -2.07 0
+      rotation 1.073668118e-06 -2.999044804e-06 0.999999999994927 2.216591901190546
+      id 3
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/3.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+Editor {
 }
 Robotino3 {
   rotation 1 0 0 0
@@ -43,6 +167,7 @@ Robotino3 {
         }
       ]
       name "RobotinoConveyorBelt"
+      supervisor TRUE
       physics Physics {
         density -1
         mass 1
@@ -74,129 +199,6 @@ Robotino3 {
           name "MpsDocking"
           controller "<extern>"
           supervisor TRUE
-        }
-      ]
-    }
-  ]
-}
-DEF MPS0 OPC_UA_Station {
-  translation 1.85 2.07 0
-  rotation 2.154894315e-06 7.80723621e-07 -0.999999999997374 1.972195958823371
-  name "MPS0"
-  controller "OPC_UA_Station"
-  controllerArgs [
-    "MPS0"
-    "4840"
-  ]
-  dockingSlot [
-    Transform {
-      translation 0 0 0.01
-      rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/number/0.png"
-              ]
-            }
-            roughness 1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.2 0.4
-          }
-        }
-      ]
-    }
-  ]
-}
-DEF MPS1 OPC_UA_Station {
-  translation -1.85 2.07 0
-  rotation 3.064844671e-06 0 -0.999999999995303 0.924999213286583
-  name "MPS1"
-  controller "OPC_UA_Station"
-  controllerArgs [
-    "MPS1"
-    "4841"
-  ]
-  dockingSlot [
-    Transform {
-      translation 0 0 0.01
-      rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/number/1.png"
-              ]
-            }
-            roughness 1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.2 0.4
-          }
-        }
-      ]
-    }
-  ]
-}
-DEF MPS2 OPC_UA_Station {
-  translation -1.85 -2.07 0
-  rotation 3.005555705e-06 -3.104127973e-06 0.999999999990665 1.169395388730041
-  name "MPS2"
-  controller "OPC_UA_Station"
-  controllerArgs [
-    "MPS2"
-    "4842"
-  ]
-  dockingSlot [
-    Transform {
-      translation 0 0 0.01
-      rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/number/2.png"
-              ]
-            }
-            roughness 1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.2 0.4
-          }
-        }
-      ]
-    }
-  ]
-}
-DEF MPS3 MPS_Station {
-  translation 1.85 -2.07 0
-  rotation 1.073668118e-06 -2.999044804e-06 0.999999999994927 2.216591901190546
-  name "MPS3"
-  dockingSlot [
-    Transform {
-      translation 0 0 0.01
-      rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/number/3.png"
-              ]
-            }
-            roughness 1
-            metalness 0
-          }
-          geometry Plane {
-            size 0.2 0.4
-          }
         }
       ]
     }
@@ -237,13 +239,6 @@ ConveyorBelt {
   borderThickness 0.001
   borderHeight 0
   speed 2
-}
-DEF NavigationPoints Transform {
-  rotation -1 0 0 3.673189128e-06
-  children [
-    DEF home NavigationPoint {
-    }
-  ]
 }
 Transform {
   translation 0 7.5 0

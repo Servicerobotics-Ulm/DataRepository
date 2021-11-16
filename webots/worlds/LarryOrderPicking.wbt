@@ -11,15 +11,15 @@ WorldInfo {
     ContactProperties {
       material1 "SmallBox"
       coulombFriction [
-        0.2
+        0.28
       ]
       bounce 0.3
     }
   ]
 }
 Viewpoint {
-  orientation 0.03916622297076669 -0.0698891808287615 -0.996785588469902 2.122743807877253
-  position -1.4028856800341063 0.895701993129718 8.5066143399058
+  orientation 0.2904653405108395 -0.2873461891631375 -0.912722331016035 1.6512364728717825
+  position -4.902060686542542 -0.03629379035811848 7.010742706245425
   ambientOcclusionRadius 0
   bloomThreshold 0
 }
@@ -33,12 +33,29 @@ TexturedBackgroundLight {
   castShadows FALSE
 }
 Larry {
-  hidden rotation_2 0 0 1 2.69
-  hidden rotation_3 0 -1 0 0.749204
-  hidden rotation_4 0 1 0 2.6
-  hidden rotation_5 0 1 0 0.12079600000000115
-  hidden rotation_6 0 0 -1 1.6
-  hidden rotation_7 0 -1 0 0.1999999999999989
+  hidden position_0_0 -3.980340543238316e-06
+  hidden position_0_1 1.2783058412452275e-06
+  hidden position_0_2 -0.19500346341104313
+  hidden position_1_0 2.6899993460825558
+  hidden rotation_2 0 0 0.9999999999999999 2.6899993460825558
+  hidden position_2_0 -2.3200139814332714
+  hidden rotation_3 0 -1 0 0.7492179814332707
+  hidden position_3_0 2.6000160113374804
+  hidden rotation_4 0 0.9999999999999999 0 2.6000160113374804
+  hidden position_4_0 -1.449999800461311
+  hidden rotation_5 0 1 0 0.12079619953868956
+  hidden position_5_0 -1.5999999982087683
+  hidden rotation_6 0 0 -0.9999999999999999 1.5999999982087683
+  hidden position_6_0 -0.20000000257910944
+  hidden rotation_7 0 -1 0 0.20000000257910897
+  hidden rotation_23 0 0 -1 3.980367652694417e-06
+  hidden rotation_24 0 0 -1 1.2783772104696978e-06
+  hidden translation_25 0.0008528850697258616 0 -0.008719646972966656
+  hidden rotation_25 0 -0.9999999999999999 0 0.19500346341104316
+  hidden position_25_0 1.1680342251491502
+  hidden rotation_26 0 0 1 1.1680342251491502
+  translation -5.884679291565109e-06 -1.3285431063689984e-06 -0.004502566128925495
+  rotation -0.005698361361741201 0.9732287221112765 0.22976810730700353 0.010869681704835956
   controller "<extern>"
   supervisor TRUE
   bodySlot [
@@ -49,6 +66,9 @@ Larry {
       staticBase FALSE
       toolSlot [
         VacuumGripper {
+          distanceTolerance 0.1
+          axisTolerance 0.5
+          strength 200
           toolSlot [
             DistanceSensor {
               translation 0 0.001 0
@@ -64,12 +84,6 @@ Larry {
           ]
         }
       ]
-      shoulder_pan_position 2.69
-      shoulder_lift_position -2.32
-      elbow_position 2.6
-      wrist_1_position -1.45
-      wrist_2_position -1.6
-      wrist_3_position -0.2
     }
   ]
   cameraSlot [
@@ -94,7 +108,14 @@ Larry {
                           supervisor TRUE
                           rangeWidth 1920
                           rangeHeight 1080
-                          rangeFieldOfView 1.4678219009
+                          # changed from 1.4678219009 (84 horizontal angle, 54 vertical angle)
+                          # to 1.597 (90 horizontal angle, 60 vertical angle)
+                          # (real kinect v2 has 70 horizontal angle, 60 vertical angle)
+                          # (in webots pixels are square)
+                          rangeFieldOfView 1.597
+                          colorFieldOfView 1.597
+                          # changed from 0.5 to 0.4
+                          minRange 0.4
                         }
                         microphone {
                         }
@@ -131,69 +152,96 @@ Larry {
     }
   ]
 }
+Crate {
+  translation -1.50497 2.14519 0
+  rotation 0 0 1 2.09474
+  outerSize 0.38 0.5 0.89
+  innerSize 0.33 0.45 0.25
+  appearance MattePaint {
+    baseColor 0.447059 0.623529 0.811765
+  }
+  appearanceBottom MattePaint {
+    baseColor 0.827451 0.843137 0.811765
+  }
+}
 SmallBoxA {
-  translation 0.6730001300218633 -1.8101813360942371 1.037280302224652
-  rotation 2.032960379e-06 0.799224833623349 0.60103216662305 3.141594918968977
+  translation 0.6730080336157123 -1.8102546527012147 1.0373777919896723
+  rotation -5.743634960142279e-06 0.7986461846412254 0.6018008571986455 -3.141542430415042
   name "ConnectorBox0"
+  textureUrl [
+    "textures/SMACKS.jpg"
+  ]
 }
 SmallBoxA {
-  translation 0.559000130023696 -1.8101811216388393 1.0372807858847513
-  rotation 2.032959597e-06 0.79922483364242 0.60103216659769 3.141594918970919
+  translation 0.672999 -1.84871 1.04835
+  rotation -3.9698811779270064e-05 0.7985855248601196 0.6018813486958138 -3.1414944232498265
+  name "ConnectorBox0(1)"
+  textureUrl [
+    "textures/SMACKS.jpg"
+  ]
+}
+SmallBoxA {
+  translation 0.5591298439225725 -1.8102382073313654 1.037365985426666
+  rotation -7.455667825631708e-07 0.7987375116539802 0.6016796385754234 -3.1415805798294234
   name "ConnectorBox1"
+  textureUrl [
+    "textures/CORN-FLAKES.jpg"
+  ]
 }
 SmallBoxA {
-  translation 0.4450001170994042 -1.8059078347473414 1.0355730397008993
-  rotation 1.970381736e-06 0.833213206396903 0.552951853855206 3.141595173246555
+  translation 0.5589989567317969 -1.8486895160475685 1.048341614647826
+  rotation -8.423130256998368e-06 0.7986775701045375 0.6017592034534762 -3.1415194279940986
+  name "ConnectorBox1(1)"
+  textureUrl [
+    "textures/CORN-FLAKES.jpg"
+  ]
+}
+SmallBoxA {
+  translation 0.44500164009239834 -1.8102353484120408 1.037366661098025
+  rotation -1.2677403954171619e-06 0.798740947355078 0.6016750776097556 -3.1415893578149836
   name "ConnectorBox2"
+  textureUrl [
+    "textures/FROSTIES.jpg"
+  ]
 }
 SmallBoxA {
-  translation 0.3310001171017513 -1.8059076987337814 1.0355735595078255
-  rotation 1.970383052e-06 0.833212612337778 0.55295274900969 3.141595173242365
+  translation 0.44499660065341246 -1.8486877498943672 1.0483409231001104
+  rotation -2.4113069837629326e-05 0.7986830393893679 0.6017519439190214 -3.14150829530567
+  name "ConnectorBox2(1)"
+  textureUrl [
+    "textures/FROSTIES.jpg"
+  ]
+}
+SmallBoxA {
+  translation 0.33100808162309026 -1.8102307569370706 1.0373635685309994
+  rotation -7.873560213463185e-06 0.7987544456896829 0.6016571577144036 3.141584987391645
   name "ConnectorBox3"
+  textureUrl [
+    "textures/SPECIAL.jpg"
+  ]
 }
 SmallBoxA {
-  translation 0.21983692612204897 -1.8100460339242017 1.037222123506918
-  rotation 2.1881227385e-05 0.799839714886414 0.600213653636462 3.141635437122057
+  translation 0.33099261157808935 -1.8486854503038657 1.0483410049871837
+  rotation -3.7243788736310885e-05 0.7986978078436462 0.6017323411273939 -3.141460110451369
+  name "ConnectorBox3(1)"
+  textureUrl [
+    "textures/SPECIAL.jpg"
+  ]
+}
+SmallBoxA {
+  translation 0.2171046539915294 -1.810244513242715 1.0373730592838108
+  rotation 1.749801612994368e-05 0.7986360282255086 0.6018143352513332 -3.1415719756864866
   name "ConnectorBox4"
 }
 SmallBoxA {
-  translation 0.21851595637025345 -1.8868882012198298 1.0591558636519303
-  rotation 7.3007047952e-05 -0.799463888467093 -0.600714146418283 3.141417258285242
-  name "ConnectorBox4(1)"
-}
-SmallBoxA {
-  translation 0.21700045901909817 -1.8484521716898914 1.0481879536648981
-  rotation 4.7387910029e-05 -0.799587879873358 -0.600549098837068 3.141516027655145
+  translation 0.21709024079927194 -1.8486941143598323 1.0483519689817273
+  rotation -7.428613270686028e-05 0.7985478148686698 0.6019313763628236 -3.14142694883452
   name "ConnectorBox4(2)"
-}
-SmallBoxA {
-  translation 0.21701 -1.93486 1.07329
-  rotation 4.7387910029e-05 -0.799587879873358 -0.600549098837068 3.141516027655145
-  name "ConnectorBox4(3)"
-}
-SmallBoxA {
-  translation 0.217015 -1.98286 1.08724
-  rotation 4.7387910029e-05 -0.799587879873358 -0.600549098837068 3.141516027655145
-  name "ConnectorBox4(4)"
-}
-SmallBoxA {
-  translation 0.21702 -2.03086 1.10119
-  rotation 4.7387910029e-05 -0.799587879873358 -0.600549098837068 3.141516027655145
-  name "ConnectorBox4(5)"
 }
 DEF NavigationPoints Transform {
   rotation -1 0 0 3.673189128e-06
   children [
     DEF home NavigationPoint {
-    }
-    DEF Blackboard NavigationPoint {
-      translation 1.5 -4.8 0
-    }
-    DEF pose1 NavigationPoint {
-      translation -1 2 0
-    }
-    DEF pose2 NavigationPoint {
-      translation 0.8 0 0
     }
   ]
 }
@@ -212,11 +260,12 @@ Transform {
       locked TRUE
     }
     Kisten {
-      translation 0.8166938294168644 1.282807888548304 7.89766967335126e-06
+      translation 0.80579 1.29957 7.58559e-06
       rotation 0.9221802114501783 0.2734843676812799 -0.2734775278586439 -1.6517371967180843
       name "Kisten(1)"
       baseColor 0.913725 0.72549 0.431373
       locked TRUE
+      enablePhysics FALSE
     }
     Kisten {
       translation 0.7647187590402731 0.7316984946154749 -8.693377453017348e-06
@@ -225,19 +274,20 @@ Transform {
       baseColor 0.913725 0.72549 0.431373
       mass 1
       locked TRUE
+      enablePhysics FALSE
     }
     ConnectorBox {
-      translation 0.674008 0.780066 -0.0989656
-      rotation 0.4119919554873615 0.7962859139672838 0.442934952144203 -1.8173653071795863
-      size 0.05 0.135 0.062
+      translation 0.592935 0.816806 0.1276378
+      rotation 0.4305249146815945 0.7933608427773172 0.43037991471032955 -1.8001353071795858
+      size 0.05 0.062 0.135
       name "SmallBox(6)"
       textureUrl [
         "textures/white.png"
       ]
     }
     SmallBox {
-      translation 0.6869587397524886 1.2163291942575098 0.05000829823801345
-      rotation 0.922183116440528 0.2734786073246809 -0.27347349247740343 -1.6517319917923148
+      translation 0.6760568786367684 1.2330902406615456 0.05000804388062274
+      rotation 0.9221796483065071 0.273484448003332 -0.2734793464772057 -1.651740138890462
       size 0.08 0.04 0.09
       name "SmallBox(2)"
       baseColor 0.203922 0.396078 0.643137
@@ -245,16 +295,16 @@ Transform {
       locked TRUE
     }
     SmallBox {
-      translation 0.6869586497042022 1.2163175204075531 8.28959266807594e-06
-      rotation 0.9221922569439529 0.27346319777729666 -0.2734580784947368 -1.6517220871155898
+      translation 0.676059230931533 1.2330769251771654 8.036490026563925e-06
+      rotation 0.9221812012670163 0.27348108097645807 -0.27347747691111735 -1.6517324620312142
       size 0.08 0.04 0.09
       baseColor 0.203922 0.396078 0.643137
       locked TRUE
     }
     ConnectorBox {
-      translation 0.654649 0.798484 0.126441
+      translation 0.592935 0.816806 -0.1276378
       rotation 0.4305249146815945 0.7933608427773172 0.43037991471032955 -1.8001353071795858
-      size 0.062 0.135 0.05
+      size 0.05 0.062 0.135
       name "SmallBox(5)"
       textureUrl [
         "textures/white.png"
@@ -269,16 +319,6 @@ Transform {
         "textures/white.png"
       ]
     }
-    SmallBox {
-      translation 0.6322738295283166 1.003881361485531 -1.753000019792182
-      rotation 0.9809649645652325 0.13731002388362812 -0.1373087602325863 -1.590018184438743
-      name "SmallBox(3)"
-    }
-    SmallBox {
-      translation 0.6322736150766217 1.0038818451468416 -1.6390000197944032
-      rotation 0.9809649645629783 0.13731002388919425 -0.13730876024312338 -1.5900181844418038
-      name "SmallBox(10)"
-    }
     Floor {
       translation 0 0 0.49
       size 14.6 8.2
@@ -288,10 +328,6 @@ Transform {
           scale 0.3 0.3
         }
       }
-    }
-    Kisten {
-      translation -3.36055 0.725018 0.404937
-      rotation -0.1862805459727416 -0.6947486814666749 -0.6947113269498448 2.7732462682858587
     }
     DEF Wall Group {
       children [
@@ -2702,8 +2738,4 @@ Transform {
       ]
     }
   ]
-}
-OPC_UA_Station {
-  translation -1.63248 2.34853 -5.75782e-06
-  rotation -2.1232899999936182e-06 -1.2258799999963155e-06 -0.9999999999969944 1.0472
 }

@@ -1,0 +1,80 @@
+#VRML_SIM R2021b utf8
+# template language: javascript
+#
+# A frame of reference (or frame) is a rectangular (or Cartesian) coordinate system.
+
+
+PROTO CoordinateFrame [
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 1 0 0
+  field SFString   name                "link"
+  field SFFloat    transparency        0
+  field SFFloat    axisLength          0.5
+  field SFFloat    axisRadius          0.005
+  field MFNode     children            [ ]
+]
+{
+%< let length = fields.axisLength.value;
+   let radius = fields.axisRadius.value;
+>%
+  Transform {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Group {
+        children IS children
+      }
+      %< for (let i = 0; i < 3; ++i) {
+           let red=0, green=0, blue=0;
+           if(i==0)
+             red=0.5;
+           else if(i==1)
+             green=0.5;
+           else if(i==2)
+             blue=0.5;
+      >%
+      Transform {
+        %< if(i==0) { >%
+        rotation 0 0 1 -1.5707953071795862
+        %< } else if(i==2) { >%
+        rotation 1 0 0 1.5708
+        %< } >%
+        children [
+          Transform {
+            translation 0 %<= length/2 >% 0
+            children [
+              Shape {
+                appearance DEF COLOR Appearance {
+                  material Material {
+                    diffuseColor %<= red >% %<= green >% %<= blue >%
+                    emissiveColor %<= red >% %<= green >% %<= blue >%
+                    transparency IS transparency
+                  }
+                }
+                geometry Cylinder {
+                  height IS axisLength
+                  radius IS axisRadius
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 %<= length >% 0
+            children [
+              Shape {
+                appearance USE COLOR
+                geometry Cone {
+                  height %<= radius*10 >%
+                  bottomRadius %<= radius*6 >%
+                }
+              }
+            ]
+          }
+        ]
+      }
+      %< } >%
+    ]
+  }
+}
+
+

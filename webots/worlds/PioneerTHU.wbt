@@ -26,7 +26,41 @@ DirectionalLight {
   direction -0.2 -0.5 -1
   intensity 1.35
 }
+DEF Locations Group {
+  children [
+    Location {
+      name "home"
+    }
+    Location {
+      name "pose1"
+      translation -1 2 0
+    }
+    Location {
+      name "pose2"
+      translation 0.8 0 0
+      rotation 0 0 1 3.14159
+    }
+    DEF CorridorCenter Location {
+      name "CorridorCenter"
+      translation -7.2 4.2 0
+      rotation 0 0 1 1.5708
+    }
+    Location {
+      name "Blackboard"
+      translation 1.5 -4.8 0
+      rotation 0 0 1 -1.5707953071795862
+    }
+    Location {
+      name "MainEntry"
+      translation 20 -12.5 0
+      rotation 0 0 1 1.5708
+    }
+  ]
+}
+Editor {
+}
 Pioneer3dx {
+  translation 0 0 0.095
   rotation 0.583564092075253 -0.583563593541097 -0.564718055965795 2.113446016965717
   controller "<extern>"
   supervisor TRUE
@@ -46,28 +80,6 @@ Pioneer3dx {
           controller "<extern>"
         }
       ]
-    }
-  ]
-}
-DEF NavigationPoints Transform {
-  rotation -1 0 0 3.673189128e-06
-  children [
-    DEF home NavigationPoint {
-    }
-    DEF CorridorCenter NavigationPoint {
-      translation 20 -12.5 0
-    }
-    DEF Blackboard NavigationPoint {
-      translation 1.5 -4.8 0
-    }
-    DEF CorridorCenter NavigationPoint {
-      translation -7.2 4.2 0
-    }
-    DEF pose1 NavigationPoint {
-      translation -1 2 0
-    }
-    DEF pose2 NavigationPoint {
-      translation 0.8 0 0
     }
   ]
 }

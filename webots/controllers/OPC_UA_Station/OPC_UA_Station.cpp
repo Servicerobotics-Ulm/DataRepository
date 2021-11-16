@@ -16,7 +16,7 @@
 #include <chrono>
 #include <mutex>
 
-#include <webots/Robot.hpp>
+#include <webots/Supervisor.hpp>
 #include <webots/LED.hpp>
 #include <webots/Motor.hpp>
 #include <webots/DistanceSensor.hpp>
@@ -31,10 +31,11 @@ bool greenLed = false;
 bool isBoxPresent = false;
 int motorSpeed = 0;
 int motorTimeout = 0;
-Robot *robot;
+Supervisor *robot;
 mutex wait_isBoxPresent;
 mutex wait_timeout;
 int port;
+string name;
 
 class MyServer: public GenericServer {
 private:
@@ -165,14 +166,13 @@ void start_server(string s) {
 }
 
 int main(int argc, char *argv[]) {
-  robot = new Robot();
+  robot = new Supervisor();
 
   // OPC UA server
-  if (argc != 3) {
-    cerr << "OPC_UA_Station needs 2 controller args: Name and Port";
-    return -1;
-  }
-  port = atoi(argv[2]);
+  port = robot->getSelf()->getField("port")->getSFInt32();
+  if(port<=0)
+    return 0;
+
   cout << "OPC_UA_Station " << argv[1] << ":" << port << endl;
   thread first_thread(start_server, argv[1]);
 
