@@ -1,0 +1,1210 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  info [
+    ""
+  ]
+  contactProperties [
+    ContactProperties {
+      material1 "WheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "SmallBox"
+      coulombFriction [
+        0.2
+      ]
+      bounce 0.3
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.9986010185046054 0.009986343065363263 0.05192570455704589 0.38051961186086086
+  position -0.5697989452539786 -3.9837155453828275 12.055412870837692
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  luminosity 0.7
+  castShadows FALSE
+}
+DEF Locations Group {
+  children [
+    Location {
+    }
+  ]
+}
+DEF Stations Group {
+  children [
+    OPC_UA_Station {
+      hidden linearVelocity_0 5.0998983009040125e-09 1.2026090221823741e-08 -2.1525311423509395e-12
+      hidden angularVelocity_0 -5.366399701777365e-10 2.27714652446621e-10 -2.218857546070891e-09
+      hidden position_1_0 0.0006463769882269831
+      hidden rotation_2 0 1 0 0.0006463769881260462
+      hidden position_2_0 5.9016154614139194e-08
+      hidden translation_3 0 1.1844541111805107e-09 2.428514795510539e-09
+      hidden rotation_3 0.9999999999999999 0 0 5.960464477539063e-08
+      hidden position_4_0 0.0006068968725181093
+      hidden rotation_5 0 1 0 0.0006068968728513657
+      hidden position_5_0 2.675683930246581e-08
+      hidden translation_6 0 5.370096867185481e-10 1.101043971274418e-09
+      hidden rotation_6 1 0 0 2.9802322387695313e-08
+      hidden position_7_0 0.0006120472806575183
+      hidden rotation_8 0 1 0 0.000612047280310533
+      hidden position_8_0 -5.935971322494928e-08
+      hidden translation_9 0 -1.1913495606696856e-09 -2.442652153461511e-09
+      hidden rotation_9 -1 0 0 5.960464477539063e-08
+      hidden position_10_0 0.0006515248456941506
+      hidden rotation_11 0 1 0 0.0006515248456818155
+      hidden position_11_0 -2.7339219048818285e-08
+      hidden translation_12 0 -5.486981979885286e-10 -1.1250088291503424e-09
+      hidden rotation_12 -0.9999999999999999 0 0 2.9802322387695313e-08
+      translation 1.85000361776245 2.070011949136105 -0.006232226897230506
+      rotation -0.00046409772576584186 0.0006030379172260356 -0.9999997104792437 1.9721984038022307
+      port 4840
+      waypointId 0
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/0.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    OPC_UA_Station {
+      hidden linearVelocity_0 -2.6490807577010322e-08 3.504584327240731e-08 -1.8002034303662737e-11
+      hidden angularVelocity_0 -1.6620072942559899e-09 -1.2029671143393427e-09 -7.455917330133648e-09
+      hidden position_1_0 0.0019133041943354434
+      hidden rotation_2 0 1 0 0.0019133041943691649
+      hidden position_2_0 1.4741417740326527e-07
+      hidden translation_3 0 2.9586020855454365e-09 6.066093613532608e-09
+      hidden rotation_3 1 0 0 1.4600096599955432e-07
+      hidden position_4_0 0.0017956137622667128
+      hidden rotation_5 0 1 0 0.001795613762304286
+      hidden position_5_0 1.109628618462515e-07
+      hidden translation_6 0 2.22702435659361e-09 4.5661218868453535e-09
+      hidden rotation_6 0.9999999999999999 0 0 1.1151007970493858e-07
+      hidden position_7_0 0.001837713727442787
+      hidden rotation_8 0 1 0 0.0018377137273300611
+      hidden position_8_0 -1.5284298908447322e-07
+      hidden translation_9 0 -3.0675592899154225e-09 -6.2894887666031796e-09
+      hidden rotation_9 -1 0 0 1.5196262340524156e-07
+      hidden position_10_0 0.0019553742084334343
+      hidden rotation_11 0 1 0 0.001955374208375854
+      hidden position_11_0 -1.0654870775900092e-07
+      hidden translation_12 0 -2.1384328197093794e-09 -4.38447921025098e-09
+      hidden rotation_12 -1 0 0 1.0745380149674385e-07
+      translation -1.8500233927586798 2.07002866954498 -0.0064211559132202195
+      rotation -0.001469465756970244 0.0003675497881320805 -0.9999988527881131 0.925006623645404
+      id 1
+      port 4841
+      waypointId 1
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/1.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    OPC_UA_Station {
+      hidden linearVelocity_0 -5.100464406916582e-09 -1.2026436877547815e-08 -2.3014475692877066e-12
+      hidden angularVelocity_0 5.363428002260691e-10 -2.2721316669242125e-10 -2.219773321231649e-09
+      hidden position_1_0 0.0006463904987197072
+      hidden rotation_2 0 1 0 0.0006463904986986012
+      hidden position_2_0 6.079840079035471e-08
+      hidden translation_3 0 1.2202238108827146e-09 2.5018542133825594e-09
+      hidden rotation_3 1 0 0 5.960464477539063e-08
+      hidden position_4_0 0.000606909746346311
+      hidden rotation_5 0 1 0 0.0006069097461731393
+      hidden position_5_0 2.7290870207951668e-08
+      hidden translation_6 0 5.477276965315525e-10 1.1230193441846836e-09
+      hidden rotation_6 1 0 0 2.9802322387695313e-08
+      hidden position_7_0 0.0006120603116692274
+      hidden rotation_8 0 1 0 0.0006120603115871728
+      hidden position_8_0 -5.804273505131453e-08
+      hidden translation_9 0 -1.1649178358053014e-09 -2.3884585038935757e-09
+      hidden rotation_9 -1 0 0 5.960464477539063e-08
+      hidden position_10_0 0.0006515385166566492
+      hidden rotation_11 0 0.9999999999999999 0 0.0006515385166938272
+      hidden position_11_0 -2.627774531269649e-08
+      hidden translation_12 0 -5.273944198025404e-10 -1.0813291859146368e-09
+      hidden rotation_12 -1 0 0 2.9802322387695313e-08
+      translation -1.850003622968198 -2.0700119613673515 -0.006232226921329707
+      rotation -0.0009110682649648242 -0.0007011568168907766 0.9999993391666488 1.1693938185178077
+      id 2
+      port 4842
+      waypointId 2
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/2.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    RollerConveyorStation {
+      hidden position_0_0 -6.018970656248565e-05
+      hidden position_0_1 -6.0189697791371427e-05
+      hidden position_0_2 -6.0189706562495275e-05
+      hidden position_0_3 -6.018969779136412e-05
+      hidden position_0_4 -6.0189706562487096e-05
+      hidden position_0_5 -6.01896977913492e-05
+      hidden position_0_6 -6.0189706562483905e-05
+      hidden position_0_7 -6.018969779134539e-05
+      hidden position_0_8 -6.018970656247376e-05
+      hidden position_0_9 -6.018969779137938e-05
+      hidden position_0_10 -6.0189706562479114e-05
+      hidden position_0_11 -6.0189697791348245e-05
+      hidden position_0_12 -6.0189706562489624e-05
+      hidden position_0_13 -6.0189697791345975e-05
+      hidden position_0_14 -6.0189706562489475e-05
+      hidden position_0_15 -6.018969779133721e-05
+      hidden position_0_16 -6.0189706562483e-05
+      hidden position_0_17 -6.018969779135243e-05
+      hidden position_0_18 -6.0189706562479995e-05
+      hidden position_0_19 -6.018969779133569e-05
+      hidden position_0_20 -6.018970656246751e-05
+      hidden position_0_21 -6.018969779135097e-05
+      hidden position_0_22 -6.018970656248605e-05
+      hidden position_0_23 -6.018969779133034e-05
+      hidden position_0_24 -6.018970656248527e-05
+      hidden position_0_25 -6.0189697791344775e-05
+      hidden position_0_26 -6.0189706562482576e-05
+      hidden position_0_27 -6.018969779134992e-05
+      hidden position_0_28 -6.018970656248321e-05
+      hidden position_0_29 -6.018969779134274e-05
+      hidden position_0_30 -6.018970656249329e-05
+      hidden position_0_31 -6.0189697791339246e-05
+      hidden position_0_32 -6.0189706562505765e-05
+      hidden position_0_33 -6.0189697791344206e-05
+      hidden position_0_34 -6.018970656248179e-05
+      hidden position_0_35 -6.018969779136177e-05
+      hidden linearVelocity_0 -4.563397918718811e-09 6.502586266136343e-09 -3.095797794027474e-06
+      hidden angularVelocity_0 -9.213058509830968e-07 1.15686825204915e-06 -1.7065109241213206e-09
+      hidden rotation_1 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_2 0 0 -1 6.0189698771238825e-05
+      hidden rotation_3 0 0 -1 6.018970614939807e-05
+      hidden rotation_4 0 0 -1 6.0189698771238825e-05
+      hidden rotation_5 0 0 -1 6.018970614939807e-05
+      hidden rotation_6 0 0 -0.9999999999999999 6.0189698771238825e-05
+      hidden rotation_7 0 0 -1 6.018970614939807e-05
+      hidden rotation_8 0 0 -1 6.0189698771238825e-05
+      hidden rotation_9 0 0 -1 6.018970614939807e-05
+      hidden rotation_10 0 0 -0.9999999999999999 6.0189698771238825e-05
+      hidden rotation_11 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_12 0 0 -1 6.0189698771238825e-05
+      hidden rotation_13 0 0 -1 6.018970614939807e-05
+      hidden rotation_14 0 0 -1 6.0189698771238825e-05
+      hidden rotation_15 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_16 0 0 -1 6.0189698771238825e-05
+      hidden rotation_17 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_18 0 0 -1 6.0189698771238825e-05
+      hidden rotation_19 0 0 -1 6.018970614939807e-05
+      hidden rotation_20 0 0 -0.9999999999999999 6.0189698771238825e-05
+      hidden rotation_21 0 0 -1 6.018970614939807e-05
+      hidden rotation_22 0 0 -1 6.0189698771238825e-05
+      hidden rotation_23 0 0 -1 6.018970614939807e-05
+      hidden rotation_24 0 0 -1 6.0189698771238825e-05
+      hidden rotation_25 0 0 -1 6.018970614939807e-05
+      hidden rotation_26 0 0 -1 6.0189698771238825e-05
+      hidden rotation_27 0 0 -1 6.018970614939807e-05
+      hidden rotation_28 0 0 -1 6.0189698771238825e-05
+      hidden rotation_29 0 0 -1 6.018970614939807e-05
+      hidden rotation_30 0 0 -0.9999999999999999 6.0189698771238825e-05
+      hidden rotation_31 0 0 -1 6.018970614939807e-05
+      hidden rotation_32 0 0 -1 6.0189698771238825e-05
+      hidden rotation_33 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_34 0 0 -1 6.0189698771238825e-05
+      hidden rotation_35 0 0 -0.9999999999999999 6.018970614939807e-05
+      hidden rotation_36 0 0 -1 6.0189698771238825e-05
+      hidden position_37_0 3.139995598101688e-05
+      hidden rotation_38 0 1 0 3.139995372236629e-05
+      hidden position_38_0 8.34232578692401e-09
+      hidden translation_39 0 1.674305138976706e-10 3.4328668033212217e-10
+      hidden position_40_0 2.854189525909731e-05
+      hidden rotation_41 0 1 0 2.85418974684242e-05
+      hidden position_41_0 -3.601168537576623e-09
+      hidden translation_42 0 -7.227543563637084e-11 -1.4818809027095092e-10
+      hidden position_43_0 2.8690888432658812e-05
+      hidden rotation_44 0 0.9999999999999999 0 2.8690892494062844e-05
+      hidden position_44_0 -9.331407880786684e-09
+      hidden translation_45 0 -1.8728131545575621e-10 -3.839874633537743e-10
+      hidden position_46_0 3.1548125777834244e-05
+      hidden rotation_47 0 1 0 3.1548119680139426e-05
+      hidden position_47_0 -2.1043172053143963e-09
+      hidden translation_48 0 -4.223366101285819e-11 -8.659265318677889e-11
+      translation 1.8499999171184358 -2.0699993225580164 -0.0044632098785249465
+      rotation 0.000574076036727874 0.0012216732152221669 0.9999990889752146 2.2165924815832336
+      id 3
+      waypointId 3
+      dockingSlot [
+        Transform {
+          translation 0 0 0.01
+          rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/number/3.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.2 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+DEF Waypoints Group {
+  children [
+    Waypoint {
+      translation 1.3655243857308759 0.928574319556416 0
+    }
+    Waypoint {
+      id 1
+      translation -1.1037539903381868 1.079734848612564 0
+    }
+    Waypoint {
+      id 2
+      translation -1.3655229001234441 -0.9285749645592623 0
+    }
+    Waypoint {
+      id 3
+      translation 1.1046887818958708 -1.0809867512212463 0
+    }
+    Waypoint {
+      id 4
+      translation -0.02 0.07 0
+    }
+    Waypoint {
+      id 5
+      translation 0.02 2.3 0
+    }
+  ]
+}
+DEF WaypointConnections Group {
+  children [
+    WaypointConnection {
+      endId 1
+      startCoord 1.3655243857308759 0.928574319556416
+      endCoord -1.1037539903381868 1.079734848612564
+    }
+    WaypointConnection {
+      startId 1
+      endId 2
+      startCoord -1.1037539903381868 1.079734848612564
+      endCoord -1.3655229001234441 -0.9285749645592623
+    }
+    WaypointConnection {
+      startId 2
+      endId 3
+      startCoord -1.3655229001234441 -0.9285749645592623
+      endCoord 1.1046887818958708 -1.0809867512212463
+    }
+    WaypointConnection {
+      startId 3
+      endId 4
+      startCoord 1.1046887818958708 -1.0809867512212463
+      endCoord -0.02 0.07
+    }
+    WaypointConnection {
+      startId 4
+      endId 5
+      startCoord -0.02 0.07
+      endCoord 0.02 2.3
+    }
+    WaypointConnection {
+      startId 5
+      startCoord 0.02 2.3
+      endCoord 1.3655243857308759 0.928574319556416
+    }
+  ]
+}
+Editor {
+}
+Robotino3 {
+  hidden position_0_0 -18.07347151368054
+  hidden position_0_1 -121.78201977603304
+  hidden position_0_2 85.63834485153382
+  hidden linearVelocity_0 -5.761846214390414e-09 -1.8427419939257214e-08 7.203094887931275e-07
+  hidden angularVelocity_0 3.016638946384772e-07 -8.94346575787634e-08 -3.5647344873380897e-10
+  hidden rotation_1 0 -1 0 5.507100899321369
+  hidden rotation_2 0 1 0 3.881686367558691
+  hidden rotation_3 0 -0.9999999999999999 0 2.326249448980395
+  translation 1.367969015639931 0.9221664164600665 -0.003915546124905543
+  rotation -0.0022792831096897868 0.0024053397153777057 -0.9999945095896074 0.14156623850533287
+  name "Robotino3_1"
+  controller "<extern>"
+  supervisor TRUE
+  bodySlot [
+    Robot {
+      children [
+        RobotinoConveyorBelt {
+          translation 0 0 0.01
+          rotation 0 0 1 -1.5707953071795862
+        }
+      ]
+      name "RobotinoConveyorBelt_1"
+      physics Physics {
+        density -1
+        mass 1
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          1 1 1
+          0 0 0
+        ]
+      }
+      controller "<extern>"
+      supervisor TRUE
+    }
+  ]
+  cameraSlot [
+    DEF CoordinateSystemRobotino_3 Transform {
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Robot {
+          translation 0.19 0 0.21
+          children [
+            SickLms100 {
+            }
+          ]
+          name "Lidar_1"
+          controller "<extern>"
+        }
+        Robot {
+          name "MpsDocking_1"
+          controller "<extern>"
+          supervisor TRUE
+        }
+      ]
+    }
+  ]
+}
+Robotino3 {
+  hidden position_0_0 2.4382768234096934e-05
+  hidden position_0_1 -0.00813893761993059
+  hidden position_0_2 0.006430818299825437
+  hidden rotation_1 0 1 0 2.438276236654938e-05
+  hidden rotation_2 0 -1 0 0.008138937619938457
+  hidden rotation_3 0 1 0 0.006430818299856252
+  translation -1.09162 1.06262 -0.00314866
+  rotation 0.0014694405747054946 -0.0010288504023884936 0.999998391104329 -0.13109530610042527
+  name "Robotino3_2"
+  controller "<extern>"
+  supervisor TRUE
+  bodySlot [
+    Robot {
+      children [
+        RobotinoConveyorBelt {
+          translation 0 0 0.01
+          rotation 0 0 1 -1.5707953071795862
+        }
+      ]
+      name "RobotinoConveyorBelt_2"
+      physics Physics {
+        density -1
+        mass 1
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          1 1 1
+          0 0 0
+        ]
+      }
+      controller "<extern>"
+      supervisor TRUE
+    }
+  ]
+  cameraSlot [
+    DEF CoordinateSystemRobotino_3 Transform {
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Robot {
+          translation 0.19 0 0.21
+          children [
+            SickLms100 {
+            }
+          ]
+          name "Lidar_2"
+          controller "<extern>"
+        }
+        Robot {
+          name "MpsDocking_2"
+          controller "<extern>"
+          supervisor TRUE
+        }
+      ]
+    }
+  ]
+}
+Kasten {
+  hidden linearVelocity_0 -1.6854381688264654e-08 4.823662606011992e-08 -2.5833369067107056e-10
+  hidden angularVelocity_0 -1.8058425875989468e-09 -1.012948650549496e-09 -7.480912476342232e-09
+  translation -1.91490131198451 2.1571416428755676 0.721866523721571
+  rotation 0.8170768281483765 -0.40751927577941116 -0.40781551806081706 1.770030163031904
+  name "Kasten(1)"
+  baseColor 0.937255 0.160784 0.160784
+}
+ConveyorBelt {
+  hidden translation_1 -3.2155611506823334e-11 0.5399215200000012 -1.2211841937670442e-07
+  hidden rotation_1 -0.9999999999999972 -1.0933223350472691e-17 7.536145755439357e-08 3.1415926535897913
+  hidden linearVelocity_1 4.5007156116332156e-11 -7.296473321510856e-10 -1.4210854715202005e-15
+  hidden angularVelocity_1 -9.129670118702228e-17 1.0501169851239702e-16 -2.031424942331816e-09
+  translation -2.49 -4.5 0
+  rotation 1 0 0 1.5707963267948966
+  size 15 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+}
+ConveyorBelt {
+  hidden translation_1 -7.931475654032738e-08 0.5399215199999992 -2.8421709430404007e-13
+  hidden rotation_1 -1 2.0539125955565408e-15 -9.91409171424707e-09 3.1415926535897887
+  hidden linearVelocity_1 1.1495024370062528e-14 1.5317315880947243e-10 -1.6484591469634325e-15
+  hidden angularVelocity_1 1.6074976964771267e-17 1.071812922701744e-22 3.827580719569684e-11
+  translation -2.75 -6.55 0
+  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
+  name "conveyor belt(1)"
+  size 3.6 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+  speed 2.5
+}
+ConveyorBelt {
+  hidden translation_1 -4.280366372455546e-08 0.5399215199999988 3.198907805312956e-11
+  hidden rotation_1 -1 2.4147350785597167e-15 -5.379249323755888e-09 3.1415926535897887
+  hidden linearVelocity_1 -4.501656968944165e-11 5.764686222334261e-10 -1.1937117960769682e-15
+  hidden angularVelocity_1 -3.2367449145944713e-16 5.213603694971698e-17 2.251454615806512e-10
+  translation 0.8 -6.55 0
+  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
+  name "conveyor belt(2)"
+  size 3.6 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+  speed 2
+}
+DEF NavigationPoints Transform {
+  rotation -1 0 0 3.673189128e-06
+  children [
+    DEF home NavigationPoint {
+    }
+  ]
+}
+Transform {
+  translation 0 7.5 0
+  rotation 1 0 0 1.5707963267948966
+  children [
+    Floor {
+      translation 0 0 2.93
+      size 20 26
+      appearance PBRAppearance {
+        baseColor 0.729412 0.741176 0.713725
+        baseColorMap ImageTexture {
+          url [
+            "textures/marble.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+      }
+    }
+    Wall {
+      translation 0 0 -10
+      size 20 1 0.11
+    }
+    Wall {
+      translation 0 0 16
+      size 20 1 0.11
+    }
+    Wall {
+      translation 10 0 3
+      rotation 0 1 0 1.5708
+      size 26 1 0.11
+    }
+    Wall {
+      translation -10 0 3
+      rotation 0 1 0 1.5708
+      size 26 1 0.11
+    }
+    DEF Shelf Group {
+      children [
+        StandardShelf {
+          translation -2 0 0
+          name "StandardShelf(13)"
+          locked TRUE
+        }
+        StandardShelf {
+          name "StandardShelf(14)"
+          locked TRUE
+        }
+        StandardShelf {
+          translation 2 0 0
+          name "StandardShelf(15)"
+          locked TRUE
+        }
+        StandardShelf {
+          translation 4 0 0
+        }
+        StandardShelf {
+          translation -2 0 -9
+          name "StandardShelf(3)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 0 0 -9
+          name "StandardShelf(4)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 2 0 -9
+          name "StandardShelf(5)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 4 0 -9
+          name "StandardShelf(11)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 6 0 -9
+          name "StandardShelf(12)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 8 0 -9
+          name "StandardShelf(16)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation -6 0 0
+          name "StandardShelf(7)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -6 0 -9
+          name "StandardShelf(8)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -9 0 0
+          name "StandardShelf(9)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -9 0 -9
+          name "StandardShelf(10)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 1
+          rotation 0 1 0 -1.5707953071795862
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 3.12
+          rotation 0 1 0 1.5708
+          name "ToolShelf(3)"
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 2.06
+          rotation 0 1 0 3.14159
+          name "ToolShelf(1)"
+          size 1.6 1.4 0.4
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 3.59
+          rotation 0 1 0 -1.5707953071795862
+          name "ToolShelf(4)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 5.71
+          rotation 0 1 0 1.5708
+          name "ToolShelf(5)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 4.65
+          rotation 0 1 0 3.14159
+          name "ToolShelf(7)"
+          size 1.6 1.4 0.4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 6.18
+          rotation 0 1 0 -1.5707953071795862
+          name "ToolShelf(8)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 8.3
+          rotation 0 1 0 1.5708
+          name "ToolShelf(9)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 7.24
+          rotation 0 1 0 3.14159
+          name "ToolShelf(10)"
+          size 1.6 1.4 0.4
+          locked TRUE
+        }
+      ]
+    }
+    Table {
+      translation 8.36 0 10.09
+      rotation 0 1 0 -1.5707953071795862
+      feetSize 0.05 0.05
+      trayAppearance VarnishedPine {
+        colorOverride 0.926 0.912 0.698
+        textureTransform TextureTransform {
+        }
+      }
+      legAppearance VarnishedPine {
+        colorOverride 0.180392 0.203922 0.211765
+        textureTransform TextureTransform {
+          scale 4 5
+        }
+      }
+    }
+    Table {
+      translation 5.25 0 14.34
+      rotation 0 1 0 3.14159
+      name "table(1)"
+      feetSize 0.05 0.05
+      trayAppearance VarnishedPine {
+        colorOverride 0.926 0.912 0.698
+        textureTransform TextureTransform {
+        }
+      }
+      legAppearance VarnishedPine {
+        colorOverride 0.180392 0.203922 0.211765
+        textureTransform TextureTransform {
+          scale 4 5
+        }
+      }
+    }
+    OfficeChair {
+      translation 9.25456 0 10.0484
+      rotation 0 -1 0 1.309
+      legAppearance BrushedAluminium {
+        colorOverride 0.333333 0.341176 0.32549
+        textureTransform TextureTransform {
+          scale 5 5
+        }
+      }
+      seatAppearance Leather {
+        colorOverride 0.203922 0.396078 0.643137
+        tone "light"
+        type "grain"
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+      }
+    }
+    OfficeChair {
+      translation 5.3297 0 15.2388
+      rotation 0 1 0 -2.8797953071795863
+      name "office chair(1)"
+      legAppearance BrushedAluminium {
+        colorOverride 0.333333 0.341176 0.32549
+        textureTransform TextureTransform {
+          scale 5 5
+        }
+      }
+      seatAppearance Leather {
+        colorOverride 0.203922 0.396078 0.643137
+        tone "light"
+        type "grain"
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+      }
+    }
+    Monitor {
+      translation 8.20104 0.74 9.98388
+      rotation 0 1 0 -1.8325953071795862
+    }
+    Monitor {
+      translation 5.03178 0.74 14.269
+      rotation 0 1 0 -2.8797953071795863
+      name "monitor(2)"
+    }
+    Monitor {
+      translation 8.20447 0.74 10.4385
+      rotation 0 1 0 -1.3089953071795861
+      name "monitor(1)"
+      color 0.827451 0.843137 0.811765
+    }
+    Monitor {
+      translation 5.51392 0.74 14.2644
+      rotation 0 1 0 2.87979
+      name "monitor(3)"
+      color 0.827451 0.843137 0.811765
+    }
+    Keyboard {
+      translation 8.60169 0.74 10.1786
+      rotation 0 1 0 -1.5707953071795862
+    }
+    Keyboard {
+      translation 5.30383 0.74 14.604
+      rotation 0 1 0 3.14159
+      name "keyboard(1)"
+    }
+    ComputerMouse {
+      translation 8.58133 0.74 9.6901
+      rotation 0 1 0 -1.3089953071795861
+    }
+    ComputerMouse {
+      translation 5.72003 0.74 14.5342
+      rotation 0 1 0 -2.8797953071795863
+      name "computer mouse(1)"
+    }
+    DEF Pallet1 Group {
+      children [
+        WoodenPallet {
+          translation -4.39 0 13.86
+          lathNumber 4
+        }
+        CardboardBox {
+          translation -4.19 0.29 13.41
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 13.41
+          name "cardboard box(8)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 13.71
+          name "cardboard box(2)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 13.71
+          name "cardboard box(9)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 14.01
+          name "cardboard box(3)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 14.01
+          name "cardboard box(10)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 14.31
+          name "cardboard box(4)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 14.31
+          name "cardboard box(11)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 13.41
+          name "cardboard box(1)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 13.41
+          name "cardboard box(12)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 13.71
+          name "cardboard box(5)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 13.71
+          name "cardboard box(13)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 14.01
+          name "cardboard box(6)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 14.01
+          name "cardboard box(14)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 14.31
+          name "cardboard box(7)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 14.31
+          name "cardboard box(15)"
+          size 0.4 0.3 0.3
+        }
+      ]
+    }
+    DEF Pallet2 Group {
+      children [
+        WoodenPallet {
+          translation -7.4 0 13.86
+          name "wooden pallet(1)"
+          lathNumber 4
+        }
+        CardboardBox {
+          translation -7.2 0.29 13.41
+          name "cardboard box(20)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.59 13.41
+          name "cardboard box(21)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.29 13.71
+          name "cardboard box(22)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.59 13.71
+          name "cardboard box(23)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.29 14.01
+          name "cardboard box(24)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.59 14.01
+          name "cardboard box(25)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.29 14.31
+          name "cardboard box(26)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.2 0.59 14.31
+          name "cardboard box(27)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.29 13.41
+          name "cardboard box(30)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.59 13.41
+          name "cardboard box(31)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.29 13.71
+          name "cardboard box(32)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.59 13.71
+          name "cardboard box(33)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.29 14.01
+          name "cardboard box(34)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.59 14.01
+          name "cardboard box(35)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.29 14.31
+          name "cardboard box(36)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -7.6 0.59 14.31
+          name "cardboard box(37)"
+          size 0.4 0.3 0.3
+        }
+      ]
+    }
+    DEF Box Group {
+      children [
+        CardboardBox {
+          translation -4.71 2.07 7.62
+          name "cardboard box(16)"
+        }
+        CardboardBox {
+          translation -5.7 2.07 7.62
+          name "cardboard box(17)"
+        }
+        CardboardBox {
+          translation -7.73 2.07 7.62
+          name "cardboard box(18)"
+        }
+        CardboardBox {
+          translation -8.69 2.07 7.62
+          name "cardboard box(19)"
+        }
+        CardboardBox {
+          translation -1.81 1.53 3.83
+          name "cardboard box(28)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -1.38 1.53 3.83
+          name "cardboard box(29)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 0.18 1.53 3.83
+          name "cardboard box(38)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 0.61 1.53 3.83
+          name "cardboard box(39)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 2.19 1.53 3.83
+          name "cardboard box(40)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 2.62 1.53 3.83
+          name "cardboard box(41)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 4.19 1.53 3.83
+          name "cardboard box(42)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 4.61 1.53 3.83
+          name "cardboard box(43)"
+          size 0.4 0.3 0.3
+        }
+      ]
+    }
+    DEF Logo Group {
+      children [
+        Transform {
+          translation 3.5 0.8 15.941
+          rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 3.5 0.799984 -9.941
+          rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -3.5 0.8 15.941
+          rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -3.5 0.8 -9.941
+          rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -9.94 0.569999 10.17
+          rotation -0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo_sr.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 1.6 0.6
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 9.94 0.569999 10.17
+          rotation 0.5773516025189619 -0.5773516025189619 0.5773476025217157 2.0944
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo_sr.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 1.6 0.6
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

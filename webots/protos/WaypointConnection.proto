@@ -6,7 +6,7 @@ PROTO WaypointConnection [
   hiddenField SFInt32  startId       0
   hiddenField SFInt32  endId         0
   hiddenField SFVec2f  startCoord    0.0 0.0
-  hiddenField SFVec2f  endCoord      1.0 1.0
+  hiddenField SFVec2f  endCoord      0.0 0.0
   hiddenField SFFloat  width         1.0
   hiddenField SFBool   showWaypoints TRUE
 ]
@@ -18,15 +18,19 @@ PROTO WaypointConnection [
    var y2 = fields.endCoord.value.y;
    var width = fields.width.value;
    var length = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+   var transparency = 1.0;
+   if(fields.showWaypoints.value) {
+     transparency = 0.5;
+   }
 >%
 
   Solid {
     name %<= '"' + fields.startId.value + '_' + fields.endId.value + '"' >%
-    translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% 0
+    translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% 0.01
     rotation 0 0 1 %<= Math.atan2(y2-y1, x2-x1) >%
     children [
       Transform {
-#        rotation 1 0 0 1.57079632679
+        rotation 1 0 0 1.57079632679
         children [
           Shape {
             appearance PBRAppearance {
@@ -38,10 +42,10 @@ PROTO WaypointConnection [
               textureTransform TextureTransform {
                 scale %<= length >% 1
               }
-              transparency %<= fields.showWaypoints.value ? 0.5 : 1.0 >%
+              transparency %<= transparency >%
             }
-            geometry Box {
-              size %<= length >% %<= width >% 0.02
+            geometry Plane {
+              size %<= length >% %<= width >%
             }
           }
         ]
