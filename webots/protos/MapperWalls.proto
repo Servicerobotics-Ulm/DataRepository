@@ -1,0 +1,98 @@
+#VRML_SIM R2021b utf8
+# template language: javascript
+
+PROTO MapperWalls [
+  field SFFloat    resolution   0.05
+  field SFFloat    width        1
+  field SFFloat    height       1
+  field SFVec2f    origin       0 0
+  field SFFloat    wallHeight   3
+  field SFString   pngFile      "myfile.png"
+  field SFColor    baseColor    1 1 1
+  field MFVec3f    Coordinate   []
+  field MFInt32    coordIndex   []
+  field MFVec3f    BottomCoordinate   []
+  field MFInt32    BottomCoordIndex   []
+]
+{
+%<
+   var resolution = fields.resolution.value
+   var width = fields.width.value
+   var height = fields.height.value
+   var originX = fields.origin.value.x
+   var originY = fields.origin.value.y
+   var wallHeight = fields.wallHeight.value
+   var pngFile = fields.pngFile.value
+>%
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children[
+# bug: webots mouseclick would detect image even at places where it is transparent
+#      => sometimes not possible to select things like robot (go below wallheight or select on scene tree)
+#      quickhack would be do comment out TOP...
+    DEF TOP Transform{
+      translation %<= originX + width*resolution/2 >% %<= (originY + height*resolution/2) >% %<= wallHeight >%
+      rotation 1 0 0 1.5707953071795862
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [ %<= "\"" + fields.pngFile.value + "\"" >% ]
+              filtering 0
+            }
+            roughness 1
+            metalness 0
+            baseColor IS baseColor
+            textureTransform TextureTransform {
+              scale 1 -1
+            }
+          }
+          geometry Plane {
+            size %<= width*resolution >% %<= height*resolution >%
+          }
+        }
+      ]
+    }
+    DEF BOTTOM Transform {
+      translation %<= originX >% %<= originY >% 0
+      scale %<= resolution >% %<= resolution >% %<= resolution >%
+      children [
+        DEF SHAPE Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            baseColor IS baseColor
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point IS BottomCoordinate
+            }
+            coordIndex IS BottomCoordIndex
+          }
+        }
+      ]
+    }
+    DEF SIDE Solid {
+      translation %<= originX >% %<= originY >% 0
+      name "PgmWalls"
+      children [
+        DEF SHAPE Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            baseColor IS baseColor
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point IS Coordinate
+            }
+            coordIndex IS coordIndex
+          }
+        }
+      ]
+      boundingObject USE SHAPE
+    }
+  ]
+}
+}

@@ -1,0 +1,44 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0 1 0 0
+  position 0 0 10
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Floor {
+  rotation 1 0 0 1.5707996938995747
+  size 20 20
+  tileSize 2 2
+}
+Pioneer3dx {
+  translation -2 -2 0.097486
+  rotation -1 0 0 -1.5708053071795867
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    DEF CoordinateSystemPioneer_3-DX Transform {
+      translation 0 -0.0975 0
+      rotation -0.5832030341794896 0.5832030341794896 0.5654630331398103 2.11232
+      children [
+        Robot {
+          translation 0.07 0 0.3175
+          children [
+            SickLms291 {
+              rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+              resolution 361
+            }
+          ]
+          name "LidarPioneer"
+          controller "<extern>"
+        }
+      ]
+    }
+  ]
+}
+walls_ExcerciseRacetrack {
+}
