@@ -56,6 +56,11 @@ Solid {
   rotation 1 0 0 1.5708
   children [
     DEF Cyl Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+        metalness 0
+      }
       geometry Cylinder {
         height 0.8
         radius 0.075
@@ -69,12 +74,7 @@ Solid {
   translation 1 3 0.4
   rotation 1 0 0 1.5708
   children [
-    DEF Cyl Shape {
-      geometry Cylinder {
-        height 0.8
-        radius 0.075
-      }
-    }
+    USE Cyl
   ]
   name "cylinder2"
   boundingObject USE Cyl
@@ -83,12 +83,7 @@ Solid {
   translation 2 3 0.4
   rotation 1 0 0 1.5708
   children [
-    DEF Cyl Shape {
-      geometry Cylinder {
-        height 0.8
-        radius 0.075
-      }
-    }
+    USE Cyl
   ]
   name "cylinder3"
   boundingObject USE Cyl
