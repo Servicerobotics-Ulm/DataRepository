@@ -1,0 +1,123 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+}
+Viewpoint {
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Pioneer3dx {
+  translation -2 -2 0.095
+  rotation -0.5828998706708541 0.5660878744009651 0.5828998706708541 -2.1113753071795864
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    DEF CoordinateSystemPioneer_3-DX Transform {
+      translation 0 -0.0975 0
+      rotation -0.5832030341794896 0.5832030341794896 0.5654630331398103 2.11232
+      children [
+        Solid {
+          translation 0.044 0 0.353
+          name "BoundingObject Lidar"
+          boundingObject Box {
+            size 0.15 0.155 0.21
+          }
+          physics Physics {
+            density -1
+            mass 0.001
+          }
+        }
+        Transform {
+          translation 0.143 0 0.167
+          children [
+            CapScrew {
+              translation 0 0.004 0
+              rotation 1 0 0 1.5708
+              screwRadius 0.001
+              screwLength 0.01
+            }
+            RealSenseD435 {
+              translation 0.03 0 0
+              rotation 0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
+              controller "<extern>"
+              supervisor TRUE
+              colorWidth 640
+              colorHeight 427
+              colorFieldOfView 1.51844
+              rangeWidth 640
+              rangeHeight 427
+              minRange 0.01
+            }
+          ]
+          translationStep 0.001
+        }
+        Robot {
+          translation 0.07 0 0.3175
+          children [
+            SickLms291 {
+              rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+              resolution 361
+            }
+          ]
+          name "LidarPioneer"
+          controller ""
+        }
+      ]
+    }
+  ]
+}
+RectangleArena {
+  rotation 1 0 0 1.5708
+  floorSize 5.29 4.9
+  floorAppearance Parquetry {
+    type "chequered"
+    textureTransform TextureTransform {
+      scale 0.25 0.25
+    }
+  }
+  wallHeight 1
+  wallAppearance RedBricks {
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+}
+Solid {
+  translation 1 1 0.4
+  rotation 1 0 0 1.5708
+  children [
+    DEF Cyl Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.8
+        radius 0.075
+      }
+    }
+  ]
+  name "cylinder1"
+  boundingObject USE Cyl
+}
+Solid {
+  translation 1 3 0.4
+  rotation 1 0 0 1.5708
+  children [
+    USE Cyl
+  ]
+  name "cylinder2"
+  boundingObject USE Cyl
+}
+Solid {
+  translation 2 3 0.4
+  rotation 1 0 0 1.5708
+  children [
+    USE Cyl
+  ]
+  name "cylinder3"
+  boundingObject USE Cyl
+}
