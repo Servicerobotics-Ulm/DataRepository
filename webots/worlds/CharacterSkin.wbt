@@ -1,0 +1,41 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.3988183902523585 -0.15276439183183796 -0.9042161977009515 3.808430242311877
+  position 5.561418012003222 -2.4855638027831195 5.590755033133689
+}
+Background {
+  skyColor [
+    0.533333 0.541176 0.521569
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.55 -0.6 -1
+  castShadows TRUE
+}
+Floor {
+  translation -1.25 -1.25 0
+  rotation 0 0 1 1.5707963267948966
+  size 150 150
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/gray_floor_tiles.jpg"
+      ]
+    }
+    roughness 0.4
+    metalness 0
+  }
+}
+Robot {
+  children [
+    CharacterSkin {
+      scale 0.8 0.8 0.8
+      model "Robert"
+    }
+  ]
+  controller "CharacterSkinControl"
+  supervisor TRUE
+}
