@@ -1,23 +1,21 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
 # license url: https://cyberbotics.com/webots_assets_license
 # tags: static
 # documentation url: https://www.sick.com/de/en/detection-and-ranging-solutions/2d-lidar-sensors/lms1xx/lms100-10000/p/p109841
 # Model of the Lidar Device LMS100 from Sick.
-# 'resolution' should be 540 (precision of 0.5°) or 1080 (precision of 0.25°)
+# 'resolution' should be 541 (precision of 0.5°) or 1081 (precision of 0.25°)
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de.
 
 PROTO SickLms100 [
   field SFVec3f    translation           0 0 0
-  field SFRotation rotation              0 1 0 0
+  field SFRotation rotation              0 0 1 0
   field SFString   name                  "Sick LMS 100"
-  field SFInt32    horizontalResolution  540
+  field SFInt32    horizontalResolution  541
   field SFFloat    fieldOfView           4.71239
   field SFFloat    minRange              0.01
   field SFFloat    maxRange              20
   field SFFloat    noise                 0.0
-  field SFFloat    defaultFrequency      10
-  field SFBool     locked                FALSE
 ]
 {
   Transform {
@@ -25,10 +23,12 @@ PROTO SickLms100 [
     rotation IS rotation
     children [
       Lidar {
-        rotation -0.57735 0.57735 0.57735 -2.0944
+#        rotation -0.57735 0.57735 0.57735 -2.0944
         children [
           Transform {
-            translation 0 -0.065 0.027
+#            translation 0 -0.065 0.027
+            translation -0.027 0 -0.065
+            rotation 0.57735 -0.57735 -0.57735 2.0944
             children [
               Shape {
                 appearance PBRAppearance {
@@ -43,7 +43,8 @@ PROTO SickLms100 [
             ]
           }
           Transform {
-            translation 0 -0.065 0
+#            translation 0 -0.065 0
+            translation 0 0 -0.065
             children [
               Shape {
                 appearance PBRAppearance {
@@ -59,8 +60,10 @@ PROTO SickLms100 [
             ]
           }
           Transform {
-            translation 0 -0.045 0
-            rotation 1 0 0 3.14159
+#            translation 0 -0.045 0
+            translation 0 0 -0.045
+#            rotation 1 0 0 3.14159
+            rotation 0.70710678 -0.70710678 0 3.141592
             children [
               Shape {
                 appearance PBRAppearance {
@@ -77,8 +80,10 @@ PROTO SickLms100 [
             ]
           }
           Transform {
-            translation 0 0.025 0
-            rotation 1 0 0 3.14159
+#            translation 0 0.025 0
+            translation 0 0 0.025
+#            rotation 1 0 0 3.14159
+            rotation 0.70710678 -0.70710678 0 3.141592
             children [
               Shape {
                 appearance PBRAppearance {
@@ -104,10 +109,6 @@ PROTO SickLms100 [
         minRange IS minRange
         maxRange IS maxRange
         noise IS noise
-        minFrequency 1
-        maxFrequency 1000
-        defaultFrequency IS defaultFrequency
-        locked IS locked
       }
     ]
   }
