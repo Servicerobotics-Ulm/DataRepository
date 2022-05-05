@@ -1,0 +1,121 @@
+#VRML_SIM R2022a utf8
+# documentation url: https://www.sick.com/ag/en/opto-electronic-protective-devices/safety-laser-scanners/nanoscan3/c/g507056
+# documentation url: https://cdn.sick.com/media/docs/1/01/701/technical_information_microscan3_outdoorscan3_nanoscan3_data_output_via_udp_and_tcp_ip_en_im0083701.pdf
+# Safety Laser Scanner nanoScan3 from Sick
+# made by Wenzheng Cai July 2021, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+# template language: javascript
+
+PROTO SicknanoScan3 [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 0 1 0
+  field SFString   name                  "Sick nanoScan3"
+  field SFInt32    horizontalResolution  1651
+  field SFFloat    fieldOfView           4.79965544298       # 275 degrees
+  field SFFloat    minRange              0.05
+  field SFFloat    maxRange              40                  # protective field range 3m, warning field range 10m
+  field SFFloat    noise                 0.0
+]
+{
+  Lidar {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Transform {
+        translation 0 0 0.018
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+            }
+            geometry Capsule {
+              top FALSE
+              height 0.01
+              radius 0.041
+              subdivision 32
+            }
+          }
+        ]
+      }
+%<
+for (let i=0; i<2; i++) {
+  let z = (i ? 0.032 : 0.006);
+>%
+      Transform {
+        translation 0 0 %<= i ? -0.0285 : -0.0475 >%
+        children [
+          Shape {
+            appearance DEF COLOR PBRAppearance {
+%<
+  if(i) {
+>%
+              baseColor 0 0 0
+%<
+  } else {
+>%
+              baseColor 0.969 0.8 0.016
+%<
+  }
+>%
+              roughness 0.5
+              metalness 0.2
+            }
+            geometry Box {
+              size 0.0806 0.1006 %<= z >%
+            }
+          }
+          Shape {
+            appearance USE COLOR
+            geometry Box {
+              size 0.1006 0.0806 %<= z >%
+            }
+          }
+%<
+  for (let x=-1; x<2; x+=2) {
+    for (let y=-1; y<2; y+=2) {
+>%
+          Transform {
+            translation %<= x*0.0403 >% %<= y*0.0403 >% 0
+            children [
+              Shape {
+                appearance USE COLOR
+                geometry Cylinder {
+                  height %<= z >%
+                  radius 0.01
+                }
+              }
+            ]
+          }
+%<
+    }
+  }
+>%
+        ]
+      }
+%<
+}
+>%
+      Transform {
+        translation 0 0 0.0247
+        children [
+          Shape {
+            appearance USE COLOR
+            geometry Cylinder {
+              height 0.01
+              radius 0.043
+            }
+          }
+        ]
+      }
+    ]
+    name IS name
+    model "Sick nanoScan3"
+    fieldOfView IS fieldOfView
+    horizontalResolution IS horizontalResolution
+    verticalFieldOfView %<= fields.fieldOfView.value / fields.horizontalResolution.value >%
+    numberOfLayers 1
+    spherical TRUE
+    minRange IS minRange
+    maxRange IS maxRange
+    noise IS noise
+  }
+}
