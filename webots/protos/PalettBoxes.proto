@@ -1,0 +1,39 @@
+#VRML_SIM R2022a utf8
+
+# 1) .wbt file: PalettBoxes
+# 2) webots: convert Root to base nodes
+# 3) .wbt file: delete Robot {
+#                        children [
+#                        ]
+#                      }
+#    to make all boxes an robot of it own on top level
+
+PROTO PalettBoxes [
+  field SFFloat    mx       4
+  field SFFloat    my       4
+  field SFFloat    mz       6
+]
+{
+  Robot {
+    children [
+%{
+  mx = fields.mx.value
+  my = fields.my.value
+  mz = fields.mz.value
+  for x = 0, (mx-1) do
+    for y = 0, (my-1) do
+      for z = 0, (mz-1) do 
+}%
+      PalettBox {
+        index %{=x}% %{=y}% %{=z}%
+      }
+%{
+      end
+    end
+  end
+}%
+    ]
+  }
+}
+
+

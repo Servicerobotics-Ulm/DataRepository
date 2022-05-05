@@ -1,0 +1,24 @@
+#VRML_SIM R2022a utf8
+#
+# a rectangular grid of rows*columns*layers ConnectorBoxes
+
+PROTO PalettBox [
+  field SFVec3f    index               0 0 0
+]
+{
+%{
+  index = fields.index.value
+}%
+  ConnectorBox {
+    # convert to NUE=NorthUpEast=FrontUpRight=XYZ from ENU=EastNorthUp=FrontLeftUp=XZ-Y
+    # translation         0.45 -0.45 -0.35
+    # offset              0.2   0.3   0.148
+#    translation %{= 0.45 + 0.2*index.x}% %{= -0.36 + 0.148*index.z}% %{= -(-0.45 + 0.3*index.y)}%
+    translation %{= 0.45 + 0.2*index.x}% %{= (-0.45 + 0.3*index.y)}% %{= -0.36 + 0.148*index.z}% 
+    rotation 0.7071 0 0.7071 3.14159
+#    rotation 1 0 0 -1.5707953071795862
+    size 0.15 0.295 0.195
+    name %{= "\"Box" .. index.x .. "_" .. index.y .. "_" .. index.z .. "\"" }%
+  }
+}
+

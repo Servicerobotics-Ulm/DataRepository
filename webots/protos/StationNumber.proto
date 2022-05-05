@@ -1,0 +1,29 @@
+#VRML_SIM R2022a utf8
+# number of Location of Station
+
+PROTO StationNumber [
+  field  MFString  url  [ "textures/number/0.png" ]
+]
+{
+
+Transform {
+  translation 0.465 0 0.01
+  rotation 0 0 1 -1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url IS url
+        }
+        roughness 1
+        metalness 0
+      }
+      geometry Plane {
+        size 0.2 0.4
+      }
+    }
+  ]
+}
+
+}
+

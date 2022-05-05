@@ -1,0 +1,54 @@
+#VRML_OBJ R2022a utf8
+# a cross with an arrow in one direction
+# template language: javascript
+
+PROTO CrossWithArrow [
+  field       SFColor  color          0 0 0
+  field       SFFloat  lineLength     0.6
+  field       SFFloat  lineWidth      0.05
+  field       SFFloat  transparency   0.0
+]
+{
+  Shape {
+    appearance PBRAppearance {
+      baseColor IS color
+      roughness 1
+      metalness 0
+      transparency IS transparency
+    }
+    geometry IndexedFaceSet {
+      coord Coordinate {
+        point [
+%<
+let lineLength = fields.lineLength.value;
+let lineWidth = fields.lineWidth.value;
+let matrix = [
+ 1, 5, 0, 0,
+ 1, 0, 0, 5,
+ 1, 0, 0, 1,
+ 0, 1, 0, 1,
+ 0, 1, 1, 0,
+ 0,-1, 1, 0,
+ 0,-1, 0, 1,
+-1, 0, 0, 1
+];
+for (let i = 0; i < 15; i++) {
+  let j=i;
+  if(i>7) {
+    j=15-i;
+  }
+  let x = matrix[j*4+0]*lineLength/2+matrix[j*4+1]*lineWidth/2;
+  let y = matrix[j*4+2]*lineLength/2+matrix[j*4+3]*lineWidth/2;
+  if(i>7) {
+    y = -y;
+  }
+>% %<= x >% %<= y >% %<= 0.01 >%
+%< } >%
+        ]
+      }
+      coordIndex [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1
+      ]
+    }
+  }
+}
