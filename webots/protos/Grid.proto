@@ -1,6 +1,9 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 #
 # a rectangular grid of (rows+1)*(columns+1) lines
+# size.x = length*(rows+1)
+# size.y = length*(columns+1)
+# size.z = radius
 
 PROTO Grid [
   field SFVec3f    translation         0 0 0
@@ -44,8 +47,8 @@ PROTO Grid [
     %{ end }%
     %{ for y = 0, columns do }%
       Transform {
-        translation 0 0 %{= length * (y - columns/2) }%
-        rotation 0 0 1 1.5708
+        translation 0 %{= length * (y - columns/2) }% 0
+        rotation 0 1 0 1.5708
         children [
           Shape {
             appearance PBRAppearance {
