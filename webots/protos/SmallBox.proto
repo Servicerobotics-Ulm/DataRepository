@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8 
 # Cai Wenzheng
 # 09.12.2020
 # tags: sdynamic
@@ -15,7 +15,6 @@ PROTO SmallBox [
   field SFColor      baseColor       1 1 1
   field SFString     contactMaterial "SmallBox"
   field SFFloat      mass            0.04                           # Defines the mass of the box in kg.
-  field SFBool       locked          FALSE
 ]
 {
   %{
@@ -29,9 +28,8 @@ Solid {
   translation IS translation
   rotation IS rotation
   children [
-    Transform {
-      translation 0 0 %{= size.z / 2}%
-      rotation 1 0 0 1.5708
+    DEF X Transform {
+      translation %{= -size.x / 2}% 0 0
       children [
         Shape {
           appearance PBRAppearance {
@@ -40,8 +38,8 @@ Solid {
             roughness 1
           }
           geometry Box {
-          size %{= size.x }% %{= size.z }% %{= size.y }%
-        }
+            size IS size
+          }
         }
       ]
     }
@@ -49,16 +47,7 @@ Solid {
   name IS name
   model IS model
   contactMaterial IS contactMaterial
-  boundingObject Transform {
-    translation 0 0 %{= size.z / 2 }%
-    children [
-      Shape {
-        geometry Box {
-          size %{= size.x }% %{= size.y }% %{= size.z }%
-        }
-      }
-    ]
-  }
+  boundingObject USE X
   %{ if fields.mass.value > 0 then }%
     physics Physics {
       density -1
@@ -68,6 +57,5 @@ Solid {
     ]
     }
   %{ end }%
-  locked IS locked
 }
 }

@@ -1,7 +1,7 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
-# This is a PROTO file for Webots for a robort larry.
+# This is a PROTO file for Webots for a robot larry.
 # tags: static
 #
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
@@ -33,7 +33,6 @@ PROTO Larry [
     model IS model
     controller IS controller
     controllerArgs IS controllerArgs
-    customData IS customData
     supervisor IS supervisor
     synchronization IS synchronization
     selfCollision IS selfCollision
@@ -51,7 +50,7 @@ PROTO Larry [
        children[
      DEF cameraSlot Transform {
         translation 0.0075 1.206 0
-        rotation 0 1 0 3.14159
+        rotation 0 -0.7071 -0.7071 3.14159
         children IS cameraSlot
       }
      DEF bottomSlot Transform {
@@ -218,7 +217,6 @@ PROTO Larry [
             ]
             name "LeftWheel"
             boundingObject Transform {
-              rotation 1 0 0 1.5708
               children [
                 Cylinder {
                   height 0.06
@@ -272,7 +270,6 @@ PROTO Larry [
             ]
             name "RightWheel"
             boundingObject Transform {
-              rotation 1 0 0 1.5708
               children [
                 Cylinder {
                   height 0.06
@@ -343,7 +340,6 @@ PROTO Larry [
                     }
                   ]
                   boundingObject Transform {
-                    rotation 0.5773489358556708 0.5773509358554485 0.5773509358554485 2.0944
                     children [
                       Cylinder {
                         height 0.03
@@ -363,6 +359,7 @@ PROTO Larry [
               children [
                 Transform {
                   translation 0.045 0.119 0
+                  rotation 1 0 0 -1.5707953071795862
                   children [
                     Cylinder {
                       height 0.045
@@ -372,6 +369,7 @@ PROTO Larry [
                 }
                 Transform {
                   translation 0.045 0.081 0
+                  rotation 1 0 0 -1.5707953071795862
                   children [
                     Cylinder {
                       height 0.03
@@ -403,7 +401,7 @@ PROTO Larry [
         }
         DEF piece2 Transform {
           translation 0 -0.06 0
-          rotation 0 0 1 -1.5707953071795862
+          rotation 0 1 0 -1.5707953071795862
           children [
             Shape {
               appearance PBRAppearance {

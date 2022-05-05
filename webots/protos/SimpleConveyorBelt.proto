@@ -1,9 +1,11 @@
+#VRML_SIM R2022a utf8
+
 PROTO SimpleConveyorBelt [
   field SFVec3f    translation      0 0 0
   field SFRotation rotation         0 1 0 0
   field SFString   name             "ConveyorBelts"
   field SFString   motorName        "belt_motor"
-  field SFVec3f    size             1.0 0.05 0.1
+  field SFVec3f    size             1.0 0.1 0.05
   field SFFloat    speed            0.3
   field SFFloat    acceleration     -1
   field SFFloat    maxForce         10
@@ -11,63 +13,84 @@ PROTO SimpleConveyorBelt [
   field SFVec3f    controlPID       10 0 0
 ]
 {
+
+%{ local size = fields.size.value }%
+
 Track {
   translation IS translation
   rotation IS rotation
   name IS name
   children [
-    DEF BO Group {
+    DEF BELT Shape {
+      appearance Rubber {
+        type "dotted"
+        textureTransform TextureTransform {
+          scale %{=4.0 * size.x}% %{=4.0 * size.y}%
+        }
+      }
+      geometry Box {
+        size IS size
+      }
+    }
+    Transform {
+      translation %{= size.x / 2 }% 0 0
+      rotation 1 0 0 -1.5708
       children [
-        Shape {
+        DEF CYLINDER  Shape {
           appearance Rubber {
             type "dotted"
             textureTransform TextureTransform {
-              scale %{=4.0 * fields.size.value.x}% %{=4.0 * fields.size.value.z}%
+              scale %{=4.0 * 2 * 3.14 * size.z / 2}% %{=4.0 * size.y}%
             }
           }
-          geometry Box {
-            size IS size
+          geometry Cylinder {
+            height %{= size.y }%
+            radius %{= size.z / 2 }%
           }
-        }
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.93 0.93 0.93
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size %{=fields.size.value.x}% %{=fields.size.value.y-0.001}% %{=fields.size.value.z+0.01}%
-          }
-        }
-        Transform {
-          translation %{= fields.size.value.x / 2 }% 0 0
-          rotation 1 0 0 1.5708
-          children [
-            DEF CYLINDER  Shape {
-              appearance Rubber {
-                type "dotted"
-                textureTransform TextureTransform {
-                  scale %{=4.0 * 2 * 3.14 * fields.size.value.y / 2}% %{=4.0 * fields.size.value.z}%
-                }
-              }
-              geometry Cylinder {
-                height %{= fields.size.value.z }%
-                radius %{= fields.size.value.y / 2 }%
-              }
-            }
-          ]
-        }
-        Transform {
-          translation %{= - fields.size.value.x / 2 }% 0 0
-          rotation 1 0 0 1.5708
-          children [
-            USE CYLINDER
-          ]
         }
       ]
     }
+    Transform {
+      translation %{= - size.x / 2 }% 0 0
+      rotation 1 0 0 -1.5708      
+      children [
+        USE CYLINDER
+      ]
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.93 0.93 0.93
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size %{=size.x}% %{=size.y+0.01}% %{=size.z-0.003}%
+      }
+    }    
   ]
-  boundingObject USE BO
+  boundingObject Group {
+    children [
+      USE BELT
+      Transform {
+        translation %{= size.x / 2 }% 0 0
+        rotation 0 1 0 -0.7854
+        children [
+          DEF BOX Shape {
+            geometry Box {
+              size %{=size.z/2*math.sqrt(2)}% %{=size.y}% %{=size.z/2*math.sqrt(2)}%
+            }
+          }
+        ]
+      }
+      Transform {
+        translation %{= -size.x / 2 }% 0 0
+        rotation 0 1 0 -0.7854
+        children [
+          USE BOX
+        ]
+      }      
+    ]
+  }
   physics Physics {
     density -1
     mass IS mass
@@ -85,6 +108,7 @@ Track {
       name %{= "\"" .. fields.motorName.value .. "_PositionSensor\"" }%
     }
   ]
-  textureAnimation %{= 1 / fields.size.value.x}% 0
+  textureAnimation %{= 1 / size.x}% 0
 }
 }
+

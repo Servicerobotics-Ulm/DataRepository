@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
 # license url: https://cyberbotics.com/webots_assets_license
 # tags: static
@@ -7,15 +7,15 @@
 # made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
 
 PROTO kinect_v2 [
-  field SFVec3f    translation         0 0.095 0
-  field SFRotation rotation            0.577351 0.577351 0.577349 -2.0944
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 0 1 0
   field SFString   name                "kinect_v2"
   field SFString   controller          ""                # Is `Robot.controller`.
   field SFBool     supervisor          FALSE             # Is `Robot.supervisor`.
   
   field SFString   colorName           "kinect_v2_color"  # name of color camera
   field SFVec3f    colorTranslation    0.021 -0.098 0     # relative position
-  field SFRotation colorRotation       -0.57735 0.57735 0.577351 -2.0944
+  field SFRotation colorRotation       0 0 1 0
   field SFInt32    colorWidth          1920               # Defines the `width` field of the `Camera` nodes.
   field SFInt32    colorHeight         1080               # Defines the `width` field of the `Camera` nodes.  
   field SFFloat    colorFieldOfView    1.4678219009       # horizontal field of view [radians]
@@ -23,7 +23,7 @@ PROTO kinect_v2 [
   
   field SFString   rangeName           "kinect_v2_range"  # name of rangefinder camera
   field SFVec3f    rangeTranslation    0.021 -0.098 0     # relative position
-  field SFRotation rangeRotation       -0.57735 0.57735 0.577351 -2.0944
+  field SFRotation rangeRotation       0 0 1 0
   field SFInt32    rangeWidth          512                # Defines the `width` field of the `RangeFinder` nodes.
   field SFInt32    rangeHeight         424                # Defines the `height` field of the `RangeFinder` nodes.  
   field SFFloat    rangeFieldOfView    1.2217304764       # horizontal field of view [radians]
@@ -72,14 +72,14 @@ PROTO kinect_v2 [
               metalness 0
             }
             geometry Box {
-              size 0.249 0.043 0.066
+              size 0.25 0.042 0.068
             }
           }
         ]
       }
       Transform {
         translation 0.0331 0 0
-        rotation 0.707106 0.707107 0 3.14159
+        rotation -0.5773489358556708 -0.5773509358554485 -0.5773509358554485 -2.094395307179586
         children [
           Shape {
             appearance PBRAppearance {
@@ -90,7 +90,7 @@ PROTO kinect_v2 [
               }
             }
             geometry Plane {
-              size 0.249 0.043
+              size 0.25 0.042
             }
           }
         ]
@@ -122,7 +122,7 @@ PROTO kinect_v2 [
               metalness 0
             }
             geometry Box {
-              size 0.249 0.014 0.013
+              size 0.25 0.014 0.013
             }
           }
         ]
@@ -148,13 +148,13 @@ PROTO kinect_v2 [
     model "kinect_v2"
     controller IS controller
     supervisor IS supervisor
-    physics Physics {
-    }
+#    physics Physics {
+#    }
     boundingObject Transform {
       translation 0 0 -0.01
       children [
         Box {
-          size 0.067 0.249 0.064 
+          size 0.068 0.25 0.064 
         }
       ]
     }

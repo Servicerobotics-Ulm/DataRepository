@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # tags: static
@@ -23,14 +23,17 @@ PROTO RobotinoConveyorBelt [
     children [
         DEF IR10 SharpGP2Y0A41SK0F {
           translation 0.207 0 0.33
+          rotation -0.57735 0.57735 0.57735 2.0944
           name "irBottom"
         }
         DEF IR11 SharpGP2Y0A41SK0F {
           translation 0.207 -0.0825 0.375
+          rotation -0.57735 0.57735 0.57735 2.0944
           name "irRight"
         }
         DEF IR12 SharpGP2Y0A41SK0F {
           translation 0.207 0.0825 0.375
+          rotation -0.57735 0.57735 0.57735 2.0944
           name "irLeft"
         }
         Transform {
@@ -38,10 +41,12 @@ PROTO RobotinoConveyorBelt [
           rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
           children [
             Track {
-              rotation 0 1 0 -1.5707953071795862
+# reverse
+#              rotation -0.57735 -0.57735 -0.57735 2.0944
+              rotation -0.57735 0.57735 0.57735 2.0944
               children [
                 Transform {
-                  rotation 0 1 0 1.5708
+                  rotation 0.57735 0.57735 0.57735 2.0944
                   children [
                     DEF conveyor_belt Shape {
                       appearance Rubber {
@@ -68,14 +73,14 @@ PROTO RobotinoConveyorBelt [
               boundingObject Group {
                 children [
                   Transform {
-                    rotation 0 1 0 1.5708
+                    rotation 0.57735 0.57735 0.57735 2.0944
                     children [
                       USE conveyor_belt
                     ]
                   }
                   Transform {
-                    translation 0 0.64012 -0.1253
-                    rotation 0 1 0 1.5708
+                    translation 0 0.1253 0.64012 
+                    rotation 0.57735 0.57735 0.57735 2.0944
                     children [
                       Box {
                         size 0.06 0.024 0.51
@@ -83,8 +88,8 @@ PROTO RobotinoConveyorBelt [
                     ]
                   }
                   Transform {
-                    translation 0 0.64012 0.1275
-                    rotation 0 1 0 1.5708
+                    translation 0 -0.1275 0.64012 
+                    rotation 0.57735 0.57735 0.57735 2.0944
                     children [
                       Box {
                         size 0.06 0.024 0.51
@@ -108,6 +113,7 @@ PROTO RobotinoConveyorBelt [
           }
             Transform {
               translation 0 0.422 0
+              rotation -1 0 0 1.5708
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -160,22 +166,28 @@ PROTO RobotinoConveyorBelt [
                 Transform {
                   translation -0.2 0.07 0
                   children [
-                    DEF light_indicator_black Shape {
-                      appearance PBRAppearance {
-                        baseColor 0 0 0
-                        metalness 0
-                        normalMapFactor 0.5
-                        textureTransform TextureTransform {
-                          scale 10 10
+                    Transform {
+                      rotation 1 0 0 -1.5708
+                      children [
+                        DEF light_indicator_black Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 0 0
+                            metalness 0
+                            normalMapFactor 0.5
+                            textureTransform TextureTransform {
+                              scale 10 10
+                            }
+                          }
+                          geometry Cylinder {
+                            height 0.115
+                            radius 0.0175
+                          }
                         }
-                      }
-                      geometry Cylinder {
-                        height 0.115
-                        radius 0.0175
-                      }
+                      ]
                     }
                     LED {
                       translation 0 0.074 0
+                      rotation -1 0 0 1.5708
                       children [
                         Shape {
                           appearance PBRAppearance {
@@ -199,6 +211,7 @@ PROTO RobotinoConveyorBelt [
                     }
                     LED {
                       translation 0 0.107 0
+                      rotation -1 0 0 1.5708
                       children [
                         Shape {
                           appearance PBRAppearance {
@@ -222,6 +235,7 @@ PROTO RobotinoConveyorBelt [
                     }
                     LED {
                       translation 0 0.14 0
+                      rotation -1 0 0 1.5708
                       children [
                         Shape {
                           appearance PBRAppearance {
@@ -242,6 +256,7 @@ PROTO RobotinoConveyorBelt [
                     }
                     Transform {
                       translation 0 0.1615 0
+                      rotation -1 0 0 1.5708
                       children [
                         DEF light_indicator_top_black Shape {
                           appearance PBRAppearance {
@@ -343,6 +358,7 @@ PROTO RobotinoConveyorBelt [
                         }
                         Transform {
                           translation 0 0.0596 0
+                          rotation -1 0 0 1.5708
                           children [
                             DEF emergency_button_2 Shape {
                               appearance PBRAppearance {
@@ -362,6 +378,7 @@ PROTO RobotinoConveyorBelt [
                         }
                         Transform {
                           translation 0 0.072 0
+                          rotation -1 0 0 1.5708
                           children [
                             DEF emergency_button_1 Shape {
                               appearance PBRAppearance {
@@ -514,7 +531,7 @@ PROTO RobotinoConveyorBelt [
                             }
                             Khepera3_DistanceSensor {
                               translation 0 0.01 0
-                              rotation 0 1 0 -1.5707953071795862
+                              rotation -1 0 0 1.5708
                               name "ir13"
                             }
                           ]
@@ -549,7 +566,7 @@ PROTO RobotinoConveyorBelt [
                             }
                             Khepera3_DistanceSensor {
                               translation 0 0.01 0
-                              rotation 0 1 0 -1.5707953071795862
+                              rotation -1 0 0 1.5708
                               name "ir14"
                             }
                           ]
@@ -612,7 +629,7 @@ PROTO RobotinoConveyorBelt [
               rotation 0 0 1 1.5708
               children [
                 Transform {
-                  rotation 0 0 1 -1.5707953071795862
+                  rotation -0.57735 0.57735 -0.57735 2.0944
                   children [
                     Shape {
                       appearance PBRAppearance {
@@ -621,7 +638,7 @@ PROTO RobotinoConveyorBelt [
                         metalness 0
                       }
                       geometry Cylinder {
-                        height 0.01
+                        height 0.009
                         radius 0.005
                       }
                     }
@@ -641,7 +658,7 @@ PROTO RobotinoConveyorBelt [
               ]
               name "isBoxPresent"
               lookupTable [
-                0.0 1 0
+                0 1 0
                 0.1 0 0
               ]
             }
@@ -689,7 +706,6 @@ PROTO RobotinoConveyorBelt [
           }
           Transform {
             translation 0 0 0.205
-            rotation 1 0 0 1.5708
             children [
               Cylinder {
                 height 0.41
@@ -699,7 +715,6 @@ PROTO RobotinoConveyorBelt [
           }
           Transform {
             translation 0 -0.22 0.5483
-            rotation 1 0 0 1.5708
             children [
               Cylinder {
                 height 0.225

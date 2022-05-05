@@ -1,63 +1,22 @@
-#VRML_OBJ R2021b utf8
-# a location is a named place where a mobile robot can drive to.
-# a cross on the floor marks the location.
-# template language: javascript
+#VRML_OBJ R2022a utf8
+# A location is a named place where a mobile robot can drive to.
+# A cross on the floor marks the location.
+# If waypointId is a positive number (or zero), a waypoint with this number will be generated at this position.
 
 PROTO Location [
-  field SFString   name           "home"
-  field SFVec3f    translation    0 0 0
-  field SFRotation rotation       0 0 1 0
-  field SFColor    color          0 0 0
-  field SFFloat    radius         0.15
-  field SFFloat    smallerRadius  0
+  field            SFString   name           "home"
+  field            SFVec3f    translation    0 0 0
+  field            SFRotation rotation       0 0 1 0
+  unconnectedField SFInt32    waypointId     -1
+  unconnectedField SFFloat    radius         0.15
+  unconnectedField SFFloat    smallerRadius  0
+  field            MFNode     children       [ CrossWithArrow{} ]
 ]
 {
 Solid {
   translation IS translation
   rotation IS rotation
   name IS name
-  children [
-    Shape {
-      appearance PBRAppearance {
-        baseColor IS color
-        roughness 1
-        metalness 0
-      }    
-      geometry IndexedFaceSet {
-        coord Coordinate {
-          point [
-%<
-let lineLength = 0.6;
-let lineWidth = 0.05;
-let matrix = [
- 1, 3, 0, 0,
- 1, 0, 0, 2,
- 1, 0, 0, 1,
- 0, 1, 0, 1,
- 0, 1, 1, 0,
- 0,-1, 1, 0,
- 0,-1, 0, 1,
--1, 0, 0, 1
-];
-for (let i = 0; i < 15; i++) {
-  let j=i;
-  if(i>7) {
-    j=15-i;
-  }
-  let x = matrix[j*4+0]*lineLength/2+matrix[j*4+1]*lineWidth/2;
-  let y = matrix[j*4+2]*lineLength/2+matrix[j*4+3]*lineWidth/2;
-  if(i>7) {
-    y = -y;
-  }
->% %<= x >% %<= y >% %<= 0.005 >%
-%< } >%
-          ]
-        }
-        coordIndex [
-          0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -1
-        ]
-      }
-    }
-  ]
+  children IS children
 }
 }

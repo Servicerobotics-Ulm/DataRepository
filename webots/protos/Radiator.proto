@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # tags: nonDeterministic
 # A green radiator with a variable number of fins and optional bounding object. Simplified and faster version of webots radiator.
 
@@ -6,8 +6,7 @@ PROTO Radiator [
   field SFVec3f    translation           0 0 0
   field SFRotation rotation              0 1 0 0
   field SFInt32    numberOfFins          30
-  field SFBool     enableBoundingObject  TRUE 
-  field SFBool     locked                FALSE
+  field SFBool     enableBoundingObject  TRUE
 ]
 {
   %{
@@ -21,15 +20,15 @@ PROTO Radiator [
     translation IS translation
     rotation IS rotation
     children [
-      Transform {
-        translation -0.02 0 %{= -0.03 * (numberOfFins - 2) }%
+      DEF X Transform {
+        translation -0.02 %{= -(-0.03 * (numberOfFins - 2)) }% 0 
         children [
           DEF BOX Shape {
             appearance Roughcast { 
               colorOverride 0 0.3 0
               textureTransform TextureTransform { scale 3 3 } }
             geometry Box {
-              size 0.24 0.58 %{= 0.15 + 0.06 * numberOfFins }%
+              size 0.24 %{= 0.15 + 0.06 * numberOfFins }% 0.58 
             }
           }
         ]
@@ -38,14 +37,7 @@ PROTO Radiator [
     name %{= "\"radiator" .. context.id .. "\"" }%
     model "radiator"
     %{ if fields.enableBoundingObject.value then }%
-    boundingObject Transform {
-      translation -0.02 0 %{= -0.03 * (numberOfFins - 2) }%
-      children [
-        Box {
-          size 0.24 0.58 %{= 0.15 + 0.06 * numberOfFins }%
-        }
-      ]
-    }
+    boundingObject USE X
     %{ end }%
   }
 }

@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8 
 #
 # a passive Connector device which can connect to an active Connector device of same model.
 # it has the shape of an box. it can only connect in the middle of one side.
@@ -9,7 +9,7 @@
 
 PROTO ConnectorBox [
   field SFVec3f      translation      0 0 0
-  field SFRotation   rotation         1 0 0 0
+  field SFRotation   rotation         0 0 1 0
   field SFVec3f      size             0.1 0.1 0.1
   field SFString     name             "ConnectorBox"
   field SFString     model            "VacuumGripperConnectorModel"
@@ -34,11 +34,10 @@ Robot {
   contactMaterial IS contactMaterial  
   children [
     Transform {
-      translation 0 0 %{= -size.z *1/2}%
+      translation %{= -size.x *1/2}% 0 0
       children [
         CerealBox3 {
-           size IS size
-#          size %{= size.z }% %{= size.y }% %{= size.x }%
+          size IS size
           mass -1
           textureUrl IS textureUrl
         }
@@ -49,11 +48,11 @@ Robot {
       model IS model
       contactMaterial IS contactMaterial
       boundingObject Transform {
-          translation 0 0 %{= -size.z / 4}%
+          translation %{= -size.x / 4}% 0 0
           children [
             Shape {              
               geometry Box {
-                size %{= size.x }% %{= size.y }% %{= size.z/2 }%
+                size %{= size.x/2 }% %{= size.y }% %{= size.z }%
               }
             }
           ]
@@ -69,11 +68,11 @@ Robot {
     }
   ]
   boundingObject Transform {
-      translation 0 0 %{= -size.z *3/4}%
+      translation %{= -size.x *3/4}% 0 0
       children [
         Shape {
           geometry Box {
-            size %{= size.x }% %{= size.y }% %{= size.z/2 }%
+            size %{= size.x/2 }% %{= size.y }% %{= size.z }%
           }
         }
       ]

@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # small load carrier (size 40 * 30 * 12cm)
@@ -15,7 +15,6 @@ PROTO Kisten [
   field SFColor      baseColor       0.447059 0.623529 0.811765
   field SFString     contactMaterial "default"
   field SFFloat      mass            0.92                         # Defines the mass of the box in kg.
-  field SFBool       locked          FALSE
   field SFBool       enablePhysics   TRUE                         # Defines whether it should have physics.  
 ]
 {
@@ -100,6 +99,5 @@ Solid {
     mass IS mass
   }
   %{ end }%
-  locked IS locked
 }
 }

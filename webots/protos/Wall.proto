@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # tags: nonDeterministic
 # A customizable wall.
 
@@ -7,7 +7,6 @@ PROTO Wall [
   field SFRotation rotation    0 1 0 0
   field SFVec3f    size        1 2.4 0.2                                                        # Defines the size of the wall.
   field SFNode     appearance  Roughcast { textureTransform TextureTransform { scale 1 2.4 } }  # Defines the appearance of the wall.
-  field SFBool     locked      TRUE
 ]
 {
   %{
@@ -22,14 +21,14 @@ PROTO Wall [
     rotation IS rotation
     children [
       DEF BOX Transform {
-        translation 0 %{= 0.5 * size.y }% 0       
+        translation 0 0 %{= 0.5 * size.z }%
         children [
           Shape {
             appearance IS appearance
             geometry Box {
-              size %{= size.x }% %{= size.y }% %{= size.z }%
+              size IS size
             }
-            isPickable FALSE
+#            isPickable FALSE
           }
         ]
       }
@@ -37,6 +36,5 @@ PROTO Wall [
     name %{= '"' .. "wall" .. context.id .. '"' }%
     model "wall"
     boundingObject USE BOX
-    locked IS locked
   }
 }

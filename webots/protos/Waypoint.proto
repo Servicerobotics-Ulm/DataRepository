@@ -1,4 +1,4 @@
-#VRML_OBJ R2021b utf8
+#VRML_OBJ R2022a utf8
 # A mobile robot can move from one waypoint to another waypoint if they are connected.
 # template language: javascript
 
@@ -19,8 +19,6 @@ Solid {
   name %<= '"' + fields.id.value + '"' >%  
   children [
     Transform {
-      translation 0 0 0
-      rotation 1 0 0 1.57
       children [
         Shape {
           appearance PBRAppearance {

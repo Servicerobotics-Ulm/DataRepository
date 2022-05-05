@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # (c) 2021 Thomas Feldmeier, http://www.servicerobotik-ulm.de, GPL 2.0
 
 PROTO VacuumGripper [
@@ -12,12 +12,15 @@ PROTO VacuumGripper [
       DistanceSensor {
         # 0.001m in front of bounding object gripper
         translation 0 0.001 0
-        rotation 0 0 1 1.5708
+        rotation -0.57735 -0.57735 0.57735 2.0944
         name "VacuumGripperDistanceSensor"
         lookupTable [
           0 0 0
           0.1 0.1 0
         ]
+      }
+      Receiver {
+        rotation 0.5773502691896257 0.5773502691896257 0.5773502691896258 2.0943951023931957
       }
     ]
 ]
@@ -29,8 +32,12 @@ Solid {
   rotation IS rotation
   name IS name
   children [
+    Transform {
+      children IS toolSlot
+    }  
     DEF CYLINDER Transform {
       translation 0 %{= -0.05 - cylinderHeight/2 }% 0
+      rotation 1 0 0 -1.5708
       children [
         Shape {
           appearance PBRAppearance {
@@ -92,39 +99,32 @@ Solid {
         }
       ]
     }
-    Transform {
-      children IS toolSlot
-    }
-    Transform {
-      rotation 1 0 0 -1.5707953071795862
-      children [
-        Connector {
-          name "VacuumGripperConnectorName"
-          model "VacuumGripperConnectorModel"
-          boundingObject Transform {
-            translation 0 0 -0.005
-            rotation 1 0 0 1.5707953071795862
-            children [
-              Cylinder {
-                height 0.01
-                radius 0.015
-              }
-            ]
+    Connector {
+      rotation -0.57735 -0.57735 0.57735 2.09439
+      name "VacuumGripperConnectorName"
+      model "VacuumGripperConnectorModel"
+      boundingObject Transform {
+        translation -0.005 0 0
+        rotation 0 1 0 1.5708
+        children [
+          Cylinder {
+            height 0.01
+            radius 0.015
           }
-          physics Physics {
-          }
-          type "active"
-          distanceTolerance IS distanceTolerance
-          axisTolerance IS axisTolerance
+        ]
+      }
+      physics Physics {
+      }
+      type "active"
+      distanceTolerance IS distanceTolerance
+      axisTolerance IS axisTolerance
 #          axisTolerance 3.14159
-          rotationTolerance 3.14159
-          numberOfRotations 0
-          snap TRUE
-          # 500N should be enough for 10kg to lift sideways
-          tensileStrength IS strength
-          shearStrength IS strength
-        }
-      ]
+      rotationTolerance 3.14159
+      numberOfRotations 0
+      snap TRUE
+      # 500N should be enough for 10kg to lift sideways
+      tensileStrength IS strength
+      shearStrength IS strength
     }
   ]
   boundingObject Group {
@@ -132,6 +132,7 @@ Solid {
       USE CYLINDER
       Transform {
         translation 0 -0.03 0
+        rotation 1 0 0 -1.5708
         children [
           Cylinder {
             height 0.04

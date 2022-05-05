@@ -1,4 +1,4 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 WorldInfo {
   contactProperties [
     ContactProperties {
@@ -11,16 +11,14 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0 1 0 0
-  position 0.02717989542430076 0.04286654992280959 22.188562300453544
-  follow "TIAGo Iron"
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 2.5 0 30
 }
 TexturedBackground {
   texture "empty_office"
   skybox FALSE
 }
 Robotino3 {
-  rotation -1 0 0 1.3673193785e-05
   controller "<extern>"
   supervisor TRUE
   cameraSlot [
@@ -42,26 +40,25 @@ Robotino3 {
 }
 PottedTree {
   translation 0.04 -4.3 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(4)"
 }
 PottedTree {
   translation 9.66 -4.57 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(5)"
 }
 PottedTree {
   translation -4.56 2.84 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(6)"
 }
 PottedTree {
   translation 4.57 -2.57 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(7)"
 }
 Floor {
-  rotation 1 0 0 1.5707963267948966
   tileSize 2 2
   appearance MattePaint {
     baseColor 0.605936 0.609995 0.601862
@@ -69,7 +66,6 @@ Floor {
 }
 Floor {
   translation 7.5 0 0
-  rotation 1 0 0 1.5707963267948966
   name "floor(1)"
   size 5 10
   tileSize 2 2
@@ -81,20 +77,20 @@ Floor {
 }
 Bench {
   translation 1.5 4.465 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 -1.5707953071795862
 }
 Window {
   translation 3.5 5.1 0
-  rotation 1 0 0 1.5707963267948966
-  size 1 2.4 0.2
+  rotation 0 0 1 -1.5707953071795862
+  size 0.2 1 2.4
 }
 Window {
   translation 6.5 -5.1 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "window(1)"
-  size 1 2.4 0.2
+  size 0.2 1 2.4
 }
-Wall {
+WallRUB {
   translation 4.5 5.1 0
   rotation 1 0 0 1.5707963267948966
   appearance Roughcast {
@@ -103,7 +99,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation -1 5.1 0
   rotation 1 0 0 1.5707963267948966
   size 8 2.4 0.2
@@ -113,7 +109,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation -5.1 0 0
   rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
   size 10.4 2.4 0.2
@@ -123,7 +119,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 3.5 -5.1 0
   rotation 1 0 0 1.5707963267948966
   size 3 2.4 0.2
@@ -133,7 +129,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation -2 -5.1 0
   rotation 1 0 0 1.5707963267948966
   size 6 2.4 0.2
@@ -143,7 +139,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 7.5 5.1 0
   rotation 1 0 0 1.5707963267948966
   size 5 2.4 0.2
@@ -153,7 +149,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 5.5 -5.1 0
   rotation 1 0 0 1.5707963267948966
   appearance Roughcast {
@@ -162,7 +158,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 8.5 -5.1 0
   rotation 1 0 0 1.5707963267948966
   size 3 2.4 0.2
@@ -172,7 +168,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 10.1 0 0
   rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
   size 10.4 2.4 0.2
@@ -182,7 +178,7 @@ Wall {
     }
   }
 }
-Wall {
+WallRUB {
   translation 5 2.77 0
   rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
   size 4.5 2.4 0.2
@@ -191,9 +187,8 @@ Wall {
       scale 7 2.4
     }
   }
-  locked FALSE
 }
-Wall {
+WallRUB {
   translation 5 -3.5 0
   rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
   size 3 2.4 0.2
@@ -205,7 +200,7 @@ Wall {
 }
 Door {
   translation 1.5 -5.1 0
-  rotation 0 0.707106781186548 0.707106781186547 3.141592653589793
+  rotation -7.95559e-16 6.53452e-16 1 1.5708
   name "door(1)"
   wallAppearance Roughcast {
     textureTransform TextureTransform {
@@ -220,11 +215,10 @@ Door {
 }
 Cabinet {
   translation 9.5 -2.5 0
-  rotation 0.577348737554214 -0.577351035005808 -0.577351035005808 2.094397399847837
+  rotation -2.86056e-18 2.77553e-17 1 3.14159
 }
 Cabinet {
   translation -5 3.7 0
-  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
   name "cabinet(2)"
   depth 0.2
   outerThickness 0.02
@@ -244,64 +238,63 @@ Cabinet {
 }
 Table {
   translation -3.2 -2 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 4.692820414042842e-06
   name "table(1)"
-  size 1 0.74 1
+  size 1 1 0.74
 }
 Chair {
   translation -3.15 -2.49 0
-  rotation 0.577348855372322 0.577350976096979 0.577350976096979 2.094397223120449
+  rotation -1.20899e-10 2.97466e-17 1 1.5708
 }
 Chair {
   translation -3.2 -1.5 0
-  rotation 0.577348737554214 -0.577351035005808 -0.577351035005808 2.094397399847837
+  rotation 2.48947e-17 3.06158e-17 1 -1.5708053071795867
   name "chair(1)"
 }
 Can {
   translation -2.84 -2.34 0.802
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
 }
 WaterBottle {
   translation -3 -1.65 0.738
-  rotation 1 0 0 1.5707963267948966
 }
 BiscuitBox {
   translation -3.44 -2.2 0.741
-  rotation 0.281082508472302 0.678598785524598 0.678598785524598 2.593568192636358
+  rotation 8.714007956506756e-17 -1.304379866825873e-16 -0.9999999999999999 2.3561886742842644
 }
 CardboardBox {
   translation 9.7 4.7 0.3
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
 }
 CardboardBox {
   translation 9 4.6 0.3
-  rotation 0.99573154047691 -0.065263693197208 -0.065263693197208 1.575073909152973
+  rotation -2.782045274080025e-16 2.7390964643988726e-16 1 1.4398966328953229
   name "cardboard box(1)"
 }
 CardboardBox {
   translation 9.6 4 0.3
-  rotation 0.99573154047691 0.065263693197208 0.065263693197208 1.575073909152973
+  rotation -2.0821683394926342e-16 2.1198334346965605e-16 1 1.701696020694471
   name "cardboard box(2)"
 }
 CardboardBox {
   translation 9.4 4.5 0.9
-  rotation 0.901501328073774 0.306019080680618 0.306019080680618 1.674304761840238
+  rotation -5.684675569043142e-17 7.236472478298367e-17 0.9999999999999999 2.225296020694471
   name "cardboard box(3)"
 }
 Fridge {
   translation 5.7 4.64 0
-  rotation 0.577348855372322 -0.577350976096979 -0.577350976096979 2.094397223120449
+  rotation -3.06179e-17 3.06181e-17 1 -1.5707953071795862
 }
 FloorLight {
   translation 4 -4 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   bulbColor 0.1 0.8 0.1
   pointLightColor 0.678431 0.498039 0.658824
   pointLightIntensity 0
 }
 FloorLight {
   translation 8.84 1 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "floor light(1)"
   bulbColor 0 0 1
   pointLightColor 0.0350805 0.179232 0.956664
@@ -309,7 +302,7 @@ FloorLight {
 }
 FloorLight {
   translation -4.5 4.5 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "floor light(2)"
   bulbColor 1 0 0
   pointLightColor 0.937255 0.160784 0.160784
@@ -317,13 +310,13 @@ FloorLight {
 }
 FloorLight {
   translation 4.5 4.5 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "floor light(3)"
   pointLightIntensity 0
 }
 CeilingLight {
   translation -3.15 -1.89 2.4
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   bulbColor 0.560784 0.34902 0.00784314
   pointLightColor 0.913725 0.72549 0.431373
   pointLightIntensity 2.5
@@ -331,38 +324,37 @@ CeilingLight {
 }
 Sofa {
   translation 9 -0.518 0
-  rotation 0 0.707106781186548 0.707106781186547 3.141592653589793
+  rotation -7.10534e-17 7.24506e-16 1 3.14159
 }
 Armchair {
   translation 7.62 1.03 0
-  rotation 0.577348973190431 -0.577350917188132 -0.577350917188132 2.094397046393079
+  rotation -4.46971e-16 3.06176e-17 1 -1.5707953071795862
 }
 LandscapePainting {
   translation 8.5 -4.98 1.2
-  rotation 0 0.707106781186548 0.707106781186547 3.141592653589793
+  rotation 0 0 1 1.5708
 }
 PottedTree {
   translation -4.5 -1 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(1)"
 }
 PottedTree {
   translation 5.6 -4.5 0
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   name "potted tree(3)"
 }
 Blackboard {
-  translation -4.98 1 1.3
-  rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
+  translation -4.86 1 1.3
 }
 Table {
   translation 7.7 -0.52 0
-  rotation 0.577348973190431 0.577350917188132 0.577350917188132 2.094397046393079
-  size 1.3 0.5 0.8
+  rotation -3.04186e-17 -8.24317e-11 -1 1.57079
+  size 1.3 0.8 0.5
 }
 AdvertisingBoard {
   translation -1.97 4.96 1.21
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
   displayWidth 2
   displayHeight 2
   frameThickness 0.1
@@ -370,9 +362,9 @@ AdvertisingBoard {
 }
 RectangularPanel {
   translation 4.88 -2.45 1.5
-  rotation 0.577352586556008 0.577349110502947 0.577349110502946 2.09439162634711
+  rotation 1.3830117369535808e-11 -1.3830086753457992e-11 1 3.141586632875234
 }
 BunchOfSunFlowers {
   translation 7.68 -0.52 0.5
-  rotation 1 0 0 1.5707963267948966
+  rotation 0 0 1 1.5707963267948966
 }
