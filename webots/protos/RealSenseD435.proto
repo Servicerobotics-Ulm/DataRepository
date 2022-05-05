@@ -1,147 +1,140 @@
-#VRML_SIM R2021b utf8
-# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
-# license url: https://cyberbotics.com/webots_assets_license
-# tags: static
+#VRML_SIM R2022a utf8
 # documentation url: https://www.intelrealsense.com/depth-camera-d435/
 # Intel RealSense D435, it contains a RangeFinder and a Camera device.
 # made by Wenzheng Cai June 2021, www.servicerobotik-ulm.de.
+# template language: javascript
+
 
 PROTO RealSenseD435 [
-  field SFVec3f    translation         0 -0.125 0.492
-  field SFRotation rotation            0 -0.499999 0.866026 3.14159
+  field SFVec3f    translation         0 0 0
+  field SFRotation rotation            0 0 1 0
   field SFString   name                "RealSenseD435"
   field SFString   controller          ""                # Is `Robot.controller`.
   field SFBool     supervisor          FALSE             # Is `Robot.supervisor`.
   
   field SFString   colorName           "RealSense_color"  # name of color camera
-  field SFVec3f    colorTranslation    0 0 0.0125         # relative position
-  field SFRotation colorRotation       1 0 0 -3.14159
+  field SFVec3f    colorTranslation    0 0 0         # relative position
+  field SFRotation colorRotation       0 0 1 0
   field SFInt32    colorWidth          1920               # Defines the `width` field of the `Camera` nodes.
   field SFInt32    colorHeight         1080               # Defines the `width` field of the `Camera` nodes.  
   field SFFloat    colorFieldOfView    1.20428            # horizontal field of view [radians]
   field SFFloat    colorNoise          0.0                # Defines the `noise` field of the `Camera`.
   
   field SFString   rangeName           "RealSense_range"  # name of rangefinder camera
-  field SFVec3f    rangeTranslation    0 0 0.0125         # relative position
-  field SFRotation rangeRotation       1 0 0 -3.14159
+  field SFVec3f    rangeTranslation    0.0 0 0         # relative position
+  field SFRotation rangeRotation       0 0 1 0
   field SFInt32    rangeWidth          1280               # Defines the `width` field of the `RangeFinder` nodes.
   field SFInt32    rangeHeight         853                # Defines the `height` field of the `RangeFinder` nodes.  
   field SFFloat    rangeFieldOfView    1.51844            # horizontal field of view [radians]
   field SFFloat    minRange            0.1                # Defines the `minRange` field of the `RangeFinder`.
   field SFFloat    maxRange            10                 # Defines the `maxRange` field of the `RangeFinder`.
   field SFFloat    rangeNoise          0.0                # Defines the `noise` field of the `RangeFinder`.
-]{
-  Robot {
-    translation IS translation
-    rotation IS rotation
-    children [
-      DEF %{= fields.colorName.value }% Camera {
-        translation IS colorTranslation
-        rotation IS colorRotation
-        name IS colorName
-        fieldOfView IS colorFieldOfView
-        width IS colorWidth
-        height IS colorHeight
-        antiAliasing TRUE
-        noise IS colorNoise
-        recognition Recognition {
-          maxRange 500
-          frameThickness 3
-          segmentation TRUE
-        }
-      }
-      DEF %{= fields.rangeName.value }% RangeFinder {
-        translation IS rangeTranslation
-        rotation IS rangeRotation
-        name IS rangeName
-        fieldOfView IS rangeFieldOfView
-        width IS rangeWidth
-        height IS rangeHeight
-        minRange IS minRange
-        maxRange IS maxRange
-        noise IS rangeNoise
-      }
+  field SFVec3f    size                0.025 0.09 0.025
+]
+{
 
-      Transform {
-        rotation 0.577351 0.577351 0.577349 2.0944
-        children [
-          Shape {
-            appearance PBRAppearance {
-              baseColor 0.827451 0.843137 0.811765
-              roughness 0.2
-              metalness 0
-            }
-            geometry Box {
-              size 0.025 0.025 0.065
-            }
-          }
-          Transform {
-                  translation 0 0.0126 0
-                  rotation 0 1 0 1.5708
-                  children [
-                    Shape {
-                      appearance PBRAppearance {
-                        baseColorMap ImageTexture {
-                          url [
-                            "textures/intel_realsenseD435_front.png"
-                          ]
-                        }
-                      }
-                      geometry Plane {
-                        size 0.09 0.025
-                      }
-                    }
-                  ]
-                }
-        ]
-      }
-      Transform {
-        translation 0.0325 0 0
-        rotation 1 0 0 1.5708
-        children [
-          Shape {
-            appearance PBRAppearance {
-              baseColor 0.827451 0.843137 0.811765
-              roughness 0.2
-              metalness 0
-            }
-            geometry Cylinder {
-              height 0.025
-              radius 0.0125
-            }
-          }
-        ]
-      }
-      Transform {
-        translation -0.0325 0 0
-        rotation 1 0 0 1.5708
-        children [
-          Shape {
-            appearance PBRAppearance {
-              baseColor 0.827451 0.843137 0.811765
-              roughness 0.2
-              metalness 0
-            }
-            geometry Cylinder {
-              height 0.025
-              radius 0.0125
-            }
-          }
-        ]
-      }
-    ]
-    name IS name
-    model "RealSenseD435"
-    controller IS controller
-    supervisor IS supervisor
-    physics Physics {
+%< let size = fields.size.value; >%
+
+Robot {
+  translation IS translation
+  rotation IS rotation
+  children [
+    DEF %<= fields.colorName.value >% Camera {
+      translation IS colorTranslation
+      rotation IS colorRotation
+      name IS colorName
+      fieldOfView IS colorFieldOfView
+      width IS colorWidth
+      height IS colorHeight
+      antiAliasing TRUE
+      noise IS colorNoise
+#      recognition Recognition {
+#        maxRange 500
+#        frameThickness 3
+#        segmentation TRUE
+#      }
     }
-    boundingObject Transform {
+    DEF %<= fields.rangeName.value >% RangeFinder {
+      translation IS rangeTranslation
+      rotation IS rangeRotation
+      name IS rangeName
+      fieldOfView IS rangeFieldOfView
+      width IS rangeWidth
+      height IS rangeHeight
+      minRange IS minRange
+      maxRange IS maxRange
+      noise IS rangeNoise
+    }
+    Transform {
+      translation 0.001 0 0
+      rotation 0.57735 -0.57735 0.57735 -2.0944
       children [
-        Box {
-          size 0.09 0.025 0.025 
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/intel_realsenseD435_front.png"
+              ]
+            }
+            roughness 0.5
+            metalness 0
+          }
+          geometry Plane {
+            size %<= size.y >% %<= size.z >%
+          }
         }
       ]
     }
+    Transform {
+      translation %<= -size.x/2 >% 0 0
+      children [
+        Shape {
+          appearance DEF WHITE PBRAppearance {
+            baseColor 0.827451 0.843137 0.811765
+            roughness 0.2
+            metalness 0
+          }
+          geometry Box {
+            size %<= size.x >% %<= size.y-size.z >% %<= size.z >%
+          }
+        }
+        Transform {
+          translation 0 %<= (size.y - size.x)/2 >% 0
+          rotation 0 1 0 1.5708
+          children [
+            DEF CYLINDER Shape {
+              appearance USE WHITE
+              geometry Cylinder {
+                height %<= size.x >%
+                radius %<= size.z/2 >%
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 %<= -(size.y - size.x)/2 >% 0
+          rotation 0 1 0 1.5708
+          children [
+            USE CYLINDER
+          ]
+        }
+      ]
+    }
+  ]
+  name IS name
+  model "RealSenseD435"
+  controller IS controller
+  supervisor IS supervisor
+  physics Physics {
   }
+  boundingObject Transform {
+    translation %<= -size.x/2 >% 0 0
+    children [
+      Box {
+        size IS size
+      }
+    ]
+  }
+}
+
 }
