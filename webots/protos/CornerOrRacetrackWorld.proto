@@ -1,0 +1,33 @@
+#VRML_SIM R2022a utf8
+# change world for Exercise DriveMidway
+# template language: javascript
+
+PROTO CornerOrRacetrackWorld [
+  field  SFString{"Corner", "Racetrack"}  world  "Corner"
+]
+{
+
+%< if( fields.world.value === "Corner" ) { >%
+
+  Transform {
+    translation 2 1.5 0
+    children [
+      walls_ExcerciseCorner {
+      }
+    ]
+  }
+  
+%< } else { >%
+
+  Transform {
+    translation 2 -2 0
+    rotation 0 0 1 -1.5708
+    children [
+      walls_ExcerciseRacetrack {
+      }
+    ]
+  }
+  
+%< } >%
+
+}

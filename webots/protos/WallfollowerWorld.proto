@@ -1,0 +1,18 @@
+#VRML_SIM R2022a utf8
+# change world for Exercise DriveMidway
+# template language: javascript
+
+PROTO WallfollowerWorld [
+  field  SFString{"ExcerciseWallfollower", "ExcerciseWallfollower2"}  world  "ExcerciseWallfollower"
+]
+{
+
+%< if(fields.world.value === "ExcerciseWallfollower") { >%
+walls_ExcerciseWallfollower
+%< } else { >%
+walls_ExcerciseWallfollower2
+%< } >%
+{
+}
+
+}

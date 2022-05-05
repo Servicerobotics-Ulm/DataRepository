@@ -1,75 +1,21 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 WorldInfo {
 }
 Viewpoint {
+  orientation -0.57735 0.57735 0.57735 2.0944
+  position 0 0 10
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
   castShadows FALSE
 }
-Pioneer3dx {
+Pioneer3dxWrapper {
   translation -2 -2 0.095
-  rotation -0.5828998706708541 0.5660878744009651 0.5828998706708541 -2.1113753071795864
-  controller "<extern>"
-  supervisor TRUE
-  extensionSlot [
-    DEF CoordinateSystemPioneer_3-DX Transform {
-      translation 0 -0.0975 0
-      rotation -0.5832030341794896 0.5832030341794896 0.5654630331398103 2.11232
-      children [
-        Solid {
-          translation 0.044 0 0.353
-          name "BoundingObject Lidar"
-          boundingObject Box {
-            size 0.15 0.155 0.21
-          }
-          physics Physics {
-            density -1
-            mass 0.001
-          }
-        }
-        Transform {
-          translation 0.143 0 0.167
-          children [
-            CapScrew {
-              translation 0 0.004 0
-              rotation 1 0 0 1.5708
-              screwRadius 0.001
-              screwLength 0.01
-            }
-            RealSenseD435 {
-              translation 0.03 0 0
-              rotation 0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
-              controller "<extern>"
-              supervisor TRUE
-              colorWidth 640
-              colorHeight 427
-              colorFieldOfView 1.51844
-              rangeWidth 640
-              rangeHeight 427
-              minRange 0.01
-            }
-          ]
-          translationStep 0.001
-        }
-        Robot {
-          translation 0.07 0 0.3175
-          children [
-            SickLms291 {
-              rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
-              resolution 361
-            }
-          ]
-          name "LidarPioneer"
-          controller ""
-        }
-      ]
-    }
-  ]
+  lidarController ""
+  cameraController "<extern>"
 }
 RectangleArena {
-  rotation 1 0 0 1.5708
   floorSize 5.29 4.9
   floorAppearance Parquetry {
     type "chequered"
@@ -86,7 +32,6 @@ RectangleArena {
 }
 Solid {
   translation -1 1 0.4
-  rotation 1 0 0 1.5708
   children [
     DEF RED Shape {
       appearance PBRAppearance {
@@ -105,7 +50,6 @@ Solid {
 }
 Solid {
   translation 0 1 0.4
-  rotation 1 0 0 1.5708
   children [
     DEF GREEN Shape {
       appearance PBRAppearance {
@@ -124,7 +68,6 @@ Solid {
 }
 Solid {
   translation 1 1 0.4
-  rotation 1 0 0 1.5708
   children [
     DEF BLUE Shape {
       appearance PBRAppearance {
