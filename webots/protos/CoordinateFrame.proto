@@ -1,12 +1,11 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022a utf8
 # template language: javascript
 #
 # A frame of reference (or frame) is a rectangular (or Cartesian) coordinate system.
 
-
 PROTO CoordinateFrame [
   field SFVec3f    translation         0 0 0
-  field SFRotation rotation            0 1 0 0
+  field SFRotation rotation            0 0 1 0
   field SFString   name                "link"
   field SFFloat    transparency        0
   field SFFloat    axisLength          0.5
@@ -17,9 +16,10 @@ PROTO CoordinateFrame [
 %< let length = fields.axisLength.value;
    let radius = fields.axisRadius.value;
 >%
-  Transform {
+  Solid {
     translation IS translation
     rotation IS rotation
+    name IS name
     children [
       Group {
         children IS children
@@ -35,13 +35,14 @@ PROTO CoordinateFrame [
       >%
       Transform {
         %< if(i==0) { >%
-        rotation 0 0 1 -1.5707953071795862
+        rotation 0 0 1 -1.5708
         %< } else if(i==2) { >%
         rotation 1 0 0 1.5708
         %< } >%
         children [
           Transform {
             translation 0 %<= length/2 >% 0
+            rotation -1 0 0 1.5708
             children [
               Shape {
                 appearance DEF COLOR Appearance {
@@ -60,6 +61,7 @@ PROTO CoordinateFrame [
           }
           Transform {
             translation 0 %<= length >% 0
+            rotation -1 0 0 1.5708
             children [
               Shape {
                 appearance USE COLOR
@@ -76,5 +78,3 @@ PROTO CoordinateFrame [
     ]
   }
 }
-
-
