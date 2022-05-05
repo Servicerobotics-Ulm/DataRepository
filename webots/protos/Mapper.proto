@@ -1,0 +1,154 @@
+#VRML_SIM R2022a utf8
+# template language: javascript
+
+PROTO Mapper [
+  field SFFloat        resolution          0.05       # The map resolution [m/cell]
+  field SFVec2f        origin              -1.6 -1.6  # left bottom map corner [m]
+                                                      # top right map corner = origin + resolution * (width,height)
+  field SFInt32        width               64         # Map width [cells]
+  field SFInt32        height              64         # Map height [cells]                                                  
+  field SFFloat        wallHeight          3          # height of walls [m]
+  field SFColor        baseColor           1 1 1      # color of the walls
+  field SFBool         showWalls           TRUE       # show Walls if possible
+  field SFBool         showMapBorders      TRUE       # show red/green map borders
+  # 1:-x 2:+x 3:-y 4:+y
+  hiddenField SFVec3f  border1_translation 0 0 0
+  hiddenField SFVec3f  border2_translation 0 0 0
+  hiddenField SFVec3f  border3_translation 0 0 0
+  hiddenField SFVec3f  border4_translation 0 0 0
+  hiddenField SFVec3f  border1_size        1 1 1
+  hiddenField SFVec3f  border3_size        1 1 1
+  hiddenField SFVec3f  cone2_translation   0 0 0
+  hiddenField SFVec3f  cone4_translation   0 0 0
+  hiddenField SFVec3f  range_translation   0 0 0
+  hiddenField SFFloat  fieldOfView         0.7854
+  hiddenField SFFloat  cone_radius         1
+  hiddenField SFFloat  maxRange            1
+  hiddenField SFFloat  MapBorderTransparency  0.5
+]
+{
+%< var worldName = context.world;
+   worldName = worldName.substring(worldName.lastIndexOf('/')+1);
+   worldName = worldName.substring(0, worldName.length - 4);
+>%
+Robot {
+  name "Mapper"
+%< if(context.coordinate_system == "NUE") { >%
+  rotation 0.577349935856137 0.577349935856137 0.5773509358560258 -2.094395307179586
+%< } >%
+  children [
+%< if(fields.showWalls.value) { >%
+    walls_%<= worldName >% { 
+      baseColor IS baseColor
+    }
+%< } >%
+    Transform {
+      translation IS cone2_translation
+      rotation 0 0 1 -1.57079632679
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            transparency IS MapBorderTransparency
+            roughness 1
+            metalness 0
+          }
+          geometry Cone {
+            bottomRadius IS cone_radius
+            height IS wallHeight
+          }
+        }
+      ]
+    }
+    Transform {
+      translation IS cone4_translation
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            transparency IS MapBorderTransparency
+            roughness 1
+            metalness 0
+          }
+          geometry Cone {
+            bottomRadius IS cone_radius
+            height IS wallHeight
+          }
+        }
+      ]
+    }
+    Transform {
+      translation IS border1_translation
+      children [
+        DEF BORDER1 Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            transparency IS MapBorderTransparency
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size IS border1_size
+          }
+        }
+      ]
+    }
+    Transform {
+      translation IS border2_translation
+      children [
+        USE BORDER1
+      ]
+    }
+    Transform {
+      translation IS border3_translation
+      children [
+        DEF BORDER3 Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            transparency IS MapBorderTransparency
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size IS border3_size
+          }
+        }
+      ]
+    }
+    Transform {
+      translation IS border4_translation
+      children [
+        USE BORDER3
+      ]
+    }
+    RangeFinder {
+      translation IS range_translation
+      rotation 1 0 0 3.1415926535
+      fieldOfView IS fieldOfView
+      width IS width
+      height IS height
+      maxRange IS maxRange
+      children [
+        Transform {
+          rotation 1 0 0 -1.5707953071795862
+          children [
+            Shape {
+              geometry Cone {
+              }
+            }
+          ]
+        }
+      ]
+    }
+    Display {
+      width IS width
+      height IS height
+    }
+  ]
+  controller "Mapper"
+  supervisor TRUE
+  window "RobotWindow"
+#  showWindow TRUE
+}
+
+}

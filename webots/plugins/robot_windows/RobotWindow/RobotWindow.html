@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset='UTF-8'>
+    <title>Mapper</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <input type="text" id="filename">
+    <hr />
+    <button onClick="importMap()">Import .yaml or .pgm file</button>
+    <hr />
+    <button onClick="exportMap()">Export .png file</button>
+    <script>
+function importMap() {
+  str = document.getElementById("filename").value;
+  if(str=='')
+    return;
+  webots.window("RobotWindow").send("importMap " + str);
+}
+function exportMap() {
+  webots.window("RobotWindow").send("exportMap");
+}
+    </script>
+  </body>
+</html>
