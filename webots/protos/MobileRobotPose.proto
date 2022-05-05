@@ -1,0 +1,118 @@
+#VRML_SIM R2022a utf8
+# Visualisation of the position of real or simulated mobile robots
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO MobileRobotPose [
+  field       SFString     name                  "MobileRobotPose"
+  field       SFVec3f      translationLocation   0 0 0
+  field       SFRotation   rotationLocation      0 0 1 0
+  field       SFVec3f      translationOdometry   0 0 0
+  field       SFRotation   rotationOdometry      0 0 1 0
+  unconnectedField SFFloat velocityForward       0.0
+  unconnectedField SFFloat velocityLeft          0.0
+  unconnectedField SFFloat velocityRotation      0.0
+  hiddenField  SFFloat     transparencyOdometry  0.5
+  hiddenField  SFFloat     transparencyRoute     1.0
+  hiddenField  SFFloat     transparencyTrail     1.0
+  hiddenField  MFVec3f     route                 [
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0,
+    0 0 0, 1 0 0, 0 1 0]
+  hiddenField  MFVec3f     trailPoints           [0 0 0 1 0 0]
+  hiddenField  MFInt32     trailIndex            [0 1]
+  field  MFNode      children              [ ]
+]
+{
+Solid {
+  name IS name
+  children [
+    Transform {
+      translation IS translationLocation
+      rotation IS rotationLocation
+      children [
+        Group {
+          children IS children
+        }
+        CrossWithArrow {
+          color 0 1 0
+          transparency 0.5
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 0.02
+      children [
+        Transform {
+          translation IS translationOdometry
+          rotation IS rotationOdometry
+          children [
+            CrossWithArrow {
+              color 1 0 0
+              transparency IS transparencyOdometry
+            }
+          ]
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 0.03
+      children [
+        Shape {
+          isPickable FALSE
+          castShadows FALSE
+          appearance Appearance {
+            material Material {
+              emissiveColor 0 0 1
+              transparency IS transparencyTrail
+            }
+          }
+          geometry IndexedLineSet {
+            coord Coordinate {
+              point IS trailPoints
+            }
+            coordIndex IS trailIndex
+          }
+        }
+        Transform {
+          translation IS translationLocation
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 1
+                roughness 1
+                metalness 0
+                transparency IS transparencyRoute
+              }
+              geometry IndexedFaceSet {
+                coord Coordinate {
+                  point IS route
+                }
+                coordIndex [
+                  0 1 2 -1
+                  3 4 5 -1
+                  6 7 8 -1
+                  9 10 11 -1
+                  12 13 14 -1
+                  15 16 17 -1
+                  18 19 20 -1
+                  21 22 23 -1
+                  24 25 26 -1
+                  27 28 29 -1
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+}

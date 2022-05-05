@@ -1,13 +1,42 @@
-#VRML_OBJ R2021b utf8
+#VRML_OBJ R2022a utf8
 
 PROTO Editor [
-  unconnectedField SFFloat    defaultWaypointWidth       1.0
-  unconnectedField SFBool     showWaypoints              TRUE
+  unconnectedField SFFloat    defaultWaypointWidth      1.0
+  unconnectedField SFBool     showWaypoints             TRUE
+  unconnectedField SFString{"0: none", "1: Location (green)", "2: Location (green) Route (blue)", "3: Location (green) Route (blue) and Odometry (red)"} showMobileRobotsPoses  "0: none"
+  hiddenField      SFVec2f    size                      1 1
+  hiddenField      SFVec3f    translation               0 0 -0.01
+  field            SFInt32    mapWidth                  1024
+  field            SFInt32    mapHeight                 1024
+  unconnectedField MFString   maps                      []
+  unconnectedField SFInt32    mapNumber                 0
 ]
 {
   Robot {
-      name "Editor"
-      controller "<extern>"
-      supervisor TRUE
-  }
+    name "Editor"
+    controller "<extern>"
+    supervisor TRUE
+    children [
+      Display {
+        translation IS translation
+        width IS mapWidth
+        height IS mapHeight
+        children [
+          Shape {
+           appearance PBRAppearance {
+             baseColorMap ImageTexture {
+               filtering 0
+             }
+             metalness 0
+             roughness 1
+           }
+           geometry Plane {
+             size IS size
+           }
+         }
+       ]
+     }
+   ]
+ }
 }
+
