@@ -1,0 +1,126 @@
+#VRML_SIM R2022a utf8
+# template language: javascript
+# assembly workstation
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO AssemblyWorkstation [
+  field SFVec3f    translation      0 0 0
+  field SFRotation rotation         0 0 1 0
+  field SFString   name             "AssemblyWorkstation"
+  field MFNode     children         []
+  field SFVec2f    size             0.8 1.25
+  field SFFloat    wheelOffset      0.05
+  field MFFloat    heights          [0.13 0.15 0.98 1.04 2.1]
+  field MFNode     Locations       [
+    Location {
+      name "AssemblyWorkstation"
+      translation -1.2 0 0
+    }
+  ]
+  unconnectedField MFString data [
+    "(is-a station)"
+    "(type manual-station)"
+  ]
+]
+{
+%<
+let size = fields.size.value;
+let mx = size.x/2;
+let my = size.y/2;
+let wheelOffset = fields.wheelOffset.value;
+let heights=fields.heights.value;
+>%
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    Group {
+      children IS children
+    }
+    Group {
+      children IS Locations
+    }
+%<    
+for(let y=-1; y<=1; y+=2) {
+  for(let x=-1; x<=1; x+=2) {
+>%  
+    SimpleCasterWheel {
+      name %<= "\"CasterWheel"+x+"x"+y+"\"" >%
+      translation %<= x*(mx-wheelOffset) >% %<= y*(my-wheelOffset) >% %<= heights[0] >%
+    }
+%<
+  }
+}
+>% 
+    DEF BO Group {
+      children [
+%<
+for(let y=-1; y<=1; y+=2) {
+>%
+        Transform {
+          translation 0 %<= y*(my-wheelOffset) >% %<= (heights[1]+heights[0])/2 >%
+          children [
+            Shape {
+              appearance DEF ALU PBRAppearance {
+                roughness 0.7
+              }
+              geometry Box {
+                size %<= 2*mx >% 0.1 %<= heights[1]-heights[0] >%
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.05 %<= y*(my-wheelOffset) >% %<= (heights[2]+heights[1])/2 >%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.2 0.2 0.2
+                roughness 0.7
+                metalness 0
+              }
+              geometry Box {
+                size 0.3 0.05 %<= heights[2]-heights[1] >%
+              }
+            }
+          ]
+        }
+%<
+  for(let x=1; x<=2; x+=1) {    
+>%
+        Transform {
+          translation %<= -mx+0.1*x >% %<= y*(my-0.08) >% %<= (heights[4]+heights[3])/2 >%
+          children [
+            Shape {
+              appearance USE ALU
+              geometry Cylinder {
+                radius 0.015
+                height %<= heights[4]-heights[3] >%
+              }
+            }
+          ]
+        }        
+%<
+  }
+}
+>%
+        Transform {
+          translation 0 0 %<= (heights[3]+heights[2])/2 >%
+          children [
+            Shape {
+              appearance USE ALU
+              geometry Box {
+                size %<= 2*mx >% %<= 2*my >% %<= heights[3]-heights[2] >%
+              }
+            }
+          ]
+        }
+
+      ]
+    }  
+  ]
+  boundingObject USE BO
+}
+}
+

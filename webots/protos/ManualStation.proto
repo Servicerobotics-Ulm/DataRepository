@@ -1,0 +1,41 @@
+#VRML_SIM R2022a utf8
+# template language: javascript
+# manual station
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO ManualStation [
+  field SFVec3f    translation      0 0 0
+  field SFRotation rotation         0 0 1 0
+  field SFString   name             "ManualStation"
+  field MFNode     children         []
+  field MFNode     Locations       [
+    Location {
+      name "ManualStation"
+      children [
+        CrossWithArrow {
+          color 0.560784 0.34902 0.00784314
+        }
+      ]
+    }
+  ]
+  unconnectedField MFString data [
+    "(is-a station)"
+    "(type manual-station)"
+  ]
+]
+{
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    Group {
+      children IS children
+    }
+    Group {
+      children IS Locations
+    }
+  ]
+}
+}
+

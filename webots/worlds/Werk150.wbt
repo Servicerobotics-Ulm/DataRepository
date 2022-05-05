@@ -1,0 +1,890 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "Werk150, www.werk150.de, ESB Business School (Reutlingen)"
+  ]
+  contactProperties [
+    ContactProperties {
+      material1 "WheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      bounce 0
+    }
+    ContactProperties {
+      material1 "LarryWheel"
+      softCFM 1e-07
+    }
+    ContactProperties {
+      material1 "noFriction"
+      coulombFriction [
+        0
+      ]
+      bounce 0
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.4814519666255081 -0.4319553484819599 0.7626392205691098 4.367565882327459
+  position -3.126117678079425 17.473710805176584 22.679255883661494
+}
+Background {
+  skyColor [
+    0.533333 0.541176 0.521569
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.55 -0.6 -1
+}
+DEF Locations Group {
+  children [
+    Location {
+      name "99"
+      translation -10.7928 11.73 0
+      rotation 0 0 1 3.14159
+    }
+    Location {
+      name "100"
+      translation 0 1 0
+      rotation 0 0 1 1.5708
+    }
+    Location {
+      name "200"
+      translation -1.5 1 0
+      rotation 0 0 1 1.5708
+    }
+    Location {
+      name "2200"
+      translation -2.5 1 0
+      rotation 0 0 1 1.5708
+    }
+  ]
+}
+DEF Stations Group {
+  children [
+    ManualStation {
+      translation 13.31 10.21 0
+      name "4"
+      Locations [
+        Location {
+          name "4569"
+          translation -1.41 -0.67 0
+          waypointId 15
+          children [
+            CrossWithArrow {
+              color 0.560784 0.34902 0.00784314
+            }
+          ]
+        }
+      ]
+    }
+    ManualStation {
+      translation 0.18 3.59 0
+      name "3"
+      Locations [
+        Location {
+          name "3"
+          waypointId 11
+          children [
+            CrossWithArrow {
+              color 0.560784 0.34902 0.00784314
+            }
+          ]
+        }
+      ]
+    }
+    ManualStation {
+      translation 7.29 5.82 0
+      name "2"
+      Locations [
+        Location {
+          name "2"
+          waypointId 4
+          children [
+            CrossWithArrow {
+              color 0.560784 0.34902 0.00784314
+            }
+          ]
+        }
+      ]
+    }
+    ManualStation {
+      translation 2.67 5.9 0
+      rotation 0 1 0 0
+      name "1"
+      Locations [
+        Location {
+          name "1"
+          waypointId 3
+          children [
+            CrossWithArrow {
+              color 0.560784 0.34902 0.00784314
+            }
+          ]
+        }
+      ]
+    }
+    ManualStation {
+      translation -9.63 11.96 0
+      rotation 0 1 0 0
+      name "0"
+      Locations [
+        Location {
+          name "0"
+          waypointId 6
+          children [
+            CrossWithArrow {
+              color 0.560784 0.34902 0.00784314
+            }
+          ]
+        }
+      ]
+    }
+    A-Frame {
+      hidden translation_1 0 4.440892098500626e-16 -8.89963199979249e-06
+      hidden rotation_1 0 0 -1 1.5707999999999998
+      hidden translation_3 0.6730071527476078 -1.8102539817291379 1.037388456678641
+      hidden rotation_3 -0.13787915574260268 0.13788647101357965 0.9808040882475605 1.5902131638228472
+      hidden translation_5 0.6729977253503439 -1.8487105495492462 1.0483626394233354
+      hidden rotation_5 -0.13782754665091432 0.13783273774063975 0.9808188944912869 1.5902084370446232
+      hidden translation_7 0.5591295861712746 -1.8102420703609199 1.0373839112401029
+      hidden rotation_7 -0.13787987775759508 0.13788975729821193 0.9808035247396856 1.590195208916479
+      hidden translation_9 0.5589948186801399 -1.8486941771071606 1.0483583178662617
+      hidden rotation_9 -0.13781912245371067 0.13777119035748595 0.9808287254121233 1.5902004383956483
+      hidden translation_11 0.44500055972777774 -1.810242519053571 1.037384497681665
+      hidden rotation_11 -0.13786910267711386 0.1378606597552576 0.9808091297591253 1.5901859479458433
+      hidden translation_13 0.4449927685001951 -1.8486943243365714 1.0483588855914405
+      hidden rotation_13 -0.13779517531854923 0.13775183102332092 0.9808348090828817 1.5901915642749507
+      hidden translation_15 0.33100758197276203 -1.8102415821903777 1.0373844113897563
+      hidden rotation_15 -0.13784576100126714 0.13784717424623347 0.9808143059347728 1.5901769198779134
+      hidden translation_17 0.330988311557463 -1.8486934735504765 1.0483590032043184
+      hidden rotation_17 -0.13778289936004434 0.13773090845505742 0.9808394718301688 1.5901874551221127
+      hidden translation_19 0.2170864229426388 -1.8487021385481834 1.048361423297654
+      hidden rotation_19 -0.1377997229101409 0.1377566295280639 0.9808334962606835 1.5901919606260075
+      hidden translation_21 0.2171035617110122 -1.8102483038170365 1.0373857814214664
+      hidden rotation_21 -0.13785621218652264 0.13784590111939804 0.9808130159750968 1.590177618676704
+      translation -5.42 2.17998 0
+      rotation 0 0 1 -5.307179586466759e-06
+      Locations [
+        Location {
+          name "5"
+          translation 0.84 -0.08 0
+          rotation 0 0 1 1.5708
+        }
+      ]
+    }
+    AssemblyWorkstation {
+      translation 3.25 10.9 0
+      rotation 0 0 1 -1.5708
+      name "AP01 Unterbau Flex"
+    }
+    AssemblyWorkstation {
+      translation 6 10.44 0
+      rotation 0 0 1 -1.5708
+      name "AP02 Vorderbau Flex"
+    }
+    AssemblyWorkstation {
+      translation 8.48 10.46 0
+      rotation 0 0 1 -1.5708
+      name "AP03 Hochzeit Flex BeeWaTec"
+    }
+    AssemblyWorkstation {
+      translation 10.49 10.46 0
+      rotation 0 0 1 -1.5708
+      name "AP04 Verpackung Flex BeeWaTec"
+      Locations [
+        Location {
+          name "AP04"
+          translation 0.93 1.09 0
+          rotation 0 0 1 -1.5707953071795862
+        }
+      ]
+    }
+    AssemblyWorkstation {
+      translation 3.25 4.35 0
+      rotation 0 0 1 1.5708
+      name "AP05 Vorderbau BeeWaTec"
+      Locations [
+        Location {
+          name "AP05"
+          translation -1.2 0 0
+        }
+      ]
+    }
+    AssemblyWorkstation {
+      translation 5.82 4.34 0
+      rotation 0 0 1 1.5708
+      name "AP06 Unterbau BeeWaTec(1)"
+      Locations [
+        Location {
+          name "AP06"
+          translation -1.2 0 0
+        }
+      ]
+    }
+    InclinedShelf {
+      translation -5.16 5.08 -1.86414e-05
+      rotation -1 0 0 3.67802e-06
+      name "Inclined_B"
+      Locations [
+        Location {
+          name "4"
+          translation 1 -0.08 0
+          rotation 0 0 1 1.5708
+          waypointId 14
+        }
+      ]
+    }
+  ]
+}
+DEF Waypoints Group {
+  children [
+    Waypoint {
+      translation -0.01 1.03 0
+    }
+    Waypoint {
+      id 2
+      translation 1.31 6.63 0
+    }
+    Waypoint {
+      id 3
+      translation 2.67 5.9 0
+    }
+    Waypoint {
+      id 4
+      translation 7.29 5.82 0
+    }
+    Waypoint {
+      id 5
+      translation 7.95 2.59 0
+    }
+    Waypoint {
+      id 6
+      translation -9.63 11.96 0
+    }
+    Waypoint {
+      id 7
+      translation -2.29 10.28 0
+    }
+    Waypoint {
+      id 8
+      translation -2.11 3.17 0
+    }
+    Waypoint {
+      id 9
+      translation -1.53 1.03 0
+    }
+    Waypoint {
+      id 10
+      translation -0.32 6.88 0
+    }
+    Waypoint {
+      id 11
+      translation 0.18 3.59 0
+    }
+    Waypoint {
+      id 12
+      translation 12.41 5.82 0
+    }
+    Waypoint {
+      id 13
+      translation 12.65 8.51 0
+    }
+    Waypoint {
+      id 15
+      translation 11.9 9.54 0
+    }
+    Waypoint {
+      id 16
+      translation 12.08 12.47 0
+    }
+    Waypoint {
+      id 17
+      translation -2.28 12.47 0
+    }
+    Waypoint {
+      id 14
+      translation -4.16 5 0
+    }
+    Waypoint {
+      id 18
+      translation -3.51 5.82 0
+    }
+    Waypoint {
+      id 19
+      translation -2.56 1.03 0
+    }
+  ]
+}
+DEF WaypointConnections Group {
+  children [
+    WaypointConnection {
+      hidden translation_0 1.99 6.265000000000001 0.01
+      hidden rotation_0 0 0 1 -0.4926250028523672
+      startId 2
+      endId 3
+      startCoord 1.31 6.63
+      endCoord 2.67 5.9
+    }
+    WaypointConnection {
+      startId 3
+      endId 4
+      startCoord 2.67 5.9
+      endCoord 7.29 5.82
+    }
+    WaypointConnection {
+      startId 4
+      endId 5
+      startCoord 7.29 5.82
+      endCoord 7.95 2.59
+    }
+    WaypointConnection {
+      startId 5
+      startCoord 7.95 2.59
+      endCoord -0.01 1.03
+    }
+    WaypointConnection {
+      hidden translation_0 -5.960000000000001 11.120000000000001 0.01
+      hidden rotation_0 0 0 1 -0.22500709205770264
+      startId 6
+      endId 7
+      startCoord -9.63 11.96
+      endCoord -2.29 10.28
+    }
+    WaypointConnection {
+      hidden translation_0 -2.2 6.725 0.01
+      hidden rotation_0 0 0 1 -1.5454852776520482
+      startId 7
+      endId 8
+      startCoord -2.29 10.28
+      endCoord -2.11 3.17
+    }
+    WaypointConnection {
+      endId 9
+      startCoord -0.01 1.03
+      endCoord -1.53 1.03
+    }
+    WaypointConnection {
+      startId 9
+      endId 8
+      startCoord -1.53 1.03
+      endCoord -2.11 3.17
+    }
+    WaypointConnection {
+      hidden translation_0 -1.305 8.58 0.01
+      hidden rotation_0 0 0 1 -1.045652809708476
+      startId 7
+      endId 10
+      startCoord -2.29 10.28
+      endCoord -0.32 6.88
+    }
+    WaypointConnection {
+      hidden translation_0 0.495 6.755 0.01
+      hidden rotation_0 0 0 1 -0.15218828647311355
+      startId 10
+      endId 2
+      startCoord -0.32 6.88
+      endCoord 1.31 6.63
+    }
+    WaypointConnection {
+      endId 11
+      startCoord -0.01 1.03
+      endCoord 0.18 3.59
+    }
+    WaypointConnection {
+      startId 9
+      endId 11
+      startCoord -1.53 1.03
+      endCoord 0.18 3.59
+    }
+    WaypointConnection {
+      hidden translation_0 -0.07 5.234999999999999 0.01
+      hidden rotation_0 0 0 1 1.7216179213332503
+      startId 11
+      endId 10
+      startCoord 0.18 3.59
+      endCoord -0.32 6.88
+    }
+    WaypointConnection {
+      startId 4
+      endId 12
+      startCoord 7.29 5.82
+      endCoord 12.41 5.82
+    }
+    WaypointConnection {
+      startId 12
+      endId 13
+      startCoord 12.41 5.82
+      endCoord 12.65 8.51
+    }
+    WaypointConnection {
+      startId 13
+      endId 15
+      startCoord 12.65 8.51
+      endCoord 11.9 9.54
+    }
+    WaypointConnection {
+      startId 15
+      endId 16
+      startCoord 11.9 9.54
+      endCoord 12.08 12.47
+    }
+    WaypointConnection {
+      startId 16
+      endId 17
+      startCoord 12.08 12.47
+      endCoord -2.28 12.47
+    }
+    WaypointConnection {
+      hidden translation_0 -2.285 11.375 0.01
+      hidden rotation_0 0 0 1 -1.5753625051053788
+      startId 17
+      endId 7
+      startCoord -2.28 12.47
+      endCoord -2.29 10.28
+    }
+    WaypointConnection {
+      startId 8
+      endId 14
+      startCoord -2.11 3.17
+      endCoord -4.16 5
+    }
+    WaypointConnection {
+      startId 8
+      endId 11
+      startCoord -2.11 3.17
+      endCoord 0.18 3.59
+    }
+    WaypointConnection {
+      hidden translation_0 -1.9149999999999998 6.35 0.01
+      hidden rotation_0 0 0 1 -2.8207828326879834
+      startId 10
+      endId 18
+      startCoord -0.32 6.88
+      endCoord -3.51 5.82
+    }
+    WaypointConnection {
+      startId 18
+      endId 11
+      startCoord -3.51 5.82
+      endCoord 0.18 3.59
+    }
+    WaypointConnection {
+      startId 14
+      endId 18
+      startCoord -4.16 5
+      endCoord -3.51 5.82
+    }
+    WaypointConnection {
+      startId 9
+      endId 19
+      startCoord -1.53 1.03
+      endCoord -2.56 1.03
+    }
+    WaypointConnection {
+      startId 19
+      endId 14
+      startCoord -2.56 1.03
+      endCoord -4.16 5
+    }
+    WaypointConnection {
+      startId 11
+      endId 3
+      startCoord 0.18 3.59
+      endCoord 2.67 5.9
+    }
+    WaypointConnection {
+      hidden translation_0 -4.9750000000000005 9.42 0.01
+      hidden rotation_0 0 0 1 2.6420954314969234
+      startId 10
+      endId 6
+      startCoord -0.32 6.88
+      endCoord -9.63 11.96
+    }
+  ]
+}
+DEF MobileRobotsPoses Group {
+}
+Transform {
+  rotation 0 0 1 -0.02
+  children [
+    Transform {
+      translation -30 -1.3 0
+      children [
+        SmallBoxB {
+          translation 25.002831417984464 6.414038256275043 0.7451877394263738
+          rotation 0.6520836786658124 0.6659849899285188 0.36228561827316835 2.461489266103039
+          name "SmallBoxB(3)"
+        }
+        SmallBoxB {
+          translation 25.004774196985082 6.32008686773487 0.7451462457097043
+          rotation -0.4228860716191895 -0.4330222623717796 0.7960270665755754 1.817463958466674
+          name "SmallBoxB(2)"
+        }
+        SmallBoxB {
+          translation 25.00632957417743 6.247364699170277 0.7450807989059784
+          rotation 0.6527368369811029 0.6657342278019223 0.3615695777867425 2.4598082014185447
+          name "SmallBoxB(1)"
+        }
+        Kisten {
+          translation 24.875772134907532 6.265155583925585 0.7312099279515742
+          rotation -0.27808620824257635 0.27280050579678644 -0.9210037702541093 1.6322465753988153
+        }
+        Werk150 {
+          level 0
+        }
+        Kisten {
+          hidden linearVelocity_0 4.922852872500781e-09 -7.785398632644898e-09 -4.734451902985039e-10
+          hidden angularVelocity_0 7.123599638875088e-10 -9.889099564144652e-09 9.587211626024883e-08
+          translation 28.472821521488598 2.2052102648464187 0.7244438424956468
+          rotation -0.0005564615656136541 -0.0010291484164017895 0.9999993156017973 1.589990884594722
+          name "Kisten(2)"
+        }
+        Kisten {
+          hidden linearVelocity_0 5.4226089899304395e-09 -6.166838654408834e-10 1.0636211216122953e-09
+          hidden angularVelocity_0 1.0630048810481522e-09 6.638814711265992e-09 2.6250734351730288e-08
+          translation 29.974841224147983 2.2611459316167903 0.7244791842583749
+          rotation 0.0008328086462444937 -0.0007760828230559956 -0.9999993520623954 1.5524205681745886
+          name "Kisten(1)"
+        }
+        SmallBoxB {
+          translation 25.0077927062327 6.173457769073601 0.7450902781485075
+          rotation -0.4226756434734372 -0.43315838158849335 0.7960647692706624 1.8176508002927994
+        }
+        MobileRollerConveyor {
+          translation 31.69 12.3 2.81569e-07
+          rotation 0 1 0 4.692820414042842e-06
+        }
+        MobileRollerConveyor {
+          translation 30.15 12.29 0
+          name "MobileRollerConveyor(1)"
+          size 2.287 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 31.7 10.8 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(2)"
+          size 2.287 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 31.7 9.3 0
+          rotation 0 1 0 0
+          name "MobileRollerConveyor(3)"
+        }
+        MobileRollerConveyor {
+          translation 30.95 9.29 0
+          rotation 0 1 0 0
+          name "MobileRollerConveyor(4)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 32.46 9.31 0
+          name "MobileRollerConveyor(5)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 33.15 9.24 0
+          name "MobileRollerConveyor(6)"
+        }
+        MobileRollerConveyor {
+          translation 33.15 8.52 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(8)"
+        }
+        MobileRollerConveyor {
+          translation 33.14 9.96 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(7)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 34.61 9.24 0
+          name "MobileRollerConveyor(9)"
+          size 2.287 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 36.1 9.22 0
+          name "MobileRollerConveyor(10)"
+        }
+        MobileRollerConveyor {
+          translation 36.04 9.93 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(11)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 36.06 8.48 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(12)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 36.81 9.21 0
+          name "MobileRollerConveyor(14)"
+        }
+        MobileRollerConveyor {
+          translation 37.53 9.2 0
+          name "MobileRollerConveyor(15)"
+        }
+        MobileRollerConveyor {
+          translation 37.54 8.49 0
+          rotation 0 0 1 -1.5707953071795862
+          name "MobileRollerConveyor(16)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 37.53 9.94 0
+          rotation 0 0 1 1.5708
+          name "MobileRollerConveyor(17)"
+          size 0.751 0.707 1.04
+        }
+        MobileRollerConveyor {
+          translation 38.86 9.19 0
+          rotation 0 1 0 0
+          name "MobileRollerConveyor(13)"
+          size 2.287 0.707 1.04
+        }
+        WoodenPallet {
+          translation 40.94 9.21 0
+          rotation 0 0 1 -1.5707953071795862
+        }
+      ]
+    }
+  ]
+}
+Editor {
+}
+Larry {
+  hidden position_0_0 6.642957819504185
+  hidden position_0_1 6.467215860887652
+  hidden position_0_2 4.519079602231145
+  hidden linearVelocity_0 1.0655513547428783e-08 1.0826659326929143e-07 1.039338849343867e-07
+  hidden angularVelocity_0 3.4403079012409983e-06 1.2698434491680207e-07 7.754861470304028e-07
+  hidden position_1_0 2.689999080113017
+  hidden rotation_2 0 0 0.9999999999999999 2.689999080113017
+  hidden position_2_0 -2.3201541639968206
+  hidden linearVelocity_2 1.436483137666215e-07 -2.4893290683099514e-06 2.1073024754514332e-07
+  hidden angularVelocity_2 3.4916329426432936e-06 -1.1679932691574627e-06 -0.0003149013068142228
+  hidden rotation_3 0 -1 0 0.7493581639968182
+  hidden position_3_0 2.6001768056248458
+  hidden linearVelocity_3 -3.2836777632744766e-05 6.248482965853504e-05 -4.03236141143104e-07
+  hidden angularVelocity_3 3.537509338611181e-06 -1.1526946652289094e-06 -0.0003148184536993432
+  hidden rotation_4 0 0.9999999999999999 0 2.6001768056248458
+  hidden position_4_0 -1.4499902741612436
+  hidden linearVelocity_4 -1.1108241616802892e-05 8.215626207120676e-06 3.935746323035206e-08
+  hidden angularVelocity_4 3.5342012345450564e-06 -1.1566460319377848e-06 -0.0003147718669679872
+  hidden rotation_5 0 1 0 0.12080572583873903
+  hidden position_5_0 -1.5999999199257924
+  hidden linearVelocity_5 2.689005820641735e-05 -1.1763290004004149e-05 5.39426588930047e-07
+  hidden angularVelocity_5 -1.9358539051599093e-05 1.0939771044549583e-05 -0.00031479097480261814
+  hidden rotation_6 0 0 -1 1.5999999199257922
+  hidden position_6_0 -0.2000003206090084
+  hidden linearVelocity_6 4.054930007389442e-05 1.4106162436411247e-05 5.969936856930725e-07
+  hidden angularVelocity_6 -1.766524587958038e-05 1.4133529249852008e-05 -0.000316323681844091
+  hidden rotation_7 0 -1 0 0.2000003206090086
+  hidden linearVelocity_7 5.614752478825326e-05 2.6944641988239735e-06 -7.842942554303347e-07
+  hidden angularVelocity_7 -1.741455554363323e-05 1.4713838778536461e-05 -0.00031484867703790025
+  hidden rotation_20 0 0 -1 5.196212462831361e-07
+  hidden linearVelocity_20 5.412173821459425e-08 -7.921949954231694e-07 -1.011874170954479e-09
+  hidden angularVelocity_20 3.4787539986359954e-06 1.1896125581800971e-07 7.739213814714713e-07
+  hidden rotation_21 0 0 -1 4.933162140025762e-07
+  hidden linearVelocity_21 5.4121106674481324e-08 -6.747848192224846e-07 -1.305577294848631e-09
+  hidden angularVelocity_21 3.4352702162463353e-06 1.189595479267703e-07 7.739204374809083e-07
+  hidden translation_22 7.1273681401251565e-12 1.1102230246251565e-16 8.009132967598531e-07
+  hidden rotation_22 0 0.9999999999999999 0 1.7797426928758177e-05
+  hidden position_22_0 0.0006186071624405754
+  hidden linearVelocity_22 -4.4636900722649923e-08 -6.660618314384692e-07 3.1045805923213265e-07
+  hidden angularVelocity_22 3.41974829480714e-06 1.1205069402061342e-07 7.961177217380283e-07
+  hidden rotation_23 0 0 1 0.0006186071621850132
+  hidden linearVelocity_23 -2.4113143230392043e-08 -3.472126222842653e-07 2.3037810592541063e-09
+  hidden angularVelocity_23 5.78661935485854e-06 1.0347258753964987e-07 7.957896393053395e-07
+  translation -2.4999930847633944 0.9999999960673321 -0.000624733015970283
+  rotation -0.0020930198672627675 0.0020631252211810195 0.9999956813817533 1.570810270656942
+  controller "<extern>"
+  supervisor TRUE
+  bodySlot [
+    UR5 {
+      rotation 0 0 1 3.106685
+      controller "<extern>"
+      supervisor TRUE
+      staticBase FALSE
+      toolSlot [
+        VacuumGripper {
+          strength 200
+        }
+      ]
+    }
+  ]
+  cameraSlot [
+    PanTiltUnit {
+      translation -0.0206 -0.0104 0.0804
+      children [
+        kinect_v2 {
+          translation 0 0 0.095
+          controller "<extern>"
+          supervisor TRUE
+          colorFieldOfView 1.597
+          rangeWidth 1920
+          rangeHeight 1080
+          rangeFieldOfView 1.597
+          minRange 0.4
+        }
+      ]
+      controller "<extern>"
+    }
+  ]
+  lidarSlot [
+    Robot {
+      translation 0.26 0 0
+      children [
+        SickLms100 {
+        }
+      ]
+      name "Sick LMS 100_Front"
+      controller "<extern>"
+    }
+    Robot {
+      translation -0.255 0 0
+      rotation 0 0 1 3.14159
+      children [
+        SickLms100 {
+        }
+      ]
+      name "Sick LMS 100_Back"
+      controller ""
+    }
+  ]
+}
+Robotino3 {
+  hidden position_0_0 0.003899443885649817
+  hidden position_0_1 -0.01541166861518567
+  hidden position_0_2 0.0025314479807759197
+  hidden linearVelocity_0 3.9313702758940706e-12 -4.337272744974386e-13 1.3363681299331302e-13
+  hidden angularVelocity_0 9.541776942829284e-12 8.547589869714177e-11 -1.3857157707936457e-12
+  hidden rotation_1 0 1 0 0.003899443885653835
+  hidden linearVelocity_1 4.5929270735672434e-12 -5.363517815871642e-13 -1.6364663314644196e-12
+  hidden angularVelocity_1 9.548793051653684e-12 8.53769057871508e-11 -1.3859955181609585e-12
+  hidden rotation_2 0 -1 0 0.015411668615179328
+  hidden linearVelocity_2 4.9887560679797064e-12 -7.577828754764196e-13 -1.2365319142131613e-11
+  hidden angularVelocity_2 9.535766890853624e-12 8.547259800613621e-11 -1.3853026780613905e-12
+  hidden rotation_3 0 0.9999999999999999 0 0.0025314479807629652
+  hidden linearVelocity_3 4.976352140490347e-12 -3.1579791153764466e-13 1.4145541435987085e-11
+  hidden angularVelocity_3 9.53725040918235e-12 8.547808411424379e-11 -1.3828742679132432e-12
+  translation 0.00024592570223016337 1.0008728734564851 -0.004160923068275625
+  rotation -0.00012280476311800258 -0.0003692381428757589 0.9999999242910891 1.5691797113210002
+  name "Robotino3_1"
+  controller "<extern>"
+  supervisor TRUE
+  bodySlot [
+    Robot {
+      children [
+        RobotinoConveyorBelt {
+          translation 0 0 0.01
+          rotation 0 0 1 -1.5708
+        }
+      ]
+      name "RobotinoConveyorBelt_1"
+      physics Physics {
+        density -1
+        mass 1
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          1 1 1
+          0 0 0
+        ]
+      }
+      controller "<extern>"
+      supervisor TRUE
+    }
+  ]
+  cameraSlot [
+    DEF CoordinateSystemRobotino_3 Transform {
+      rotation 0 0 1 -1.5708
+      children [
+        Robot {
+          translation 0.19 0 0.21
+          children [
+            SickLms100 {
+            }
+          ]
+          name "Lidar_1"
+          controller "<extern>"
+        }
+        Robot {
+          name "MpsDocking_1"
+          controller "<extern>"
+          supervisor TRUE
+        }
+      ]
+    }
+  ]
+}
+Robotino3 {
+  hidden position_0_0 0.006841749571649063
+  hidden position_0_1 -4.513433229426731e-07
+  hidden position_0_2 -0.018034871841948096
+  hidden linearVelocity_0 3.684297744507746e-12 -5.262975147655812e-12 1.709744657391034e-13
+  hidden angularVelocity_0 1.157991670746083e-10 7.972914741992925e-11 -4.521014305819625e-12
+  hidden rotation_1 0 1 0 0.006841749571623181
+  hidden linearVelocity_1 3.6998608327783675e-12 -6.503766243072224e-12 -2.0708114307431047e-11
+  hidden angularVelocity_1 1.1580406828439718e-10 7.956353086574256e-11 -4.522756708782103e-12
+  hidden rotation_2 0 -1 0 4.509909734255549e-07
+  hidden linearVelocity_2 4.965106996973338e-12 -7.248418064440922e-12 -2.006174568409228e-12
+  hidden angularVelocity_2 1.1578903046616772e-10 7.972941959635056e-11 -4.52287401993518e-12
+  hidden rotation_3 0 -1 0 0.018034871841956127
+  hidden linearVelocity_3 4.95411595111277e-12 -5.802734478392554e-12 2.2740948634130838e-11
+  hidden angularVelocity_3 1.1566773040493037e-10 7.981502142759011e-11 -4.52253459145554e-12
+  translation -1.5000034899657118 0.9999935025374586 -0.004160918063961835
+  rotation 7.773928217237597e-05 -0.0005712639239945508 0.9999998338070527 1.5699998350954758
+  name "Robotino3_2"
+  controller "<extern>"
+  supervisor TRUE
+  bodySlot [
+    Robot {
+      children [
+        RobotinoConveyorBelt {
+          translation 0 0 0.01
+          rotation 0 0 1 -1.5707953071795862
+        }
+      ]
+      name "RobotinoConveyorBelt_2"
+      physics Physics {
+        density -1
+        mass 1
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          1 1 1
+          0 0 0
+        ]
+      }
+      controller "<extern>"
+      supervisor TRUE
+    }
+  ]
+  cameraSlot [
+    DEF CoordinateSystemRobotino_3 Transform {
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Robot {
+          translation 0.19 0 0.21
+          children [
+            SickLms100 {
+            }
+          ]
+          name "Lidar_2"
+          controller "<extern>"
+        }
+        Robot {
+          name "MpsDocking_2"
+          controller "<extern>"
+          supervisor TRUE
+        }
+      ]
+    }
+  ]
+}

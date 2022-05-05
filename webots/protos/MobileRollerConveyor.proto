@@ -1,0 +1,98 @@
+#VRML_SIM R2022a utf8
+# mobile roller conveyor
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+# template language: javascript
+
+PROTO MobileRollerConveyor [
+  field SFVec3f    translation       0 0 0
+  field SFRotation rotation          0 0 1 0
+  field SFString   name              "MobileRollerConveyor"
+  field SFVec3f    size              0.707 0.707 1.04
+  field SFFloat    railHeight        0
+  field SFFloat    wx                0.05
+  field SFFloat    wy                0.05
+  field SFFloat    rollerRadius      0.04
+  field SFFloat    rollerDistance    0.1
+]
+{
+%<
+let size = fields.size.value;
+let wx=fields.wx.value;
+let wy=fields.wy.value;
+let rollerRadius=fields.rollerRadius.value;
+>%
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    SimpleRollerTrack {
+      translation %<= -(size.x-2*wx)/2 >% 0 %<= size.z-rollerRadius >%
+      conveyorLength %<= size.x-2*wx >%
+      heightDifference 0
+      rollerLength %<= size.y-2*wy >%
+      rollerRadius IS rollerRadius
+      rollerDistance IS rollerDistance
+      sideRailsHeight IS railHeight
+      sideRailsWidth IS wy
+    }
+    DEF BO Group {
+      children [
+%<
+const box1 = {
+  x:[size.x/2, size.x/2-wx],
+  y:[-size.y/2, size.y/2],
+  z:[size.z, size.z-2*rollerRadius]};
+const box2 = {
+  x:box1.x,
+  y:[size.y/2, size.y/2-wy],
+  z:[0.13, size.z-2*rollerRadius]};
+const boxes=[box1, box2];
+for(let i=0; i<boxes.length; i++) {
+  for(let x=-1; x<=1; x+=2) {
+    for(let y=(x==0 ? 1 : -1); y<=1; y+=2) {
+      let b=boxes[i];
+      let x1=x*b.x[0];
+      let x2=x*b.x[1];
+      let y1=y*b.y[0];
+      let y2=y*b.y[1];
+      let z1=b.z[0];
+      let z2=b.z[1];
+>%
+        Transform {
+          translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% %<= (z1+z2)/2 >%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 0.7
+              }
+              geometry Box {
+                size %<= Math.abs(x2-x1) >% %<= Math.abs(y2-y1) >% %<= Math.abs(z2-z1) >%
+              }
+            }
+          ]
+        }
+%<
+    }
+  }
+}
+>%
+      ]
+    }
+%<
+for(let x=-1; x<=1; x+=2) {
+  for(let y=-1; y<=1; y+=2) {  
+>%
+    SimpleCasterWheel {
+      translation %<= x*(box2.x[0]+box2.x[1])/2 >% %<= y*(box2.y[0]+box2.y[1])/2 >% 0.13
+      name %<= "\"CasterWheel"+x+"x"+y+"\"" >%
+    }
+%<
+  }
+}
+>%
+  ]
+  boundingObject USE BO
+  contactMaterial IS contactMaterial
+}
+}

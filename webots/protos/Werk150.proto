@@ -1,0 +1,266 @@
+#VRML_SIM R2022a utf8
+# Werk150 in Reutlingen, www.werk150.de, https://cdn.www.bestviews.de/esb-in-360/en/
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO Werk150 [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 0 1 0
+  field SFInt32    level                 1
+]
+{
+Solid {
+  name "Werk150"
+  translation IS translation
+  rotation IS rotation
+  children [
+  
+    DEF BO Group {
+      children [
+      
+%< 
+if (!Array.prototype.last){
+    Array.prototype.last = function(){
+        return this[this.length - 1];
+    };
+};
+let level=fields.level.value;
+const heights = [0, 2.9, 3.22, 6.12, 7.02, 8.4];
+const column = {
+  x:[0, 5, 10, 15, 20, 25, 30, 35, 40, 45],
+  y:[0, 18.32, 24.44],
+  size:{x:0.4, y:0.6, z:heights[4]}};
+const wallWidth = 0.3;
+const innerWallWidth = 0.125;
+const entranceHeight = 2.75;  
+let obj=column;
+if(level>=0)
+  for(let i=0; i<obj.x.length; i++) {
+    for(let j=0; j<obj.y.length; j++) {
+      let x=obj.x[i];
+      let y=obj.y[j];
+      let size=obj.size;
+>%
+    Transform {
+      translation %<= x >% %<= y >% %<= size.z/2 >%
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.533333 0.541176 0.521569
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size %<= size.x >% %<= size.y >% %<= size.z >%
+          }
+        }
+      ]
+    }
+%<
+    }
+  }
+if(level>=2)  
+  for(let i=0; i<obj.x.length; i++) {
+>%
+    Transform {
+      translation %<= obj.x[i] >% %<= (obj.y[0]+obj.y[1])/2 >% %<= (heights[4]+heights[5])/2 >%
+      children [
+        Shape {
+          appearance RoughPine {
+          }
+          geometry Box {
+            size %<= obj.size.x >% %<= obj.y[1]-obj.y[0]+obj.size.y >% %<= heights[5]-heights[4] >%
+          }
+        }
+      ]
+    }
+%<
+  }
+if(level>=1) {
+>%
+    Transform {
+      translation %<= (obj.x.last()+obj.x[0])/2 >% %<= obj.y[1] >% %<= (heights[4]+heights[1])/2 >%
+      children [
+        Shape {
+          appearance RoughPine {
+          }
+          geometry Box {
+            size %<= obj.x.last()-obj.x[0]+obj.size.x >% %<= innerWallWidth >% %<= heights[4]-heights[1] >%
+          }
+        }
+      ]
+    }
+%<
+}
+const outerWallCorner = {
+  x:[column.x[0]-(wallWidth+column.size.x/2), column.x.last()+(wallWidth+column.size.x/2)],
+  y:[column.y[0]-(wallWidth+column.size.y/2), column.y.last()+(wallWidth+column.size.y/2)],
+  z:heights[0]};
+const floor = outerWallCorner;
+obj = floor;
+>%
+    DEF FLOOR Transform {
+      translation %<= (obj.x[0]+obj.x[1])/2 >% %<= (obj.y[0]+obj.y[1])/2 >% %<= obj.z >%
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/gray_floor_tiles.jpg"
+              ]
+            }
+#            baseColor 0.827451 0.843137 0.811765
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              scale %<= obj.x[1]-obj.x[0] >% %<= obj.y[1]-obj.y[0] >%
+            }
+          }
+          geometry DEF PLANE Plane {
+            size %<= obj.x[1]-obj.x[0] >% %<= obj.y[1]-obj.y[0] >%
+          }
+        }
+      ]
+    }
+%<
+const eastWalls = {
+  x:[-0.5, 6, 9, 11, 14, 16, 19, 26, 29, 31, 34, 36, 39, 41, 44, 45.5],  
+  y:[outerWallCorner.y[0], outerWallCorner.y[0]+wallWidth],
+  z:[0, entranceHeight]};
+const eastWall = {
+  x:[eastWalls.x[0], eastWalls.x.last()],
+  y:eastWalls.y,
+  z:[entranceHeight, heights[5]]};  
+const westWall = {
+  x:eastWall.x,
+  y:[outerWallCorner.y[1]-wallWidth, outerWallCorner.y[1]],
+  z:[0, heights[4]]};
+const northWalls = {
+  x:[outerWallCorner.x[1]-wallWidth, outerWallCorner.x[1]],
+  y:[-0.6, 0.95, 3.95, 5.95, 8.95, 10.95, 15.42, 24.74],
+  z:[0, entranceHeight]};
+const northWall = {
+  x:northWalls.x,
+  y:[northWalls.y[0], northWalls.y.last()],
+  z:[entranceHeight, heights[5]]};
+const southWall = {
+  x:[column.x[0]-column.size.x/2-wallWidth, column.x[0]-column.size.x/2],
+  y:[-0.6, 24.74],
+  z:[0, heights[5]]};
+const roof = {
+  x: outerWallCorner.x,
+  y: outerWallCorner.y,
+  z:[heights[5], heights[5]+wallWidth]};
+const walls=[eastWalls, eastWall, westWall, northWalls, northWall, southWall, roof];
+
+for(let j=0; j<walls.length; j++) {
+  obj=walls[j];
+  let neededLevel=1;
+  if(obj==eastWall || obj==northWall)
+    neededLevel=2;
+  if(obj==roof)
+    neededLevel=3;    
+  if(level>=neededLevel) {
+    for(let i=0; i<obj.x.length || i<obj.y.length; i+=2) {
+      let x1=obj.x[i % obj.x.length];
+      let x2=obj.x[(i+1) % obj.x.length];
+      let y1=obj.y[i % obj.y.length];
+      let y2=obj.y[(i+1) % obj.y.length];
+      let z1=obj.z[0];
+      let z2=obj.z[1];
+>%
+    Transform {
+      translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% %<= (z1+z2)/2 >%          
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size %<= x2-x1 >% %<= y2-y1 >% %<= z2-z1 >%          
+          }
+        }
+      ]
+    }            
+%<
+    }
+  }
+}
+>%
+      
+      ]
+    }
+
+%<
+const stairSteps=18;
+const stairStringerWidth=0.09;
+const stairTotalWidth=1.51;
+const stairStepWidth=0.28;
+const stairLength=stairSteps*stairStepWidth;
+let x1=column.x[1]+stairStepWidth/2;
+let x2=column.x[column.x.length-2]-stairStepWidth/2;
+if(level>=1)
+  for(let i=0; i<3; i++) {
+>%
+    StraightStairs {
+      name %<= "\"StraightStairs" + i + "\"" >%
+      translation %<= i==2 ? (x1+x2)/2 : (i ? x1 : x2) >%
+        %<= column.y[1]-column.size.y/2-0.05-stairTotalWidth/2 >% 
+        %<= i==2 ? heights[2] : 0 >%
+      rotation 0 0 1 %<= i ? 0 : 3.1416 >%
+      stepSize %<= i==2 ? x2-x1-stairLength*2+stairStepWidth : stairStepWidth >% %<= stairTotalWidth-2*stairStringerWidth >% 0.01
+      stepRise %<= i==2 ? 0 : heights[2]/stairSteps >%
+      nSteps %<= i==2 ? 1 : stairSteps >%
+      stringerWidth %<= stairStringerWidth >%
+      stepAppearance DEF STAIR CorrodedMetal {
+        colorOverride 0.533333 0.541176 0.521569
+      }
+      stringerAppearance USE STAIR
+      rightRail [
+        DEF RAIL StraightStairsRail {
+          run %<= i==2 ? x2-x1-stairLength*2+stairStepWidth : stairLength >%
+          rise %<= i==2 ? 0 : heights[2] >%
+          width 0.045
+          newelHeight %<= i==2 ? 1.22 : 1.05 >%
+          balusterHeight 0.7
+          nBalusters %<= i==2 ? 25 : 5 >%
+          appearance USE STAIR
+        }
+      ]
+      leftRail [ 
+        %<= i==2 ? "" : "USE RAIL" >%
+      ]
+    }
+%<
+  }
+let shelfWidth = 1;
+let shelfDepth = 0.6;
+let shelfHeight = 2.1;
+let shelfLength = [12, 3, 8, 3];
+if(level>=0)
+  for(let i=0; i<4; i++) {
+    let l=shelfLength[i];
+>%
+    Transform {
+      translation %<= column.x[3]+shelfDepth+shelfWidth*1.5+0.05 >% 8.5 0
+      rotation 0 0 1 %<= Math.PI/2*i >%
+      children [
+        SimpleShelf {
+          name %<= "\"SimpleShelf" + i + "\"" >%          
+          translation %<= -shelfLength[(i+1)&1]*shelfWidth/2-shelfDepth/2 >% %<= i==2 ? 2*shelfWidth : 0 >% 0
+          size %<= shelfDepth >% %<= shelfWidth*l >% %<= shelfHeight >%
+          layers 2 %<= l+1 >% 8
+          color 0.73 0.73 0.73
+        }
+      ]
+    }            
+%<
+  }
+>%
+   
+  ]
+  boundingObject USE BO
+}
+}

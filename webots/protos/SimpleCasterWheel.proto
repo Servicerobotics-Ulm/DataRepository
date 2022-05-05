@@ -1,0 +1,82 @@
+#VRML_SIM R2022a utf8
+# simple fixed caster wheel without Physics/HingeJoint
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO SimpleCasterWheel [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 0 1 0
+  field SFString   name                  ""
+]
+{
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    DEF CASTER_CYL Shape {
+      appearance DEF BLACK PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.02
+        radius 0.025
+      }
+    }
+    Transform {
+      translation -0.021 0.02 -0.035
+      rotation 0 1 0 0.54035
+      children [
+        DEF CASTER_RAILING Shape {
+          appearance USE BLACK
+          geometry Box {
+            size 0.03 0.0075 0.1
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -0.021 -0.02 -0.035
+      rotation 0 1 0 0.54035
+      children [
+        USE CASTER_RAILING
+      ]
+    }
+    Solid {
+      translation -0.042 0 -0.07
+      rotation 1 0 0 -1.5708
+      children [
+        Group {
+          children [
+            Shape {
+              appearance USE BLACK
+              geometry Cylinder {
+                height 0.032
+                radius 0.045
+              }
+            }
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.53 0.54 0.52
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.03
+                radius 0.06
+              }
+            }
+          ]
+        }
+      ]
+      boundingObject Cylinder {
+        height 0.005
+        radius 0.06
+      }
+    }
+  ]
+  boundingObject USE CASTER_CYL
+}
+}
+

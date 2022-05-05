@@ -1,0 +1,111 @@
+#VRML_SIM R2022a utf8
+# template language: javascript
+
+PROTO SimpleShelf [
+  field SFVec3f    translation       0 0 0
+  field SFRotation rotation          0 0 1 0
+  field SFString   name              "SimpleShelf"
+  field SFVec3f    size              0.6 1 2
+  field SFVec3f    thickness         0.03 0.03 0.03
+  field SFVec3f    layers            2 2 2
+  field SFColor    color             1 1 1
+]
+{
+%<
+let s = fields.size.value;
+let t = fields.thickness.value;
+let l = fields.layers.value;
+l.x--;
+l.y--;
+l.z--;
+>%
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [    
+    Solid {
+      translation 0 0 %<= s.z/2 >%
+      name IS name      
+      children [
+%<    
+for(let z=0; z<=l.z; z++) {
+>%
+        Transform {
+          translation 0 0 %<= (z/l.z-0.5)*(s.z-t.z) >%
+          children [
+            Shape {
+              appearance DEF COLOR PBRAppearance {
+                baseColor IS color
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size %<= s.x >% %<= s.y >% %<= t.z >%
+              }
+            }
+          ]
+        }
+%<
+}
+>%
+
+%<
+for(let x=0; x<=l.x; x++) {
+  for(let y=0; y<=l.y; y++) {
+>%
+    Transform {
+      translation %<= (x/l.x-0.5)*(s.x-t.x) >% %<= (y/l.y-0.5)*(s.y-t.y) >% 0
+      children [
+        Shape {
+          appearance USE COLOR
+          geometry Box {
+            size %<= t.x >% %<= t.y >% %<= s.z >%
+          }
+        }
+      ]
+    }
+
+%<
+  }
+}
+>%
+        Transform {
+          translation %<= -0.5*(s.x-t.x) >% 0 0
+          children [
+            Shape {
+              appearance USE COLOR
+              geometry Box {
+                size %<= t.x >% %<= s.y >% %<= s.z >%
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 %<= -0.5*(s.y-t.y) >% 0
+          children [
+            DEF SIDE Shape {
+              appearance USE COLOR
+              geometry Box {
+                size %<= s.x >% %<= t.y >% %<= s.z >%
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 %<= 0.5*(s.y-t.y) >% 0
+          children [
+            USE SIDE
+          ]
+        }
+      ]
+      boundingObject Transform {
+        children [
+          Box {
+            size IS size
+          }
+        ]
+      }
+    }
+  ]
+}
+}

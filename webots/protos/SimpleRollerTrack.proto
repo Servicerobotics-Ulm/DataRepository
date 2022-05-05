@@ -1,0 +1,99 @@
+#VRML_SIM R2022a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# simple roller track of variable size (Rollenband)
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO SimpleRollerTrack [
+  field SFVec3f    translation       0 0 0
+  field SFRotation rotation          0 0 1 0
+  field SFString   name              "SimpleRollerTrack"
+  field SFFloat    conveyorLength    0.980001    # horizontal length of roller conveyor
+  field SFFloat    heightDifference  0.5         # vertical height difference of end and start point
+  field SFFloat    rollerLength      0.25
+  field SFFloat    rollerRadius      0.015
+  field SFFloat    rollerDistance    0.05        # horizontal distance between two rollers
+  field SFFloat    sideRailsHeight   0.1
+  field SFFloat    sideRailsWidth    0.01
+  field SFString   contactMaterial   "SimpleRollerTrack"
+]
+{
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+%{ 
+  local conveyorLength = fields.conveyorLength.value
+  local heightDifference = fields.heightDifference.value
+  local conveyorLength = fields.conveyorLength.value
+  local rollerLength = fields.rollerLength.value
+  local rollerRadius = fields.rollerRadius.value
+  local rollerDistance = fields.rollerDistance.value
+  local sideRailsHeight = fields.sideRailsHeight.value
+  local sideRailsWidth = fields.sideRailsWidth.value
+  local nRollers = math.floor((conveyorLength-2*rollerRadius) / rollerDistance )
+  local alpha = math.atan(heightDifference / conveyorLength)
+  for n=0,nRollers do
+}%
+    Transform {
+      translation %{= n*rollerDistance+rollerRadius }% 0 %{= (n*rollerDistance+rollerRadius)/conveyorLength*heightDifference }%
+      rotation 1 0 0 -1.5708
+      children [
+        Shape {
+          appearance DEF ALU PBRAppearance {
+            roughness 0.5
+          }
+          geometry Cylinder {
+            height IS rollerLength
+            radius IS rollerRadius
+          }
+        }
+      ]
+    }
+
+%{
+  end
+}%
+    DEF BOUNDING Group {
+      children [
+        Transform {
+          translation %{= conveyorLength/2 }% 0 %{= heightDifference/2 }%
+          children [
+            Shape {
+              appearance PBRAppearance {
+                transparency 1.0
+              }
+              geometry TexturedParallelepiped {
+                size %{= math.sqrt(conveyorLength*conveyorLength+heightDifference*heightDifference) }% %{= rollerLength }% %{= rollerRadius*2/math.cos(alpha) }%
+                angles 0 1.57079632679 %{= alpha }%
+              }
+            }
+          ]
+        }
+%{
+  for n=-1,1,2 do 
+}%
+        Transform {
+          translation %{= conveyorLength/2 }% %{= n*(rollerLength+sideRailsWidth)/2 }% %{= (heightDifference+sideRailsHeight)/2 }%
+          children [
+            Shape {
+              appearance USE ALU
+              geometry TexturedParallelepiped {
+                size %{= math.sqrt(conveyorLength*conveyorLength+heightDifference*heightDifference) }% %{= sideRailsWidth }% %{= rollerRadius*2/math.cos(alpha)+sideRailsHeight }%
+                angles 0 1.57079632679 %{= alpha }%
+              }
+            }
+          ]
+        }
+%{
+  end
+}%
+      ]
+    }
+  ]
+  boundingObject USE BOUNDING
+  contactMaterial IS contactMaterial
+}
+}
+

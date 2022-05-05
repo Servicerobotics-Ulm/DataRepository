@@ -1,0 +1,36 @@
+#VRML_SIM R2022a utf8
+# A mobile robot can drop boxes into the crate of this station.
+
+PROTO CrateStation [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "CrateStation"
+  field MFNode     Locations       [
+    Location {
+      name "CrateStation"
+      translation 0.9 0 0
+      rotation 0 0 1 3.1416
+    }
+  ]
+  unconnectedField MFString data [
+    "(is-a rack)"
+    "(type Crate)"
+  ]
+]
+{
+  Crate  {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children IS Locations
+    outerSize 0.38 0.5 0.89
+    innerSize 0.33 0.45 0.25
+    appearance MattePaint {
+      baseColor 0.447059 0.623529 0.811765
+    }
+    appearanceBottom MattePaint {
+      baseColor 0.827451 0.843137 0.811765
+    }
+  }
+}
+
