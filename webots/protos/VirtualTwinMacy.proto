@@ -1,0 +1,54 @@
+#VRML_SIM R2022a utf8
+# virtual twin of mobile robot 'Macy' (MiR 250 base, UR5e robot arm, Kinect V2 camera, conveyor belt)
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO VirtualTwinMacy [
+  field       SFVec3f      translation   0 0 0
+  field       SFRotation   rotation      0 0 1 0
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      translation -0.075 0.05 0.52
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopMacy.png"
+              ]
+            }
+            transparency 0.2
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Plane {
+            size 0.95 0.68
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            transparency 0.4
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.8 0.6 0.5
+          }
+        }
+      ]
+    }
+  ]
+}}
+

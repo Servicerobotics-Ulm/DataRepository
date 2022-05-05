@@ -1,0 +1,31 @@
+#VRML_SIM R2022a utf8
+# virtual twin of mobile robot 'Larry'
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO VirtualTwinNumber [
+  field       SFColor      color         1 0 0
+  field       MFString     url           ["textures/TextToPNG/0.png"]
+]
+{
+Transform {
+  translation 0 0 0.56
+  rotation 0 0 1 -1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor IS color
+        baseColorMap ImageTexture {
+          url IS url
+          filtering 0
+        }
+        metalness 0
+        roughness 1
+      }
+      geometry Plane {
+        size 0.15 0.2
+      }
+    }
+  ]
+}
+}

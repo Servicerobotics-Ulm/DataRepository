@@ -1,0 +1,62 @@
+#VRML_SIM R2022a utf8
+# virtual twin of mobile robot 'Pioneer 3-DX' from Adept
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO VirtualTwinPioneer [
+  field       SFVec3f      translation   0 0 0
+  field       SFRotation   rotation      0 0 1 0
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      translation -0.045 0 0.1245
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopPioneer.png"
+              ]
+            }
+            transparency 0.2
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.53 -0.52
+              scale 0.9 0.9
+            }
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.24
+            radius 0.22
+            side FALSE
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            transparency 0.4
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.53 -0.52
+              scale 0.77 0.77
+            }
+          }
+          geometry Cylinder {
+            height 0.24
+            radius 0.22
+            top FALSE
+          }
+        }
+      ]
+    }
+  ]
+}
+}
+

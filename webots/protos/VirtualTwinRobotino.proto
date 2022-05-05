@@ -1,0 +1,58 @@
+#VRML_SIM R2022a utf8
+# virtual twin of mobile robot 'Robotino 3' from Festo
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO VirtualTwinRobotino [
+  field       SFVec3f      translation   0 0 0
+  field       SFRotation   rotation      0 0 1 0
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+   Transform {
+   translation 0 0 0.15
+   children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/TopRobotino.png"
+          ]
+        }
+        transparency 0.2
+        metalness 0
+        textureTransform TextureTransform {
+          center -0.45 -0.5
+          scale 0.95 0.95
+        }
+      }
+      geometry Cylinder {
+        bottom FALSE
+        height 0.276
+        radius 0.2266
+        side FALSE
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        transparency 0.4
+        metalness 0
+        textureTransform TextureTransform {
+          center -0.45 -0.5
+          scale 0.8 0.8
+        }
+      }
+      geometry Cylinder {
+        height 0.276
+        radius 0.2266
+        top FALSE
+      }
+    }
+   ]}
+  ]
+}
+}
+
