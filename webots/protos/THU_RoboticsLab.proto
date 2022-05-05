@@ -1,0 +1,1487 @@
+#VRML_SIM R2022a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# THU Ulm Service Robotics Laboratory
+#
+# made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO THU_RoboticsLab [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field MFNode children [
+    OfficeChairWrapper {
+      translation 1.47 -3.81 0
+      rotation 0 0 1 1.83
+    }
+    OfficeChairWrapper {
+      translation -0.31 -3.69 0
+      rotation 0 0 1 1.3
+      name "office chair(1)"
+    }
+    OfficeChairWrapper {
+      translation -1.71 -3.62 0
+      rotation 0 0 1 1.5708
+      name "office chair(2)"
+    }
+    OfficeChairWrapper {
+      translation -3.55 0.79 0
+      rotation 0 0 1 0.26
+      name "office chair(4)"
+    }
+    OfficeChairWrapper {
+      translation -3.62 2.39 0
+      rotation 0 0 1 -0.26
+      name "office chair(5)"
+    }
+    OfficeChairWrapper {
+      translation 1.62 5.03 0
+      rotation 0 0 1 1.5708
+      name "office chair(6)"
+    }
+    OfficeChairWrapper {
+      translation -0.04 5.03 0
+      rotation 0 0 1 1.5708
+      name "office chair(7)"
+    }
+    OfficeChairWrapper {
+      translation -1.3 5.03 0
+      rotation 0 0 1 1.5708
+      name "office chair(8)"
+    }
+    OfficeChairWrapper {
+      translation -0.18 3.85 0
+      rotation 0 0 1 -1.83
+      name "office chair(9)"
+    }
+    OfficeChairWrapper {
+      translation 1.36 3.72 0
+      rotation 0 0 1 -1.5708
+      name "office chair(10)"
+    }
+    OfficeChairWrapper {
+      translation -3.58 -6.31 0
+      rotation 0 0 1 0.26
+      name "office chair(11)"
+    }
+    OfficeChairWrapper {
+      translation -3.62 -7.39 0
+      rotation 0 0 1 -0.78
+      name "office chair(12)"
+    }
+  ]
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      children IS children
+    }
+    Transform {
+      translation -1.08 -1.25 0
+      children [
+
+
+
+DEF WALLS Group {
+  children [
+    Wall {
+      translation -4.03 -4.4 0
+      rotation 0 0 1 -3.14159
+      size 0.25 0.22 3.2
+    }
+    Wall {
+      translation 3.43 -4.4 0
+      rotation 0 0 1 -3.14159
+      size 0.22 0.22 3.2
+    }
+    Wall {
+      translation -4.275 -4.4 0
+      rotation 0 0 1 -3.14159
+      size 0.24 0.22 2.2
+    }
+    Wall {
+      translation -4.275 -1.38 0
+      rotation 0 0 1 -3.14159
+      size 0.24 0.22 2.2
+    }
+    Wall {
+      translation -4.03 -1.38 0
+      rotation 0 0 -1 3.14159
+      size 0.25 0.22 3.2
+    }
+    Wall {
+      translation 3.43 -1.38 0
+      rotation 0 0 -1 3.14159
+      size 0.22 0.22 3.2
+    }
+    Wall {
+      translation -4.275 0.95 0
+      rotation 0 0 1 -3.14159
+      size 0.24 0.25 2.2
+    }
+    Wall {
+      translation -4.03 0.95 0
+      rotation 0 0 -1 3.14159
+      size 0.25 0.22 3.2
+    }
+    Wall {
+      translation 3.43 0.95 0
+      rotation 0 0 -1 3.14159
+      size 0.22 0.22 3.2
+    }
+    Wall {
+      translation -4.275 4.38 0
+      rotation 0 0 1 -3.14159
+      size 0.24 0.25 2.2
+    }
+    Wall {
+      translation -4.03 4.39 0
+      rotation 0 0 -1 3.14159
+      size 0.25 0.22 3.2
+    }
+    Wall {
+      translation 3.43 4.39 0
+      rotation 0 0 -1 3.14159
+      size 0.22 0.22 3.2
+    }
+    Wall {
+      translation -0.41 -7.36 0
+      rotation 0 0 1 -1.5708
+      size 0.12 8.42 3.2
+    }
+    Wall {
+      translation -0.41 7.36 0
+      rotation 0 0 1 -1.5708
+      size 0.12 8.42 3.2
+    }
+
+    Wall {
+      translation 1.11 -1.3 0
+      rotation 0 0 1 1.5708
+      size 0.06 5 0.7
+      appearance DEF SMALL_WALLS Roughcast {
+        colorOverride 0.89 0.8 1
+        textureTransform TextureTransform {
+          scale 1 2.4
+        }
+      }
+    }
+    Wall {
+      translation 1.79 3.9 0
+      rotation 0 0 1 1.5708
+      size 0.06 3.5 0.7
+      appearance USE SMALL_WALLS
+    }
+    Wall {
+      translation 3.57 1.33 0
+      rotation 0 0 1 -3.14159
+      size 0.06 5.2 0.7
+      appearance USE SMALL_WALLS
+    }
+    Wall {
+      translation -1.36 -0.52 0
+      rotation 0 0 1 -3.14159
+      size 0.06 1.5 0.7
+      appearance USE SMALL_WALLS
+    }
+    Wall {
+      translation -1.35 2.73 0
+      rotation 0 0 1 -3.14159
+      size 0.06 2.8 0.7
+      appearance USE SMALL_WALLS
+    }
+    Wall {
+      translation -4.5 -4.3 0
+      rotation 0 0 -1 -3.14159
+      size 0.2 6 2.2
+    }
+    Wall {
+      translation -4.5 1.3 0
+      rotation 0 0 1 3.14159
+      size 0.2 3.2 2.2
+    }
+    Wall {
+      translation -4.5 5.6 0
+      rotation 0 0 1 3.14159
+      size 0.2 3.4 2.2
+    }
+  ]
+}
+DEF Box Group {
+  children [
+    Solid {
+      translation 1.74 2.29 0.1
+      children [
+        DEF X Shape {
+          appearance PBRAppearance {
+            baseColor 0.6 0.54 0.54
+            roughness 0.2
+            metalness 0
+            textureTransform TextureTransform {
+              scale 4 4
+            }
+          }
+          geometry Box {
+            size 0.31 0.15 0.2
+          }
+        }
+      ]
+      name "box1"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.14 -0.32 0.05
+      children [
+        DEF X Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.95 0.95
+            roughness 0.2
+            metalness 0
+            textureTransform TextureTransform {
+              scale 4 4
+            }
+          }
+          geometry Box {
+            size 0.36 1.86 0.1
+          }
+        }
+      ]
+      name "box2"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.125 -0.06 0.83
+      children [
+        DEF X Shape {
+          appearance DEF WOOD PBRAppearance {
+            baseColor 0.46 0.3 0.02
+            baseColorMap ImageTexture {
+              url [
+                "textures/wood.jpg"
+              ]
+            }
+            roughness 0.2
+            metalness 0
+          }
+          geometry Box {
+            size 0.45 1.36 0.067
+          }
+        }
+      ]
+      name "box3"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.125 -1.22 0.83
+      children [
+        DEF X Shape {
+          appearance USE WOOD 
+          geometry Box {
+            size 0.45 0.08 0.067
+          }
+        }
+      ]
+      name "box3b"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.32 -0.96 0.83
+      children [
+        DEF X Shape {
+          appearance USE WOOD 
+          geometry Box {
+            size 0.06 0.44 0.067
+          }
+        }
+      ]
+      name "box4"
+      boundingObject USE X
+    }
+    Solid {
+      translation 2.91 -0.96 0.83
+      children [
+        DEF X Shape {
+          appearance USE WOOD 
+          geometry Box {
+            size 0.02 0.44 0.067
+          }
+        }
+      ]
+      name "box5"
+      boundingObject USE X
+    }
+    Solid {
+      translation 1.57 6.88 0.28
+      children [
+        DEF X Shape {
+          appearance DEF PAINTEDWOOD PaintedWood {
+            colorOverride 0.7 0.56 0.2
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box6"
+      boundingObject USE X
+    }
+    Solid {
+      translation 1.47 4.33 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box7"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.05 4.33 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box8"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.79 4.26 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.8 0.44 0.56
+          }
+        }
+      ]
+      name "box9"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.79 2.66 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.8 0.44 0.56
+          }
+        }
+      ]
+      name "box10"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.79 -1.08 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.8 0.44 0.56
+          }
+        }
+      ]
+      name "box11"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.79 -5.43 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.8 0.44 0.56
+          }
+        }
+      ]
+      name "box11b"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.24 -1.73 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box12"
+      boundingObject USE X
+    }
+    Solid {
+      translation 0.36 -1.73 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box13"
+      boundingObject USE X
+    }
+    Solid {
+      translation 1.97 -1.73 0.26
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 0.8 0.56
+          }
+        }
+      ]
+      name "box14"
+      boundingObject USE X
+    }
+    Solid {
+      translation 1.74 2.29 0.37
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.38 0.21 0.34
+          }
+        }
+      ]
+      name "box15"
+      boundingObject USE X
+    }
+    Solid {
+      translation -1.79 -1.85 0.4
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.6 1.04 0.8
+          }
+        }
+      ]
+      name "box16"
+      boundingObject USE X
+    }
+    Solid {
+      translation 2.72 -4.7 0.4
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 1.04 0.6 0.8
+          }
+        }
+      ]
+      name "box17"
+      boundingObject USE X
+    }
+    Solid {
+      translation 2.22 -7 0.4
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 2.04 0.6 0.8
+          }
+        }
+      ]
+      name "box18"
+      boundingObject USE X
+    }
+    Solid {
+      translation 3.14 -0.32 0.45
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD
+          geometry Box {
+            size 0.44 1.86 0.7
+          }
+        }
+      ]
+      name "box19"
+      boundingObject USE X
+    }
+    Solid {
+      translation -4.235 1.53 0.97
+      children [
+        DEF X Shape {
+          appearance PaintedWood {
+            colorOverride 0.93 0.93 0.92
+          }
+          geometry Box {
+            size 0.35 0.86 1.94
+          }
+        }
+      ]
+      name "box20"
+      boundingObject USE X
+    }
+    Solid {
+      translation -4.15 5.9 0.925
+      children [
+        DEF X Shape {
+          appearance DEF PAINTEDWOOD2 PaintedWood {
+            colorOverride 0.91 0.72 0.43
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry Box {
+            size 0.48 2.79 1.85
+          }
+        }
+      ]
+      name "box21"
+      boundingObject USE X
+    }
+    Solid {
+      translation -4.15 -2.89 0.925
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD2
+          geometry Box {
+            size 0.48 2.79 1.85
+          }
+        }
+      ]
+      name "box22"
+      boundingObject USE X
+    }
+    Solid {
+      translation -4.15 -5.91 0.925
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD2
+          geometry Box {
+            size 0.48 2.79 1.85
+          }
+        }
+      ]
+      name "box23"
+      boundingObject USE X
+    }
+    Solid {
+      translation 1.05997 7.12 1.82
+      children [
+        DEF X Shape {
+          appearance USE PAINTEDWOOD2
+          geometry Box {
+            size 4.84 0.36 0.84
+          }
+        }
+      ]
+      name "box24"
+      boundingObject USE X
+    }
+  ]
+}
+Door {
+  translation -4.42 3.4 0
+  rotation 0 0 1 3.14159
+  size 0.06 1 2.2
+  frameSize 0.1 0.05 0.05
+  doorAppearance GenericDoorAppearance {
+    colorOverride 0.33 0.34 0.32
+  }
+  wallAppearance Roughcast {
+    IBLStrength 4
+  }
+  frameAppearance VarnishedPine {
+    colorOverride 0.33 0.34 0.32
+  }
+}
+Window {
+  translation 3.7 0 0
+  name "window(2)"
+  size 0.2 14.6 3.2
+  bottomWallHeight 1
+  windowHeight 2
+  frameSize 0.02 0.02 0.05
+  windowSillSize 0.25 0.05
+  wallAppearance Roughcast {
+    IBLStrength 4
+  }
+  frameAppearance VarnishedPine {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Window {
+  translation -4.5 0 2.2
+  name "window(19)"
+  size 0.2 14.6 1
+  bottomWallHeight 0
+  windowHeight 1
+  frameSize 0.02 0.02 0.05
+  windowSillSize 0 0
+  wallAppearance Roughcast {
+    IBLStrength 4
+  }
+  frameAppearance VarnishedPine {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}    
+TableWrapper {
+  translation -1.79 -0.53 0
+  name "table1"
+}
+TableWrapper {
+  translation -1.79 -6.48 0
+  name "table2"
+}
+TableWrapper {
+  translation -1.79 -4.88 0
+  name "table3"
+}
+TableWrapper {
+  translation -1.79 2.11 0
+  name "table4"
+}
+TableWrapper {
+  translation -1.79 3.71 0
+  name "table5"
+}
+TableWrapper {
+  translation 0.91 -1.73 0
+  rotation 0 0 1 1.5708
+  name "table6"
+}
+TableWrapper {
+  translation 2.51 -1.73 0
+  rotation 0 0 1 1.5708
+  name "table7"
+}
+TableWrapper {
+  translation 2.51 4.33 0
+  rotation 0 0 1 1.5708
+  name "table8"
+}
+TableWrapper {
+  translation 2.62 6.88 0
+  rotation 0 0 1 1.5708
+  name "table9"
+}
+TableWrapper {
+  translation 1.02 6.88 0
+  rotation 0 0 1 1.5708
+  name "table10"
+}
+TableWrapper {
+  translation -0.58 6.88 0
+  rotation 0 0 1 1.5708
+  name "table11"
+}
+TableWrapper {
+  translation 0.92 4.33 0
+  rotation 0 0 1 1.5708
+  name "table12"
+}
+TableWrapper {
+  translation -0.69 -1.73 0
+  rotation 0 0 1 1.5708
+  name "table13"
+}
+TableWrapper {
+  translation -2.59 -6.88 0
+  rotation 0 0 1 1.5708
+  name "table14"
+}
+Table {
+  translation 0.24 -5.3 0
+  rotation 0 0 1 1.5708
+  size 2.5 1.1 0.74
+  feetSize 0.05 0.05
+  trayAppearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  legAppearance VarnishedPine {
+    colorOverride 0.33 0.34 0.32
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Chair {
+  translation 0.25 -4.07 0
+  rotation 0 0 1 -1.5708
+}
+Chair {
+  translation 0.23 -6.51 0
+  rotation 0 0 1 1.5708
+  name "chair(13)"
+}
+Chair {
+  translation -0.43 -6.13 0
+  name "chair(14)"
+}
+Chair {
+  translation -0.43 -5.34 0
+  name "chair(15)"
+}
+Chair {
+  translation -0.43 -4.6 0
+  name "chair(16)"
+}
+Chair {
+  translation 0.87 -6.13 0
+  rotation 0 0 1 -3.14159
+  name "chair(17)"
+}
+Chair {
+  translation 0.87 -5.34 0
+  rotation 0 0 1 -3.14159
+  name "chair(18)"
+}
+Chair {
+  translation 0.87 -4.6 0
+  rotation 0 0 1 -3.14159
+  name "chair(19)"
+}
+Monitor {
+  translation 2.26 -1.58 0.72
+  rotation 0 0 1 -1.3
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation -0.91 -1.56 0.72
+  rotation 0 0 1 -1.3
+  name "monitor(2)"
+}
+Monitor {
+  translation 2.71 -1.57 0.72
+  rotation 0 0 1 -1.83
+  name "monitor(1)"
+}
+Monitor {
+  translation -0.45 -1.56 0.72
+  rotation 0 0 1 -1.83
+  name "monitor(3)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 0.8164 -1.53546 0.72
+  rotation 0 0 -1 1.5708
+  name "monitor(4)"
+}
+Monitor {
+  translation -1.5736 -0.54546 0.72
+  rotation 0 0 1 -2.88
+  name "monitor(5)"
+}
+Monitor {
+  translation -1.57691 -1.00975 0.72
+  rotation 0 0 -1 -2.88
+  name "monitor(6)"
+}
+Monitor {
+  translation -1.65051 1.87556 0.72
+  rotation 0 0 -1 -2.88
+  name "monitor(7)"
+}
+Monitor {
+  translation -1.62934 3.32767 0.72
+  rotation 0 0 1 2.87979
+  name "monitor(8)"
+}
+Monitor {
+  translation -1.62957 3.79015 0.72
+  rotation 0 0 1 -2.88
+  name "monitor(10)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation -1.65075 2.33936 0.72
+  rotation 0 0 1 -2.88
+  name "monitor(9)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 1.17016 4.17254 0.72
+  rotation 0 0 1 1.83259
+  name "monitor(11)"
+}
+Monitor {
+  translation 2.78535 4.15799 0.72
+  rotation 0 0 1 1.83259
+  name "monitor(12)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 2.32658 4.15905 0.72
+  rotation 0 0 1 1.30899
+  name "monitor(14)"
+}
+Monitor {
+  translation 0.706512 4.17545 0.72
+  rotation 0 0 1 1.30899
+  name "monitor(13)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 2.88873 6.98851 0.72
+  rotation 0 0 1 -1.83
+  name "monitor(15)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 2.42797 6.98123 0.72
+  rotation 0 0 -1 1.30901
+  name "monitor(16)"
+}
+Monitor {
+  translation 1.45095 7.00643 0.72
+  rotation 0 0 1 -1.83
+  name "monitor(21)"
+}
+Monitor {
+  translation -1.6403 -4.6942 0.72
+  rotation 0 0 1 -2.88
+  name "monitor(17)"
+}
+Monitor {
+  translation -1.58691 -6.54899 0.72
+  rotation 0 0 -1 -3.14159
+  name "monitor(19)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation -1.57906 -5.16539 0.72
+  rotation 0 0 -1 -3.14159
+  name "monitor(20)"
+  color 0.93 0.93 0.93
+}
+Monitor {
+  translation 0.979952 7.056 0.72
+  rotation 0 0 1 -1.5708
+  name "monitor(18)"
+  color 0.93 0.93 0.93
+}
+Keyboard {
+  translation 0.80936 -1.78726 0.72
+  rotation 0 0 1 1.5708
+}
+Keyboard {
+  translation 2.47918 -1.83723 0.72
+  rotation 0 0 1 1.5708
+  name "keyboard(3)"
+}
+Keyboard {
+  translation -0.64996 -1.8414 0.72
+  rotation 0 0 1 1.5708
+  name "keyboard(1)"
+}
+Keyboard {
+  translation -1.87443 2.10516 0.72
+  name "keyboard(2)"
+}
+Keyboard {
+  translation -1.86302 3.57848 0.72
+  name "keyboard(4)"
+}
+Keyboard {
+  translation 0.92458 4.41843 0.72
+  rotation 0 0 -1 1.5708
+  name "keyboard(5)"
+}
+Keyboard {
+  translation 2.62888 4.41726 0.72
+  rotation 0 0 -1 1.5708
+  name "keyboard(6)"
+}
+Keyboard {
+  translation 1.1767 6.69899 0.72
+  rotation 0 0 1 1.5708
+  name "keyboard(7)"
+}
+Keyboard {
+  translation 2.72294 6.74402 0.72
+  rotation 0 0 1 1.5708
+  name "keyboard(8)"
+}
+Keyboard {
+  translation -1.88109 -4.95483 0.72
+  name "keyboard(9)"
+}
+ComputerMouse {
+  translation -1.98 -5.29 0.72
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation -1.98 1.78 0.72
+  name "computer mouse(1)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation -1.98 3.22 0.72
+  rotation 0 0 1 -0.26
+  name "computer mouse(2)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation -0.37 -1.97 0.72
+  rotation 0 0 1 1.5708
+  name "computer mouse(3)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 1.11 -1.89 0.72
+  rotation 0 0 1 1.5708
+  name "computer mouse(4)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 2.8 -1.9 0.72
+  rotation 0 0 1 1.309
+  name "computer mouse(5)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 2.33 4.52 0.72
+  rotation 0 0 1 -1.5708
+  name "computer mouse(6)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 0.63 4.58 0.72
+  rotation 0 0 1 -1.83
+  name "computer mouse(7)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 1.45582 6.5825 0.72
+  rotation 0 0 1 1.5708
+  name "computer mouse(8)"
+  topColor 0.33 0.34 0.32
+}
+ComputerMouse {
+  translation 3.04582 6.6925 0.72
+  rotation 0 0 1 1.5708
+  name "computer mouse(9)"
+  topColor 0.33 0.34 0.32
+}
+DesktopComputer {
+  translation -1.98 0.14 0
+  rotation 0 0 1 3.14159
+}
+DesktopComputer {
+  translation -1.98 1.45 0
+  rotation 0 0 1 3.14159
+  name "desktop computer(1)"
+}
+DesktopComputer {
+  translation -1.98 3.07 0
+  rotation 0 0 1 3.14159
+  name "desktop computer(2)"
+}
+DesktopComputer {
+  translation -0.0300021 -1.93 0
+  rotation 0 0 1 -1.5708
+  name "desktop computer(3)"
+}
+DesktopComputer {
+  translation 1.58 -1.93 0
+  rotation 0 0 1 -1.5708
+  name "desktop computer(4)"
+}
+DesktopComputer {
+  translation 1.83 -1.58 0.72
+  rotation 0 0 1 -1.5708
+  name "desktop computer(5)"
+}
+DesktopComputer {
+  translation 0.27 4.15 0.72
+  rotation 0 0 1 1.5708
+  name "desktop computer(6)"
+}
+DesktopComputer {
+  translation 3.13 4.15 0.72
+  rotation 0 0 1 1.5708
+  name "desktop computer(7)"
+}
+DesktopComputer {
+  translation 3.24 7.03 0.72
+  rotation 0 0 1 -1.5708
+  name "desktop computer(8)"
+}
+DesktopComputer {
+  translation 0.45 7.03 0.72
+  rotation 0 0 1 -1.5708
+  name "desktop computer(9)"
+}
+DesktopComputer {
+  translation -1.66639 -4.43946 0.81
+  rotation 0 -0.7071 -0.7071 3.14159
+  name "desktop computer(10)"
+}
+Cabinet {
+  translation 0.82 3.87 0
+  rotation 0 0 1 -1.5708
+  name "cabinet(1)"
+  depth 0.35
+  outerThickness 0.02
+  rowsHeights [
+    0.1, 0.25
+  ]
+  columnsWidths [
+    0.5, 0.5
+  ]
+  layout [
+    "Drawer (2, 2, 1, 1, 1.5)"
+    "Drawer (1, 2, 1, 1, 1.5)"
+    "Shelf (1, 1, 0, 2)"
+    "Shelf (2, 2, 1, 0)"
+    "Shelf (1, 2, 1, 0)"
+    "Shelf (1, 1, 0, 1)"
+  ]
+  handle CabinetHandle {
+    handleColor 0.53 0.54 0.52
+  }
+  primaryAppearance PaintedWood {
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+  secondaryAppearance PaintedWood {
+    colorOverride 0.643137 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Cabinet {
+  translation -1.3 2.45 0
+  name "cabinet(2)"
+  depth 0.4
+  outerThickness 0.02
+  rowsHeights [
+    0.1, 0.4
+  ]
+  columnsWidths [
+    0.6, 0.6
+  ]
+  layout [
+    "Drawer (2, 2, 1, 1, 1.5)"
+    "Drawer (1, 2, 1, 1, 1.5)"
+    "Shelf (1, 1, 0, 2)"
+    "Shelf (2, 2, 1, 0)"
+    "Shelf (1, 2, 1, 0)"
+    "Shelf (1, 1, 0, 1)"
+  ]
+  handle CabinetHandle {
+    handleColor 0.53 0.54 0.52
+  }
+  primaryAppearance PaintedWood {
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+  secondaryAppearance PaintedWood {
+    colorOverride 0.643137 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Cabinet {
+  translation 3.32 1.58 0
+  rotation 0 0 1 3.14159
+  name "cabinet(3)"
+  depth 0.4
+  outerThickness 0.02
+  rowsHeights [
+    0.3, 0.4, 0.3, 0.3
+  ]
+  columnsWidths [
+    0.6
+  ]
+  layout [
+    "Drawer (1, 1, 1, 1, 3.5)"
+    "Shelf (1, 4, 1, 0)"
+    "Shelf (1, 3, 1, 0)"
+    "Shelf (1, 2, 1, 0)"
+    "Shelf (1, 1, 1, 1)"
+  ]
+  handle CabinetHandle {
+    handleColor 0.53 0.54 0.52
+  }
+  primaryAppearance PaintedWood {
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+  secondaryAppearance PaintedWood {
+    colorOverride 0.643137 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Cabinet {
+  translation 3.32 0.94 0
+  rotation 0 0 1 3.14159
+  name "cabinet(4)"
+  depth 0.4
+  outerThickness 0.02
+  rowsHeights [
+    0.65, 0.25, 0.4
+  ]
+  columnsWidths [
+    0.6
+  ]
+  layout [
+    "LeftSidedDoor (1, 1, 1, 1, 1.5)"
+    "Shelf (1, 3, 1, 0)"
+    "Shelf (1, 2, 1, 0)"
+    "Shelf (1, 1, 1, 1)"
+  ]
+  handle CabinetHandle {
+    translation 0 -0.26 0
+    handleLength 0.1
+    handleRadius 0.008
+    handleColor 0.53 0.54 0.52
+  }
+  primaryAppearance PaintedWood {
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+  secondaryAppearance PaintedWood {
+    colorOverride 0.643137 0 0
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Transform {
+  scale 0.78 0.78 0.78
+  children [
+    Sofa {
+      translation 3.91 3.35 0
+      rotation 0 0 1 -3.14159
+      color 0.53 0.54 0.52
+    }
+  ]
+}
+PottedTree {
+  translation 3.21906 3.63992 0
+}
+Sink {
+  translation 3.205 -0.96 0.84
+  rotation 0 0 1 3.14159
+}
+BathroomSink {
+  translation -4.4 0.469999 0.7
+  bottomAppearance MarbleTiles {
+    colorOverride 0 0 0
+  }
+  name "sink(2)"
+}
+Cabinet {
+  translation -4.4 2.47001 0
+  name "cabinet(23)"
+  depth 0.3
+  outerThickness 0.02
+  rowsHeights [
+    0.4, 0.3, 0.3, 0.3, 0.3, 0.3
+  ]
+  columnsWidths [
+    0.8
+  ]
+  layout [
+    "Shelf (1, 5, 1, 0)"
+    "Shelf (1, 4, 1, 0)"
+    "Shelf (1, 3, 1, 0)"
+    "Shelf (1, 2, 1, 0)"
+    "Shelf (1, 6, 1, 0)"
+  ]
+  handle NULL
+}
+DEF First_AID_Box Transform {
+  translation -4.4 -0.040011 1.23
+  rotation 0 0 1 -3.14159
+  children [
+    Cabinet {
+      rotation 0 0 1 3.14159
+      name "cabinet(26)"
+      depth 0.16
+      outerThickness 0.02
+      rowsHeights [
+        0.36
+      ]
+      columnsWidths [
+        0.3
+      ]
+      layout [
+        "LeftSidedDoor (1, 1, 1, 1, 1.5)"
+      ]
+      handle CabinetHandle {
+        handleColor 0.53 0.54 0.52
+      }
+      primaryAppearance PaintedWood {
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+        IBLStrength 3
+      }
+      secondaryAppearance PaintedWood {
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+        IBLStrength 3
+      }
+    }
+    Transform {
+      translation -0.162 -0.01 0.2
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/first_aid.jpg"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.15 0.15
+          }
+        }
+      ]
+    }
+  ]
+}
+Blackboard {
+  translation -0.05 -7.26 1.6
+  rotation 0 0 1 1.5708
+}
+DEF Logo Group {
+  children [
+    Transform {
+      translation 3.319 4.39 2
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.901 4.39 2
+      rotation 0.57735 0.57735 0.57735 2.09439
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 3.319 0.95 2
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.901 0.95 2
+      rotation 0.57735 0.57735 0.57735 2.09439
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 3.319 -1.38 2
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.901 -1.38 2
+      rotation 0.57735 0.57735 0.57735 2.09439
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 3.319 -4.4 2
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -3.901 -4.4 2
+      rotation 0.57735 0.57735 0.57735 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.21 0.297
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -4.61 4.37 1.63997
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo_sr.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.8 0.3
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -4.61 0.19 1.63997
+      rotation -0.57735 0.57735 0.57735 -2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo_sr.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 0.8 0.3
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+
+      ]
+    }
+  ]
+}
+}

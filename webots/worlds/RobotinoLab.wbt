@@ -79,7 +79,7 @@ Transform {
       rotation -3.3905113482557537e-09 0.707108281185553 0.70710528118436 3.14159
       locked TRUE
     }
-    Shelf {
+    InclinedShelf {
       translation 0.9 -4.05562e-06 -1.88118e-07
       rotation -3.3905113482557537e-09 0.707108281185553 0.70710528118436 3.14159
       locked TRUE

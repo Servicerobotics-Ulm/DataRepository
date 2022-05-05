@@ -1,0 +1,1950 @@
+#VRML_SIM R2022a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# THU Ulm Campus
+#
+# made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO THU_Campus [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field MFNode children [
+  ]
+]
+{
+
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      children IS children
+    }
+    Floor {
+      translation 10.25 20.25 0
+      size 130 150
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/gray_floor_tiles.jpg"
+          ]
+        }
+        roughness 0.4
+        metalness 0
+      }
+    }
+    Table2Wrapper {
+      translation -0.84 -19.04 0
+      rotation 0 0 1 3.14159
+      name "table(15)"
+    }
+    Table2Wrapper {
+      translation 20.42 -19.16 0
+      name "table(16)"
+    }
+    Table2Wrapper {
+      translation 17.9 -19.16 0
+      name "table(21)"
+    }
+    Table2Wrapper {
+      translation 26.99 44.38 0
+      name "table(17)"
+    }
+    Table2Wrapper {
+      translation 29.34 44.38 0
+      name "table(19)"
+    }
+    Table2Wrapper {
+      translation 31.72 44.38 0
+      name "table(20)"
+    }
+    Table2Wrapper {
+      translation 34.39 44.38 0
+      name "table(18)"
+    }
+    TrashBin {
+      translation 17.93 -11.39 0.02
+      rotation 0 0 1 1.5708
+    }
+    Cabinet {
+      translation -5.69 39.99 0
+      rotation 0 0 1 3.14159
+      rowsHeights [
+        0.24, 0.24, 0.2, 0.2, 0.4, 0.4
+      ]
+      handle NULL
+      primaryAppearance DEF WOOD PaintedWood {
+        colorOverride 0.96 0.8 0.29
+      }
+      secondaryAppearance USE WOOD
+    }
+    Cabinet {
+      translation -5.69 39.18 0
+      rotation 0 0 1 3.14159
+      name "cabinet(5)"
+      rowsHeights [
+        0.24, 0.24, 0.2, 0.2, 0.4, 0.4
+      ]
+      handle NULL
+      primaryAppearance USE WOOD
+      secondaryAppearance USE WOOD
+    }
+    Cabinet {
+      translation -5.69 37.31 0
+      rotation 0 0 1 3.14159
+      name "cabinet(6)"
+      rowsHeights [
+        0.24, 0.24, 0.2, 0.2, 0.4, 0.4
+      ]
+      handle NULL
+      primaryAppearance USE WOOD
+      secondaryAppearance USE WOOD
+    }
+    Cabinet {
+      translation -5.69 36.48 0
+      rotation 0 0 1 -3.1415853071795863
+      name "cabinet(7)"
+      rowsHeights [
+        0.24, 0.24, 0.2, 0.2, 0.4, 0.4
+      ]
+      handle NULL
+      primaryAppearance USE WOOD
+      secondaryAppearance USE WOOD
+    }
+    Transform {
+      translation -1.08 -1.25 0
+      children [
+
+
+
+Radiator {
+  translation 24.99 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 22.7 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 20.47 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 18.15 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 15.57 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 13.11 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 10.67 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 8.15 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 5.46 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 2.69 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation -0.11 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation -3.01 44.28 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation -47.19 43.89 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 41.54 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 39.22 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 36.47 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 34.05 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 31.55 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 28.94 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 26.27 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 23.6 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 20.92 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 18.17 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 15.35 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 12.63 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 9.68 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 6.89 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 4.25 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 1.31 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -1.89 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -5.12 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -8.12 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -11 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -14.08 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -17.11 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -19.83 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -22.88 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -26 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation -47.19 -28.67 0.33
+  rotation 0 0 1 -3.14159
+}
+Radiator {
+  translation 3.38 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 5.76 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 8.21 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 10.63 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 13.13 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 15.65 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 25.55 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 36.54 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 33.58 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 30.21 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 27.57 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 24.25 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 21.67 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 18.5 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 12.55 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 9.51 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 6.49 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 3.87 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 0.44 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation -2.36 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 15.85 -19.52 0.33
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation 28.35 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 31.32 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation 34.72 -11 0.33
+  rotation 0 0 1 -1.5708
+}
+Radiator {
+  translation -47.19 -32.11 0.33
+  rotation 0 0 1 -3.14159
+}
+StoneBench {
+  translation -44.77 8.27 0
+}
+StoneBench {
+  translation -44.77 14.02 0
+  name "stone bench(4)"
+}
+StoneBench {
+  translation -44.77 15.54 0
+  name "stone bench(5)"
+}
+StoneBench {
+  translation -44.77 26.73 0
+  name "stone bench(6)"
+}
+StoneBench {
+  translation -44.77 25.14 0
+  name "stone bench(7)"
+}
+StoneBench {
+  translation -44.77 37.77 0
+  name "stone bench(8)"
+}
+StoneBench {
+  translation 39.97 38.36 0
+  name "stone bench(10)"
+}
+StoneBench {
+  translation 39.97 39.95 0
+  name "stone bench(17)"
+}
+StoneBench {
+  translation 39.97 28.84 0
+  name "stone bench(11)"
+}
+StoneBench {
+  translation 39.97 27.29 0
+  name "stone bench(12)"
+}
+StoneBench {
+  translation 39.97 17.1 0
+  name "stone bench(13)"
+}
+StoneBench {
+  translation 39.97 15.53 0
+  name "stone bench(14)"
+}
+StoneBench {
+  translation 39.97 4.47 0
+  name "stone bench(15)"
+}
+StoneBench {
+  translation 39.97 2.89 0
+  name "stone bench(16)"
+}
+StoneBench {
+  translation -44.77 39.36 0
+  name "stone bench(9)"
+}
+StoneBench {
+  translation -44.77 6.65 0
+  name "stone bench(3)"
+}
+StoneBench {
+  translation -44.77 -1.82 0
+  name "stone bench(2)"
+}
+StoneBench {
+  translation -44.77 -3.43 0
+  name "stone bench(1)"
+}
+Sofa {
+  translation -2.8 -18.28 0
+  rotation 0 0 1 1.5708
+  name "sofa(1)"
+  color 0 0 0.5
+}
+Sofa {
+  translation -4.19 -16.97 0
+  name "sofa(2)"
+  color 0 0 0.5
+}
+Sofa {
+  translation -46.74 50.44 0
+  name "sofa(4)"
+  color 0 0 0.5
+}
+Sofa {
+  translation -45.34 50.86 0
+  rotation 0 0 1 -1.5708
+  name "sofa(5)"
+  color 0 0 0.5
+}
+Sofa {
+  translation -43.53 50.86 0
+  rotation 0 0 1 -1.5708
+  name "sofa(6)"
+  color 0 0 0.5
+}
+Sofa {
+  translation -4.19 -15.16 0
+  name "sofa(3)"
+  color 0 0 0.5
+}
+WoodenChair {
+  translation 1.06 -17.23 0
+  rotation 0 0 -1 -3.14159
+}
+WoodenChair {
+  translation 22.04 -17.57 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(5)"
+}
+WoodenChair {
+  translation 19.42 -17.47 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(26)"
+}
+WoodenChair {
+  translation 28.57 46.1 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(8)"
+}
+WoodenChair {
+  translation 31.33 45.99 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(16)"
+}
+WoodenChair {
+  translation 33.57 45.99 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(20)"
+}
+WoodenChair {
+  translation 36.16 45.9 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(15)"
+}
+WoodenChair {
+  translation 1.06 -18.19 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(1)"
+}
+WoodenChair {
+  translation 22.04 -18.35 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(4)"
+}
+WoodenChair {
+  translation 19.43 -18.34 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(27)"
+}
+WoodenChair {
+  translation 28.63 45.25 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(9)"
+}
+WoodenChair {
+  translation 31.3 45.16 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(17)"
+}
+WoodenChair {
+  translation 33.52 45.16 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(21)"
+}
+WoodenChair {
+  translation 36.1 45.14 0
+  rotation 0 0 -1 -3.14159
+  name "wooden chair(12)"
+}
+WoodenChair {
+  translation -0.67 -18.27 0
+  name "wooden chair(2)"
+}
+WoodenChair {
+  translation 21.05 -18.35 0
+  name "wooden chair(6)"
+}
+WoodenChair {
+  translation 18.53 -18.35 0
+  name "wooden chair(25)"
+}
+WoodenChair {
+  translation 27.81 45.17 0
+  name "wooden chair(11)"
+}
+WoodenChair {
+  translation 29.61 45.1 0
+  name "wooden chair(18)"
+}
+WoodenChair {
+  translation 32.33 45.1 0
+  name "wooden chair(22)"
+}
+WoodenChair {
+  translation 34.79 45.27 0
+  name "wooden chair(14)"
+}
+WoodenChair {
+  translation -0.65 -17.38 0
+  name "wooden chair(3)"
+}
+WoodenChair {
+  translation 21.05 -17.66 0
+  name "wooden chair(7)"
+}
+WoodenChair {
+  translation 18.53 -17.53 0
+  name "wooden chair(24)"
+}
+WoodenChair {
+  translation 27.72 45.76 0
+  name "wooden chair(10)"
+}
+WoodenChair {
+  translation 29.6 45.85 0
+  name "wooden chair(19)"
+}
+WoodenChair {
+  translation 32.36 45.85 0
+  name "wooden chair(23)"
+}
+WoodenChair {
+  translation 34.86 45.9 0
+  name "wooden chair(13)"
+}
+DEF LOAD_WALLS Group {
+  children [
+    Wall {
+      translation -38.48 -22.78 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -32.47 -22.78 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -26.45 -22.78 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -4.86 -19.54 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation -4.86 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation -3.99 -7.92 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 1.18 -19.55 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 1.18 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 1.18 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 7.2 -19.55 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 7.2 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 7.2 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 13.22 -19.55 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 13.22 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 13.22 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 19.24 -19.55 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 19.24 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 19.24 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 25.26 -19.54 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 25.26 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 25.26 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 31.24 -19.54 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 31.24 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 31.24 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 37.14 -19.54 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 37.14 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 37.1 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 37.66 -19.54 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 37.66 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 37.63 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 43.31 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 43.31 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 43.31 -7.84 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 49.3 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 49.3 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 49.3 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 55.32 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 55.32 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 55.32 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 61.33 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 61.33 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 61.33 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 67.37 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 67.37 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 67.37 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 73.37 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 73.37 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 73.37 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 79.39 -19.67 0
+      size 0.4 0.4 3.2
+    }
+    Wall {
+      translation 79.39 -15.52 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation 79.39 -8 0
+      size 0.4 0.8 3.2
+    }
+    Wall {
+      translation -59.55 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -59.46 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -59.55 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -53.52 47.51 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -53.52 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -53.52 59.21 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -47.41 47.5 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -47.41 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -47.41 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -41.46 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -41.46 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -41.46 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -35.47 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -35.47 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -35.47 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -29.43 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -29.43 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -29.43 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -23.42 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -23.42 51.9 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -23.42 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -17.45 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -17.45 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -17.45 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -11.38 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -11.38 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -11.38 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -5.29 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -5.39 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -5.29 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -4.99 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -4.97 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation -4.99 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 0.91 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 0.91 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 0.91 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 6.94 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 6.94 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 6.94 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 13.01 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 13.01 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 13.01 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 18.96 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 18.96 51.85 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 18.96 59.3 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 25.25 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 28.24 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 31.24 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 34.27 47.39 0
+      size 0.3 0.4 3.2
+    }
+    Wall {
+      translation 37.27 47.39 0
+      size 0.3 0.4 3.2
+    }
+  ]
+}
+DEF WALLS Group {
+  children [
+    Wall {
+      translation -0.94 10.7 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7 2.2
+    }
+    Wall {
+      translation 0.139984 29.02 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7 2.2
+    }
+    Wall {
+      translation 0.139983 32.03 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7 2.2
+    }
+    Wall {
+      translation -0.399 41.05 0
+      rotation 0 0 1 -1.5708
+      size 0.12 8.076 2.2
+    }
+    Wall {
+      translation 16.43 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 41.98 2.2
+    }
+    Wall {
+      translation -4.31 -10.71 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.5 2.2
+    }
+    Wall {
+      translation -0.6 -10.71 0
+      rotation 0 0 1 -1.5708
+      size 0.12 5 2.2
+    }
+    Wall {
+      translation 11.2 -10.71 0
+      rotation 0 0 1 -1.5708
+      size 0.12 16.2 2.2
+    }
+    Wall {
+      translation 31.32 -10.71 0
+      rotation 0 0 1 -1.5708
+      size 0.12 12.2 2.2
+    }
+    Wall {
+      translation 17.54 -19.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 45.6 2.2
+    }
+    Wall {
+      translation -9.15 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.36 2.2
+    }
+    Wall {
+      translation -11.88 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 2.1 2.2
+    }
+    Wall {
+      translation -17.31 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.3 2.2
+    }
+    Wall {
+      translation -26.37 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 9 2.2
+    }
+    Wall {
+      translation -43.67 38.18 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.36 2.2
+    }
+    Wall {
+      translation -38.3 44.11 0
+      rotation 0 0 1 -1.5708
+      size 0.12 12.1 2.2
+    }
+    Wall {
+      translation -14.33 38.18 0
+      rotation 0 0 1 -1.5708
+      size 0.12 11.96 2.2
+    }
+    Wall {
+      translation -33.21 38.18 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.5 2.2
+    }
+    Wall {
+      translation -38.43 38.18 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.3 2.2
+    }
+    Wall {
+      translation -26.39 31.99 0
+      rotation 0 0 1 -1.5708
+      size 0.12 12.15 2.2
+    }
+    Wall {
+      translation -26.385 30.45 0
+      rotation 0 0 1 -1.5708
+      size 0.12 20.85 2.2
+    }
+    Wall {
+      translation -26.385 9.2 0
+      rotation 0 0 1 -1.5708
+      size 0.12 20.85 2.2
+    }
+    Wall {
+      translation -39.96 29.01 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.06 2.2
+    }
+    Wall {
+      translation -39.96 22.99 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.06 2.2
+    }
+    Wall {
+      translation -39.96 19.83 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.06 2.2
+    }
+    Wall {
+      translation -40.64 16.69 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7.42 2.2
+    }
+    Wall {
+      translation -13.34 16.69 0
+      rotation 0 0 1 -1.5708
+      size 0.12 5 2.2
+    }
+    Wall {
+      translation -13.34 13.68 0
+      rotation 0 0 1 -1.5708
+      size 0.12 5 2.2
+    }
+    Wall {
+      translation -9.15 1.8 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.36 2.2
+    }
+    Wall {
+      translation -15.77 1.8 0
+      rotation 0 0 1 -1.5708
+      size 0.12 9.06 2.2
+    }
+    Wall {
+      translation -24.97 1.8 0
+      rotation 0 0 1 -1.5708
+      size 0.12 9.1 2.2
+    }
+    Wall {
+      translation -37.65 1.8 0
+      rotation 0 0 1 -1.5708
+      size 0.12 13.4 2.2
+    }
+    Wall {
+      translation -13.67 -7.41 0
+      rotation 0 0 1 -1.5708
+      size 0.12 10.4 2.2
+    }
+    Wall {
+      translation -27.09 -7.41 0
+      rotation 0 0 1 -1.5708
+      size 0.12 10.6 2.2
+    }
+    Wall {
+      translation -39.13 -7.41 0
+      rotation 0 0 1 -1.5708
+      size 0.12 10.44 2.2
+    }
+    Wall {
+      translation -9.89 -13.61 0
+      rotation 0 0 1 -1.5708
+      size 0.12 3.08 2.2
+    }
+    Wall {
+      translation -16.67 -13.61 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7.7 2.2
+    }
+    Wall {
+      translation -26.37 -13.61 0
+      rotation 0 0 1 -1.5708
+      size 0.12 9.05 2.2
+    }
+    Wall {
+      translation -36.08 -13.61 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7.64 2.2
+    }
+    Wall {
+      translation -42.86 -13.61 0
+      rotation 0 0 1 -1.5708
+      size 0.12 3.14 2.2
+    }
+    Wall {
+      translation -8.57 -22.82 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.44 2.2
+    }
+    Wall {
+      translation -12.03 -22.82 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.66 2.2
+    }
+    Wall {
+      translation -9.6 -28.86 0
+      rotation 0 0 1 -1.5708
+      size 0.12 2.5 2.2
+    }
+    Wall {
+      translation -13.11 -28.86 0
+      rotation 0 0 1 -1.5708
+      size 0.12 2.5 2.2
+    }
+    Wall {
+      translation -9.89 -31.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 3.08 2.2
+    }
+    Wall {
+      translation -16.67 -31.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7.7 2.2
+    }
+    Wall {
+      translation -26.37 -31.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 9.05 2.2
+    }
+    Wall {
+      translation -36.08 -31.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 7.64 2.2
+    }
+    Wall {
+      translation -42.86 -31.81 0
+      rotation 0 0 1 -1.5708
+      size 0.12 3.14 2.2
+    }
+    Wall {
+      translation -26.23 -34.94 0
+      rotation 0 0 1 -1.5708
+      size 0.12 42.26 2.2
+    }
+    Wall {
+      translation -35.45 51.64 0
+      rotation 0 0 1 -1.5708
+      size 0.12 24.06 2.2
+    }
+    Wall {
+      translation 30.31 53.22 0
+      rotation 0 0 1 -1.5708
+      size 0.12 10.1 2.2
+    }
+    Wall {
+      translation 41.33 53.22 0
+      rotation 0 0 1 -1.5708
+      size 0.12 10.1 2.2
+    }
+    Wall {
+      translation -11.16 56.42 0
+      rotation 0 0 1 -1.5708
+      size 0.12 72.6 2.2
+    }
+    Wall {
+      translation 35.76 80.41 0
+      rotation 0 0 1 -1.5708
+      size 0.12 21.236 2.2
+    }
+    Wall {
+      translation 44.11 47.33 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 40.69 47.33 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 43.36 44.03 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 40.69 41.03 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 44.11 41.03 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 40.69 38.02 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 44.11 38.02 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 43.36 35 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 40.69 32.01 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 44.11 32.01 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 43.36 28.98 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 43.36 22.98 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 40.6 19.96 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.75 2.2
+    }
+    Wall {
+      translation 44.11 19.96 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 40.69 16.84 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 44.11 16.84 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 40.69 10.65 0
+      rotation 0 0 1 -1.5708
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation 44.1 10.65 0
+      rotation 0 0 1 -1.5708
+      size 0.12 4.54 2.2
+    }
+    Wall {
+      translation 43.3 7.64 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.16 2.2
+    }
+    Wall {
+      translation 43.37 4.62 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 43.36 -1.4 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 43.36 -7.37 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.04 2.2
+    }
+    Wall {
+      translation 43.3 -10.47 0
+      rotation 0 0 1 -1.5708
+      size 0.12 6.16 2.2
+    }
+    Wall {
+      translation 35.825 56.42 0
+      rotation 0 0 1 -1.5708
+      size 0.12 3.008 2.2
+    }
+
+    Wall {
+      translation -4.5 8.32 0
+      rotation 0 0 1 3.14159
+      size 0.12 1.8 2.2
+    }
+    Wall {
+      translation -2.16 8.32 0
+      rotation 0 0 1 3.14159
+      size 0.12 1.8 2.2
+    }
+    Wall {
+      translation -2.16 10.39 0
+      rotation 0 0 1 3.14159
+      size 0.12 0.5 2.2
+    }
+    Wall {
+      translation -4.5 11.19 0
+      rotation 0 0 1 3.14159
+      size 0.12 2 2.2
+    }
+    Wall {
+      translation -4.5 19.86 0
+      rotation 0 0 1 3.14159
+      size 0.12 13.2 2.2
+    }
+    Wall {
+      translation -4.49999 30.51 0
+      rotation 0 0 1 3.14159
+      size 0.12 6 2.2
+    }
+    Wall {
+      translation -4.49999 38.47 0
+      rotation 0 0 1 3.14159
+      size 0.12 7.8 2.2
+    }
+    Wall {
+      translation -4.49999 43.7 0
+      rotation 0 0 1 3.14159
+      size 0.12 0.7 2.2
+    }
+    Wall {
+      translation -4.5 -9.035 0
+      rotation 0 0 -1 -3.14159
+      size 0.12 3.23 2.2
+    }
+    Wall {
+      translation 3.7 -9.035 0
+      size 0.12 3.23 2.2
+    }
+    Wall {
+      translation 3.7 25.735 0
+      size 0.12 36.63 2.2
+    }
+    Wall {
+      translation 37.36 16.7 0
+      size 0.12 54.7 2.2
+    }
+    Wall {
+      translation -8.41 -1.35 0
+      size 0.12 12.24 2.2
+    }
+    Wall {
+      translation -8.41 12.26 0
+      size 0.12 12.1 2.2
+    }
+    Wall {
+      translation -8.41 24.34 0
+      size 0.12 9.5 2.2
+    }
+    Wall {
+      translation -8.41 34.32 0
+      size 0.12 7.6 2.2
+    }
+    Wall {
+      translation -8.41 41.67 0
+      size 0.12 5 2.2
+    }
+    Wall {
+      translation -5.2 -25.87 0
+      size 0.12 12 2.2
+    }
+    Wall {
+      translation -8.29 -28.06 0
+      size 0.12 7.62 2.2
+    }
+    Wall {
+      translation -8.29 -18.22 0
+      size 0.12 9.32 2.2
+    }
+    Wall {
+      translation -14.42 -27.2 0
+      size 0.12 9.1 2.2
+    }
+    Wall {
+      translation -20.35 -33.375 0
+      size 0.12 3.01 2.2
+    }
+    Wall {
+      translation -20.35 -22.75 0
+      size 0.12 15.1 2.2
+    }
+    Wall {
+      translation -32.37 -33.375 0
+      size 0.12 3.01 2.2
+    }
+    Wall {
+      translation -44.49 -28.06 0
+      size 0.12 7.62 2.2
+    }
+    Wall {
+      translation -44.49 -18.21 0
+      size 0.12 9.32 2.2
+    }
+    Wall {
+      translation -47.42 6.15 0
+      size 0.12 82.3 2.2
+    }
+    Wall {
+      translation -11.37 41.145 0
+      size 0.12 5.81 2.2
+    }
+    Wall {
+      translation -10.9 16.33 0
+      size 0.12 0.6 2.2
+    }
+    Wall {
+      translation -10.9 14.19 0
+      size 0.12 0.9 2.2
+    }
+    Wall {
+      translation -15.9 16.185 0
+      size 0.12 28.65 2.2
+    }
+    Wall {
+      translation -36.87 19.825 0
+      size 0.12 21.37 2.2
+    }
+    Wall {
+      translation -20.36 -2.6 0
+      size 0.12 9.8 2.2
+    }
+    Wall {
+      translation -32.45 -2.865 0
+      size 0.12 9.21 2.2
+    }
+    Wall {
+      translation -44.41 -2.8 0
+      size 0.12 9.33 2.2
+    }
+    Wall {
+      translation -44.41 11.66 0
+      size 0.12 16.94 2.2
+    }
+    Wall {
+      translation -44.41 25.32 0
+      size 0.12 7.6 2.2
+    }
+    Wall {
+      translation -44.41 37.345 0
+      size 0.12 13.65 2.2
+    }
+    Wall {
+      translation -42.49 22.42 0
+      size 0.12 1.02 2.2
+    }
+    Wall {
+      translation -42.49 20.46 0
+      size 0.12 1.14 2.2
+    }
+    Wall {
+      translation -20.35 6.4 0
+      size 0.12 5.48 2.2
+    }
+    Wall {
+      translation -35.38 6.4 0
+      size 0.12 5.48 2.2
+    }
+    Wall {
+      translation -20.37 38.05 0
+      size 0.12 12 2.2
+    }
+    Wall {
+      translation -32.4 38.05 0
+      size 0.12 12 2.2
+    }
+    Wall {
+      translation -42.9 51.9 0
+      size 0.12 0.4 2.2
+    }
+    Wall {
+      translation -42.9 54.96 0
+      size 0.12 2.8 2.2
+    }
+    Wall {
+      translation -23.36 53.23 0
+      size 0.12 3.3 2.2
+    }
+    Wall {
+      translation -5.18 53.97 0
+      size 0.12 4.78 2.2
+    }
+    Wall {
+      translation 25.202 65.95 0
+      size 0.12 28.8 2.2
+    }
+    Wall {
+      translation 46.44 34.97 0
+      size 0.12 91 2.2
+    }
+    Wall {
+      translation 34.26 54.88 0
+      size 0.12 3.2 2.2
+    }
+    Wall {
+      translation 37.39 54.88 0
+      size 0.12 3.2 2.2
+    }
+    Wall {
+      translation 40.28 50.16 0
+      size 0.12 6 2.2
+    }
+    Wall {
+      translation 40.28 44.19 0
+      size 0.12 3.3 2.2
+    }
+    Wall {
+      translation 42.03 45.17 0
+      size 0.12 2.16 2.2
+    }
+    Wall {
+      translation 40.28 39.11 0
+      size 0.12 4.2 2.2
+    }
+    Wall {
+      translation 40.28 33.93 0
+      size 0.12 4.2 2.2
+    }
+    Wall {
+      translation 40.28 27.47 0
+      size 0.12 5.98 2.2
+    }
+    Wall {
+      translation 40.28 22.31 0
+      size 0.12 1.63 2.2
+    }
+    Wall {
+      translation 40.28 15.98 0
+      size 0.12 4.94 2.2
+    }
+    Wall {
+      translation 40.28 10.66 0
+      size 0.12 2.96 2.2
+    }
+    Wall {
+      translation 40.28 3.13 0
+      size 0.12 5.98 2.2
+    }
+    Wall {
+      translation 40.28 -2.05 0
+      size 0.12 1.62 2.2
+    }
+    Wall {
+      translation 40.28 -5.84 0
+      size 0.12 3.18 2.2
+    }
+    Wall {
+      translation 40.28 -16.61 0
+      size 0.12 6.28 2.2
+    }
+    Wall {
+      translation 37.4 -16.61 0
+      size 0.12 6.28 2.2
+    }
+    Wall {
+      translation -4.79 -19.45 0
+      rotation 0 0 -1 -3.14159
+      size 0.12 0.6 2.2
+    }
+    Wall {
+      translation 9.94 53.92 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.46 2.2
+    }
+    Wall {
+      translation 10.73 52.83 0
+      size 0.12 2.3 2.2
+    }
+    Wall {
+      translation 9.15 52.83 0
+      size 0.12 2.3 2.2
+    }
+    Wall {
+      translation 9.92 -13.65 0
+      rotation 0 0 1 -1.5708
+      size 0.12 1.5 2.2
+    }
+    Wall {
+      translation 10.73 -14.54 0
+      size 0.12 1.9 2.2
+    }
+    Wall {
+      translation 9.11 -14.54 0
+      size 0.12 1.9 2.2
+    }
+  ]
+}
+StraightStairsWrapper {
+  translation -35.14 48.45 0
+  rotation 0 0 1 3.14159
+  name "straight stairs"
+}
+StraightStairsWrapper {
+  translation -10.58 48.45 0
+  rotation 0 0 1 3.14159
+  name "straight stairs(2)"
+}
+StraightStairsWrapper {
+  translation 12.26 48.45 0
+  rotation 0 0 1 3.14159
+  name "straight stairs(4)"
+}
+StraightStairsWrapper {
+  translation 6.63003 -18.39 0
+  name "straight stairs(8)"
+}
+StraightStairsWrapper {
+  translation 30.79 -18.39 0
+  name "straight stairs(9)"
+}
+StraightStairsRailWrapper {
+  translation 25.08 51.62 0.01
+  rotation 0 0 1 3.14159
+  run 48.3
+  nBalusters 140
+}
+StraightStairsRailWrapper {
+  translation -35 49.2 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(15)"
+}
+StraightStairsRailWrapper {
+  translation -35 47.68 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(1)"
+}
+StraightStairsRailWrapper {
+  translation -10.44 47.68 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(2)"
+}
+StraightStairsRailWrapper {
+  translation -10.44 49.2 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(3)"
+}
+StraightStairsRailWrapper {
+  translation 12.41 49.2 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(4)"
+}
+StraightStairsRailWrapper {
+  translation 12.41 47.65 0.01
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(5)"
+}
+StraightStairsRailWrapper {
+  translation -33.97 -10.86 0
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(6)"
+  run 10.51
+}
+StraightStairsRailWrapper {
+  translation -21.92 -10.86 0
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(7)"
+  run 10.51
+}
+StraightStairsRailWrapper {
+  translation -8.17 -10.86 0
+  rotation 0 0 1 3.14159
+  name "straight stairs rail(8)"
+  run 10.6
+}
+StraightStairsRailWrapper {
+  translation -44.36 -7.52 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(9)"
+  run 1.4
+  nBalusters 4
+}
+StraightStairsRailWrapper {
+  translation -8.43 -7.55 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(10)"
+  run 1.4
+  nBalusters 4
+}
+StraightStairsRailWrapper {
+  translation -18.84 -7.54 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(11)"
+  run 3.3
+  nBalusters 8
+}
+StraightStairsRailWrapper {
+  translation -21.85 -7.52 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(12)"
+  run 3.32
+  nBalusters 8
+}
+StraightStairsRailWrapper {
+  translation -32.5 -7.52 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(13)"
+  run 3.32
+  nBalusters 8
+}
+StraightStairsRailWrapper {
+  translation -33.9 -7.52 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(14)"
+  run 3.32
+  nBalusters 8
+}
+StraightStairsRailWrapper {
+  translation -47.44 59.05 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(16)"
+  run 2.53
+  nBalusters 10
+}
+StraightStairsRailWrapper {
+  translation -59.64 59.05 0
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(17)"
+  run 11.42
+  nBalusters 50
+}
+StraightStairsRailWrapper {
+  translation -59.35 59.44 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "straight stairs rail(18)"
+  run 11.74
+  nBalusters 50
+}
+StraightStairsRailWrapper {
+  translation -59.35 47.28 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "straight stairs rail(19)"
+  run 11.74
+  nBalusters 50
+}
+DEF COLUMNS Group {
+  children [
+    Solid {
+      translation 16.32 -16.82 1.6
+      children [
+        DEF COLUMN Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 0.341176 0.32549
+            roughness 0.2
+            metalness 0
+          }
+          geometry Cylinder {
+            height 3.2
+            radius 0.4
+          }
+        }
+      ]
+      name "box25"
+      boundingObject USE COLUMN
+    }
+    Solid {
+      translation 36.24 -16.82 1.6
+      children [
+        USE COLUMN
+      ]
+      name "box26"
+      boundingObject USE COLUMN
+    }
+    Solid {
+      translation 3.89 50.39 1.6
+      children [
+        USE COLUMN
+      ]
+      name "box28"
+      boundingObject USE COLUMN
+    }
+    Solid {
+      translation -13.79 50.48 1.6
+      children [
+        USE COLUMN
+      ]
+      name "box29"
+      boundingObject USE COLUMN
+    }
+    Solid {
+      translation -38.5 50.39 1.6
+      children [
+        USE COLUMN
+      ]
+      name "box30"
+      boundingObject USE COLUMN
+    }
+  ]
+}
+DEF Logo Solid {
+  children [
+    Transform {
+      translation 20.051 18.47 0.1
+      rotation 0 0 1 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/logo_THU.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Plane {
+            size 30 15
+          }
+        }
+      ]
+    }
+  ]
+  name "logo"
+}
+
+
+
+      ]
+    }
+  ]
+}
+}

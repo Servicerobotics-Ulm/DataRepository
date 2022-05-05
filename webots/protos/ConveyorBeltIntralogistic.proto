@@ -1,0 +1,661 @@
+#VRML_SIM R2022a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# intralogistics scenario: boxes on top of conveyor belts are moved from station to station by mobile robots
+#
+# made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO ConveyorBeltIntralogistic [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field MFNode children [
+  ]
+]
+{
+
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      children IS children
+    }
+
+
+
+ConveyorBelt {
+  translation -2.49 -4.5 0
+  rotation 0 0 1 4.692820414042842e-06
+  size 15 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+}
+ConveyorBelt {
+  translation -2.75 -6.55 0
+  rotation -1.20899e-10 2.97466e-17 1 1.5708
+  name "conveyor belt(1)"
+  size 3.6 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+  speed 2.5
+}
+ConveyorBelt {
+  translation 0.8 -6.55 0
+  rotation -1.20899e-10 2.97466e-17 1 1.5708
+  name "conveyor belt(2)"
+  size 3.6 0.72 0.5
+  borderThickness 0.001
+  borderHeight 0
+  speed 2
+}
+Transform {
+  translation 0 7.5 0
+  rotation 1 0 0 1.5707963267948966
+  children [
+    Transform {
+      translation 0 0 2.93
+      rotation 1 0 0 -1.5707953071795862
+      children [
+        Floor {
+          size 20 26
+          appearance PBRAppearance {
+            baseColor 0.729412 0.741176 0.713725
+            baseColorMap ImageTexture {
+              url [
+                "textures/marble.jpg"
+              ]
+            }
+            roughness 0.5
+            metalness 0
+          }
+        }
+      ]
+    }
+    WallRUB {
+      translation 0 0 -10
+      size 20 1 0.11
+    }
+    WallRUB {
+      translation 0 0 16
+      size 20 1 0.11
+    }
+    WallRUB {
+      translation 10 0 3
+      rotation 0 1 0 1.5708
+      size 26 1 0.11
+    }
+    WallRUB {
+      translation -10 0 3
+      rotation 0 1 0 1.5708
+      size 26 1 0.11
+    }
+    DEF Shelf Group {
+      children [
+        StandardShelf {
+          translation -2 0 0
+          name "StandardShelf(13)"
+          locked TRUE
+        }
+        StandardShelf {
+          name "StandardShelf(14)"
+          locked TRUE
+        }
+        StandardShelf {
+          translation 2 0 0
+          name "StandardShelf(15)"
+          locked TRUE
+        }
+        StandardShelf {
+          translation 4 0 0
+        }
+        StandardShelf {
+          translation -2 0 -9
+          name "StandardShelf(3)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 0 0 -9
+          name "StandardShelf(4)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 2 0 -9
+          name "StandardShelf(5)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 4 0 -9
+          name "StandardShelf(11)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 6 0 -9
+          name "StandardShelf(12)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation 8 0 -9
+          name "StandardShelf(16)"
+          size 8 2.2 0.8
+          matrix 8 5 3
+          locked TRUE
+        }
+        StandardShelf {
+          translation -6 0 0
+          name "StandardShelf(7)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -6 0 -9
+          name "StandardShelf(8)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -9 0 0
+          name "StandardShelf(9)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        StandardShelf {
+          translation -9 0 -9
+          name "StandardShelf(10)"
+          size 8 2.6 1.6
+          matrix 8 4 3
+          railWidth 0.05
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 1
+          rotation 0 1 0 -1.5707953071795862
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 3.12
+          rotation 0 1 0 1.5708
+          name "ToolShelf(3)"
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 2.06
+          rotation 0 1 0 3.14159
+          name "ToolShelf(1)"
+          size 1.6 1.4 0.4
+          layers 4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 3.59
+          rotation 0 1 0 -1.5707953071795862
+          name "ToolShelf(4)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 5.71
+          rotation 0 1 0 1.5708
+          name "ToolShelf(5)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 4.65
+          rotation 0 1 0 3.14159
+          name "ToolShelf(7)"
+          size 1.6 1.4 0.4
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 6.18
+          rotation 0 1 0 -1.5707953071795862
+          name "ToolShelf(8)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 7.5 0 8.3
+          rotation 0 1 0 1.5708
+          name "ToolShelf(9)"
+          locked TRUE
+        }
+        ToolShelf {
+          translation 8.16 0 7.24
+          rotation 0 1 0 3.14159
+          name "ToolShelf(10)"
+          size 1.6 1.4 0.4
+          locked TRUE
+        }
+      ]
+    }
+    Table {
+      translation 8.36 0 10.09
+      rotation -0.9999999999997401 5.09807655171661e-07 5.098076552328934e-07 1.5707963267951566
+      feetSize 0.05 0.05
+      trayAppearance VarnishedPine {
+        colorOverride 0.926 0.912 0.698
+        textureTransform TextureTransform {
+        }
+      }
+      legAppearance VarnishedPine {
+        colorOverride 0.180392 0.203922 0.211765
+        textureTransform TextureTransform {
+          scale 4 5
+        }
+      }
+    }
+    Table {
+      translation 5.25 0 14.34
+      rotation -0.5773492478224381 -0.5773507798725421 -0.577350779872542 2.0943966344446547
+      name "table(1)"
+      feetSize 0.05 0.05
+      trayAppearance VarnishedPine {
+        colorOverride 0.926 0.912 0.698
+        textureTransform TextureTransform {
+        }
+      }
+      legAppearance VarnishedPine {
+        colorOverride 0.180392 0.203922 0.211765
+        textureTransform TextureTransform {
+          scale 4 5
+        }
+      }
+    }
+    OfficeChair {
+      translation 9.25456 0 10.0484
+      rotation -0.9831059923021173 0.12942682855511245 0.1294268285551125 1.5878338417837838
+      legAppearance BrushedAluminium {
+        colorOverride 0.333333 0.341176 0.32549
+        textureTransform TextureTransform {
+          scale 5 5
+        }
+      }
+      seatAppearance Leather {
+        colorOverride 0.203922 0.396078 0.643137
+        tone "light"
+        type "grain"
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+      }
+    }
+    OfficeChair {
+      translation 5.3297 0 15.2388
+      rotation -0.6776607049122516 -0.5199884465148387 -0.5199884465148386 1.9504420732046808
+      name "office chair(1)"
+      legAppearance BrushedAluminium {
+        colorOverride 0.333333 0.341176 0.32549
+        textureTransform TextureTransform {
+          scale 5 5
+        }
+      }
+      seatAppearance Leather {
+        colorOverride 0.203922 0.396078 0.643137
+        tone "light"
+        type "grain"
+        textureTransform TextureTransform {
+          scale 10 10
+        }
+      }
+    }
+    Monitor {
+      translation 8.20104 0.74 9.98388
+      rotation -0.9831056546079536 -0.129428111084623 -0.12942811108462293 1.5878341852311966
+    }
+    Monitor {
+      translation 5.03178 0.74 14.269
+      rotation -0.6776607049122516 -0.5199884465148387 -0.5199884465148386 1.9504420732046808
+      name "monitor(2)"
+    }
+    Monitor {
+      translation 8.20447 0.74 10.4385
+      rotation -0.9831053950945543 0.1294290966822769 0.12942909668227695 1.5878344491659688
+      name "monitor(1)"
+      color 0.827451 0.843137 0.811765
+    }
+    Monitor {
+      translation 5.51392 0.74 14.2644
+      rotation -0.476903893855053 -0.6215153562165172 -0.6215153562165171 2.251591460949707
+      name "monitor(3)"
+      color 0.827451 0.843137 0.811765
+    }
+    Keyboard {
+      translation 8.60169 0.74 10.1786
+      rotation -0.9999999999997401 5.09807655171661e-07 5.098076552328934e-07 1.5707963267951566
+    }
+    Keyboard {
+      translation 5.30383 0.74 14.604
+      rotation -0.5773492478224381 -0.5773507798725421 -0.577350779872542 2.0943966344446547
+      name "keyboard(1)"
+    }
+    ComputerMouse {
+      translation 8.58133 0.74 9.6901
+      rotation -0.9831053950945543 0.1294290966822769 0.12942909668227695 1.5878344491659688
+    }
+    ComputerMouse {
+      translation 5.72003 0.74 14.5342
+      rotation -0.6776607049122516 -0.5199884465148387 -0.5199884465148386 1.9504420732046808
+      name "computer mouse(1)"
+    }
+    DEF Pallet1 Group {
+      children [
+        WoodenPallet {
+          translation -4.39 0 13.86
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          lathNumber 4
+        }
+        CardboardBox {
+          translation -4.19 0.29 13.41
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 13.41
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(8)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 13.71
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(2)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 13.71
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(9)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 14.01
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(3)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 14.01
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(10)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.29 14.31
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(4)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.19 0.59 14.31
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(11)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 13.41
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(1)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 13.41
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(12)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 13.71
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(5)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 13.71
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(13)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 14.01
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(6)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 14.01
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(14)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.29 14.31
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(7)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -4.59 0.59 14.31
+          rotation 0 0.7071067811865476 0.7071067811865476 3.14159
+          name "cardboard box(15)"
+          size 0.4 0.3 0.3
+        }
+      ]
+    }
+    DEF Box Group {
+      children [
+        CardboardBox {
+          translation -4.71 2.07 7.62
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(16)"
+        }
+        CardboardBox {
+          translation -5.7 2.07 7.62
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(17)"
+        }
+        CardboardBox {
+          translation -7.73 2.07 7.62
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(18)"
+        }
+        CardboardBox {
+          translation -8.69 2.07 7.62
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(19)"
+        }
+        CardboardBox {
+          translation -1.81 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(28)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation -1.38 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(29)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 0.18 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(38)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 0.61 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(39)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 2.19 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(40)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 2.62 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(41)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 4.19 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(42)"
+          size 0.4 0.3 0.3
+        }
+        CardboardBox {
+          translation 4.61 1.53 3.83
+          rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+          name "cardboard box(43)"
+          size 0.4 0.3 0.3
+        }
+      ]
+    }
+    DEF Logo Group {
+      children [
+        Transform {
+          translation 3.5 0.8 15.941
+          rotation -9.35756806098907e-07 -0.9999999999973123 -2.12132118707526e-06 3.1415907724399137
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 3.5 0.799984 -9.941
+          rotation 0.9588110733935237 0.2018711219572352 -0.19982336114099916 8.9803699588894e-06
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -3.5 0.8 15.941
+          rotation -9.35756806098907e-07 -0.9999999999973123 -2.12132118707526e-06 3.1415907724399137
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -3.5 0.8 -9.941
+          rotation 0.9588110733935237 0.2018711219572352 -0.19982336114099916 8.9803699588894e-06
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 0.21 0.297
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -9.94 0.569999 10.17
+          rotation 6.955834108456497e-07 0.9999999999982582 1.7320516149924155e-06 1.5707952903289715
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo_sr.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 1.6 0.6
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 9.94 0.569999 10.17
+          rotation 3.982332284383561e-06 -0.9999999999860707 -3.464103230208342e-06 1.5707968450380145
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/logo_sr.png"
+                  ]
+                }
+                roughness 1
+                metalness 0
+              }
+              geometry Plane {
+                size 1.6 0.6
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+  ]
+}
+
+}
