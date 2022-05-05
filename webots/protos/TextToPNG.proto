@@ -1,0 +1,53 @@
+#VRML_SIM R2022a utf8
+# robot with display to enter text, display it and save as .png file
+# template language: javascript
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO TextToPNG [
+  field       SFVec3f      translation            0 0 0
+  field       SFRotation   rotation               0 0 1 0
+  field       SFVec2f      size                   1 1
+  field       SFInt32      width                  128
+  field       SFInt32      height                 128
+  unconnectedField MFString     text                    ["abc"]
+  unconnectedField SFBool       saveNow                FALSE
+  unconnectedField SFString     fileName               "abc"
+  unconnectedField SFColor      backgroundColor        0 0 0
+  unconnectedField SFFloat      backgroundTransparency 1
+  unconnectedField SFColor      textColor              1 1 1
+  unconnectedField SFFloat      textTransparency       0
+  unconnectedField SFVec2f      textXY                 0 0
+  unconnectedField SFString     {"Arial","Arial Black","Comic Sans MS","Courier New","Georgia","Impact","Lucida Console","Lucida Sans Unicode","Palatino Linotype","Tahoma"} textFont "Arial"
+  unconnectedField SFInt32      textSize               32
+  unconnectedField SFBool       antiAliasing           TRUE
+]
+{
+Robot {
+  name "TextToPNG"
+  translation IS translation
+  rotation IS rotation
+  children [
+    Display {
+      width IS width
+      height IS height
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              filtering 0
+            }
+            metalness 0
+            roughness 1
+          }
+          geometry Plane {
+            size IS size
+          }
+        }
+      ]
+    }
+  ]
+  controller "TextToPNG"
+  supervisor TRUE
+}
+}
+
