@@ -1,0 +1,28 @@
+#VRML_SIM R2022a utf8
+# simple wrapper
+
+PROTO StraightStairsRailWrapper [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "stairs"
+  field SFFloat    run             6.5
+  field SFInt32    nBalusters      20
+]
+{
+StraightStairsRail {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  run IS run
+  nBalusters IS nBalusters
+  rise 0
+  newelHeight 1.22
+  balusterHeight 1
+  balusterRadius 0.02
+  appearance PBRAppearance {
+    baseColor 0.729412 0.741176 0.713725
+    roughness 0.8
+    metalness 0
+  }
+}
+}

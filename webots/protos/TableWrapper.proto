@@ -1,0 +1,30 @@
+#VRML_SIM R2022a utf8
+# simple wrapper
+
+PROTO TableWrapper [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "table"
+]
+{
+Table {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  size 0.8 1.6 0.72
+  feetSize 0.03 0.03
+  frameThickness 0.025
+  trayAppearance VarnishedPine {
+    colorOverride 0.96 0.8 0.29
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+  legAppearance VarnishedPine {
+    colorOverride 0.2 0.2 0.2
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+}

@@ -1,0 +1,78 @@
+#VRML_SIM R2022a utf8
+# simple wrapper
+# template language: javascript
+
+PROTO Pioneer3dxWrapper [
+  field SFVec3f    translation       0 0 0
+  field SFRotation rotation          0 0 1 0
+  field SFString   name              "Pioneer3dx"
+  field SFString   lidarController   ""
+  field SFString   cameraController  ""
+]
+
+{
+
+Pioneer3dx {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    DEF %<= "CoordinateSystem" + fields.name.value >% Transform {
+      translation 0 0 -0.095
+      rotation 0 1 0 0.0345
+      children [
+        Robot {
+          translation 0.082 0 0.306
+          children [
+            SickLms291 {
+              resolution 361
+            }
+          ]
+          name %<= "\"" + fields.name.value + "_lidar\"" >%
+          boundingObject Transform {
+            translation -0.015 0 0.0295
+            children [
+              Shape {
+                geometry Box {
+                  size 0.156 0.155 0.185
+                }
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.001
+          }
+          controller IS lidarController
+        }
+        Transform {
+          translation 0.1 0 0.6
+          children [
+            CapScrew {
+              translation 0 -0.01 0
+              rotation 0.57735 0.57735 0.57735 2.0944
+              screwRadius 0.002
+              screwLength 0.02
+            }
+            RealSenseD435 {
+              translation 0.04 0 0
+              controller IS cameraController
+              name %<= "\"" + fields.name.value + "_camera\"" >%
+              supervisor TRUE
+              colorWidth 640
+              colorHeight 427
+              colorFieldOfView 1.51844
+              rangeWidth 640
+              rangeHeight 427
+              minRange 0.01
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+}

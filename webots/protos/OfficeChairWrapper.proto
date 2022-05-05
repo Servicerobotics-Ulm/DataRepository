@@ -1,0 +1,30 @@
+#VRML_SIM R2022a utf8
+# simple wrapper
+
+PROTO OfficeChairWrapper [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "office chair"
+]
+{
+OfficeChair {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  legAppearance BrushedAluminium {
+    colorOverride 0.180392 0.203922 0.211765
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  seatAppearance Leather {
+    colorOverride 0.12549 0.290196 0.529412
+    tone "light"
+    type "grain"
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+}
+

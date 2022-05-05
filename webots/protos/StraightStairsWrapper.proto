@@ -1,0 +1,60 @@
+#VRML_SIM R2022a utf8
+# simple wrapper
+
+PROTO StraightStairsWrapper [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "stairs"
+]
+{
+StraightStairs {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  stepSize 0.3 1.2 0.03
+  stepRise 0.207
+  nSteps 22
+  stepAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/gray_floor.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+  stringerAppearance PBRAppearance {
+    baseColor 0.333333 0.341176 0.32549
+    roughness 0.8
+    metalness 0
+  }
+  leftRail [
+    StraightStairsRail {
+      run 6.56
+      rise 4.52
+      balusterHeight 0.7
+      balusterRadius 0.019
+      nBalusters 15
+      appearance PBRAppearance {
+        baseColor 0.729412 0.741176 0.713725
+        roughness 0.8
+        metalness 0
+      }
+    }
+  ]
+  rightRail [
+    StraightStairsRail {
+      run 6.56
+      rise 4.52
+      balusterHeight 0.7
+      balusterRadius 0.019
+      nBalusters 15
+      appearance PBRAppearance {
+        baseColor 0.729412 0.741176 0.713725
+        roughness 0.8
+        metalness 0
+      }
+    }
+  ]
+}
+}
