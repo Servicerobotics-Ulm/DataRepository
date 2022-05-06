@@ -25,15 +25,15 @@ WorldInfo {
     ContactProperties {
       material1 "noFriction"
       coulombFriction [
-        0.0
+        0
       ]
       bounce 0
     }
   ]
 }
 Viewpoint {
-  orientation -0.24197875985437603 -0.8866777985989504 0.3940161941482324 5.071680502611334
-  position -4.098640231688834 1.5682783913239948 7.9542608374301995
+  orientation 0.044705520348958555 0.9966750054770044 -0.06812011382655134 1.1645417711562078
+  position -3.414503724152276 0.7677939952135305 8.470886854545254
   ambientOcclusionRadius 0
   bloomThreshold 0
 }
@@ -55,8 +55,12 @@ DEF Locations Group {
 }
 DEF Stations Group {
   children [
+    A-Frame {
+      translation 0.42 -2.14 0
+      rotation 0 0 1 1.5708
+    }
     OPC_UA_Station {
-      translation 1.09237 1.92073 1.21013e-06
+      translation 0.865542 2.00155 1.34919e-06
       rotation 8.0555591e-08 7.13756005e-07 -0.999999999999742 2.757595845132146
       name "0"
       port 4840
@@ -80,31 +84,7 @@ DEF Stations Group {
           rotation 0 0 1 3.14159
           radius 0.075
         }
-      ]
-    }
-    A-Frame {
-      translation 0.42 -2.14 0
-      rotation 0 0 1 1.5708
-      Locations [
-        Location {
-          name "3"
-          translation -0.21 0.33 0
-          rotation 0 0 1 -1.5707953071795862
-          radius 0.075
-        }
-      ]
-      data [
-        "(is-a rack)"
-        "(type a-frame)"
-        "(pre-grasp-pose (-0.015 -0.01 0.0 0 0 0))"
-        "(pull-out-pose (0 0 0.2 0 0 0))"
-        "(planned-grasping \"false\")"
-        "(recognition-component \"rack\")"
-        "(dimensions (700 560 1000))"
-        "(pick-distance (1.0 0.61))"
-        "(obj-recog-ptu-poses ((1.57 -0.48)))"
-        "(levels ((1.5 1.11)))"
-        "(post-grasping-state GRASPABLE)"
+
       ]
     }
     InclinedShelf {
@@ -114,8 +94,8 @@ DEF Stations Group {
       Locations [
         Location {
           name "4"
-          translation -0.2 0.42 0
-          rotation 0 0 1 -1.5707953071795862
+          translation 1 -0.08 0
+          rotation 0 0 1 1.5708
           radius 0.075
           smallerRadius 0.05
         }
@@ -126,7 +106,7 @@ DEF Stations Group {
         "(pre-grasp-pose (-0.01 0 0 0 0 0))"
         "(pull-out-pose (-0.17 0 0 0 0 0))"
         "(planned-grasping \"false\")"
-        "(recognition-component \"box\")"
+        "(recognition-component \"SmartKinectBoxDetection\")"
         "(dimensions (1000 630 1500))"
         "(pick-distance (1.0 0.7))"
         "(obj-recog-ptu-poses ((1.57 -0.63) (1.57 -0.43) (1.57 0.)))"
@@ -156,12 +136,6 @@ Larry {
   hidden rotation_6 0 0 -0.9999999999999999 1.5999999922620798
   hidden position_6_0 -0.19999999999590984
   hidden rotation_7 0 -1 0 0.19999999999591092
-  hidden rotation_23 0 0 -1 5.923412275775386
-  hidden rotation_24 0 0 1 6.09915526783107
-  hidden translation_25 0.053645631513811506 0 -0.044161669530571296
-  hidden rotation_25 0 1 0 4.519061804157882
-  hidden position_25_0 -30.246507782367757
-  hidden rotation_26 0 0 -1 5.113766553649412
   translation -0.00021535670280019292 -7.131567551729072e-05 -0.0018528824823791507
   controller "<extern>"
   supervisor TRUE
@@ -181,7 +155,6 @@ Larry {
   cameraSlot [
     PanTiltUnit {
       translation -0.0206 -0.0104 0.0804
-#      translation -0.0206 -0.011 0.0454
       children [
         kinect_v2 {
           translation 0 0 0.095
@@ -271,7 +244,7 @@ Robotino3 {
   ]
 }
 Crate {
-  translation 1.23264 1.97872 0.749997
+  translation 0.857317 1.99752 0.749997
   rotation -1.2741148438999996e-05 7.885295237999997e-06 0.9999999998877427 0.3899991389368227
   outerSize 0.4 0.268 0.19
   innerSize 0.36 0.228 0.1
@@ -315,80 +288,6 @@ Floor {
   }
 }
 THU_RoboticsLab {
-}
-SmallBoxA {
-  translation 0.6730080336157123 -1.8102546527012147 1.0373777919896723
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox0"
-  textureUrl [
-    "textures/SMACKS.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.672999 -1.84871 1.04835
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox0(1)"
-  textureUrl [
-    "textures/SMACKS.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.5591298439225725 -1.8102382073313654 1.037365985426666
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox1"
-  textureUrl [
-    "textures/CORN-FLAKES.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.5589989567317969 -1.8486895160475685 1.048341614647826
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox1(1)"
-  textureUrl [
-    "textures/CORN-FLAKES.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.44500164009239834 -1.8102353484120408 1.037366661098025
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox2"
-  textureUrl [
-    "textures/FROSTIES.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.44499660065341246 -1.8486877498943672 1.0483409231001104
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox2(1)"
-  textureUrl [
-    "textures/FROSTIES.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.33100808162309026 -1.8102307569370706 1.0373635685309994
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox3"
-  textureUrl [
-    "textures/SPECIAL.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.33099261157808935 -1.8486854503038657 1.0483410049871837
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox3(1)"
-  textureUrl [
-    "textures/SPECIAL.jpg"
-  ]
-}
-SmallBoxA {
-  translation 0.2171046539915294 -1.810244513242715 1.0373730592838108
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox4"
-}
-SmallBoxA {
-  translation 0.21709024079927194 -1.8486941143598323 1.0483519689817273
-  rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
-  name "ConnectorBox4(2)"
 }
 Transform {
   translation -1.08 -1.25 0
