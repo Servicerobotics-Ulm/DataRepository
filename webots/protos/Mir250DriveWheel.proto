@@ -1,0 +1,74 @@
+#VRML_SIM R2022a utf8
+# tags: hidden
+
+PROTO Mir250DriveWheel [
+  field SFVec3f    translation           0 0 0
+  field SFRotation rotation              0 0 1 0
+  field SFString   name                  ""
+  field SFString   rotationalMotorName   ""
+  field SFString   positionSensorName    ""
+]
+{
+Transform {
+  translation IS translation
+  rotation IS rotation
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+      }
+      device [
+        RotationalMotor {
+          name IS rotationalMotorName
+          maxVelocity 20
+          maxTorque 100
+        }
+        PositionSensor {
+          name IS positionSensorName
+        }
+      ]
+      endPoint Solid {
+        rotation 1 0 0 -1.5708
+        name IS name
+        children [
+          DEF driveWheel Group {
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.042
+                  radius 0.07
+                }
+              }
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.53 0.54 0.52
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.04
+                  radius 0.1
+                }
+              }
+            ]
+          }
+        ]
+        contactMaterial "Mir250Wheel"
+        boundingObject Cylinder {
+          height 0.005
+          radius 0.1
+        }
+        physics Physics {
+          density -1
+          mass 1
+        }
+      }
+    }
+  ]
+}
+}

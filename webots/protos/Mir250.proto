@@ -1,0 +1,197 @@
+#VRML_SIM R2022a utf8
+# documentation url: https://www.mobile-industrial-robots.com/en/solutions/robots/mir250/
+# Mobile robot "MiR 250" from Mobile Industrial Robots#
+#
+# made by Wenzheng Cai July 2021, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO Mir250 [
+  field SFVec3f    translation      0 0 0
+  field SFRotation rotation         0 0 1 0
+  field SFString   name             "Mir250"
+  field SFString   controller       ""
+  field MFString   controllerArgs   []
+  field  SFString  customData       ""
+  field SFBool     supervisor       FALSE
+  field SFBool     synchronization  TRUE
+  field MFNode     bodySlot         []
+]
+{
+Robot {
+  translation IS translation
+  rotation IS rotation
+  controller IS controller
+  controllerArgs IS controllerArgs
+  customData IS customData
+  supervisor IS supervisor
+  synchronization IS synchronization
+  name IS name
+  children [
+    Group {
+      children IS bodySlot
+    }
+    DEF BASE Group {
+      children [
+        Transform {
+          translation 0 0 0.2975
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.73 0.746 0.71
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.78 0.56 0.005
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.31 0.2 0.285
+          children [
+            DEF RUBBER Shape {
+              appearance DEF BLACK PBRAppearance {
+                baseColor 0 0 0
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.18 0.18 0.02
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.31 0.2 0.285
+          children [
+            USE RUBBER
+          ]
+        }
+        Transform {
+          translation 0.31 -0.2 0.285
+          children [
+            USE RUBBER
+          ]
+        }
+        Transform {
+          translation -0.31 -0.2 0.285
+          children [
+            USE RUBBER
+          ]
+        }
+        Transform {
+          translation 0 0 0.255
+          children [
+            Shape {
+              appearance DEF IRONGREY PBRAppearance {
+                baseColor 0.32 0.35 0.36
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.78 0.56 0.08
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 0.195
+          children [
+            Shape {
+              appearance USE IRONGREY
+              geometry Box {
+                size 0.63 0.41 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 0.195
+          children [
+            Shape {
+              appearance USE IRONGREY
+              geometry Box {
+                size 0.22 0.47 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 0.1525
+          children [
+            Shape {
+              appearance USE IRONGREY
+              geometry Box {
+                size 0.78 0.56 0.045
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.01 0 0.0825
+          children [
+            Shape {
+              appearance USE IRONGREY
+              geometry Box {
+                size 0.74 0.16 0.095
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.265 0.0825
+          children [
+            DEF BOX Shape {
+              appearance USE IRONGREY
+              geometry Box {
+                size 0.39 0.03 0.095
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -0.26 0.0825
+          children [
+            USE BOX
+          ]
+        }
+      ]
+    }
+    Mir250DriveWheel {
+      translation 0 0.2 0.1
+      name "LeftWheel"
+      rotationalMotorName "LeftWheelRotationalMotor"
+      positionSensorName "LeftWheelPositionSensor"
+    }
+    Mir250DriveWheel {
+      translation 0 -0.2 0.1
+      name "RightWheel"
+      rotationalMotorName "RightWheelRotationalMotor"
+      positionSensorName "RightWheelPositionSensor"
+    }
+    Mir250CasterWheel {
+      translation 0.3 0.19 0.13
+      name "FrontLeftWheel"
+    }
+    Mir250CasterWheel {
+      translation 0.3 -0.19 0.13
+      name "FrontRightWheel"
+    }
+    Mir250CasterWheel {
+      translation -0.3 0.19 0.13
+      name "BackLeftWheel"
+    }
+    Mir250CasterWheel {
+      translation -0.3 -0.19 0.13
+      name "BackRightWheel"
+    }
+  ]
+  model "Mir250"
+  boundingObject USE BASE
+  physics Physics {
+    density -1
+    mass 90
+  }
+}
+}
+

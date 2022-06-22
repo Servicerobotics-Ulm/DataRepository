@@ -1,0 +1,178 @@
+#VRML_SIM R2022a utf8
+# the mobile robot 'Macy' from servicerobotics THU ulm is based on an Mir250 mobile robot, a UR5e robot arm, a KinectV2 camera and a conveyor belt
+# made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+# template language: javascript
+
+PROTO Macy [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "Macy"
+  field SFString   controller      "Mir250KeyboardControl"
+  field SFBool     supervisor      FALSE
+  field MFNode     children        []
+  field SFString   panTiltController      ""
+  field SFString   kinectV2Controller     ""
+  field SFString   ur5eController         ""
+  field SFString   frontLidarController   ""
+  field SFString   backLidarController    ""
+  field SFString   conveyorBeltController ""
+]
+{
+Mir250 {
+  translation IS translation
+  rotation IS rotation
+  controller IS controller
+  supervisor IS supervisor
+  name IS name
+  bodySlot [
+    Group {
+      children IS children
+    }
+    PanTiltUnit {
+      name %<= "\"" + fields.name.value + "_pan_tilt_unit\"" >%
+      controller IS panTiltController
+      translation -0.267 0.236 1.312
+      children [
+#        CoordinateFrame {
+#          translation 0.02 -0.095 0.111
+#        }
+        kinect_v2 {
+          name %<= "\"" + fields.name.value + "_camera\"" >%
+          controller IS kinectV2Controller
+          translation 0.02 0 0.111
+          rotation 0 1 0 -0.0698132
+          colorTranslation -0.003 -0.095 0
+          rangeTranslation -0.003 -0.095 0
+        }
+      ]
+    }
+    UR5e {
+      name %<= "\"" + fields.name.value + "_robot_arm\"" >%
+      controller IS ur5eController
+      translation 0.231 0.002 0.497
+      rotation 0 0 1 1.5708
+      staticBase FALSE
+    }
+    MacyBase {
+      translation 0 0 0.3
+    }
+    Robot {
+      translation 0.316 0.195 0.2
+      rotation -0.9238797538364408 -0.382682898035882 0 -3.1415853071795863
+      name %<= "\"" + fields.name.value + "_front_lidar\"" >%
+      controller IS frontLidarController
+      supervisor TRUE
+      children [
+        SicknanoScan3 {
+        }
+      ]
+    }
+    Robot {
+      translation -0.316 -0.195 0.2
+      rotation 0.3826828980362601 -0.9238797538373537 0 3.14159
+      name %<= "\"" + fields.name.value + "_back_lidar\"" >%
+      controller IS backLidarController
+      supervisor TRUE
+      children [
+        SicknanoScan3 {
+        }
+      ]
+    }
+    Robot {
+      name %<= "\"" + fields.name.value + "_conveyor_belt\"" >%
+      controller IS conveyorBeltController
+      supervisor TRUE
+      translation -0.265 0 0.3
+      rotation 0 0 1 3.14159
+      children [
+        MacyConveyorBelt {
+        }
+      ]
+      physics Physics {
+        density -1
+        mass 1
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          1 1 1
+          0 0 0
+        ]
+      }
+    }
+    Solid {
+      translation -0.39 0.255 0.538
+      children [
+        Transform {
+          translation 0 0 0.32
+          children [
+            Shape {
+              appearance DEF ITEM PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.03 0.03 0.64
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.065 0 0.655
+          children [
+            Shape {
+              appearance USE ITEM
+              geometry Box {
+                size 0.16 0.03 0.03
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.07 0 0.675
+          children [
+            Shape {
+              appearance USE ITEM
+              geometry Box {
+                size 0.15 0.03 0.01
+              }
+            }
+          ]
+        }
+      ]
+      physics Physics {
+      }
+      boundingObject Group {
+        children [
+          Transform {
+            translation 0 0 0.32
+            children [
+              Box {
+                size 0.03 0.03 0.64
+              }
+            ]
+          }
+          Transform {
+            translation 0.065 0 0.655
+            children [
+              Box {
+                size 0.16 0.03 0.03
+              }
+            ]
+          }
+          Transform {
+            translation 0.07 0 0.675
+            children [
+              Box {
+                size 0.15 0.03 0.01
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+}
+

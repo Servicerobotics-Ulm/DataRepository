@@ -1,0 +1,67 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "THU Ulm Campus with Macy (Mir 250 with UR5e and Kinect)"
+  ]
+  contactProperties [
+    ContactProperties {
+      softCFM 1e-07
+    }
+    ContactProperties {
+      material1 "SmallBox"
+      coulombFriction [
+        0.2
+      ]
+      bounce 0.3
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.361201472919139 -0.347306830803504 0.8653967074343829 4.529628403800743
+  position -0.03643481651911025 1.195500769208559 1.782708433825866
+}
+Background {
+  skyColor [
+    0.533333 0.541176 0.521569
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.55 -0.6 -1
+}
+Macy {
+  hidden position_0_0 0.6400253859602417
+  hidden position_0_1 0.6399715914583202
+  hidden position_0_2 0.018502028050743025
+  hidden position_0_3 0.06421468367750509
+  hidden position_0_4 -0.012698637627788353
+  hidden position_0_5 -0.01733590688204557
+  hidden position_5_0 2.6900000128387163
+  hidden rotation_6 0 0 1 2.6900000128387163
+  hidden position_6_0 -2.320011535638696
+  hidden rotation_7 0 -1 0 0.7492155356386964
+  hidden position_7_0 2.6000168351825943
+  hidden rotation_8 0 1 0 2.6000168351825943
+  hidden position_8_0 -1.4499984390074836
+  hidden rotation_9 0 1 0 0.12079756099251564
+  hidden position_9_0 -1.5999997703724071
+  hidden rotation_10 0 0 -1 1.5999997703724071
+  hidden position_10_0 -0.20000009717999667
+  hidden rotation_11 0 -1 0 0.20000009717999687
+}
+THU_RoboticsLab {
+}
+Floor {
+  translation -1.25 -1.25 0
+  rotation 0 0 1 1.5707963267948966
+  size 15 9
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/gray_floor_tiles.jpg"
+      ]
+    }
+    roughness 0.4
+    metalness 0
+  }
+}

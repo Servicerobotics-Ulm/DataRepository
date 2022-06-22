@@ -1,0 +1,216 @@
+#VRML_SIM R2022a utf8
+# made by Wenzheng Cai July 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO MacyBase [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        1 0 0 0
+  field SFString   name            "Macy Base"
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      DEF BO Group {
+        children [
+          Transform {
+            translation 0.235 0 0.02
+            children [
+              DEF baseThwartItem Shape {
+                appearance DEF ITEM PBRAppearance {
+                  baseColor 0.827 0.843 0.812
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.04 0.57 0.04
+                }
+              }
+            ]
+          }
+          Transform {
+            translation -0.235 0 0.02
+            children [
+              USE baseThwartItem
+            ]
+          }
+          Transform {
+            translation 0.235 0 0.18
+            children [
+              USE baseThwartItem
+            ]
+          }
+          Transform {
+            translation -0.155 0 0.18
+            children [
+              USE baseThwartItem
+            ]
+          }      
+          Transform {
+            translation -0.355 0 0.02
+            children [
+              Shape {
+                appearance USE ITEM
+                geometry Box {
+                  size 0.04 0.4 0.04
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.04 -0.04667 0.18
+            children [
+              DEF baseHorizontalItem1 Shape {
+                appearance USE ITEM
+                geometry Box {
+                  size 0.35 0.04 0.04
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.04 0.04667 0.18
+            children [
+              USE baseHorizontalItem1
+            ]
+          }
+          Transform {
+            translation 0.315 -0.04667 0.18
+            children [
+              DEF baseHorizontalItem2 Shape {
+                appearance USE ITEM
+                geometry Box {
+                  size 0.12 0.04 0.04
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.315 0.04667 0.18
+            children [
+              USE baseHorizontalItem2
+            ]
+          }
+          Transform {
+            translation 0 -0.22 0.02
+            children [
+              DEF baseHorizontalItem3 Shape {
+                appearance USE ITEM
+                geometry Box {
+                  size 0.75 0.04 0.04
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 0.22 0.02
+            children [
+              USE baseHorizontalItem3
+            ]
+          }
+          Transform {
+            translation 0.235 -0.22 0.1
+            children [
+              DEF baseVerticalItem Shape {
+                appearance USE ITEM
+                geometry Box {
+                  size 0.04 0.04 0.12
+                }
+              }
+            ]
+          }
+          Transform {
+            translation -0.155 -0.22 0.1
+            children [
+              USE baseVerticalItem
+            ]
+          }
+          Transform {
+            translation 0.235 0.22 0.1
+            children [
+              USE baseVerticalItem
+            ]
+          }
+          Transform {
+            translation -0.155 0.22 0.1
+            children [
+              USE baseVerticalItem
+            ]
+          }
+          Transform {
+            translation -0.155 -0.04667 0.1
+            children [
+              USE baseVerticalItem
+            ]
+          }
+          Transform {
+            translation -0.155 0.04667 0.1
+            children [
+              USE baseVerticalItem
+            ]
+          }
+          Transform {
+            translation -0.2625 0 0.1225
+            children [
+              Shape {
+                appearance DEF ALU PBRAppearance {
+                   roughness 0.7
+                }
+                geometry Box {
+                  size 0.175 0.48 0.165
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.04 0 0.201
+            children [
+              DEF Decke1 Shape {
+                appearance USE ALU
+                geometry Box {
+                  size 0.43 0.48 0.002
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.04 -0.241 0.1
+            children [
+              DEF Decke2 Shape {
+                appearance USE ALU
+                geometry Box {
+                  size 0.43 0.002 0.2
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0.04 0.241 0.1
+            children [
+              USE Decke2
+            ]
+          }
+          Transform {
+            translation 0.256 0 0.1
+            children [
+              DEF Decke3 Shape {
+                appearance USE ALU
+                geometry Box {
+                  size 0.002 0.48 0.2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    name IS name
+    model "Macy Base" 
+    boundingObject USE BO
+    physics Physics {
+      density -1
+      mass 20
+    }
+  }
+}
+

@@ -1,0 +1,855 @@
+#VRML_SIM R2022a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0.
+# Modified from https://www.cyberbotics.com/doc/guide/object-factory#conveyorplatform
+# The conveyor belt contains 3 controllable LEDs, 1 light sensor.
+# made by Wenzheng Cai July 2021, www.servicerobotik-ulm.de
+
+PROTO MacyConveyorBelt [
+  field  SFVec3f     translation      0 0 0
+  field  SFRotation  rotation         0 0 1 0
+  field  SFString    name             "Conveyor Belt"
+]
+{
+Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    DEF shelf Group {
+      children [
+        Transform {
+          translation -0.075 0.255 0.25
+          children [
+            DEF beltShelfVerticalItem Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.03 0.03 0.5
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.095 0.255 0.25
+          children [
+            USE beltShelfVerticalItem
+          ]
+        }
+        Transform {
+          translation -0.075 -0.255 0.25
+          children [
+            USE beltShelfVerticalItem
+          ]
+        }
+        Transform {
+          translation 0.095 -0.255 0.25
+          children [
+            USE beltShelfVerticalItem
+          ]
+        }
+        Transform {
+          translation -0.075 0 0.355
+          children [
+            DEF beltShelfThwartItem Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.03 0.48 0.03
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.095 0 0.355
+          children [
+            USE beltShelfThwartItem
+          ]
+        }
+        Transform {
+          translation 0.01 0.2 0.355
+          children [
+            DEF beltShelfHorizontalItem Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.14 0.03 0.03
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.01 -0.2 0.355
+          children [
+            USE beltShelfHorizontalItem
+          ]
+        }
+        Transform {
+          translation -0.075 0.0835 0.39
+          children [
+            DEF beltSupporter Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+              }
+              geometry Box {
+                size 0.02 0.008 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.075 -0.0835 0.39
+          children [
+            USE beltSupporter
+          ]
+        }
+        Transform {
+          translation 0.095 0.0835 0.39
+          children [
+            USE beltSupporter
+          ]
+        }
+        Transform {
+          translation 0.095 -0.0835 0.39
+          children [
+            USE beltSupporter
+          ]
+        }
+      ]
+    }
+    DEF belt Transform {
+      translation 0.06 0 0.4
+      children [
+        DEF base Group {
+          children [
+            Transform {
+              translation -0.0425 0 0
+              children [
+                DEF beltBaseThwartItem1 Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.827451 0.843137 0.811765
+                    roughness 0.1
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.02 0.175 0.02
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation 0.1475 0 0
+              children [
+                USE beltBaseThwartItem1
+              ]
+            }
+            Transform {
+              translation -0.1125 0.1475 0
+              children [
+                DEF beltBaseThwartItem2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.827451 0.843137 0.811765
+                    roughness 0.1
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.02 0.04 0.02
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation -0.1125 -0.1475 0
+              children [
+                USE beltBaseThwartItem2
+              ]
+            }
+            Transform {
+              translation 0.1225 0.1475 0
+              children [
+                USE beltBaseThwartItem2
+              ]
+            }
+            Transform {
+              translation 0.1225 -0.1475 0
+              children [
+                USE beltBaseThwartItem2
+              ]
+            }
+          ]
+        }
+        Transform {
+          translation -0.1125 0.166 0.03
+          children [
+            DEF railSupporter Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+              }
+              geometry Box {
+                size 0.02 0.008 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.1125 -0.166 0.03
+          children [
+            USE railSupporter
+          ]
+        }
+        Transform {
+          translation 0.1225 0.166 0.03
+          children [
+            USE railSupporter
+          ]
+        }
+        Transform {
+          translation 0.1225 -0.166 0.03
+          children [
+            USE railSupporter
+          ]
+        }
+        Transform {
+          translation -0.0475 0.158 0.04
+          children [
+            DEF beltSideRail1 Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.361 0.008 0.02
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.0475 -0.158 0.04
+          children [
+            USE beltSideRail1
+          ]
+        }
+        Transform {
+          translation 0.168 0.159491 0.04
+          rotation 0 0 1 0.0509
+          children [
+            DEF beltSideRail2 Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.07 0.008 0.02
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.168 -0.159491 0.04
+          rotation 0 0 1 -0.0509
+          children [
+            USE beltSideRail2
+          ]
+        }
+        Transform {
+          translation 0.1705 0.1375 -0.03
+          children [
+            DEF beltBaseVerticalItem Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.02 0.02 0.08
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.1705 -0.1375 -0.03
+          children [
+            DEF beltBaseVerticalItem Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.02 0.02 0.08
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.1885 0 -0.044
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.016 0.4 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.1885 -0.085 -0.084
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 0.1
+                metalness 0
+              }
+              geometry Box {
+                size 0.016 0.16 0.04
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.2145 0.05 0
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                metalness 0.1
+              }
+              geometry Cylinder {
+                height 0.33
+                radius 0.003
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.2145 0.07 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF HFDCylinder Shape {
+              appearance PBRAppearance {
+                baseColor 0.933333 0.933333 0.92549
+                metalness 0.1
+              }
+              geometry Cylinder {
+                height 0.026
+                radius 0.00955
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.2145 -0.07 0
+          rotation 1 0 0 1.5708
+          children [
+            USE HFDCylinder
+          ]
+        }
+        Transform {
+          translation -0.2145 0.145 0
+          rotation 1 0 0 1.5708
+          children [
+            USE HFDCylinder
+          ]
+        }
+        Transform {
+          translation -0.2145 0.20075 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.729412 0.741176 0.713725
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.055 0.0375 0.06
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.1545 0.20075 0.03
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.729412 0.741176 0.713725
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.125
+                radius 0.0188
+              }
+            }
+          ]
+        }
+      ]
+    }
+    SimpleConveyorBelt {
+      translation 0.06 0.1075 0.4
+      size 0.428 0.04 0.03
+      name "ConveyorBelt0"
+      motorName "belt_motor0"
+    }
+    SimpleConveyorBelt {
+      translation 0.06 -0.1075 0.4
+      size 0.428 0.04 0.03
+      name "ConveyorBelt1"
+      motorName "belt_motor1"
+    }
+    DEF led Transform {
+      translation 0.05 -0.2 0.4341
+      children [
+        DEF light_indicator_black Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            roughness 1
+            metalness 0
+            normalMapFactor 0.5
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry Cylinder {
+            height 0.1282
+            radius 0.01875
+          }
+        }
+        LED {
+          translation 0 0 0.0811
+          children [
+            DEF light Shape {
+              appearance PBRAppearance {
+                baseColor 0 1 0
+                roughness 1
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Cylinder {
+                height 0.034
+                radius 0.01875
+              }
+            }
+          ]
+          name "green_led"
+          color [
+            0 1 0
+          ]
+        }
+        LED {
+          translation 0 0 0.1151
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.5 0
+                roughness 1
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Cylinder {
+                height 0.034
+                radius 0.01875
+              }
+            }
+          ]
+          name "orange_led"
+          color [
+            1 0.5 0
+          ]
+        }
+        LED {
+          translation 0 0 0.1491
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0 0
+                roughness 1
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Cylinder {
+                height 0.034
+                radius 0.01875
+              }
+            }
+          ]
+          name "red_led"
+        }
+        Transform {
+          translation 0 0 0.1725
+          children [
+            DEF light_indicator_top_black Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Cylinder {
+                height 0.0128
+                radius 0.01875
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -0.0581
+          children [
+            DEF light_indicator_base_black Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Cylinder {
+                height 0.012
+                radius 0.035
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DistanceSensor {
+      translation -0.11 0 0.4
+      rotation 0 1 0 -1.5707953071795862
+      children [
+        Transform {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.827451 0.843137 0.811765
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.01
+                radius 0.005
+              }
+            }
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.900008 0.222004 0.222004
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.011
+                radius 0.002
+              }
+            }
+          ]
+        }
+      ]
+      name "isBoxPresent"
+      lookupTable [
+        0 1 0
+        0.1 0 0
+      ]
+    }
+  ]   
+  name IS name
+  model "Macy Conveyor Belt"
+  boundingObject Group {
+    children [
+      Transform {
+        translation -0.075 0.255 0.25
+        children [
+          DEF beltShelf1 Box {
+            size 0.03 0.03 0.5
+          }
+        ]
+      }
+      Transform {
+        translation 0.095 0.255 0.25
+        children [
+          USE beltShelf1
+        ]
+      }
+      Transform {
+        translation -0.075 -0.255 0.25
+        children [
+          USE beltShelf1
+        ]
+      }
+      Transform {
+        translation 0.095 -0.255 0.25
+        children [
+          USE beltShelf1
+        ]
+      }
+      Transform {
+        translation -0.075 0 0.355
+        children [
+          DEF beltShelf2 Box {
+            size 0.03 0.48 0.03
+          }
+        ]
+      }
+      Transform {
+        translation 0.095 0 0.355
+        children [
+          USE beltShelf2
+        ]
+      }
+      Transform {
+        translation 0.01 0.2 0.355
+        children [
+          DEF beltShelf3 Box {
+            size 0.14 0.03 0.03
+          }
+        ]
+      }
+      Transform {
+        translation 0.01 -0.2 0.355
+        children [
+          USE beltShelf3
+        ]
+      }
+      Transform {
+        translation -0.075 0.0835 0.39
+        children [
+          DEF beltShelf4 Box {
+            size 0.02 0.008 0.04
+          }
+        ]
+      }
+      Transform {
+        translation -0.075 -0.0835 0.39
+        children [
+          USE beltShelf4
+        ]
+      }
+      Transform {
+        translation 0.095 0.0835 0.39
+        children [
+          USE beltShelf4
+        ]
+      }
+      Transform {
+        translation 0.095 -0.0835 0.39
+        children [
+          USE beltShelf4
+        ]
+      }
+      Transform {
+        translation 0.05 -0.2 0.376
+        children [
+          Cylinder {
+            height 0.012
+            radius 0.035
+          }
+        ]
+      }
+      Transform {
+        translation 0.05 -0.2 0.4976
+        children [
+          Cylinder {
+            height 0.231
+            radius 0.01875
+          }
+        ]
+      }
+      Transform {
+        translation 0.0175 0 0.4
+        children [
+          DEF beltBase1 Box {
+            size 0.02 0.175 0.02
+          }
+        ]
+      }
+      Transform {
+        translation 0.2075 0 0.4
+        children [
+          USE beltBase1
+        ]
+      }
+      Transform {
+        translation -0.0525 0.1475 0.4
+        children [
+          DEF beltBase2 Box {
+            size 0.02 0.04 0.02
+          }
+        ]
+      }
+      Transform {
+        translation -0.0525 -0.1475 0.4
+        children [
+          USE beltBase2
+        ]
+      }
+      Transform {
+        translation 0.1825 0.1475 0.4
+        children [
+          USE beltBase2
+        ]
+      }
+      Transform {
+        translation 0.1825 -0.1475 0.4
+        children [
+          USE beltBase2
+        ]
+      }
+      Transform {
+        translation -0.0525 0.166 0.43
+        children [
+          DEF beltBase3 Box {
+            size 0.02 0.008 0.04
+          }
+        ]
+      }
+      Transform {
+        translation -0.0525 -0.166 0.43
+        children [
+          USE beltBase3
+        ]
+      }
+      Transform {
+        translation 0.1825 0.166 0.43
+        children [
+          USE beltBase3
+        ]
+      }
+      Transform {
+        translation 0.1825 -0.166 0.43
+        children [
+          USE beltBase3
+        ]
+      }
+      Transform {
+        translation 0.0125 0.158 0.44
+        children [
+          DEF beltBase4 Box {
+            size 0.361 0.008 0.02
+          }
+        ]
+      }
+      Transform {
+        translation 0.0125 -0.158 0.44
+        children [
+          USE beltBase4
+        ]
+      }
+      Transform {
+        translation 0.228 0.1595 0.44
+        rotation 0 0 1 0.0509
+        children [
+          DEF beltBase5 Box {
+            size 0.07 0.008 0.02
+          }
+        ]
+      }
+      Transform {
+        translation 0.228 -0.1595 0.44
+        rotation 0 0 1 -0.0509
+        children [
+          USE beltBase5
+        ]
+      }
+      Transform {
+        translation 0.2305 0.1375 0.37
+        children [
+          DEF beltBase6 Box {
+            size 0.02 0.02 0.08
+          }
+        ]
+      }
+      Transform {
+        translation 0.2305 -0.1375 0.37
+        children [
+          USE beltBase6
+        ]
+      }
+      Transform {
+        translation 0.2485 0 0.356
+        children [
+          Box {
+            size 0.016 0.4 0.04
+          }
+        ]
+      }
+      Transform {
+        translation 0.2485 -0.085 0.316
+        children [
+          Box {
+            size 0.016 0.16 0.04
+          }
+        ]
+      }
+      Transform {
+        translation -0.1545 0 0.4
+        rotation 1 0 0 1.5708
+        children [
+          Cylinder {
+            height 0.167
+            radius 0.00955
+          }
+        ]
+      }
+      Transform {
+        translation -0.1545 0.155 0.4
+        rotation 1 0 0 1.5708
+        children [
+          Cylinder {
+            height 0.05
+            radius 0.00955
+          }
+        ]
+      }
+      Transform {
+        translation -0.1545 0.20075 0.4
+        children [
+          Box {
+            size 0.055 0.0375 0.06
+          }
+        ]
+      }
+      Transform {
+        translation -0.0945 0.20075 0.43
+        rotation 0 1 0 1.5708
+        children [
+          Cylinder {
+            height 0.125
+            radius 0.0188
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 7.233
+  }
+}
+}
+
