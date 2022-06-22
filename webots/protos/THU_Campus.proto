@@ -1915,30 +1915,24 @@ DEF COLUMNS Group {
     }
   ]
 }
-DEF Logo Solid {
+Transform {
+  translation 20.051 18.47 0.1
   children [
-    Transform {
-      translation 20.051 18.47 0.1
-      rotation 0 0 1 3.14159
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "textures/logo_THU.png"
-              ]
-            }
-            roughness 1
-            metalness 0
-          }
-          geometry Plane {
-            size 30 15
-          }
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/logo_THU.png"
+          ]
         }
-      ]
+        roughness 1
+        metalness 0
+      }
+      geometry Plane {
+        size 30 15
+      }
     }
   ]
-  name "logo"
 }
 
 
