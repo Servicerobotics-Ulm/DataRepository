@@ -1,4 +1,48 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/MarbleTiles.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/PaintedWood.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Leather.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/DesktopComputer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/CabinetHandle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/WoodenChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/bathroom/protos/BathroomSink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Sofa.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/school_furniture/protos/Blackboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Tree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/street_furniture/protos/StoneBench.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/street_furniture/protos/Bench.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/street_furniture/protos/TrashBin.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/kitchen/components/protos/Sink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/GenericDoorAppearance.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/microphone.proto"
+EXTERNPROTO "../protos/Wall.proto"
+EXTERNPROTO "../protos/Radiator.proto"
+EXTERNPROTO "../protos/NavigationPoint.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/StraightStairsRail.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/StraightStairs.proto"
+
 WorldInfo {
   info [
     "THU Ulm"
@@ -2018,7 +2062,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -2040,7 +2084,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -2062,7 +2106,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -2084,7 +2128,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -4194,7 +4238,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/first_aid.jpg"
+                    "../protos/textures/first_aid.jpg"
                   ]
                 }
                 roughness 1
@@ -4222,7 +4266,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4242,7 +4286,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4262,7 +4306,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4282,7 +4326,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4302,7 +4346,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4322,7 +4366,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4342,7 +4386,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4362,7 +4406,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -4382,7 +4426,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo_sr.png"
+                    "../protos/textures/logo_sr.png"
                   ]
                 }
                 roughness 1
@@ -4402,7 +4446,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo_sr.png"
+                    "../protos/textures/logo_sr.png"
                   ]
                 }
                 roughness 1
@@ -4422,7 +4466,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo_THU.png"
+                    "../protos/textures/logo_THU.png"
                   ]
                 }
                 roughness 1
@@ -4449,7 +4493,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-01.png"
+                "../protos/textures/apriltags_pngs/tag16_05-01.png"
               ]
             }
             roughness 1
@@ -4469,7 +4513,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-02.png"
+                "../protos/textures/apriltags_pngs/tag16_05-02.png"
               ]
             }
             roughness 1
@@ -4489,7 +4533,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-03.png"
+                "../protos/textures/apriltags_pngs/tag16_05-03.png"
               ]
             }
             roughness 1
@@ -4509,7 +4553,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-04.png"
+                "../protos/textures/apriltags_pngs/tag16_05-04.png"
               ]
             }
             roughness 1
@@ -4529,7 +4573,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-05.png"
+                "../protos/textures/apriltags_pngs/tag16_05-05.png"
               ]
             }
             roughness 1
@@ -4549,7 +4593,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-06.png"
+                "../protos/textures/apriltags_pngs/tag16_05-06.png"
               ]
             }
             roughness 1
@@ -4569,7 +4613,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-07.png"
+                "../protos/textures/apriltags_pngs/tag16_05-07.png"
               ]
             }
             roughness 1
@@ -4589,7 +4633,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-08.png"
+                "../protos/textures/apriltags_pngs/tag16_05-08.png"
               ]
             }
             roughness 1
@@ -4609,7 +4653,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-09.png"
+                "../protos/textures/apriltags_pngs/tag16_05-09.png"
               ]
             }
             roughness 1
@@ -4629,7 +4673,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-10.png"
+                "../protos/textures/apriltags_pngs/tag16_05-10.png"
               ]
             }
             roughness 1
@@ -4649,7 +4693,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-11.png"
+                "../protos/textures/apriltags_pngs/tag16_05-11.png"
               ]
             }
             roughness 1
@@ -4669,7 +4713,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-12.png"
+                "../protos/textures/apriltags_pngs/tag16_05-12.png"
               ]
             }
             roughness 1
@@ -4689,7 +4733,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-13.png"
+                "../protos/textures/apriltags_pngs/tag16_05-13.png"
               ]
             }
             roughness 1
@@ -4709,7 +4753,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-14.png"
+                "../protos/textures/apriltags_pngs/tag16_05-14.png"
               ]
             }
             roughness 1
@@ -4729,7 +4773,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-15.png"
+                "../protos/textures/apriltags_pngs/tag16_05-15.png"
               ]
             }
             roughness 1
@@ -4749,7 +4793,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-16.png"
+                "../protos/textures/apriltags_pngs/tag16_05-16.png"
               ]
             }
             roughness 1
@@ -4769,7 +4813,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-17.png"
+                "../protos/textures/apriltags_pngs/tag16_05-17.png"
               ]
             }
             roughness 1
@@ -4789,7 +4833,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-18.png"
+                "../protos/textures/apriltags_pngs/tag16_05-18.png"
               ]
             }
             roughness 1
@@ -4809,7 +4853,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-19.png"
+                "../protos/textures/apriltags_pngs/tag16_05-19.png"
               ]
             }
             roughness 1
@@ -4829,7 +4873,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-20.png"
+                "../protos/textures/apriltags_pngs/tag16_05-20.png"
               ]
             }
             roughness 1
@@ -4849,7 +4893,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-21.png"
+                "../protos/textures/apriltags_pngs/tag16_05-21.png"
               ]
             }
             roughness 1
@@ -4869,7 +4913,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-21.png"
+                "../protos/textures/apriltags_pngs/tag16_05-21.png"
               ]
             }
             roughness 1
@@ -4889,7 +4933,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-22.png"
+                "../protos/textures/apriltags_pngs/tag16_05-22.png"
               ]
             }
             roughness 1
@@ -4909,7 +4953,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-23.png"
+                "../protos/textures/apriltags_pngs/tag16_05-23.png"
               ]
             }
             roughness 1
@@ -4929,7 +4973,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-24.png"
+                "../protos/textures/apriltags_pngs/tag16_05-24.png"
               ]
             }
             roughness 1
@@ -4949,7 +4993,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-25.png"
+                "../protos/textures/apriltags_pngs/tag16_05-25.png"
               ]
             }
             roughness 1
@@ -4969,7 +5013,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-26.png"
+                "../protos/textures/apriltags_pngs/tag16_05-26.png"
               ]
             }
             roughness 1
@@ -4989,7 +5033,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-27.png"
+                "../protos/textures/apriltags_pngs/tag16_05-27.png"
               ]
             }
             roughness 1
@@ -5009,7 +5053,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-28.png"
+                "../protos/textures/apriltags_pngs/tag16_05-28.png"
               ]
             }
             roughness 1
@@ -5029,7 +5073,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-29.png"
+                "../protos/textures/apriltags_pngs/tag16_05-29.png"
               ]
             }
             roughness 1
@@ -5049,7 +5093,7 @@ DEF AprilTags Transform {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/apriltags_pngs/tag16_05-30.png"
+                "../protos/textures/apriltags_pngs/tag16_05-30.png"
               ]
             }
             roughness 1

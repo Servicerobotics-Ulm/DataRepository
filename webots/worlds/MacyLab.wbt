@@ -1,4 +1,9 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/Macy.proto"
+
 WorldInfo {
   info [
     "THU Ulm Campus with Macy (Mir 250 with UR5e and Kinect)"
@@ -50,18 +55,6 @@ Macy {
   hidden rotation_11 0 -1 0 0.20000009717999687
 }
 THU_RoboticsLab {
+  addFloor TRUE
 }
-Floor {
-  translation -1.25 -1.25 0
-  rotation 0 0 1 1.5707963267948966
-  size 15 9
-  appearance PBRAppearance {
-    baseColorMap ImageTexture {
-      url [
-        "textures/gray_floor_tiles.jpg"
-      ]
-    }
-    roughness 0.4
-    metalness 0
-  }
-}
+

@@ -1,4 +1,36 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/PanTiltUnit.proto"
+EXTERNPROTO "../protos/A-Frame.proto"
+EXTERNPROTO "../protos/ConnectorBox.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/UR5.proto"
+EXTERNPROTO "../protos/InclinedShelf.proto"
+EXTERNPROTO "../protos/SmallBoxA.proto"
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/Crate.proto"
+EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/Kisten.proto"
+EXTERNPROTO "../protos/RollerConveyorStation.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/SmallBox.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+EXTERNPROTO "../protos/OPC_UA_Station.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     "THU Ulm Service Robotics Laboratory"
@@ -300,28 +332,15 @@ Transform {
     }
   ]
 }
-Floor {
-  translation -1.25 -1.25 0
-  rotation 0 0 1 1.5707963267948966
-  size 15 9
-  appearance PBRAppearance {
-    baseColorMap ImageTexture {
-      url [
-        "textures/gray_floor_tiles.jpg"
-      ]
-    }
-    roughness 0.4
-    metalness 0
-  }
-}
 THU_RoboticsLab {
+  addFloor TRUE
 }
 SmallBoxA {
   translation 0.6730080336157123 -1.8102546527012147 1.0373777919896723
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox0"
   textureUrl [
-    "textures/SMACKS.jpg"
+    "../protos/textures/SMACKS.jpg"
   ]
 }
 SmallBoxA {
@@ -329,7 +348,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox0(1)"
   textureUrl [
-    "textures/SMACKS.jpg"
+    "../protos/textures/SMACKS.jpg"
   ]
 }
 SmallBoxA {
@@ -337,7 +356,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox1"
   textureUrl [
-    "textures/CORN-FLAKES.jpg"
+    "../protos/textures/CORN-FLAKES.jpg"
   ]
 }
 SmallBoxA {
@@ -345,7 +364,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox1(1)"
   textureUrl [
-    "textures/CORN-FLAKES.jpg"
+    "../protos/textures/CORN-FLAKES.jpg"
   ]
 }
 SmallBoxA {
@@ -353,7 +372,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox2"
   textureUrl [
-    "textures/FROSTIES.jpg"
+    "../protos/textures/FROSTIES.jpg"
   ]
 }
 SmallBoxA {
@@ -361,7 +380,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox2(1)"
   textureUrl [
-    "textures/FROSTIES.jpg"
+    "../protos/textures/FROSTIES.jpg"
   ]
 }
 SmallBoxA {
@@ -369,7 +388,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox3"
   textureUrl [
-    "textures/SPECIAL.jpg"
+    "../protos/textures/SPECIAL.jpg"
   ]
 }
 SmallBoxA {
@@ -377,7 +396,7 @@ SmallBoxA {
   rotation 0.13784398964888167 -0.13787298964670397 -0.980810926347968 -1.5902153071795864
   name "ConnectorBox3(1)"
   textureUrl [
-    "textures/SPECIAL.jpg"
+    "../protos/textures/SPECIAL.jpg"
   ]
 }
 SmallBoxA {
@@ -414,7 +433,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(6)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
     SmallBox {
@@ -437,7 +456,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(5)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
     ConnectorBox {
@@ -446,7 +465,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(4)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
   ]

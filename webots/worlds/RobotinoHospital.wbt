@@ -1,9 +1,24 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/HospitalWalls.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     ""
   ]
-  basicTimeStep 8
   contactProperties [
     ContactProperties {
       material1 "WheelMat"
@@ -52,8 +67,8 @@ DEF Locations Group {
   ]
 }
 Editor {
-  mapWidth 1000
-  mapHeight 400
+  showMobileRobotsPoses "2: Localization (green) Route (blue)"
+  mapType "Current"
 }
 Floor {
   size 45.25 18.45
@@ -62,7 +77,7 @@ Floor {
     baseColor 0.347066 0.351293 0.379995
     baseColorMap ImageTexture {
       url [
-        "textures/hospital_section_rooms.png"
+        "../protos/textures/hospital_section_rooms.png"
       ]
     }
     roughness 0.5

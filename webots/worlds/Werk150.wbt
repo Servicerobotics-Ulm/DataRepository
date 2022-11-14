@@ -1,4 +1,33 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/pallet/protos/WoodenPallet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "Werk150.wbt"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/PanTiltUnit.proto"
+EXTERNPROTO "../protos/A-Frame.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/SmallBoxB.proto"
+EXTERNPROTO "../protos/UR5.proto"
+EXTERNPROTO "../protos/InclinedShelf.proto"
+EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/Kisten.proto"
+EXTERNPROTO "../protos/MobileRollerConveyor.proto"
+EXTERNPROTO "../protos/ManualStation.proto"
+EXTERNPROTO "../protos/CrossWithArrow.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+EXTERNPROTO "../protos/AssemblyWorkstation.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     "Werk150, www.werk150.de, ESB Business School (Reutlingen)"

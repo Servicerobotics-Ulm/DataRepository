@@ -1,4 +1,11 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Pioneer3dxWrapper.proto"
+EXTERNPROTO "../protos/HospitalWalls.proto"
+
 WorldInfo {
   info [
     "Hospital Environment with Pioneer 3DX"
@@ -22,7 +29,7 @@ Floor {
     baseColor 0.827451 0.843137 0.811765
     baseColorMap ImageTexture {
       url [
-        "textures/hospital_section_rooms.png"
+        "../protos/textures/hospital_section_rooms.png"
       ]
     }
     roughness 0.5

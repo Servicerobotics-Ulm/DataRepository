@@ -1,4 +1,26 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/PanTiltUnit.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/microphone.proto"
+EXTERNPROTO "../protos/UR5.proto"
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     "THU Ulm Service Robotics Laboratory"
@@ -130,19 +152,7 @@ Larry {
     }
   ]
 }
-Floor {
-  translation -1.25 -1.25 0
-  rotation 0 0 1 1.5707963267948966
-  size 15 9
-  appearance PBRAppearance {
-    baseColorMap ImageTexture {
-      url [
-        "textures/gray_floor_tiles.jpg"
-      ]
-    }
-    roughness 0.4
-    metalness 0
-  }
-}
 THU_RoboticsLab {
+  addFloor TRUE
 }
+

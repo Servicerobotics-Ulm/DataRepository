@@ -1,4 +1,35 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Leather.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/humans/pedestrian/protos/Pedestrian.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/pallet/protos/WoodenPallet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/microphone.proto"
+EXTERNPROTO "../protos/UR5.proto"
+EXTERNPROTO "../protos/ToolShelf.proto"
+EXTERNPROTO "../protos/Wall.proto"
+EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/StandardShelf.proto"
+EXTERNPROTO "../protos/Kisten.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+
 WorldInfo {
   info [
     "THU Ulm Service Robotics Laboratory"
@@ -139,7 +170,7 @@ Floor {
     baseColor 0.729412 0.741176 0.713725
     baseColorMap ImageTexture {
       url [
-        "textures/marble.jpg"
+        "../protos/textures/marble.jpg"
       ]
     }
     roughness 0.5
@@ -880,7 +911,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo.png"
+                "../protos/textures/logo.png"
               ]
             }
             roughness 1
@@ -900,7 +931,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo.png"
+                "../protos/textures/logo.png"
               ]
             }
             roughness 1
@@ -920,7 +951,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo.png"
+                "../protos/textures/logo.png"
               ]
             }
             roughness 1
@@ -940,7 +971,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo.png"
+                "../protos/textures/logo.png"
               ]
             }
             roughness 1
@@ -960,7 +991,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo_sr.png"
+                "../protos/textures/logo_sr.png"
               ]
             }
             roughness 1
@@ -980,7 +1011,7 @@ DEF Logo Group {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "textures/logo_sr.png"
+                "../protos/textures/logo_sr.png"
               ]
             }
             roughness 1

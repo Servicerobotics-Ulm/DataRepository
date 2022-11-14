@@ -1,4 +1,48 @@
-#VRML_SIM R2021b utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/MarbleTiles.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/PaintedWood.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Leather.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/DesktopComputer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/CabinetHandle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/bathroom/protos/BathroomSink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Sofa.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/school_furniture/protos/Blackboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Tree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/fire_extinguisher/protos/FireExtinguisher.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/kitchen/components/protos/Sink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/DoorLever.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/GenericDoorAppearance.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "../protos/A-Frame.proto"
+EXTERNPROTO "../protos/Wall.proto"
+EXTERNPROTO "../protos/NavigationPoint.proto"
+EXTERNPROTO "../protos/InclinedShelf.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/Kisten.proto"
+EXTERNPROTO "../protos/SmallBox.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+EXTERNPROTO "../protos/OPC_UA_Station.proto"
+
 WorldInfo {
   info [
     ""
@@ -499,7 +543,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -519,7 +563,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -539,7 +583,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -559,7 +603,7 @@ Transform {
                 baseColor 0.459998 0.296468 0.0199283
                 baseColorMap ImageTexture {
                   url [
-                    "textures/wood.jpg"
+                    "../protos/textures/wood.jpg"
                   ]
                 }
                 roughness 0.2
@@ -2352,7 +2396,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/first_aid.jpg"
+                    "../protos/textures/first_aid.jpg"
                   ]
                 }
                 roughness 1
@@ -2380,7 +2424,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2400,7 +2444,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2420,7 +2464,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2440,7 +2484,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2460,7 +2504,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2480,7 +2524,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2500,7 +2544,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2520,7 +2564,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo.png"
+                    "../protos/textures/logo.png"
                   ]
                 }
                 roughness 1
@@ -2540,7 +2584,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo_sr.png"
+                    "../protos/textures/logo_sr.png"
                   ]
                 }
                 roughness 1
@@ -2560,7 +2604,7 @@ Transform {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/logo_sr.png"
+                    "../protos/textures/logo_sr.png"
                   ]
                 }
                 roughness 1

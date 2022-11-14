@@ -1,4 +1,24 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "ConveyorBeltIntralogistic.wbt"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/RollerConveyorStation.proto"
+EXTERNPROTO "../protos/Kasten.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+EXTERNPROTO "../protos/OPC_UA_Station.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     ""
@@ -60,7 +80,7 @@ DEF Stations Group {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/number/0.png"
+                    "../protos/textures/number/0.png"
                   ]
                 }
                 roughness 1
@@ -89,7 +109,7 @@ DEF Stations Group {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/number/1.png"
+                    "../protos/textures/number/1.png"
                   ]
                 }
                 roughness 1
@@ -118,7 +138,7 @@ DEF Stations Group {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/number/2.png"
+                    "../protos/textures/number/2.png"
                   ]
                 }
                 roughness 1
@@ -146,7 +166,7 @@ DEF Stations Group {
               appearance PBRAppearance {
                 baseColorMap ImageTexture {
                   url [
-                    "textures/number/3.png"
+                    "../protos/textures/number/3.png"
                   ]
                 }
                 roughness 1

@@ -1,4 +1,31 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/PanTiltUnit.proto"
+EXTERNPROTO "../protos/A-Frame.proto"
+EXTERNPROTO "../protos/ConnectorBox.proto"
+EXTERNPROTO "../protos/Larry.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/UR5.proto"
+EXTERNPROTO "../protos/InclinedShelf.proto"
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/Kisten.proto"
+EXTERNPROTO "../protos/kinect_v2.proto"
+EXTERNPROTO "../protos/SmallBox.proto"
+EXTERNPROTO "../protos/CrateStation.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
 WorldInfo {
   info [
     "THU Ulm Service Robotics Laboratory"
@@ -83,8 +110,6 @@ DEF Stations Group {
   ]
 }
 Editor {
-  mapWidth 400
-  mapHeight 400
 }
 Larry {
   hidden position_0_0 6.642958338583787
@@ -160,21 +185,8 @@ Larry {
     }
   ]
 }
-Floor {
-  translation -1.25 -1.25 0
-  rotation 0 0 1 1.5707963267948966
-  size 15 9
-  appearance PBRAppearance {
-    baseColorMap ImageTexture {
-      url [
-        "textures/gray_floor_tiles.jpg"
-      ]
-    }
-    roughness 0.4
-    metalness 0
-  }
-}
 THU_RoboticsLab {
+  addFloor TRUE
 }
 Transform {
   translation -1.08 -1.25 0
@@ -200,7 +212,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(6)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
     SmallBox {
@@ -223,7 +235,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(5)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
     ConnectorBox {
@@ -232,7 +244,7 @@ Transform {
       size 0.135 0.05 0.062
       name "SmallBox(4)"
       textureUrl [
-        "textures/white.png"
+        "../protos/textures/white.png"
       ]
     }
   ]

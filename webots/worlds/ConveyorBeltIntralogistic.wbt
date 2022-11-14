@@ -1,4 +1,25 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/festo/robotino3/protos/Robotino3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/StationNumber.proto"
+EXTERNPROTO "../protos/SickLms100.proto"
+EXTERNPROTO "../protos/RollerConveyorStation.proto"
+EXTERNPROTO "../protos/Kasten.proto"
+EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
+EXTERNPROTO "../protos/OPC_UA_Station.proto"
+EXTERNPROTO "../protos/Editor.proto"
+EXTERNPROTO "../protos/ConveyorBeltIntralogistic.proto"
+
 WorldInfo {
   info [
     ""
@@ -58,7 +79,7 @@ DEF Stations Group {
           name "Station0"
           children [
             StationNumber {
-              url [ "textures/number/0.png" ]
+              url [ "../protos/textures/number/0.png" ]
             }
           ]
         }
@@ -76,7 +97,7 @@ DEF Stations Group {
           name "Station1"
           children [
             StationNumber {
-              url [ "textures/number/1.png" ]
+              url [ "../protos/textures/number/1.png" ]
             }
           ]
         }
@@ -94,7 +115,7 @@ DEF Stations Group {
           name "Station2"
           children [
             StationNumber {
-              url [ "textures/number/2.png" ]
+              url [ "../protos/textures/number/2.png" ]
             }
           ]
         }
@@ -111,7 +132,7 @@ DEF Stations Group {
           name "Station3"
           children [
             StationNumber {
-              url [ "textures/number/3.png" ]
+              url [ "../protos/textures/number/3.png" ]
             }
           ]
         }
@@ -120,8 +141,6 @@ DEF Stations Group {
   ]
 }
 Editor {
-  mapWidth 400
-  mapHeight 400
 }
 Robotino3 {
   controller "<extern>"
