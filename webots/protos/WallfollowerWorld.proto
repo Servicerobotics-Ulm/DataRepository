@@ -1,18 +1,23 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # change world for Exercise DriveMidway
 # template language: javascript
+
+EXTERNPROTO "../protos/walls/walls_ExcerciseWallfollower.proto"
+EXTERNPROTO "../protos/walls/walls_ExcerciseWallfollower2.proto"
 
 PROTO WallfollowerWorld [
   field  SFString{"ExcerciseWallfollower", "ExcerciseWallfollower2"}  world  "ExcerciseWallfollower"
 ]
 {
 
-%< if(fields.world.value === "ExcerciseWallfollower") { >%
-walls_ExcerciseWallfollower
-%< } else { >%
-walls_ExcerciseWallfollower2
-%< } >%
-{
+Group {
+  children [
+    %< if(fields.world.value === "ExcerciseWallfollower") { >%
+    walls_ExcerciseWallfollower {}
+    %< } else { >%
+    walls_ExcerciseWallfollower2 {}
+    %< } >%
+  ]
 }
 
 }
