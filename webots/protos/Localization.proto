@@ -1,0 +1,231 @@
+#VRML_SIM R2022b utf8
+# Can be moved by the user to change the localization (calculated position).
+# template language: javascript
+
+EXTERNPROTO "CrossWithArrow.proto"
+EXTERNPROTO "RealRobotId.proto"
+
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO Localization [
+  field       SFString     baseComponent               "ComponentWebotsMobileRobot"
+  field       SFVec3f      translation                 0 0 0
+  field       SFRotation   rotation                    0 0 1 0
+  field       SFString     {"baseComponent", "localizationComponent"} service "localizationComponent"
+  field       SFString     localizationComponent       "SmartAmcl"
+  field       MFString     localizationComponentNames  []
+  field       SFString     {"", "Robotino", "Larry", "Pioneer", "Macy"} type "Robotino"
+  field       SFBool       INITIALPOSE_requires_neutral  FALSE
+]
+{
+Solid {
+  name %<= "\"" + fields.baseComponent.value + " \"" >%
+  translation IS translation
+  rotation IS rotation
+  
+%< let id = fields.baseComponent.value.slice(-2); // last 2 characters
+   if(fields.type.value=="Robotino") { >%
+  children [
+    RealRobotId {
+      translation 0 0 0.3
+      id %<= '"' + id + '"' >%
+    }
+    Transform {
+      translation 0 0 0.15
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopRobotino.png"
+              ]
+            }
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.45 -0.5
+              scale 0.95 0.95
+            }
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.276
+            radius 0.2266
+            side FALSE
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.45 -0.5
+              scale 0.8 0.8
+            }
+          }
+          geometry Cylinder {
+            height 0.276
+            radius 0.2266
+            top FALSE
+          }
+        }
+      ]
+    }
+  ]
+%< } >%
+
+%< if(fields.type.value=="Larry") { >%
+  children [
+    RealRobotId {
+      translation 0 0 0.56
+      id %<= '"' + id + '"' >%
+    }
+    Transform {
+      translation 0 0 0.28
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopLarry.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.54
+            radius 0.32
+            side FALSE
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Cylinder {
+            height 0.54
+            radius 0.32
+            top FALSE
+          }
+        }
+      ]
+    }
+  ]
+%< } >%
+
+%< if(fields.type.value=="Pioneer") { >%
+  children [
+    RealRobotId {
+      translation 0 0 0.26
+      id %<= '"' + id + '"' >%
+    }  
+    Transform {
+      translation -0.045 0 0.1245
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopPioneer.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.53 -0.52
+              scale 0.9 0.9
+            }
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.24
+            radius 0.22
+            side FALSE
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              center -0.53 -0.52
+              scale 0.77 0.77
+            }
+          }
+          geometry Cylinder {
+            height 0.24
+            radius 0.22
+            top FALSE
+          }
+        }
+      ]
+    }
+  ]
+%< } >%
+
+%< if(fields.type.value=="Macy") { >%
+  children [
+    RealRobotId {
+      translation 0 0 0.54
+      id %<= '"' + id + '"' >%
+    }
+    Transform {
+      translation -0.075 0.05 0.52
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/TopMacy.png"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Plane {
+            size 0.95 0.68
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.8 0.6 0.5
+          }
+        }
+      ]
+    }
+  ]
+%< } >%
+
+%< if(fields.type.value=="") { >%
+  children [
+    RealRobotId {
+      translation 0 0 0.015
+      id %<= '"' + id + '"' >%
+    }
+    CrossWithArrow {
+      color 0 1 0
+      transparency 0.5
+    }
+  ]
+%< } >%
+
+}
+}
+

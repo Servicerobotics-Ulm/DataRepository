@@ -1,0 +1,40 @@
+#VRML_SIM R2022b utf8
+# tags: hidden
+# template language: javascript
+# used in RealRobot.proto to display a red digit if the last two characters of id are from "_0" to "_9"
+# made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+PROTO RealRobotId [
+  field       SFVec3f      translation   0 0 0
+  field       SFColor      color         1 0 0
+  field       SFString     id            ""
+]
+{
+Transform {
+  translation IS translation
+%< let id = fields.id.value.slice(-2);
+   let number = id.substring(1,2);
+   let number_array = ["\"textures/TextToPNG/" + number + ".png\""];
+   if(id.length==2 && id.substring(0,1)==="_" && number>="0" && number<="9") {
+>%
+  rotation 0 0 1 -1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor IS color
+        baseColorMap ImageTexture {
+          url %<= number_array >%
+          filtering 0
+        }
+        metalness 0
+        roughness 1
+      }
+      geometry Plane {
+        size 0.15 0.2
+      }
+    }
+  ]
+%< }
+>%
+}
+}
