@@ -1,10 +1,13 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # Visualisation of the position of real or simulated mobile robots
 # template language: javascript
+
 # made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 
+EXTERNPROTO "CrossWithArrow.proto"
+
 PROTO MobileRobotPose [
-  field       SFString     name                  "MobileRobotPose"
+  field       SFString     baseComponent         "ComponentWebotsMobileRobot"
   field       SFVec3f      translationLocation   0 0 0
   field       SFRotation   rotationLocation      0 0 1 0
   field       SFVec3f      translationOdometry   0 0 0
@@ -12,9 +15,10 @@ PROTO MobileRobotPose [
   unconnectedField SFFloat velocityForward       0.0
   unconnectedField SFFloat velocityLeft          0.0
   unconnectedField SFFloat velocityRotation      0.0
+  unconnectedField SFVec3f covMatrixDiagonal     0 0 0
   hiddenField  SFFloat     transparencyOdometry  0.5
   hiddenField  SFFloat     transparencyRoute     1.0
-  hiddenField  SFFloat     transparencyTrail     1.0
+  hiddenField  MFNode      trailPoints           [ ]
   hiddenField  MFVec3f     route                 [
     0 0 0, 1 0 0, 0 1 0,
     0 0 0, 1 0 0, 0 1 0,
@@ -26,26 +30,14 @@ PROTO MobileRobotPose [
     0 0 0, 1 0 0, 0 1 0,
     0 0 0, 1 0 0, 0 1 0,
     0 0 0, 1 0 0, 0 1 0]
-  hiddenField  MFVec3f     trailPoints           [0 0 0 1 0 0]
-  hiddenField  MFInt32     trailIndex            [0 1]
-  field  MFNode      children              [ ]
 ]
 {
 Solid {
-  name IS name
+  name IS baseComponent
   children [
     Transform {
       translation IS translationLocation
       rotation IS rotationLocation
-      children [
-        Group {
-          children IS children
-        }
-        CrossWithArrow {
-          color 0 1 0
-          transparency 0.5
-        }
-      ]
     }
     Transform {
       translation 0 0 0.02
@@ -65,21 +57,8 @@ Solid {
     Transform {
       translation 0 0 0.03
       children [
-        Shape {
-          isPickable FALSE
-          castShadows FALSE
-          appearance Appearance {
-            material Material {
-              emissiveColor 0 0 1
-              transparency IS transparencyTrail
-            }
-          }
-          geometry IndexedLineSet {
-            coord Coordinate {
-              point IS trailPoints
-            }
-            coordIndex IS trailIndex
-          }
+        Group {
+          children IS trailPoints
         }
         Transform {
           translation IS translationLocation
