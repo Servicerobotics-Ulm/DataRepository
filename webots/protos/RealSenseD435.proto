@@ -1,10 +1,8 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # documentation url: https://www.intelrealsense.com/depth-camera-d435/
 # Intel RealSense D435, it contains a RangeFinder and a Camera device.
 # made by Wenzheng Cai June 2021, www.servicerobotik-ulm.de.
 # template language: javascript
-
-
 PROTO RealSenseD435 [
   field SFVec3f    translation         0 0 0
   field SFRotation rotation            0 0 1 0

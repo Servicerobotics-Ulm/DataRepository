@@ -1,10 +1,9 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # documentation url: https://www.sick.com/ag/en/opto-electronic-protective-devices/safety-laser-scanners/nanoscan3/c/g507056
 # documentation url: https://cdn.sick.com/media/docs/1/01/701/technical_information_microscan3_outdoorscan3_nanoscan3_data_output_via_udp_and_tcp_ip_en_im0083701.pdf
 # Safety Laser Scanner nanoScan3 from Sick
 # made by Wenzheng Cai July 2021, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 # template language: javascript
-
 PROTO SicknanoScan3 [
   field SFVec3f    translation           0 0 0
   field SFRotation rotation              0 0 1 0

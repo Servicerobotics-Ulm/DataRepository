@@ -1,6 +1,5 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # (c) 2021 Thomas Feldmeier, http://www.servicerobotik-ulm.de, GPL 2.0
-
 PROTO VacuumGripper [
   field SFFloat    length              0.119
   field SFRotation rotation            0 1 0 0

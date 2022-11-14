@@ -1,9 +1,14 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This station can be commanded by an mobile robot through OPC UA. It has an motorized conveyor belt, an sensor to detect a box on top and signal lights.
 #
 # made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "Location.proto"
+EXTERNPROTO "Lenkrolle.proto"
+EXTERNPROTO "SimpleConveyorBelt.proto"
 
 PROTO OPC_UA_Station [
   field SFVec3f             translation       0 0 0
@@ -552,7 +557,7 @@ Robot {
           }
         }
         Transform {
-          translation 0.00110008 -7.50548e-08 -0.04
+          translation 0.002 0 -0.04
           rotation 0.57735 0.57735 0.57735 2.0944
           children [
             Shape {

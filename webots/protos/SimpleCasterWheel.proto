@@ -1,7 +1,6 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # simple fixed caster wheel without Physics/HingeJoint
 # made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
-
 PROTO SimpleCasterWheel [
   field SFVec3f    translation           0 0 0
   field SFRotation rotation              0 0 1 0

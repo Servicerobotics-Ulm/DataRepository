@@ -1,9 +1,12 @@
-#VRML_SIM R2022a utf8 
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This is a PROTO file for Webots for a shelf (0.4 x 1 x 1.4 m) (coordinate axis x=front y=left z=up)
 # This shelf has 4 wheels and 3 boards with angle 0.576376rad.
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
+
+EXTERNPROTO "Location.proto"
+EXTERNPROTO "Lenkrolle.proto"
 
 PROTO InclinedShelf [
   field SFVec3f       translation     0 0 0

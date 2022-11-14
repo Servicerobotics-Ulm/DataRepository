@@ -1,10 +1,9 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 #
 # a rectangular grid of (rows+1)*(columns+1) lines
 # size.x = length*(rows+1)
 # size.y = length*(columns+1)
 # size.z = radius
-
 PROTO Grid [
   field SFVec3f    translation         0 0 0
   field SFRotation rotation            0 1 0 0

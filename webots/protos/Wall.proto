@@ -1,6 +1,8 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # tags: nonDeterministic
 # A customizable wall.
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
 
 PROTO Wall [
   field SFVec3f    translation 0 0 0

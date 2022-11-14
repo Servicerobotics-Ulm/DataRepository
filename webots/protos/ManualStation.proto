@@ -1,7 +1,10 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # template language: javascript
 # manual station
 # made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+EXTERNPROTO "Location.proto"
+EXTERNPROTO "CrossWithArrow.proto"
 
 PROTO ManualStation [
   field SFVec3f    translation      0 0 0

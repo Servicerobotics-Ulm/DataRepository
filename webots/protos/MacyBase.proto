@@ -1,6 +1,5 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # made by Wenzheng Cai July 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
-
 PROTO MacyBase [
   field SFVec3f    translation     0 0 0
   field SFRotation rotation        1 0 0 0

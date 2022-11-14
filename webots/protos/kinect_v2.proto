@@ -1,11 +1,10 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
 # license url: https://cyberbotics.com/webots_assets_license
 # tags: static
 # documentation url: https://www.cyberbotics.com/doc/guide/range-finder-sensors#microsoft-kinect
 # Microsoft Kinect v2. It contains a RangeFinder and a Camera device.
 # made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
-
 PROTO kinect_v2 [
   field SFVec3f    translation         0 0 0
   field SFRotation rotation            0 0 1 0

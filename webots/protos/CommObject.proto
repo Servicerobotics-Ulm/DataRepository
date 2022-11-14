@@ -1,9 +1,8 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # should have DEF CommObject
 # only used for communication:
 # controller SimpleConveyorBelt: write isBoxPresent
 # controller <extern> ComponentWebotsRobotArm Palettizing: read isBoxPresent
-
 # controller <extern> ComponentWebotsRobotArm Palettizing: write boxesPickedPalletizing
 # controller <extern> ComponentWebotsRobotArm Depalettizing: read boxesPickedPalletizing
 

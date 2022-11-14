@@ -1,7 +1,10 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # documentation url: https://www.mobile-industrial-robots.com/en/solutions/robots/mir250/
-# Mobile robot "MiR 250" from Mobile Industrial Robots#
-#
+# Mobile robot "MiR 250" from Mobile Industrial Robots
+
+EXTERNPROTO "Mir250DriveWheel.proto"
+EXTERNPROTO "Mir250CasterWheel.proto"
+
 # made by Wenzheng Cai July 2021, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 
 PROTO Mir250 [

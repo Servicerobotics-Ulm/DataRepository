@@ -1,5 +1,6 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # robot with display to enter text, display it and save as .png file
+# if you set 'saveNow' to TRUE, the file is saved in worlds/textures/TextToPNG/<fileName>.png
 # template language: javascript
 # made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 

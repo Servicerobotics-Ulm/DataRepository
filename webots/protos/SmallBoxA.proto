@@ -1,4 +1,6 @@
-#VRML_SIM R2022a utf8 
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "ConnectorBox.proto"
 
 PROTO SmallBoxA [
   field SFVec3f      translation      0 0 0

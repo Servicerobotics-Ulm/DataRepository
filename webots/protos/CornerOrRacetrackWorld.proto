@@ -1,6 +1,9 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # change world for Exercise DriveMidway
 # template language: javascript
+
+EXTERNPROTO "walls/walls_ExcerciseCorner.proto"
+EXTERNPROTO "walls/walls_ExcerciseRacetrack.proto"
 
 PROTO CornerOrRacetrackWorld [
   field  SFString{"Corner", "Racetrack"}  world  "Corner"

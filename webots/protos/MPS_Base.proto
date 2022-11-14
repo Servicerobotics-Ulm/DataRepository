@@ -1,4 +1,4 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # This is a PROTO file for Webots for a MPS Base station (0.7 x 0.35 x 0.7 m) with coordinate system (x front, y right, z up).
@@ -6,7 +6,6 @@
 # tags: static
 #
 # made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
-
 PROTO MPS_Base [
   field SFVec3f        translation       0 0 0                           # any vector
   field SFRotation     rotation          1 0 0 -1.5708                   # unit axis, (-inf, inf) angle

@@ -1,10 +1,13 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # template language: javascript
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # A mobile robot can deliver a box to this passive station.
 #
 # made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
+
+EXTERNPROTO "Location.proto"
+EXTERNPROTO "Lenkrolle.proto"
 
 PROTO RollerConveyorStation [
   field            SFVec3f       translation     0 0 0
@@ -426,7 +429,7 @@ Solid {
           }
         }
         Transform {
-          translation 0.0011 0 0
+          translation 0.003 0 0
           rotation 0.57735 0.57735 0.57735 2.0944
           children [
             Shape {

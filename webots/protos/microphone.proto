@@ -1,10 +1,9 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # microphone and holder between PanTiltUnit.proto and kinect_v2.proto
 #
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
-
 PROTO microphone [
   field SFVec3f    translation         0 0 0
   field SFRotation rotation            0.57735 0.57735 0.57735 2.0944

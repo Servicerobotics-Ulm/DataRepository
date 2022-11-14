@@ -1,4 +1,6 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "PalettBox.proto"
 
 # 1) .wbt file: PalettBoxes
 # 2) webots: convert Root to base nodes

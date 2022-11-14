@@ -1,4 +1,4 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
@@ -8,7 +8,6 @@
 # 2) change 4. value of pan_rotation or tilt_rotation by supervisor to rotate camera
 #    increasing 4. value of pan_rotation rotates left
 #    increasing 4. value of tilt_rotation rotates up
-
 PROTO PanTiltUnit [
   field SFVec3f    translation     0 0 0
   field SFRotation rotation        0 0 1 0

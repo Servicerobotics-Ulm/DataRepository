@@ -1,4 +1,4 @@
-#VRML_SIM R2022a utf8 
+#VRML_SIM R2022b utf8
 #
 # a passive Connector device which can connect to an active Connector device of same model.
 # it has the shape of an box. it can only connect in the middle of one side.
@@ -6,6 +6,8 @@
 # to connect, this passive device and the other active device must be close to each other
 # and their z-axis must point to each other.
 # this device needs an robot controller to turn it on by calling enable(timeStep).
+
+EXTERNPROTO "CerealBox3.proto"
 
 PROTO ConnectorBox [
   field SFVec3f      translation      0 0 0

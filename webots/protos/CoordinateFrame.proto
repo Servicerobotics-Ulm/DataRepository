@@ -1,8 +1,7 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # template language: javascript
-#
+# Red Arrow=X-axis, Green=Y, Blue=Z.
 # A frame of reference (or frame) is a rectangular (or Cartesian) coordinate system.
-
 PROTO CoordinateFrame [
   field SFVec3f    translation         0 0 0
   field SFRotation rotation            0 0 1 0

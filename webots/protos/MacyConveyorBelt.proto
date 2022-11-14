@@ -1,9 +1,12 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # Modified from https://www.cyberbotics.com/doc/guide/object-factory#conveyorplatform
 # The conveyor belt contains 3 controllable LEDs, 1 light sensor.
 # made by Wenzheng Cai July 2021, www.servicerobotik-ulm.de
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "SimpleConveyorBelt.proto"
 
 PROTO MacyConveyorBelt [
   field  SFVec3f     translation      0 0 0

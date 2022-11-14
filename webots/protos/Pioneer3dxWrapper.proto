@@ -1,13 +1,18 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # simple wrapper
 # template language: javascript
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/tools/protos/CapScrew.proto"
+EXTERNPROTO "SickLms291.proto"
+EXTERNPROTO "RealSenseD435.proto"
 
 PROTO Pioneer3dxWrapper [
   field SFVec3f    translation       0 0 0
   field SFRotation rotation          0 0 1 0
   field SFString   name              "Pioneer3dx"
-  field SFString   lidarController   ""
-  field SFString   cameraController  ""
+  field SFString   lidarController   "<none>"
+  field SFString   cameraController  "<none>"
 ]
 
 {

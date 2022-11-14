@@ -1,8 +1,7 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0
 # Roboto arm UR5 from Universal Robots with 6 degrees of freedom.
-
 # how UR5.proto was made from UR5.urdf (linux commands):
 
 # mkdir /tmp/UR5

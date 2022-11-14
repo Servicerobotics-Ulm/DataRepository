@@ -1,6 +1,8 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
 #
 # a rectangular grid of rows*columns*layers ConnectorBoxes
+
+EXTERNPROTO "ConnectorBox.proto"
 
 PROTO PalettBox [
   field SFVec3f    index               0 0 0
