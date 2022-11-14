@@ -1,0 +1,35 @@
+#VRML_SIM R2022b utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/Editor.proto"
+
+WorldInfo {
+  info [
+    "THU Ulm RoboticsLab"
+  ]
+}
+Viewpoint {
+  orientation 0 -1 0 4.7124
+  position 0 0 15
+}
+Background {
+  skyColor [
+    0.533333 0.541176 0.521569
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.55 -0.6 -1
+}
+Editor {
+}
+THU_RoboticsLab {
+  addFloor TRUE
+}
+
