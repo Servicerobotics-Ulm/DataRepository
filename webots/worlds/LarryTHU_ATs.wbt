@@ -82,7 +82,7 @@ Larry {
   bodySlot [
     UR5e {
       rotation 0.9999999999999999 0 0 4.712388966
-      controller ""
+      controller "<none>"
       toolSlot [
         DEF sutionTool Solid {
           translation 0 0.025 0
@@ -212,7 +212,7 @@ Larry {
         }
       ]
       name "Sick LMS 100_Back"
-      controller ""
+      controller "<none>"
     }
   ]
 }

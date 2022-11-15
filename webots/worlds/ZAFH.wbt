@@ -247,7 +247,7 @@ Larry {
         }
       ]
       name "Sick LMS 100_Back"
-      controller ""
+      controller "<none>"
     }
   ]
 }

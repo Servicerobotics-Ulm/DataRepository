@@ -20,7 +20,6 @@ TexturedBackgroundLight {
 }
 Pioneer3dxWrapper {
   translation -2 -2 0.095
-  lidarController ""
   cameraController "<extern>"
 }
 RectangleArena {

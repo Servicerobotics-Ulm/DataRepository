@@ -101,7 +101,7 @@ Larry {
   bodySlot [
     UR5 {
       rotation 0 0 1 3.106685
-      controller ""
+      controller "<none>"
       supervisor TRUE
       staticBase FALSE
       toolSlot [
@@ -113,11 +113,11 @@ Larry {
   ]
   cameraSlot [
     PanTiltUnit {
-      controller ""
+      controller "<none>"
       children [
         kinect_v2 {
           translation 0 0 0.095
-          controller ""
+          controller "<none>"
           supervisor TRUE
           colorFieldOfView 1.597
           rangeWidth 1920
@@ -148,7 +148,7 @@ Larry {
         }
       ]
       name "Sick LMS 100_Back"
-      controller ""
+      controller "<none>"
     }
   ]
 }

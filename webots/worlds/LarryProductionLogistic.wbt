@@ -72,7 +72,7 @@ Larry {
   bodySlot [
     UR5 {
       rotation 0 0 1 3.106685
-      controller ""
+      controller "<none>"
       supervisor TRUE
       staticBase FALSE
       toolSlot [
@@ -92,7 +92,7 @@ Larry {
       topSlot [
         Robot {
           name "PTU"
-          controller ""
+          controller "<none>"
           supervisor TRUE
         }
         DEF PanRotate Transform {
@@ -107,7 +107,7 @@ Larry {
                       rotation 0 -1 0 1.5708
                       children [
                         kinect_v2 {
-                          controller ""
+                          controller "<none>"
                           supervisor TRUE
                           rangeWidth 1920
                           rangeHeight 1080
@@ -134,7 +134,7 @@ Larry {
         }
       ]
       name "Sick LMS 100_Front"
-      controller ""
+      controller "<none>"
     }
     Robot {
       translation -0.255 0 0
@@ -144,14 +144,14 @@ Larry {
         }
       ]
       name "Sick LMS 100_Back"
-      controller ""
+      controller "<none>"
     }
   ]
 }
 Robotino3 {
   translation 2.49998 3.96659e-06 1.54
   rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 -2.094395307179586
-  controller ""
+  controller "<none>"
   bodySlot [
     RobotinoConveyorBelt {
       translation -1.87509e-14 3.67802e-08 0.01
@@ -169,7 +169,7 @@ Robotino3 {
   translation -2.8 3.96659e-06 1.54
   rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 -2.094395307179586
   name "Robotino 3(1)"
-  controller ""
+  controller "<none>"
   bodySlot [
     RobotinoConveyorBelt {
       translation -1.87509e-14 3.67802e-08 0.01
