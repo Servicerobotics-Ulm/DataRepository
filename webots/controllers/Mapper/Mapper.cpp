@@ -357,7 +357,7 @@ int main(int argc, char **argv) {
     ofstream outfile;
     outfile.open("../../protos/walls/walls_"+worldName+".proto");
     outfile <<
-"#VRML_SIM R2022a utf8"
+"#VRML_SIM R2022b utf8"
 "\n# template language: javascript"
 "\nEXTERNPROTO \"../MapperWalls.proto\""
 "\nPROTO walls_"+worldName+" ["
