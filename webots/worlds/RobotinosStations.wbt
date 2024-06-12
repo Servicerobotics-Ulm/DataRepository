@@ -1,0 +1,94 @@
+#VRML_SIM R2023a utf8
+
+IMPORTABLE EXTERNPROTO "../protos/MobileRobotPose.proto"
+IMPORTABLE EXTERNPROTO "../protos/Localization.proto"
+IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
+IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
+IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
+EXTERNPROTO "../protos/THU_RoboticsLab.proto"
+EXTERNPROTO "../protos/Editor.proto"
+EXTERNPROTO "../protos/RollerConveyorStation.proto"
+EXTERNPROTO "../protos/Location.proto"
+EXTERNPROTO "../protos/OPC_UA_Station.proto"
+
+WorldInfo {
+  info [
+    "THU Ulm RoboticsLab"
+  ]
+}
+Viewpoint {
+  orientation 0.034966706827205915 -0.9986407882592835 -0.03865107292866264 4.811046568721635
+  position -1.4158333318109069 0.7343093222756588 6.652819420378796
+}
+Background {
+  skyColor [
+    0.533333 0.541176 0.521569
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.55 -0.6 -1
+}
+DEF Locations Group {
+  children [
+    Location {
+      name "0"
+      translation -1.5 0.89 0
+      rotation 0 0 1 -1.5707953071795862
+    }
+  ]
+}
+DEF Stations Group {
+  children [
+    RollerConveyorStation {
+      translation 1.35 -1.76 0
+      rotation 0 0 1 3.14159
+      name "4"
+      Locations [
+        Location {
+          name "Station4"
+          translation 1.58 0 0
+          rotation 0 0 1 3.14159
+        }
+      ]
+    }
+    OPC_UA_Station {
+      translation 1.33 0 0
+      rotation 0 0 1 3.14159
+      name "1"
+      Locations [
+        Location {
+          name "Station1"
+#          translation 1.58 0 0
+          translation 1.08 0 0
+          rotation 0 0 1 3.14159
+        }
+      ]
+    }
+    OPC_UA_Station {
+      translation 0.575758 1.71568 0
+      rotation 0 0 1 -2.6179953071795863
+      name "2"
+      Locations [
+        Location {
+          name "Station2"
+#          translation 1.58 0 0
+          translation 1.38 0 0
+          rotation 0 0 1 3.14159
+        }
+      ]
+    }
+  ]
+}
+DEF Waypoints Group {
+}
+DEF WaypointConnections Group {
+}
+DEF MobileRobotsPoses Group {
+}
+Editor {
+  showMobileRobotsPoses "2: Localization (green) Route (blue)"
+}
+THU_RoboticsLab {
+  addFloor TRUE
+}
