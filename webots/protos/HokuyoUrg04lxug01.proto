@@ -106,7 +106,7 @@ PROTO HokuyoUrg04lxug01 [
     verticalFieldOfView %<= 4.18879 / fields.resolution.value >%
     horizontalResolution IS resolution
     numberOfLayers 1
-    spherical TRUE
+    projection "cylindrical"
     minRange 0.2
     maxRange 5.6
     noise IS noise

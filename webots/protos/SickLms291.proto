@@ -64,7 +64,7 @@ PROTO SickLms291 [
     horizontalResolution IS resolution
     verticalFieldOfView %<= 3.14159 / fields.resolution.value >%
     numberOfLayers 1
-    spherical TRUE
+    projection "cylindrical"
     maxRange 80
     noise IS noise
   }

@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # template language: javascript
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
@@ -6,93 +6,93 @@
 
 # made by Wenzheng Cai 2020, Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/MarbleTiles.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/PaintedWood.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/VarnishedPine.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Monitor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/Keyboard.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/DesktopComputer.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/computers/protos/ComputerMouse.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/CabinetHandle.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/Cabinet.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/Chair.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/plants/protos/PottedTree.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/bathroom/protos/BathroomSink.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/living_room_furniture/protos/Sofa.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/school_furniture/protos/Blackboard.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Pine.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/trees/protos/Tree.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/kitchen/components/protos/Sink.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Door.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Window.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/GenericDoorAppearance.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/MarbleTiles.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/PaintedWood.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/DesktopComputer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/cabinet/protos/CabinetHandle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/bathroom/protos/BathroomSink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/living_room_furniture/protos/Sofa.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/school_furniture/protos/Blackboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Tree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/kitchen/components/protos/Sink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/GenericDoorAppearance.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
 EXTERNPROTO "TableWrapper.proto"
 EXTERNPROTO "Wall.proto"
-EXTERNPROTO "OfficeChairWrapper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/OfficeChair.proto"
 
 PROTO THU_RoboticsLab [
   field SFBool     addFloor        FALSE
   field SFVec3f    translation     0 0 0
   field SFRotation rotation        0 0 1 0
   field MFNode children [
-    OfficeChairWrapper {
+    OfficeChair {
       translation 1.47 -3.81 0
       rotation 0 0 1 1.83
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -0.31 -3.69 0
       rotation 0 0 1 1.3
       name "office chair(1)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -1.71 -3.62 0
       rotation 0 0 1 1.5708
       name "office chair(2)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -3.55 0.79 0
       rotation 0 0 1 0.26
       name "office chair(4)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -3.62 2.39 0
       rotation 0 0 1 -0.26
       name "office chair(5)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation 1.62 5.03 0
       rotation 0 0 1 1.5708
       name "office chair(6)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -0.04 5.03 0
       rotation 0 0 1 1.5708
       name "office chair(7)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -1.3 5.03 0
       rotation 0 0 1 1.5708
       name "office chair(8)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -0.18 3.85 0
       rotation 0 0 1 -1.83
       name "office chair(9)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation 1.36 3.72 0
       rotation 0 0 1 -1.5708
       name "office chair(10)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -3.58 -6.31 0
       rotation 0 0 1 0.26
       name "office chair(11)"
     }
-    OfficeChairWrapper {
+    OfficeChair {
       translation -3.62 -7.39 0
       rotation 0 0 1 -0.78
       name "office chair(12)"
