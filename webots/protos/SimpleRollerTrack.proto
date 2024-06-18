@@ -1,10 +1,10 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # simple roller track of variable size (Rollenband)
 # made by Thomas Feldmeier 2022, www.servicerobotik-ulm.de
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/geometries/protos/TexturedParallelepiped.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/geometries/protos/TexturedParallelepiped.proto"
 
 PROTO SimpleRollerTrack [
   field SFVec3f    translation       0 0 0

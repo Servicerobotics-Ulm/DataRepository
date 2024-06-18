@@ -1,6 +1,6 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "../protos/THU_RoboticsLab.proto"
 EXTERNPROTO "../protos/Macy.proto"
 

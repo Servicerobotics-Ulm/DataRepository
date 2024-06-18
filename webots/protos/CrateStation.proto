@@ -1,7 +1,7 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # A mobile robot can drop boxes into the crate of this station.
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/MattePaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/MattePaint.proto"
 EXTERNPROTO "Location.proto"
 EXTERNPROTO "Crate.proto"
 

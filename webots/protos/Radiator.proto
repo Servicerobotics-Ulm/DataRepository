@@ -1,8 +1,8 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # tags: nonDeterministic
 # A green radiator with a variable number of fins and optional bounding object. Simplified and faster version of webots radiator.
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Roughcast.proto"
 
 PROTO Radiator [
   field SFVec3f    translation           0 0 0

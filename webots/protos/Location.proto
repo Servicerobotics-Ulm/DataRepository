@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # A location is a named place where a mobile robot can drive to.
 # A cross on the floor marks the location.
 # If waypointId is a positive number (or zero), a waypoint with this number will be generated at this position.

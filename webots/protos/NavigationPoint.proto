@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # a navigation point: a cross on the floor marks the points where the robot should go to
 PROTO NavigationPoint [
   field SFVec3f    translation 0 0 0

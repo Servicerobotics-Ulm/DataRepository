@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # a cross with an arrow in one direction
 # template language: javascript
 PROTO CrossWithArrow [

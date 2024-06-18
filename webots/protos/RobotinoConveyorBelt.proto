@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # tags: static
@@ -6,9 +6,9 @@
 # The conveyor belt contains 3 controllable LEDs.
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Rubber.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/devices/sharp/protos/SharpGP2Y0A41SK0F.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/k-team/khepera3/protos/Khepera3_DistanceSensor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Rubber.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/sharp/protos/SharpGP2Y0A41SK0F.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/k-team/khepera3/protos/Khepera3_DistanceSensor.proto"
 
 PROTO RobotinoConveyorBelt [
   field  SFVec3f     translation      0 0 0

@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # tags: hidden
 # template language: javascript
 # used in RealRobot.proto to display a red digit if the last two characters of id are from "_0" to "_9"

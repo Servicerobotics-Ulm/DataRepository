@@ -1,4 +1,4 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # template language: javascript
 PROTO Mapper [
   field SFFloat        resolution          0.05       # The map resolution [m/cell]

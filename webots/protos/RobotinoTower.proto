@@ -1,11 +1,11 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023b utf8
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0.
 # tags: static
 # Modified from https://www.cyberbotics.com/doc/guide/object-factory
 # made by Wenzheng Cai 2021, www.servicerobotik-ulm.de
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
 
 PROTO RobotinoTower [
   field  SFVec3f     translation      -0.04 0.03 0.075
