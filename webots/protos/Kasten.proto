@@ -46,7 +46,7 @@ PROTO Kasten [
     translation IS translation
     rotation IS rotation
     children [
-        Transform {
+        Pose {
           translation 0 %{= 0.5 * fields.plateWidth.value }% 0
           children [
             Shape {
@@ -67,7 +67,7 @@ PROTO Kasten [
     for m = 0, 1 do  
       for n = 0, 1 do
       }%
-        Transform {
+        Pose {
           translation %{= -math.pow(-1, m) * 0.5 * (fields.size.value.x - fields.plateWidth.value) }% 
                       %{= 0.5 * (fields.size.value.y + fields.plateWidth.value) }% 
                       %{= -math.pow(-1, n) * 0.5 * (fields.size.value.z - fields.plateWidth.value) }%
@@ -95,7 +95,7 @@ PROTO Kasten [
     for j = 0, 1 do  
       for k = 0, 1 do
       }%
-        Transform {
+        Pose {
           translation %{= -j * math.pow(-1, k) * 0.5 * (fields.size.value.x - fields.plateWidth.value) }% 
 		%{= 0.5 * (fields.size.value.y + fields.plateWidth.value) }% 
 		%{= -(1 - j) * math.pow(-1, k) * 0.5 * (fields.size.value.z - fields.plateWidth.value) }%
@@ -124,7 +124,7 @@ PROTO Kasten [
     contactMaterial IS contactMaterial
     boundingObject Group {
       children [
-        Transform {
+        Pose {
           translation 0 %{= 0.5 * fields.plateWidth.value }% 0
           children [
             Box {
@@ -138,7 +138,7 @@ PROTO Kasten [
     for m = 0, 1 do  
       for n = 0, 1 do
       }%
-        Transform {
+        Pose {
           translation %{= -math.pow(-1, m) * 0.5 * (fields.size.value.x - fields.plateWidth.value) }% 
                       %{= 0.5 * (fields.size.value.y + fields.plateWidth.value) }% 
                       %{= -math.pow(-1, n) * 0.5 * (fields.size.value.z - fields.plateWidth.value) }%
@@ -159,7 +159,7 @@ PROTO Kasten [
     for j = 0, 1 do  
       for k = 0, 1 do
       }%
-        Transform {
+        Pose {
           translation %{= -j * math.pow(-1, k) * 0.5 * (fields.size.value.x - fields.plateWidth.value) }% 
 		%{= 0.5 * (fields.size.value.y + fields.plateWidth.value) }% 
 		%{= -(1 - j) * math.pow(-1, k) * 0.5 * (fields.size.value.z - fields.plateWidth.value) }%

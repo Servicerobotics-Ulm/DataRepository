@@ -22,11 +22,11 @@ PROTO RobotinoTower [
     rotation IS rotation
     scale IS scale
     children [
-        DEF EXT_top_pos Transform {
+        DEF EXT_top_pos Pose {
         translation 0.04 -0.03 0.4185
         children IS topSlot
         }
-        Transform {
+        Pose {
           translation 0 0 0.239
           rotation -0.9351132545462786 0.25056206820525934 0.25056306820553154 -1.6378353071795866
           children [
@@ -44,7 +44,7 @@ PROTO RobotinoTower [
                 subdivision 3
               }
             }
-            Transform {
+            Pose {
               translation 0 0.247 0
               children [
                 Shape {
@@ -67,7 +67,7 @@ PROTO RobotinoTower [
       model IS model
       boundingObject Group {
         children [
-          Transform {
+          Pose {
             translation 0 0 0.239
             rotation 1 0 0 1.5708
             children [
@@ -77,7 +77,7 @@ PROTO RobotinoTower [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 0 0.486
             rotation 1 0 0 1.5708
             children [

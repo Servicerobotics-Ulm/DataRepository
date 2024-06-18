@@ -20,12 +20,12 @@ PROTO Grid [
      columns = fields.columns.value
      length = fields.length.value
   }%
-  Transform {
+  Pose {
     translation IS translation
     rotation IS rotation
     children [
     %{ for x = 0, rows do }%
-      Transform {
+      Pose {
         translation %{= length * (x - rows/2) }% 0 0
         rotation 1 0 0 1.5708
         children [
@@ -45,7 +45,7 @@ PROTO Grid [
       }
     %{ end }%
     %{ for y = 0, columns do }%
-      Transform {
+      Pose {
         translation 0 %{= length * (y - columns/2) }% 0
         rotation 0 1 0 1.5708
         children [

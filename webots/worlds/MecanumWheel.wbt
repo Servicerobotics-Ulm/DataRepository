@@ -67,7 +67,7 @@ Youbot {
   controller "<extern>"
   supervisor TRUE
   bodySlot [
-    DEF CoordinateSystemyouBot Transform {
+    DEF CoordinateSystemyouBot Pose {
       translation 0 0 -0.103
     }
   ]

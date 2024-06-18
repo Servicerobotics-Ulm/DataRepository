@@ -31,10 +31,10 @@ Solid {
   rotation IS rotation
   name IS name
   children [
-    Transform {
+    Pose {
       children IS toolSlot
     }  
-    DEF CYLINDER Transform {
+    DEF CYLINDER Pose {
       translation 0 %{= -0.05 - cylinderHeight/2 }% 0
       rotation 1 0 0 -1.5708
       children [
@@ -51,7 +51,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 -0.06 0
       rotation 0 0 1 -1.5707953071795862
       scale 0.5 0.5 0.5
@@ -73,7 +73,7 @@ Solid {
             ]
           }
         }
-        Transform {
+        Pose {
           translation -0.1 0 0
           rotation 0 0 1 -1.5707953071795862
           children [
@@ -102,7 +102,7 @@ Solid {
       rotation -0.57735 -0.57735 0.57735 2.09439
       name "VacuumGripperConnectorName"
       model "VacuumGripperConnectorModel"
-      boundingObject Transform {
+      boundingObject Pose {
         translation -0.005 0 0
         rotation 0 1 0 1.5708
         children [
@@ -129,7 +129,7 @@ Solid {
   boundingObject Group {
     children [
       USE CYLINDER
-      Transform {
+      Pose {
         translation 0 -0.03 0
         rotation 1 0 0 -1.5708
         children [

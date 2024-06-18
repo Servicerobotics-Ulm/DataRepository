@@ -27,7 +27,7 @@ Solid {
   translation IS translation
   rotation IS rotation
   children [
-    DEF X Transform {
+    DEF X Pose {
       translation %{= -size.x / 2}% 0 0
       children [
         Shape {

@@ -20,7 +20,7 @@ Solid {
   children [
     DEF shelf Group {
       children [
-        Transform {
+        Pose {
           translation -0.075 0.255 0.25
           children [
             DEF beltShelfVerticalItem Shape {
@@ -35,25 +35,25 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.095 0.255 0.25
           children [
             USE beltShelfVerticalItem
           ]
         }
-        Transform {
+        Pose {
           translation -0.075 -0.255 0.25
           children [
             USE beltShelfVerticalItem
           ]
         }
-        Transform {
+        Pose {
           translation 0.095 -0.255 0.25
           children [
             USE beltShelfVerticalItem
           ]
         }
-        Transform {
+        Pose {
           translation -0.075 0 0.355
           children [
             DEF beltShelfThwartItem Shape {
@@ -68,13 +68,13 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.095 0 0.355
           children [
             USE beltShelfThwartItem
           ]
         }
-        Transform {
+        Pose {
           translation 0.01 0.2 0.355
           children [
             DEF beltShelfHorizontalItem Shape {
@@ -89,13 +89,13 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.01 -0.2 0.355
           children [
             USE beltShelfHorizontalItem
           ]
         }
-        Transform {
+        Pose {
           translation -0.075 0.0835 0.39
           children [
             DEF beltSupporter Shape {
@@ -108,19 +108,19 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.075 -0.0835 0.39
           children [
             USE beltSupporter
           ]
         }
-        Transform {
+        Pose {
           translation 0.095 0.0835 0.39
           children [
             USE beltSupporter
           ]
         }
-        Transform {
+        Pose {
           translation 0.095 -0.0835 0.39
           children [
             USE beltSupporter
@@ -128,12 +128,12 @@ Solid {
         }
       ]
     }
-    DEF belt Transform {
+    DEF belt Pose {
       translation 0.06 0 0.4
       children [
         DEF base Group {
           children [
-            Transform {
+            Pose {
               translation -0.0425 0 0
               children [
                 DEF beltBaseThwartItem1 Shape {
@@ -148,13 +148,13 @@ Solid {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.1475 0 0
               children [
                 USE beltBaseThwartItem1
               ]
             }
-            Transform {
+            Pose {
               translation -0.1125 0.1475 0
               children [
                 DEF beltBaseThwartItem2 Shape {
@@ -169,19 +169,19 @@ Solid {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.1125 -0.1475 0
               children [
                 USE beltBaseThwartItem2
               ]
             }
-            Transform {
+            Pose {
               translation 0.1225 0.1475 0
               children [
                 USE beltBaseThwartItem2
               ]
             }
-            Transform {
+            Pose {
               translation 0.1225 -0.1475 0
               children [
                 USE beltBaseThwartItem2
@@ -189,7 +189,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.1125 0.166 0.03
           children [
             DEF railSupporter Shape {
@@ -202,25 +202,25 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.1125 -0.166 0.03
           children [
             USE railSupporter
           ]
         }
-        Transform {
+        Pose {
           translation 0.1225 0.166 0.03
           children [
             USE railSupporter
           ]
         }
-        Transform {
+        Pose {
           translation 0.1225 -0.166 0.03
           children [
             USE railSupporter
           ]
         }
-        Transform {
+        Pose {
           translation -0.0475 0.158 0.04
           children [
             DEF beltSideRail1 Shape {
@@ -235,13 +235,13 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0475 -0.158 0.04
           children [
             USE beltSideRail1
           ]
         }
-        Transform {
+        Pose {
           translation 0.168 0.159491 0.04
           rotation 0 0 1 0.0509
           children [
@@ -257,14 +257,14 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.168 -0.159491 0.04
           rotation 0 0 1 -0.0509
           children [
             USE beltSideRail2
           ]
         }
-        Transform {
+        Pose {
           translation 0.1705 0.1375 -0.03
           children [
             DEF beltBaseVerticalItem Shape {
@@ -279,7 +279,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.1705 -0.1375 -0.03
           children [
             DEF beltBaseVerticalItem Shape {
@@ -294,7 +294,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.1885 0 -0.044
           children [
             Shape {
@@ -309,7 +309,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.1885 -0.085 -0.084
           children [
             Shape {
@@ -324,7 +324,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.2145 0.05 0
           rotation 1 0 0 1.5708
           children [
@@ -339,7 +339,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.2145 0.07 0
           rotation 1 0 0 1.5708
           children [
@@ -355,21 +355,21 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.2145 -0.07 0
           rotation 1 0 0 1.5708
           children [
             USE HFDCylinder
           ]
         }
-        Transform {
+        Pose {
           translation -0.2145 0.145 0
           rotation 1 0 0 1.5708
           children [
             USE HFDCylinder
           ]
         }
-        Transform {
+        Pose {
           translation -0.2145 0.20075 0
           children [
             Shape {
@@ -384,7 +384,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.1545 0.20075 0.03
           rotation 0 1 0 1.5708
           children [
@@ -415,7 +415,7 @@ Solid {
       name "ConveyorBelt1"
       motorName "belt_motor1"
     }
-    DEF led Transform {
+    DEF led Pose {
       translation 0.05 -0.2 0.4341
       children [
         DEF light_indicator_black Shape {
@@ -502,7 +502,7 @@ Solid {
           ]
           name "red_led"
         }
-        Transform {
+        Pose {
           translation 0 0 0.1725
           children [
             DEF light_indicator_top_black Shape {
@@ -521,7 +521,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 0 -0.0581
           children [
             DEF light_indicator_base_black Shape {
@@ -546,7 +546,7 @@ Solid {
       translation -0.11 0 0.4
       rotation 0 1 0 -1.5707953071795862
       children [
-        Transform {
+        Pose {
           rotation 0 1 0 1.5708
           children [
             Shape {
@@ -585,7 +585,7 @@ Solid {
   model "Macy Conveyor Belt"
   boundingObject Group {
     children [
-      Transform {
+      Pose {
         translation -0.075 0.255 0.25
         children [
           DEF beltShelf1 Box {
@@ -593,25 +593,25 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.095 0.255 0.25
         children [
           USE beltShelf1
         ]
       }
-      Transform {
+      Pose {
         translation -0.075 -0.255 0.25
         children [
           USE beltShelf1
         ]
       }
-      Transform {
+      Pose {
         translation 0.095 -0.255 0.25
         children [
           USE beltShelf1
         ]
       }
-      Transform {
+      Pose {
         translation -0.075 0 0.355
         children [
           DEF beltShelf2 Box {
@@ -619,13 +619,13 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.095 0 0.355
         children [
           USE beltShelf2
         ]
       }
-      Transform {
+      Pose {
         translation 0.01 0.2 0.355
         children [
           DEF beltShelf3 Box {
@@ -633,13 +633,13 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.01 -0.2 0.355
         children [
           USE beltShelf3
         ]
       }
-      Transform {
+      Pose {
         translation -0.075 0.0835 0.39
         children [
           DEF beltShelf4 Box {
@@ -647,25 +647,25 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.075 -0.0835 0.39
         children [
           USE beltShelf4
         ]
       }
-      Transform {
+      Pose {
         translation 0.095 0.0835 0.39
         children [
           USE beltShelf4
         ]
       }
-      Transform {
+      Pose {
         translation 0.095 -0.0835 0.39
         children [
           USE beltShelf4
         ]
       }
-      Transform {
+      Pose {
         translation 0.05 -0.2 0.376
         children [
           Cylinder {
@@ -674,7 +674,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.05 -0.2 0.4976
         children [
           Cylinder {
@@ -683,7 +683,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0175 0 0.4
         children [
           DEF beltBase1 Box {
@@ -691,13 +691,13 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.2075 0 0.4
         children [
           USE beltBase1
         ]
       }
-      Transform {
+      Pose {
         translation -0.0525 0.1475 0.4
         children [
           DEF beltBase2 Box {
@@ -705,25 +705,25 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.0525 -0.1475 0.4
         children [
           USE beltBase2
         ]
       }
-      Transform {
+      Pose {
         translation 0.1825 0.1475 0.4
         children [
           USE beltBase2
         ]
       }
-      Transform {
+      Pose {
         translation 0.1825 -0.1475 0.4
         children [
           USE beltBase2
         ]
       }
-      Transform {
+      Pose {
         translation -0.0525 0.166 0.43
         children [
           DEF beltBase3 Box {
@@ -731,25 +731,25 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.0525 -0.166 0.43
         children [
           USE beltBase3
         ]
       }
-      Transform {
+      Pose {
         translation 0.1825 0.166 0.43
         children [
           USE beltBase3
         ]
       }
-      Transform {
+      Pose {
         translation 0.1825 -0.166 0.43
         children [
           USE beltBase3
         ]
       }
-      Transform {
+      Pose {
         translation 0.0125 0.158 0.44
         children [
           DEF beltBase4 Box {
@@ -757,13 +757,13 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0125 -0.158 0.44
         children [
           USE beltBase4
         ]
       }
-      Transform {
+      Pose {
         translation 0.228 0.1595 0.44
         rotation 0 0 1 0.0509
         children [
@@ -772,14 +772,14 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.228 -0.1595 0.44
         rotation 0 0 1 -0.0509
         children [
           USE beltBase5
         ]
       }
-      Transform {
+      Pose {
         translation 0.2305 0.1375 0.37
         children [
           DEF beltBase6 Box {
@@ -787,13 +787,13 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.2305 -0.1375 0.37
         children [
           USE beltBase6
         ]
       }
-      Transform {
+      Pose {
         translation 0.2485 0 0.356
         children [
           Box {
@@ -801,7 +801,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.2485 -0.085 0.316
         children [
           Box {
@@ -809,7 +809,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.1545 0 0.4
         rotation 1 0 0 1.5708
         children [
@@ -819,7 +819,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.1545 0.155 0.4
         rotation 1 0 0 1.5708
         children [
@@ -829,7 +829,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.1545 0.20075 0.4
         children [
           Box {
@@ -837,7 +837,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.0945 0.20075 0.43
         rotation 0 1 0 1.5708
         children [

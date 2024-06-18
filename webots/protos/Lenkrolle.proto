@@ -36,7 +36,7 @@ Solid {
       }
       endPoint Solid {
         children [
-          Transform {
+          Pose {
             children [
               DEF Roll_Bremse Shape {
                 appearance PBRAppearance {
@@ -57,7 +57,7 @@ Solid {
               }
             ]
           }
-          Transform {
+          Pose {
             children [
               DEF Roll_Holder Shape {
                 appearance PBRAppearance {
@@ -86,7 +86,7 @@ Solid {
             endPoint Solid {
               translation 0 0 0
               children [
-                Transform {
+                Pose {
                   children [
                     DEF Frame_Roll_Wheel Shape {
                       appearance PBRAppearance {
@@ -108,7 +108,7 @@ Solid {
                   ]
                 }
               ]
-              boundingObject Transform {
+              boundingObject Pose {
                 translation -0.02007 0 -0.04115
                 rotation -0.5773489358556708 0.5773509358554485 -0.5773509358554485 -2.094395307179586
                 children [
@@ -121,7 +121,7 @@ Solid {
             }
           }
         ]
-        boundingObject Transform {
+        boundingObject Pose {
           translation 0 0 -0.0005
           children [
             Cylinder {
@@ -133,7 +133,7 @@ Solid {
       }
     }
   ]
-  boundingObject Transform {
+  boundingObject Pose {
     translation 0 0 0.0138
     children [
       Box {

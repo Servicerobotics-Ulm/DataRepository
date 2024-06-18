@@ -95,15 +95,15 @@ Larry {
           controller "<none>"
           supervisor TRUE
         }
-        DEF PanRotate Transform {
+        DEF PanRotate Pose {
           rotation 0 1 0 1.57
           children [
             Tilt {
               topSlot [
-                DEF TiltRotate Transform {
+                DEF TiltRotate Pose {
                   rotation 0 0 -1 -0.65
                   children [
-                    Transform {
+                    Pose {
                       rotation 0 -1 0 1.5708
                       children [
                         kinect_v2 {
@@ -149,6 +149,7 @@ Larry {
   ]
 }
 Robotino3 {
+  name "Robotino3"
   translation 2.49998 3.96659e-06 1.54
   rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 -2.094395307179586
   controller "<none>"
@@ -166,6 +167,7 @@ Robotino3 {
   ]
 }
 Robotino3 {
+  name "Robotino3"
   translation -2.8 3.96659e-06 1.54
   rotation 0.5773509358554485 0.5773509358554485 0.5773489358556708 -2.094395307179586
   name "Robotino 3(1)"
@@ -1336,7 +1338,7 @@ Pedestrian {
 }
 DEF Logo Group {
   children [
-    Transform {
+    Pose {
       translation 3 0.8 12.841
       rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
       children [
@@ -1356,7 +1358,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 3 0.79998 -6.991
       rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
       children [
@@ -1376,7 +1378,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -2.4 0.8 12.841
       rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
       children [
@@ -1396,7 +1398,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -2.4 0.8 -6.991
       rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
       children [
@@ -1416,7 +1418,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -7.39 0.57 1.17
       rotation -0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
       children [
@@ -1436,7 +1438,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 7.39 0.57 1.17
       rotation 0.5773516025189619 -0.5773516025189619 0.5773476025217157 2.0944
       children [

@@ -94,7 +94,7 @@ Grid {
   rows 6
   columns 6
 }
-DEF BOX Transform {
+DEF BOX Pose {
   translation -2 0 0
   children [
     Shape {
@@ -109,7 +109,7 @@ DEF BOX Transform {
     }
   ]
 }
-DEF CONE Transform {
+DEF CONE Pose {
   translation -1 1 0.25
   children [
     Shape {
@@ -126,7 +126,7 @@ DEF CONE Transform {
     }
   ]
 }
-DEF CAPSULE Transform {
+DEF CAPSULE Pose {
   translation 0 2 0.25
   rotation 1 0 0 1.5708
   children [

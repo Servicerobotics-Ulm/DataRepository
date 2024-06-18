@@ -22,7 +22,7 @@ PROTO Radiator [
     translation IS translation
     rotation IS rotation
     children [
-      DEF X Transform {
+      DEF X Pose {
         translation -0.02 %{= -(-0.03 * (numberOfFins - 2)) }% 0 
         children [
           DEF BOX Shape {

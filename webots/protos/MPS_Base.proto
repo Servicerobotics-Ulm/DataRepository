@@ -28,7 +28,7 @@ Robot {
   controllerArgs IS controllerArgs
   supervisor IS supervisor
   children [
-    DEF Body Transform {
+    DEF Body Pose {
       translation -0.175 -0.35 0.0774
       children [
         Shape {
@@ -41,7 +41,7 @@ Robot {
             size 0.31 0.688 0.02
           }
         }
-        Transform {
+        Pose {
           translation 0.163 0 0.335
           children [
             Shape {
@@ -56,7 +56,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.163 0 0.335
           children [
             Shape {
@@ -71,7 +71,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 -0.15301 0.4065
           children [
             Shape {
@@ -86,7 +86,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 0 0.665
           children [
             Shape {
@@ -101,7 +101,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 0.34 0.3325
           children [
             Shape {
@@ -116,7 +116,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 0 0.691
           children [
             Shape {
@@ -131,7 +131,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.173 0 0.691
           children [
             Shape {
@@ -146,7 +146,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.173 0 0.691
           children [
             Shape {
@@ -161,7 +161,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0015 -0.002 0.791328
           children [
             Shape {
@@ -173,7 +173,7 @@ Robot {
                 size 0.3404 0.0017 0.016
               }
             }
-            Transform {
+            Pose {
               translation 0 0.0043 0.0055
               children [
                 Shape {
@@ -187,7 +187,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0 0.0043 -0.0055
               children [
                 Shape {
@@ -203,7 +203,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0015 -0.0472 0.791328
           children [
             Shape {
@@ -215,7 +215,7 @@ Robot {
                 size 0.3404 0.0017 0.016
               }
             }
-            Transform {
+            Pose {
               translation 0 -0.0043 0.0055
               children [
                 Shape {
@@ -229,7 +229,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0 -0.0043 -0.0055
               children [
                 Shape {
@@ -245,7 +245,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.12 -0.0025 0.739
           children [
             Shape {
@@ -259,7 +259,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.12 -0.0465 0.739
           children [
             Shape {
@@ -298,7 +298,7 @@ Robot {
                 translation 0 0 -0.025
                 rotation 0 0 1 0
                 children [
-                  Transform {
+                  Pose {
                     translation 0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -313,7 +313,7 @@ Robot {
                       }
                     ]
                   }
-                  Transform {
+                  Pose {
                     translation -0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -361,7 +361,7 @@ Robot {
                 name "solid(3)"
                 boundingObject Group {
                   children [
-                    Transform {
+                    Pose {
                       translation 0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -376,7 +376,7 @@ Robot {
                         }
                       ]
                     }
-                    Transform {
+                    Pose {
                       translation -0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -426,7 +426,7 @@ Robot {
                 translation 0 0 -0.025
                 rotation 0 0 1 0
                 children [
-                  Transform {
+                  Pose {
                     translation 0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -441,7 +441,7 @@ Robot {
                       }
                     ]
                   }
-                  Transform {
+                  Pose {
                     translation -0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -489,7 +489,7 @@ Robot {
                 name "solid(3)"
                 boundingObject Group {
                   children [
-                    Transform {
+                    Pose {
                       translation 0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -504,7 +504,7 @@ Robot {
                         }
                       ]
                     }
-                    Transform {
+                    Pose {
                       translation -0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -554,7 +554,7 @@ Robot {
                 translation 0 0 -0.025
                 rotation 0 0 1 0
                 children [
-                  Transform {
+                  Pose {
                     translation 0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -569,7 +569,7 @@ Robot {
                       }
                     ]
                   }
-                  Transform {
+                  Pose {
                     translation -0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -617,7 +617,7 @@ Robot {
                 name "solid(3)"
                 boundingObject Group {
                   children [
-                    Transform {
+                    Pose {
                       translation 0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -632,7 +632,7 @@ Robot {
                         }
                       ]
                     }
-                    Transform {
+                    Pose {
                       translation -0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -682,7 +682,7 @@ Robot {
                 translation 0 0 -0.025
                 rotation 0 0 1 0
                 children [
-                  Transform {
+                  Pose {
                     translation 0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -697,7 +697,7 @@ Robot {
                       }
                     ]
                   }
-                  Transform {
+                  Pose {
                     translation -0.013 0 0
                     children [
                       DEF Roll_Side Shape {
@@ -745,7 +745,7 @@ Robot {
                 name "solid(3)"
                 boundingObject Group {
                   children [
-                    Transform {
+                    Pose {
                       translation 0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -760,7 +760,7 @@ Robot {
                         }
                       ]
                     }
-                    Transform {
+                    Pose {
                       translation -0.013 0 0
                       children [
                         DEF Roll_Side Shape {
@@ -791,7 +791,7 @@ Robot {
         }
       ]
     }
-    DEF Light Transform {
+    DEF Light Pose {
       translation 0 0 -0.01
       children [
         Shape {
@@ -890,7 +890,7 @@ Robot {
           position -0.165 0
           radius 0.01
           children [
-            DEF TRACK_WHEEL_BIG Transform {
+            DEF TRACK_WHEEL_BIG Pose {
               rotation 1 0 0 1.5708
               children [
                 Shape {
@@ -929,7 +929,7 @@ Robot {
             USE TRACK_WHEEL_BIG
           ]
         }
-        Transform {
+        Pose {
           translation -0.0008 0.0027 0.00133
           children [
             Shape {
@@ -943,7 +943,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0008 -0.0217 0.00133
           children [
             Shape {
@@ -957,7 +957,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0008 -0.009 0.00133
           children [
             Shape {
@@ -974,7 +974,7 @@ Robot {
       ]
       boundingObject Group {
         children [
-          Transform {
+          Pose {
             translation -0.0008 -0.0097 0.00133
             children [
               Box {
@@ -982,7 +982,7 @@ Robot {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -0.165 0 0
             rotation 1 0 0 1.5708
             children [
@@ -993,21 +993,21 @@ Robot {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.163 0 0
             rotation 1 0 0 1.5708
             children [
               USE WHEEL_BO
             ]
           }
-          Transform {
+          Pose {
             translation 0.16 -0.02 0
             rotation 1 0 0 1.5708
             children [
               USE WHEEL_BO
             ]
           }
-          Transform {
+          Pose {
             translation -0.162 -0.02 0
             rotation 1 0 0 1.5708
             children [
@@ -1066,10 +1066,10 @@ Robot {
       }
       geometriesCount 150
     }
-    DEF Switch Transform {
+    DEF Switch Pose {
       translation -0.176731 -0.327498 0.866
       children [
-        Transform {
+        Pose {
           rotation 1 0 0 1.5708
           children [
             Shape {
@@ -1103,7 +1103,7 @@ Robot {
           endPoint Solid {
             rotation 0 0 -1 0.52
             children [
-              Transform {
+              Pose {
                 translation 0 0 0.018
                 rotation 1 0 0 1.5708
                 children [
@@ -1120,7 +1120,7 @@ Robot {
                   }
                 ]
               }
-              Transform {
+              Pose {
                 translation 0 0 0.023
                 rotation 1 0 0 1.5708
                 children [
@@ -1135,7 +1135,7 @@ Robot {
                       radius 0.012
                     }
                   }
-                  Transform {
+                  Pose {
                     translation -0.014 0 0.008
                     rotation 0.862857 -0.357407 0.357403 1.71778
                     children [
@@ -1151,7 +1151,7 @@ Robot {
                       }
                     ]
                   }
-                  Transform {
+                  Pose {
                     translation 0.014 0 0.008
                     rotation -0.862857 -0.357407 0.357405 -1.71779
                     children [
@@ -1172,7 +1172,7 @@ Robot {
             ]
             boundingObject Group {
               children [
-                Transform {
+                Pose {
                   rotation 1 0 0 1.5708
                   children [
                     Cylinder {
@@ -1181,7 +1181,7 @@ Robot {
                     }
                   ]
                 }
-                Transform {
+                Pose {
                   translation 0 0 0.018
                   rotation 1 0 0 1.5708
                   children [
@@ -1191,7 +1191,7 @@ Robot {
                     }
                   ]
                 }
-                Transform {
+                Pose {
                   translation 0 0 0.023
                   rotation 1 0 0 1.5708
                   children [
@@ -1201,7 +1201,7 @@ Robot {
                     }
                   ]
                 }
-                Transform {
+                Pose {
                   translation -0.014 -0.008 0.023
                   rotation 0 0 1 -0.785395
                   children [
@@ -1210,7 +1210,7 @@ Robot {
                     }
                   ]
                 }
-                Transform {
+                Pose {
                   translation 0.014 -0.008 0.023
                   rotation 0 0 1 0.785398
                   children [
@@ -1233,7 +1233,7 @@ Robot {
           translation -0.3 -0.401 0.882
           rotation 0 0 1 1.5708
           children [
-            Transform {
+            Pose {
               rotation 0 0 1 -1.5707953071795862
               children [
                 Shape {
@@ -1262,7 +1262,7 @@ Robot {
             }
           ]
           name "distance_sensor_back"
-          boundingObject Transform {
+          boundingObject Pose {
             rotation 0 0 1 1.5708
             children [
               Cylinder {
@@ -1282,7 +1282,7 @@ Robot {
           translation -0.175 -0.401 0.882
           rotation 0 0 -1 -0.8891
           children [
-            Transform {
+            Pose {
               rotation 0 0 1 -1.5707953071795862
               children [
                 Shape {
@@ -1311,7 +1311,7 @@ Robot {
             }
           ]
           name "distance_sensor_middle"
-          boundingObject Transform {
+          boundingObject Pose {
             rotation 0 0 1 1.5708
             children [
               Cylinder {
@@ -1331,7 +1331,7 @@ Robot {
           translation -0.05 -0.401 0.882
           rotation 0 0 -1 -1.0472
           children [
-            Transform {
+            Pose {
               rotation 0 0 1 -1.5707953071795862
               children [
                 Shape {
@@ -1360,7 +1360,7 @@ Robot {
             }
           ]
           name "distance_sensor_front"
-          boundingObject Transform {
+          boundingObject Pose {
             rotation 0 0 1 1.5708
             children [
               Cylinder {
@@ -1380,7 +1380,7 @@ Robot {
     }
     DEF Texture Group {
       children [
-        Transform {
+        Pose {
           translation 0.00109862 -0.579999 0.71
           rotation 0.7071067811862364 0.7071067811862364 0 3.14159
           children [
@@ -1400,7 +1400,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.348901 -0.579999 0.71
           rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
           children [
@@ -1420,7 +1420,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.00109862 -0.129999 0.71
           rotation 0.7071067811862364 0.7071067811862364 0 3.14159
           children [
@@ -1440,7 +1440,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.348901 -0.129999 0.71
           rotation 0.7071067811859252 -0.7071067811859252 1.326789589425184e-06 3.14159
           children [
@@ -1460,7 +1460,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.00109862 -0.349999 0.5
           rotation 0 0 1 -1.5707953071795862
           children [
@@ -1487,7 +1487,7 @@ Robot {
   model "MPS Base"
   boundingObject Group {
     children [
-      Transform {
+      Pose {
         translation -0.285 -0.06 0.901
         rotation 1 0 0 1.5708
         children [
@@ -1497,7 +1497,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.285 -0.06 0.7782
         rotation 1 0 0 1.5708
         children [
@@ -1507,7 +1507,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.175 -0.35 0.0774
         children [
           Box {
@@ -1515,7 +1515,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.012 -0.35 0.4124
         children [
           Box {
@@ -1523,7 +1523,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.338 -0.35 0.4124
         children [
           Box {
@@ -1531,7 +1531,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.175 -0.50301 0.4839
         children [
           Box {
@@ -1539,7 +1539,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.175 -0.35 0.7424
         children [
           Box {
@@ -1547,7 +1547,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.175 -0.01 0.4099
         children [
           Box {
@@ -1555,7 +1555,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.175 -0.35 0.7684
         children [
           Box {
@@ -1563,7 +1563,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.348 -0.35 0.7684
         children [
           Box {
@@ -1571,7 +1571,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.002 -0.35 0.7684
         children [
           Box {
@@ -1579,7 +1579,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.1765 -0.3486 0.86872
         children [
           Box {
@@ -1587,7 +1587,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.1765 -0.4007 0.86872
         children [
           Box {
@@ -1595,7 +1595,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.055 -0.3525 0.8165
         children [
           Box {
@@ -1603,7 +1603,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.295 -0.3964 0.8165
         children [
           Box {

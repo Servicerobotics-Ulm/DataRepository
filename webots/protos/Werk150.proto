@@ -41,7 +41,7 @@ if(level>=0)
       let y=obj.y[j];
       let size=obj.size;
 >%
-    Transform {
+    Pose {
       translation %<= x >% %<= y >% %<= size.z/2 >%
       children [
         Shape {
@@ -62,7 +62,7 @@ if(level>=0)
 if(level>=2)  
   for(let i=0; i<obj.x.length; i++) {
 >%
-    Transform {
+    Pose {
       translation %<= obj.x[i] >% %<= (obj.y[0]+obj.y[1])/2 >% %<= (heights[4]+heights[5])/2 >%
       children [
         Shape {
@@ -78,7 +78,7 @@ if(level>=2)
   }
 if(level>=1) {
 >%
-    Transform {
+    Pose {
       translation %<= (obj.x.last()+obj.x[0])/2 >% %<= obj.y[1] >% %<= (heights[4]+heights[1])/2 >%
       children [
         Shape {
@@ -99,7 +99,7 @@ const outerWallCorner = {
 const floor = outerWallCorner;
 obj = floor;
 >%
-    DEF FLOOR Transform {
+    DEF FLOOR Pose {
       translation %<= (obj.x[0]+obj.x[1])/2 >% %<= (obj.y[0]+obj.y[1])/2 >% %<= obj.z >%
       children [
         Shape {
@@ -169,7 +169,7 @@ for(let j=0; j<walls.length; j++) {
       let z1=obj.z[0];
       let z2=obj.z[1];
 >%
-    Transform {
+    Pose {
       translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% %<= (z1+z2)/2 >%          
       children [
         Shape {
@@ -243,7 +243,7 @@ if(level>=0)
   for(let i=0; i<4; i++) {
     let l=shelfLength[i];
 >%
-    Transform {
+    Pose {
       translation %<= column.x[3]+shelfDepth+shelfWidth*1.5+0.05 >% 8.5 0
       rotation 0 0 1 %<= Math.PI/2*i >%
       children [

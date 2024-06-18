@@ -267,6 +267,7 @@ Kisten {
   name "Kisten(1)"
 }
 Robotino3 {
+  name "Robotino3"
   name "Robotino3_1"
   hidden position_0_0 5.34449724403571e-14
   hidden position_0_1 -5.2676442959959875e-14
@@ -300,7 +301,7 @@ Robotino3 {
     }
   ]
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {
@@ -322,6 +323,7 @@ Robotino3 {
   ]
 }
 Robotino3 {
+  name "Robotino3"
   name "Robotino3_2"
   hidden position_0_0 5.235427131740468e-14
   hidden position_0_1 -7.30988608153487e-14
@@ -357,7 +359,7 @@ Robotino3 {
     }
   ]
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {
@@ -378,7 +380,7 @@ Robotino3 {
     }
   ]
 }
-DEF NavigationPoints Transform {
+DEF NavigationPoints Pose {
   rotation -1 0 0 3.673189128e-06
   children [
     DEF location0 NavigationPoint {
@@ -1840,7 +1842,7 @@ Transform {
       rotation -0.00041262698245356027 -0.9995545255511205 0.029842590189992368 -0.26207868814419033
       name "fire extinguisher(1)"
     }
-    DEF First_AID_Box Transform {
+    DEF First_AID_Box Pose {
       translation 0.040011 1.23 4.4
       rotation 0 1 0 -3.1415853071795863
       children [
@@ -1874,7 +1876,7 @@ Transform {
             IBLStrength 3
           }
         }
-        Transform {
+        Pose {
           translation 0.01 0.2 0.162
           rotation 1 0 0 1.5708
           children [
@@ -1902,7 +1904,7 @@ Transform {
     }
     DEF Logo Solid {
       children [
-        Transform {
+        Pose {
           translation -4.39 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -1922,7 +1924,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.39 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -1942,7 +1944,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -1962,7 +1964,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -1982,7 +1984,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2002,7 +2004,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2022,7 +2024,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2042,7 +2044,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2062,7 +2064,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -3.4 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -2082,7 +2084,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.79 1.63997 4.61
           rotation 1 0 0 1.5708
           children [

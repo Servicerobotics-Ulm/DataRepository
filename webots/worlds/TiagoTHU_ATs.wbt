@@ -83,13 +83,13 @@ TiagoIron {
       name "LidarTiago"
       controller "<extern>"
     }
-    DEF CoordinateSystemTiagoIron Transform {
+    DEF CoordinateSystemTiagoIron Pose {
       translation 0 -0.0913 0.202
       rotation -0.5773492691885823 0.5773502691890485 0.5773512691895147 2.09439
     }
   ]
 }
-DEF NavigationPoints Transform {
+DEF NavigationPoints Pose {
   rotation 1 0 0 -1.5708
   children [
     DEF home NavigationPoint {
@@ -4027,7 +4027,7 @@ Transform {
         }
       }
     }
-    Transform {
+    Pose {
       scale 0.7 0.7 0.7
       children [
         Sofa {
@@ -4072,7 +4072,7 @@ Transform {
       ]
       handle NULL
     }
-    DEF First_AID_Box Transform {
+    DEF First_AID_Box Pose {
       translation 0.040011 1.23 4.4
       rotation 0 1 0 -3.1415853071795863
       children [
@@ -4105,7 +4105,7 @@ Transform {
             IBLStrength 3
           }
         }
-        Transform {
+        Pose {
           translation 0.01 0.2 0.162
           rotation 1 0 0 1.5708
           children [
@@ -4134,7 +4134,7 @@ Transform {
     DEF Logo Solid {
       name "logo"
       children [
-        Transform {
+        Pose {
           translation -4.39 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4154,7 +4154,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.39 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4174,7 +4174,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4194,7 +4194,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4214,7 +4214,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4234,7 +4234,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4254,7 +4254,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4274,7 +4274,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4294,7 +4294,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.37 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -4314,7 +4314,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.19 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -4334,7 +4334,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -18.47 0.1 -20.051
           rotation -3.3977899999752476e-06 0.9999999999927152 1.73923999998733e-06 -1.5707953071795862
           children [
@@ -4358,9 +4358,9 @@ Transform {
     }
   ]
 }
-DEF AprilTags Transform {
+DEF AprilTags Pose {
   children [
-    Transform {
+    Pose {
       translation 1.82999 0.4 2.211
       rotation -0.5773509358554485 0.5773489358556708 -0.5773509358554485 -2.094395307179586
       children [
@@ -4380,7 +4380,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 1.82999 0.4 0.291
       rotation -0.5773509358554485 0.5773489358556708 -0.5773509358554485 -2.094395307179586
       children [
@@ -4400,7 +4400,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.62999 0.4 2.511
       rotation 1.2264404877024328e-06 -0.7071062811856401 0.7071072811860378 3.14159
       children [
@@ -4420,7 +4420,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -1.30001 0.4 2.511
       rotation 1.2264404877024328e-06 -0.7071062811856401 0.7071072811860378 3.14159
       children [
@@ -4440,7 +4440,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.79999 0.4 -2.619
       rotation -0.9999999999967182 -1.7392399999942921e-06 1.8811699999938263e-06 -1.5707953071795862
       children [
@@ -4460,7 +4460,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -2.39001 0.4 -2.609
       rotation -0.5773489358556708 -0.5773509358554485 0.5773509358554485 -2.094395307179586
       children [
@@ -4480,7 +4480,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -2.39001 0.4 1.251
       rotation -0.5773489358556708 -0.5773509358554485 0.5773509358554485 -2.094395307179586
       children [
@@ -4500,7 +4500,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -6.05001 0.7 -36.079
       rotation -1 -1.73924e-06 -6.88391e-07 -1.5707953071795862
       children [
@@ -4520,7 +4520,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -6.05001 0.7 -38.779
       rotation -1 -1.73924e-06 -6.88391e-07 -1.5707953071795862
       children [
@@ -4540,7 +4540,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -6.53001 0.7 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4560,7 +4560,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -0.33001 0.70002 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4580,7 +4580,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 5.70999 0.700032 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4600,7 +4600,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 11.77 0.700048 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4620,7 +4620,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 17.72 0.700072 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4640,7 +4640,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 24.01 0.700096 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4660,7 +4660,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 26.99 0.700099 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4680,7 +4680,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 30.01 0.700099 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4700,7 +4700,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 33.03 0.700105 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4720,7 +4720,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 36.03 0.700114 -46.149
       rotation 0.5773509358554485 -0.5773489358556708 0.5773509358554485 2.0944
       children [
@@ -4740,7 +4740,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 36.11 0.700114 -42.929
       rotation 1.2264404877024328e-06 -0.7071072811860378 0.7071062811856401 -3.1415853071795863
       children [
@@ -4760,7 +4760,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 36.11 0.700114 -42.929
       rotation 1.2264404877024328e-06 -0.7071072811860378 0.7071062811856401 -3.1415853071795863
       children [
@@ -4780,7 +4780,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 39.31 0.700078 11.641
       rotation 1.2264404877024328e-06 -0.7071072811860378 0.7071062811856401 -3.1415853071795863
       children [
@@ -4800,7 +4800,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 36.39 0.700074 14.941
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4820,7 +4820,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 30.37 0.700036 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4840,7 +4840,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 24.39 0.700025 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4860,7 +4860,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 18.37 0.700008 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4880,7 +4880,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 12.35 0.699981 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4900,7 +4900,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 9.72 0.699969 15.051
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4920,7 +4920,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 6.33 0.699949 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4940,7 +4940,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.31 0.699909 16.721
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [
@@ -4960,7 +4960,7 @@ DEF AprilTags Transform {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -9.3 0.699836 14.991
       rotation 0.577350602519073 0.5773526025176962 -0.5773476025211385 2.09439
       children [

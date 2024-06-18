@@ -96,13 +96,13 @@ Larry {
           controller "<none>"
           supervisor TRUE
         }
-        DEF PanRotate Transform {
+        DEF PanRotate Pose {
           children [
             Tilt {
               topSlot [
-                DEF TiltRotate Transform {
+                DEF TiltRotate Pose {
                   children [
-                    Transform {
+                    Pose {
                       rotation 0 -1 0 1.5708
                       children [
                         kinect_v2 {
@@ -147,6 +147,7 @@ Larry {
   ]
 }
 Robotino3 {
+  name "Robotino3"
   translation 5.28998 2.06727e-05 12
   rotation -5.085758426212298e-09 0.707107781185531 0.70710578118615 3.14159
   controller "<none>"
@@ -903,7 +904,7 @@ DEF Box Group {
 }
 DEF Logo Group {
   children [
-    Transform {
+    Pose {
       translation 3.5 0.8 15.941
       rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
       children [
@@ -923,7 +924,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 3.5 0.799984 -9.941
       rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
       children [
@@ -943,7 +944,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -3.5 0.8 15.941
       rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
       children [
@@ -963,7 +964,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -3.5 0.8 -9.941
       rotation -1 -9.58979e-09 1.88116e-06 -1.5708053071795867
       children [
@@ -983,7 +984,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -9.94 0.569999 10.17
       rotation -0.5773509358554485 -0.5773509358554485 0.5773489358556708 -2.094395307179586
       children [
@@ -1003,7 +1004,7 @@ DEF Logo Group {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 9.94 0.569999 10.17
       rotation 0.5773516025189619 -0.5773516025189619 0.5773476025217157 2.0944
       children [

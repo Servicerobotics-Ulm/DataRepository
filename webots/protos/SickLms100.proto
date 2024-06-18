@@ -21,7 +21,7 @@ PROTO SickLms100 [
     translation IS translation
     rotation IS rotation
     children [
-      Transform {
+      Pose {
         translation 0 0 -0.045
         rotation 0.70710678 -0.70710678 0 3.141592
         children [
@@ -41,7 +41,7 @@ PROTO SickLms100 [
       }
       DEF Body Group {
         children [
-          Transform {
+          Pose {
             translation -0.027 0 -0.065
             rotation 0.57735 -0.57735 -0.57735 2.0944
             children [
@@ -57,7 +57,7 @@ PROTO SickLms100 [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 0 -0.065
             children [
               Shape {
@@ -73,7 +73,7 @@ PROTO SickLms100 [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 0 0.025
             rotation 0.70710678 -0.70710678 0 3.141592
             children [

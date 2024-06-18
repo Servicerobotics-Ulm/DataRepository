@@ -69,11 +69,11 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 0 -0.108
       rotation 1 0 0 1.5708
       children [
-        DEF Body_OPCUA Transform {
+        DEF Body_OPCUA Pose {
           translation 0 0.2 0
           children [
             Shape {
@@ -95,10 +95,10 @@ Robot {
             }
           ]
         }
-        DEF Light Transform {
+        DEF Light Pose {
           translation -0.31 1.15 0.26
           children [
-            Transform {
+            Pose {
               rotation 1 0 0 1.5708
               children [
                 Shape {
@@ -186,7 +186,7 @@ Robot {
               ]
               name "red_led"
             }
-            Transform {
+            Pose {
               translation 0 0.1615 0
               rotation -1 0 0 1.5708
               children [
@@ -223,7 +223,7 @@ Robot {
           motorName "belt_motor1"
         }
         
-        Transform {
+        Pose {
           translation 0 0.77 0
           children [
             Shape {
@@ -236,7 +236,7 @@ Robot {
                 size 0.64 0.03 0.03
               }
             }
-            Transform {
+            Pose {
               translation 0.336 0.0349 -0.103
               children [
                 Shape {
@@ -251,7 +251,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.334 0.0349 -0.103
               children [
                 Shape {
@@ -266,7 +266,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.336 0.0349 0.1054
               children [
                 Shape {
@@ -281,7 +281,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.334 0.0349 0.1054
               children [
                 Shape {
@@ -296,7 +296,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.336 0.06 -0.1789
               children [
                 Shape {
@@ -311,7 +311,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.334 0.06 -0.1789
               children [
                 Shape {
@@ -326,7 +326,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.336 0.06 0.1789
               children [
                 Shape {
@@ -341,7 +341,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.334 0.06 0.1789
               children [
                 Shape {
@@ -356,7 +356,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.471 -0.073 0.07
               rotation 0.7071072811865696 -0.7071062811861719 -3.3905013482585576e-09 3.14159
               children [
@@ -379,7 +379,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.37 0.015 -0.1664
               children [
                 Shape {
@@ -394,7 +394,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.405 -0.012 -0.1664
               children [
                 Shape {
@@ -409,7 +409,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.37 0.015 0.1688
               children [
                 Shape {
@@ -424,7 +424,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.405 -0.012 0.1688
               children [
                 Shape {
@@ -439,7 +439,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.0095 0.0967 0.1565
               children [
                 Shape {
@@ -454,7 +454,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation -0.0095 0.0967 -0.1565
               children [
                 Shape {
@@ -469,7 +469,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.4265 0.0967 0.1719
               rotation 0 1 0 -0.265
               children [
@@ -485,7 +485,7 @@ Robot {
                 }
               ]
             }
-            Transform {
+            Pose {
               translation 0.4265 0.0967 -0.1719
               rotation 0 1 0 0.265
               children [
@@ -507,7 +507,7 @@ Robot {
           translation -0.24 0.79 0
           rotation 0 0 1 1.5708
           children [
-            Transform {
+            Pose {
               rotation 0 0 1 -1.5707953071795862
               children [
                 Shape {
@@ -543,7 +543,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.352 0 0.385
       children [
         Shape {
@@ -556,7 +556,7 @@ Robot {
             size 0.002 0.56 0.58
           }
         }
-        Transform {
+        Pose {
           translation 0.002 0 -0.04
           rotation 0.57735 0.57735 0.57735 2.0944
           children [
@@ -578,7 +578,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -0.3504 0.001 0.345
       children [
         Shape {
@@ -593,7 +593,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.001 0.2816 0.345
       children [
         Shape {
@@ -606,7 +606,7 @@ Robot {
             size 0.7 0.002 0.5
           }
         }
-        Transform {
+        Pose {
           translation 0 0.0011 0
           rotation 0 0.7071 0.7071 3.14159
           children [
@@ -628,7 +628,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0.001 -0.2804 0.345
       children [
         Shape {
@@ -647,7 +647,7 @@ Robot {
 
   boundingObject Group {
     children [
-      Transform {
+      Pose {
         translation -0.0095 0.1565 0.7587
         children [
           Box {
@@ -655,7 +655,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.4265 0.17201 0.7587
         rotation 0 0 1 0.265
         children [
@@ -664,7 +664,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.0095 -0.1565 0.7587
         children [
           Box {
@@ -672,7 +672,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.4265 -0.17201 0.7587
         rotation 0 0 1 -0.265
         children [
@@ -681,7 +681,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.3358 0.265 0.5948
         children [
           Box {
@@ -689,7 +689,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.3338 0.2656 0.5948
         children [
           Box {
@@ -697,7 +697,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.3345 -0.2639 0.5948
         children [
           Box {
@@ -705,7 +705,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.335 -0.2648 0.5948
         children [
           Box {
@@ -713,7 +713,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.3358 0 0.11
         children [
           Box {
@@ -721,7 +721,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.3342 0.001 0.11
         children [
           Box {
@@ -729,7 +729,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.3358 0 0.6621
         children [
           Box {
@@ -737,7 +737,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.3342 0.001 0.6621
         children [
           Box {
@@ -745,7 +745,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 0.2653 0.11
         children [
           Box {
@@ -753,7 +753,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 0.266 0.782
         children [
           Box {
@@ -761,7 +761,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 -0.2643 0.11
         children [
           Box {
@@ -769,7 +769,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 -0.2647 0.782
         children [
           Box {
@@ -777,7 +777,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.31 -0.26 1.097
         children [
           Cylinder {
@@ -786,7 +786,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0 0 0.662
         children [
           Box {
@@ -794,7 +794,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.336 0.103 0.6969
         children [
           Box {
@@ -802,7 +802,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.334 0.103 0.6969
         children [
           Box {
@@ -810,7 +810,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.334 -0.1053 0.6969
         children [
           Box {
@@ -818,7 +818,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.336 -0.1053 0.6969
         children [
           Box {
@@ -826,7 +826,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.336 0.1789 0.722
         children [
           Box {
@@ -834,7 +834,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.334 0.1789 0.722
         children [
           Box {
@@ -842,7 +842,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.336 -0.1789 0.722
         children [
           Box {
@@ -850,7 +850,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.334 -0.1789 0.722
         children [
           Box {
@@ -858,7 +858,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.37 0.1664 0.677
         children [
           Box {
@@ -866,7 +866,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.405 0.1664 0.65
         children [
           Box {
@@ -874,7 +874,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.37 -0.1688 0.677
         children [
           Box {
@@ -882,7 +882,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.405 -0.1688 0.65
         children [
           Box {
@@ -890,7 +890,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.4578 0.0016 0.6487
         children [
           Box {
@@ -898,7 +898,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.4398 0.0028 0.6508
         children [
           Box {
@@ -906,7 +906,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.4579 -0.07 0.6086
         children [
           Box {
@@ -914,7 +914,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.24 0 0.682
         children [
           Cylinder {
@@ -923,7 +923,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.352 0 0.385
         children [
           Box {
@@ -931,7 +931,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.3504 0.001 0.345
         children [
           Box {
@@ -939,7 +939,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 0.2816 0.345
         children [
           Box {
@@ -947,7 +947,7 @@ Robot {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 -0.2804 0.345
         children [
           Box {

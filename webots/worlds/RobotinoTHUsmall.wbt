@@ -42,11 +42,12 @@ DirectionalLight {
   on FALSE
 }
 Robotino3 {
+  name "Robotino3"
   rotation 1 0 0 -1.57081
   controller "<extern>"
   supervisor TRUE
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {
@@ -62,7 +63,7 @@ Robotino3 {
     }
   ]
 }
-DEF NavigationPoints Transform {
+DEF NavigationPoints Pose {
   rotation 1 0 0 -1.5708
   children [
     DEF home NavigationPoint {

@@ -108,13 +108,13 @@ Larry {
           name "PTU"
           supervisor TRUE
         }
-        DEF PanRotate Transform {
+        DEF PanRotate Pose {
           children [
             Tilt {
               topSlot [
-                DEF TiltRotate Transform {
+                DEF TiltRotate Pose {
                   children [
-                    Transform {
+                    Pose {
                       rotation 0 -1 0 1.5708
                       children [
                         kinect_v2 {
@@ -158,7 +158,7 @@ Larry {
     }
   ]
 }
-DEF NavigationPoints Transform {
+DEF NavigationPoints Pose {
   rotation -1 0 0 3.673189128e-06
   children [
     DEF home NavigationPoint {
@@ -4094,7 +4094,7 @@ Transform {
         }
       }
     }
-    Transform {
+    Pose {
       scale 0.7 0.7 0.7
       children [
         Sofa {
@@ -4139,7 +4139,7 @@ Transform {
       ]
       handle NULL
     }
-    DEF First_AID_Box Transform {
+    DEF First_AID_Box Pose {
       translation 0.040011 1.23 4.4
       rotation 0 1 0 -3.1415853071795863
       children [
@@ -4172,7 +4172,7 @@ Transform {
             IBLStrength 3
           }
         }
-        Transform {
+        Pose {
           translation 0.01 0.2 0.162
           rotation 1 0 0 1.5708
           children [
@@ -4200,7 +4200,7 @@ Transform {
     }
     DEF Logo Solid {
       children [
-        Transform {
+        Pose {
           translation -4.39 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4220,7 +4220,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.39 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4240,7 +4240,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4260,7 +4260,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4280,7 +4280,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4300,7 +4300,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4320,7 +4320,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -4340,7 +4340,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -4360,7 +4360,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.37 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -4380,7 +4380,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.19 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -4400,7 +4400,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -18.47 0.1 -20.051
           rotation -3.3977899999752476e-06 0.9999999999927152 1.73923999998733e-06 -1.5707953071795862
           children [

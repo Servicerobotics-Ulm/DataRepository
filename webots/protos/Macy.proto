@@ -113,7 +113,7 @@ Mir250 {
     Solid {
       translation -0.39 0.255 0.538
       children [
-        Transform {
+        Pose {
           translation 0 0 0.32
           children [
             Shape {
@@ -128,7 +128,7 @@ Mir250 {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.065 0 0.655
           children [
             Shape {
@@ -139,7 +139,7 @@ Mir250 {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.07 0 0.675
           children [
             Shape {
@@ -155,7 +155,7 @@ Mir250 {
       }
       boundingObject Group {
         children [
-          Transform {
+          Pose {
             translation 0 0 0.32
             children [
               Box {
@@ -163,7 +163,7 @@ Mir250 {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.065 0 0.655
             children [
               Box {
@@ -171,7 +171,7 @@ Mir250 {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.07 0 0.675
             children [
               Box {

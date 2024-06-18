@@ -29,7 +29,7 @@ Transform {
 %<    
 for(let z=0; z<=l.z; z++) {
 >%
-        Transform {
+        Pose {
           translation 0 0 %<= (z/l.z-0.5)*(s.z-t.z) >%
           children [
             Shape {
@@ -52,7 +52,7 @@ for(let z=0; z<=l.z; z++) {
 for(let x=0; x<=l.x; x++) {
   for(let y=0; y<=l.y; y++) {
 >%
-    Transform {
+    Pose {
       translation %<= (x/l.x-0.5)*(s.x-t.x) >% %<= (y/l.y-0.5)*(s.y-t.y) >% 0
       children [
         Shape {
@@ -68,7 +68,7 @@ for(let x=0; x<=l.x; x++) {
   }
 }
 >%
-        Transform {
+        Pose {
           translation %<= -0.5*(s.x-t.x) >% 0 0
           children [
             Shape {
@@ -79,7 +79,7 @@ for(let x=0; x<=l.x; x++) {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 %<= -0.5*(s.y-t.y) >% 0
           children [
             DEF SIDE Shape {
@@ -90,14 +90,14 @@ for(let x=0; x<=l.x; x++) {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 %<= 0.5*(s.y-t.y) >% 0
           children [
             USE SIDE
           ]
         }
       ]
-      boundingObject Transform {
+      boundingObject Pose {
         children [
           Box {
             size IS size

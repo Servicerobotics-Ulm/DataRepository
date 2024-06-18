@@ -143,6 +143,7 @@ DEF Stations Group {
 Editor {
 }
 Robotino3 {
+  name "Robotino3"
   controller "<extern>"
   supervisor TRUE
   bodySlot [
@@ -170,7 +171,7 @@ Robotino3 {
     }
   ]
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {

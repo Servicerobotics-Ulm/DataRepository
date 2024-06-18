@@ -37,37 +37,37 @@ PROTO Larry [
     selfCollision IS selfCollision
     locked IS locked
     children [
-     DEF bodySlot Transform {
+     DEF bodySlot Pose {
         #wheel radius=0.2m
         #systemParam:x=129 y=-54 z=352 azimuth=0.034906585
         translation 0.129 -0.054 0.552
         #rotation 0 0 1 3.106685 should be done in UR5
         children IS bodySlot
      }
-     Transform {
+     Pose {
        rotation 0 0.707105 0.707108 3.14159
        children[
-     DEF cameraSlot Transform {
+     DEF cameraSlot Pose {
         translation 0.0075 1.206 0
         rotation 0 -0.7071 -0.7071 3.14159
         children IS cameraSlot
       }
-     DEF bottomSlot Transform {
+     DEF bottomSlot Pose {
         translation 0 0.0725 0
         rotation 0 1 0 0
         children IS bottomSlot
       }
-     DEF lidarSlot Transform {
+     DEF lidarSlot Pose {
         translation 0 0.3 0
         rotation 0 -0.707108 0.707105 3.14159
         children IS lidarSlot
       }
-     DEF topSlot Transform {
+     DEF topSlot Pose {
         translation 0 0.5494 0
         rotation 0 1 0 0
         children IS topSlot
       }
-     DEF Larry_Body Transform {
+     DEF Larry_Body Pose {
       translation 0.004 0.189 0
       children [
         Shape {
@@ -87,7 +87,7 @@ PROTO Larry [
             ]
           }
         }
-      Transform {
+      Pose {
           translation 0.176 0.602 0
           children [
             Shape {
@@ -102,7 +102,7 @@ PROTO Larry [
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.071 0.992 0
           children [
             Shape {
@@ -117,7 +117,7 @@ PROTO Larry [
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.058 1.012 0
           children [
             Shape {
@@ -132,7 +132,7 @@ PROTO Larry [
             }
           ]
         }
-      Transform {
+      Pose {
           translation 0.046 0.232 0.106
           children [
             Shape {
@@ -147,7 +147,7 @@ PROTO Larry [
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.046 0.232 -0.106
           children [
             Shape {
@@ -162,7 +162,7 @@ PROTO Larry [
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.008 0.232 0
           children [
             Shape {
@@ -179,7 +179,7 @@ PROTO Larry [
         }
       ]
     }
-    DEF LeftWheel Transform {
+    DEF LeftWheel Pose {
       translation 0 0.2 0.2325
       children [
         HingeJoint {
@@ -215,7 +215,7 @@ PROTO Larry [
               }
             ]
             name "LeftWheel"
-            boundingObject Transform {
+            boundingObject Pose {
               children [
                 Cylinder {
                   height 0.06
@@ -231,7 +231,7 @@ PROTO Larry [
         }
       ]
     }
-    DEF RightWheel Transform {
+    DEF RightWheel Pose {
       translation 0 0.2 -0.2325
       rotation 0 1 0 3.14159
       children [
@@ -268,7 +268,7 @@ PROTO Larry [
               }
             ]
             name "RightWheel"
-            boundingObject Transform {
+            boundingObject Pose {
               children [
                 Cylinder {
                   height 0.06
@@ -284,7 +284,7 @@ PROTO Larry [
         }
       ]
     }
-    DEF FrontWheel Transform {
+    DEF FrontWheel Pose {
       translation -0.3371 0.061 0
       children [
         HingeJoint {
@@ -338,7 +338,7 @@ PROTO Larry [
                       }
                     }
                   ]
-                  boundingObject Transform {
+                  boundingObject Pose {
                     children [
                       Cylinder {
                         height 0.03
@@ -356,7 +356,7 @@ PROTO Larry [
             name "FrontWheel"
             boundingObject Group {
               children [
-                Transform {
+                Pose {
                   translation 0.045 0.119 0
                   rotation 1 0 0 -1.5707953071795862
                   children [
@@ -366,7 +366,7 @@ PROTO Larry [
                     }
                   ]
                 }
-                Transform {
+                Pose {
                   translation 0.045 0.081 0
                   rotation 1 0 0 -1.5707953071795862
                   children [
@@ -398,7 +398,7 @@ PROTO Larry [
             size 0.03 0.09 0.072
           }
         }
-        DEF piece2 Transform {
+        DEF piece2 Pose {
           translation 0 -0.06 0
           rotation 0 1 0 -1.5707953071795862
           children [
@@ -433,7 +433,7 @@ PROTO Larry [
 ]
   boundingObject Group {
     children [
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation 0.9758225096307714 0.15454692233725462 0.15454992233574708 1.59528
         children [
@@ -443,7 +443,7 @@ PROTO Larry [
         ]
         rotationStep 0.314159
       }
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation 0.9086652304906886 0.29523307488838846 0.2952370748894031 1.66644
         children [
@@ -453,7 +453,7 @@ PROTO Larry [
         ]
         rotationStep 0.314159
       }
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation -0.9086583764095387 0.2952451223045791 0.2952461223049934 -1.6664453071795862
         children [
@@ -463,7 +463,7 @@ PROTO Larry [
         ]
         rotationStep 0.314159
       }
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation -0.9758198024462768 0.15455696871009938 0.15455696871009938 -1.5952753071795867
         children [
@@ -473,7 +473,7 @@ PROTO Larry [
         ]
         rotationStep 0.314159
       }
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation 1 0 0 1.5708
         children [
@@ -482,7 +482,7 @@ PROTO Larry [
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0 0 0.355
         rotation 1 0 0 1.5708
         children [
@@ -491,7 +491,7 @@ PROTO Larry [
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.001 0 0.118
         rotation 1 0 0 1.5708
         children [
@@ -500,7 +500,7 @@ PROTO Larry [
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.18 0 0.9
         rotation 1 0 0 1.5708
         children [
@@ -509,7 +509,7 @@ PROTO Larry [
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.075 0 1.181
         rotation 1 0 0 1.5708
         children [
@@ -518,7 +518,7 @@ PROTO Larry [
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.062 0 1.201
         rotation 1 0 0 1.5708
         children [

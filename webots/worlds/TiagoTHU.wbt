@@ -85,7 +85,7 @@ TiagoIron {
       name "LidarTiago"
       controller "<extern>"
     }
-    DEF CoordinateSystemTiagoIron Transform {
+    DEF CoordinateSystemTiagoIron Pose {
       translation -0.202 0 -0.091
     }
   ]

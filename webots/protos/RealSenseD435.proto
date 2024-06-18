@@ -63,7 +63,7 @@ Robot {
       maxRange IS maxRange
       noise IS rangeNoise
     }
-    Transform {
+    Pose {
       translation 0.001 0 0
       rotation 0.57735 -0.57735 0.57735 -2.0944
       children [
@@ -83,7 +83,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation %<= -size.x/2 >% 0 0
       children [
         Shape {
@@ -96,7 +96,7 @@ Robot {
             size %<= size.x >% %<= size.y-size.z >% %<= size.z >%
           }
         }
-        Transform {
+        Pose {
           translation 0 %<= (size.y - size.x)/2 >% 0
           rotation 0 1 0 1.5708
           children [
@@ -109,7 +109,7 @@ Robot {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0 %<= -(size.y - size.x)/2 >% 0
           rotation 0 1 0 1.5708
           children [
@@ -125,7 +125,7 @@ Robot {
   supervisor IS supervisor
   physics Physics {
   }
-  boundingObject Transform {
+  boundingObject Pose {
     translation %<= -size.x/2 >% 0 0
     children [
       Box {

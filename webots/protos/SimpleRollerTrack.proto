@@ -38,7 +38,7 @@ Solid {
   local alpha = math.atan(heightDifference / conveyorLength)
   for n=0,nRollers do
 }%
-    Transform {
+    Pose {
       translation %{= n*rollerDistance+rollerRadius }% 0 %{= (n*rollerDistance+rollerRadius)/conveyorLength*heightDifference }%
       rotation 1 0 0 -1.5708
       children [
@@ -59,7 +59,7 @@ Solid {
 }%
     DEF BOUNDING Group {
       children [
-        Transform {
+        Pose {
           translation %{= conveyorLength/2 }% 0 %{= heightDifference/2 }%
           children [
             Shape {
@@ -76,7 +76,7 @@ Solid {
 %{
   for n=-1,1,2 do 
 }%
-        Transform {
+        Pose {
           translation %{= conveyorLength/2 }% %{= n*(rollerLength+sideRailsWidth)/2 }% %{= (heightDifference+sideRailsHeight)/2 }%
           children [
             Shape {

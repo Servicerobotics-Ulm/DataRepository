@@ -471,7 +471,7 @@ PROTO UR5 [
                                               url "UR5/wrist3_1.obj"
                                             }
                                           }
-                                          DEF toolSlot Transform {
+                                          DEF toolSlot Pose {
                                             translation 0 0.0823 0
                                             children IS toolSlot
                                           }

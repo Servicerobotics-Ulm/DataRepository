@@ -23,7 +23,7 @@ Solid {
         radius 0.025
       }
     }
-    Transform {
+    Pose {
       translation -0.021 0.02 -0.035
       rotation 0 1 0 0.54035
       children [
@@ -35,7 +35,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -0.021 -0.02 -0.035
       rotation 0 1 0 0.54035
       children [

@@ -103,10 +103,11 @@ Editor {
   showMobileRobotsPoses "2: Localization (green) Route (blue)"
 }
 Robotino3 {
+  name "Robotino3"
   controller "<extern>"
   supervisor TRUE
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.57079632679
       children [
         Robot {

@@ -35,7 +35,7 @@ Solid {
   ]
   boundingObject Group {
     children [
-      Transform {
+      Pose {
         translation 0 0.0494 0
         rotation 0.57735 0.577351 0.57735 -2.0944
         children [
@@ -44,7 +44,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0278 0.0364 0
         rotation -0.577351 0.577349 0.577351 2.0944
         children [
@@ -53,7 +53,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.0271 0.0107 0
         rotation 0.57735 0.577351 0.57735 -2.0944
         children [
@@ -62,7 +62,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0268 0.0107 0
         rotation 0.57735 0.577351 0.57735 -2.0944
         children [
@@ -71,7 +71,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0754 0.0166 -0.038
         children [
           Cylinder {
@@ -80,7 +80,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.1169 0.0228 -0.0376
         rotation -0.577351 0.577349 0.577351 2.0944
         children [
@@ -89,7 +89,7 @@ Solid {
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.1246 0.0315 0.085
         children [
           Cylinder {

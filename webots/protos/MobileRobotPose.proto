@@ -35,14 +35,14 @@ PROTO MobileRobotPose [
 Solid {
   name IS baseComponent
   children [
-    Transform {
+    Pose {
       translation IS translationLocation
       rotation IS rotationLocation
     }
-    Transform {
+    Pose {
       translation 0 0 0.02
       children [
-        Transform {
+        Pose {
           translation IS translationOdometry
           rotation IS rotationOdometry
           children [
@@ -54,13 +54,13 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 0 0.03
       children [
         Group {
           children IS trailPoints
         }
-        Transform {
+        Pose {
           translation IS translationLocation
           children [
             Shape {

@@ -17,7 +17,7 @@ Solid {
   translation IS translation
   name %<= '"' + fields.id.value + '"' >%  
   children [
-    Transform {
+    Pose {
       children [
         Shape {
           appearance PBRAppearance {

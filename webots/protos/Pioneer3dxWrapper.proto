@@ -24,7 +24,7 @@ Pioneer3dx {
   controller "<extern>"
   supervisor TRUE
   extensionSlot [
-    DEF %<= "CoordinateSystem" + fields.name.value >% Transform {
+    DEF %<= "CoordinateSystem" + fields.name.value >% Pose {
       translation 0 0 -0.095
       rotation 0 1 0 0.0345
       children [
@@ -36,7 +36,7 @@ Pioneer3dx {
             }
           ]
           name %<= "\"" + fields.name.value + "_lidar\"" >%
-          boundingObject Transform {
+          boundingObject Pose {
             translation -0.015 0 0.0295
             children [
               Shape {
@@ -52,7 +52,7 @@ Pioneer3dx {
           }
           controller IS lidarController
         }
-        Transform {
+        Pose {
           translation 0.1 0 0.6
           children [
             CapScrew {

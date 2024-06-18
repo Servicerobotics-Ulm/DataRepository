@@ -61,7 +61,7 @@ PROTO kinect_v2 [
         noise IS rangeNoise
       }
 
-      Transform {
+      Pose {
         rotation 0.577351 0.577351 0.577349 2.0944
         children [
           Shape {
@@ -76,7 +76,7 @@ PROTO kinect_v2 [
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0331 0 0
         rotation -0.5773489358556708 -0.5773509358554485 -0.5773509358554485 -2.094395307179586
         children [
@@ -94,7 +94,7 @@ PROTO kinect_v2 [
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.025 0 -0.024
         rotation 0.577351 0.577351 0.577349 2.0944
         children [
@@ -110,7 +110,7 @@ PROTO kinect_v2 [
           }
         ]
       }
-      Transform {
+      Pose {
         translation 0.0265 0 -0.0335
         rotation 0.577351 0.577351 0.577349 2.0944
         children [
@@ -126,7 +126,7 @@ PROTO kinect_v2 [
           }
         ]
       }
-      Transform {
+      Pose {
         translation -0.015 0 -0.037
         rotation 0 1 0 0.02
         children [
@@ -149,7 +149,7 @@ PROTO kinect_v2 [
     supervisor IS supervisor
 #    physics Physics {
 #    }
-    boundingObject Transform {
+    boundingObject Pose {
       translation 0 0 -0.01
       children [
         Box {

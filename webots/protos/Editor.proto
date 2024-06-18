@@ -29,7 +29,7 @@ PROTO Editor [
       Group {
         children IS display
       }
-      Transform {
+      Pose {
         translation IS lidarPointHeight
         children [
           Shape {

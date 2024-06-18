@@ -32,7 +32,7 @@ Transform {
   translation IS translation
   rotation IS rotation
   children [
-    Transform {
+    Pose {
       children IS children
     }
     Floor {
@@ -126,7 +126,7 @@ Transform {
       primaryAppearance USE WOOD
       secondaryAppearance USE WOOD
     }
-    Transform {
+    Pose {
       translation -1.08 -1.25 0
       children [
 

@@ -62,7 +62,7 @@ for(let i=0; i<boxes.length; i++) {
       let z1=b.z[0];
       let z2=b.z[1];
 >%
-        Transform {
+        Pose {
           translation %<= (x1+x2)/2 >% %<= (y1+y2)/2 >% %<= (z1+z2)/2 >%
           children [
             Shape {

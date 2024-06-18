@@ -21,14 +21,20 @@ PROTO MapperWalls [
    var originX = fields.origin.value.x
    var originY = fields.origin.value.y
    var wallHeight = fields.wallHeight.value
+   var x = fields.BottomCoordinate.value
+   var scaled="[ "
+   var i;
+   for(i=0; i<x.length; i++) {
+     scaled += " "+(x[i].x*resolution).toFixed(2)+" "+(x[i].y*resolution).toFixed(2)+" "+(x[i].z*resolution).toFixed(2);
+   }
+   scaled += " ]";
 >%
 Transform {
   translation IS translation
   rotation IS rotation
   children[
-    DEF TOP Transform {
+    DEF TOP Pose {
       translation %<= originX >% %<= originY >% %<= wallHeight >%
-      scale %<= resolution >% %<= resolution >% %<= resolution >%
       children [
         DEF SHAPE Shape {
           appearance PBRAppearance {
@@ -39,16 +45,15 @@ Transform {
           geometry IndexedFaceSet {
             ccw FALSE
             coord Coordinate {
-              point IS BottomCoordinate
+              point %<= scaled >%
             }
             coordIndex IS BottomCoordIndex
           }
         }
       ]
     }
-    DEF BOTTOM Transform {
+    DEF BOTTOM Pose {
       translation %<= originX >% %<= originY >% 0
-      scale %<= resolution >% %<= resolution >% %<= resolution >%
       children [
         DEF SHAPE Shape {
           appearance PBRAppearance {
@@ -58,7 +63,7 @@ Transform {
           }
           geometry IndexedFaceSet {
             coord Coordinate {
-              point IS BottomCoordinate
+              point %<= scaled >%
             }
             coordIndex IS BottomCoordIndex
           }

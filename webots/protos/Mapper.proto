@@ -41,7 +41,7 @@ Robot {
       baseColor IS baseColor
     }
 %< } >%
-    Transform {
+    Pose {
       translation IS cone2_translation
       rotation 0 0 1 -1.57079632679
       children [
@@ -59,7 +59,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation IS cone4_translation
       children [
         Shape {
@@ -76,7 +76,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation IS border1_translation
       children [
         DEF BORDER1 Shape {
@@ -92,13 +92,13 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation IS border2_translation
       children [
         USE BORDER1
       ]
     }
-    Transform {
+    Pose {
       translation IS border3_translation
       children [
         DEF BORDER3 Shape {
@@ -114,7 +114,7 @@ Robot {
         }
       ]
     }
-    Transform {
+    Pose {
       translation IS border4_translation
       children [
         USE BORDER3
@@ -128,7 +128,7 @@ Robot {
       height IS height
       maxRange IS maxRange
       children [
-        Transform {
+        Pose {
           rotation 1 0 0 -1.5707953071795862
           children [
             Shape {

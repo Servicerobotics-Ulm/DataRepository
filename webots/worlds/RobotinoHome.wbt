@@ -53,10 +53,11 @@ TexturedBackground {
   skybox FALSE
 }
 Robotino3 {
+  name "Robotino3"
   controller "<extern>"
   supervisor TRUE
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {

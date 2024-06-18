@@ -32,14 +32,14 @@ PROTO CoordinateFrame [
            else if(i==2)
              blue=0.5;
       >%
-      Transform {
+      Pose {
         %< if(i==0) { >%
         rotation 0 0 1 -1.5708
         %< } else if(i==2) { >%
         rotation 1 0 0 1.5708
         %< } >%
         children [
-          Transform {
+          Pose {
             translation 0 %<= length/2 >% 0
             rotation -1 0 0 1.5708
             children [
@@ -58,7 +58,7 @@ PROTO CoordinateFrame [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 %<= length >% 0
             rotation -1 0 0 1.5708
             children [

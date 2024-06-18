@@ -58,7 +58,7 @@ Solid {
     }
     DEF BoundingObjects Group {
       children [
-        Transform {
+        Pose {
           translation -0.3355 0.1903 0.5934
           children [
             Shape {
@@ -71,7 +71,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.3352 -0.1896 0.5934
           children [
            Shape { appearance USE ALU geometry
@@ -81,7 +81,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3343 0.1908 0.5934
           children [
            Shape { appearance USE ALU geometry
@@ -91,7 +91,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3348 -0.1891 0.5934
           children [
            Shape { appearance USE ALU geometry
@@ -101,7 +101,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0006 0.1902 0.1084
           children [
            Shape { appearance USE ALU geometry
@@ -111,7 +111,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0003 0.1005 0.3568
           children [
            Shape { appearance USE ALU geometry
@@ -121,7 +121,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0006 0.1904 0.4653
           children [
            Shape { appearance USE ALU geometry
@@ -131,7 +131,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0006 -0.1891 0.1084
           children [
            Shape { appearance USE ALU geometry
@@ -141,7 +141,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0002 -0.0991 0.3567
           children [
            Shape { appearance USE ALU geometry
@@ -151,7 +151,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.0002 -0.189 0.4653
           children [
            Shape { appearance USE ALU geometry
@@ -161,7 +161,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.3351 0.0003 0.1084
           children [
            Shape { appearance USE ALU geometry
@@ -171,7 +171,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.3351 0.0003 0.3567
           children [
            Shape { appearance USE ALU geometry
@@ -181,7 +181,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.3329 0.0003 0.5834
           children [
            Shape { appearance USE ALU geometry
@@ -191,7 +191,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3351 0.0007 0.1084
           children [
            Shape { appearance USE ALU geometry
@@ -201,7 +201,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3351 0.0009 0.3567
           children [
            Shape { appearance USE ALU geometry
@@ -211,7 +211,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3348 0.0009 0.4654
           children [
            Shape { appearance USE ALU geometry
@@ -221,7 +221,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3268 0.0011 0.6422
           children [
            Shape { appearance USE ALU geometry
@@ -231,7 +231,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.0428 -0.1042 0.6529
           rotation 0 1 0 -0.09
           children [
@@ -242,7 +242,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.0374 -0.1614 0.7121
           rotation 0 1 0 -0.09
           children [
@@ -253,7 +253,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.4112 -0.1047 0.63193
           rotation 0 1 0 -0.09
           children [
@@ -264,7 +264,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.0428 0.1054 0.6529
           rotation 0 1 0 -0.09
           children [
@@ -275,7 +275,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.4112 0.1053 0.63193
           rotation 0 1 0 -0.09
           children [
@@ -286,7 +286,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.0374 0.1626 0.7121
           rotation 0 1 0 -0.09
           children [
@@ -297,7 +297,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.4398 0.0023 0.651
           children [
            Shape { appearance USE ALU geometry
@@ -307,7 +307,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.4578 0 0.6489
           children [
            Shape { appearance USE ALU geometry
@@ -317,7 +317,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.4579 -0.0713 0.6088
           children [
            Shape { appearance USE ALU geometry
@@ -327,7 +327,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0.3509 0 0.2932
           children [
            Shape { appearance USE ALU geometry
@@ -337,7 +337,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation -0.3509 0 0.2332
           children [
            Shape { appearance USE ALU geometry
@@ -347,7 +347,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0 0.2068 0.2882
           children [
            Shape { appearance USE ALU geometry
@@ -357,7 +357,7 @@ Solid {
            }
           ]
         }
-        Transform {
+        Pose {
           translation 0 -0.2051 0.2882
           children [
            Shape { appearance USE ALU geometry
@@ -370,7 +370,7 @@ Solid {
 
       ]
     }
-    Transform {
+    Pose {
       translation 0 0 -0.1078
       rotation 0 -0.7071067811862364 -0.7071067811862364 3.14159
       children [
@@ -385,7 +385,7 @@ Solid {
        let y1=0.813; let y2=0.738;
        let c=j/17.0;
 >%
-                Transform {
+                Pose {
                   translation %<= x1*(1-c)+x2*c >% %<= y1*(1-c)+y2*c >% %<= 0.105*i >%
                   children [
 %< if(i==-1 && j==0) {>%
@@ -416,7 +416,7 @@ Solid {
         }      
       ]
     }
-    Transform {
+    Pose {
       translation 0.3509 0 0.2932
       children [
         Shape {
@@ -429,7 +429,7 @@ Solid {
             size 0.002 0.408 0.4
           }
         }
-        Transform {
+        Pose {
           translation 0.003 0 0
           rotation 0.57735 0.57735 0.57735 2.0944
           children [
@@ -451,7 +451,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation -0.3509 0 0.2332
       children [
         Shape {
@@ -466,7 +466,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 0.2068 0.2882
       children [
         Shape {
@@ -479,7 +479,7 @@ Solid {
             size 0.7 0.002 0.39
           }
         }
-        Transform {
+        Pose {
           translation 0 0.0011 0
           rotation 0 0.7071 0.7071 3.14159
           children [
@@ -501,7 +501,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 -0.2051 0.2882
       children [
         Shape {

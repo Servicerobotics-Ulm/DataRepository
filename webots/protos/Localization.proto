@@ -30,7 +30,7 @@ Solid {
       translation 0 0 0.3
       id %<= '"' + id + '"' >%
     }
-    Transform {
+    Pose {
       translation 0 0 0.15
       children [
         Shape {
@@ -78,7 +78,7 @@ Solid {
       translation 0 0 0.56
       id %<= '"' + id + '"' >%
     }
-    Transform {
+    Pose {
       translation 0 0 0.28
       children [
         Shape {
@@ -124,7 +124,7 @@ Solid {
       translation 0 0 0.26
       id %<= '"' + id + '"' >%
     }  
-    Transform {
+    Pose {
       translation -0.045 0 0.1245
       children [
         Shape {
@@ -175,7 +175,7 @@ Solid {
       translation 0 0 0.54
       id %<= '"' + id + '"' >%
     }
-    Transform {
+    Pose {
       translation -0.075 0.05 0.52
       children [
         Shape {
@@ -196,7 +196,7 @@ Solid {
         }
       ]
     }
-    Transform {
+    Pose {
       translation 0 0 0.25
       children [
         Shape {

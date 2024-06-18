@@ -31,7 +31,7 @@ PROTO Crate [
       }
       DEF BOUNDING Group {
         children [
-          Transform {
+          Pose {
             translation 0 0 %<= bottom/2 >%
             children [
               DEF BOTTOM Shape {
@@ -42,7 +42,7 @@ PROTO Crate [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 %<= (outer.y+inner.y)/4 >% %<= (outer.z + bottom)/2 >%
             children [
               DEF LEFT Shape {
@@ -53,13 +53,13 @@ PROTO Crate [
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0 %<= -(outer.y+inner.y)/4 >% %<= (outer.z + bottom)/2 >%
             children [
               USE LEFT
             ]
           }        
-          Transform {
+          Pose {
             translation %<= (outer.x+inner.x)/4 >%  0 %<= (outer.z + bottom)/2 >%
             children [
               DEF FRONT Shape {
@@ -70,7 +70,7 @@ PROTO Crate [
               }
             ]
           }
-          Transform {
+          Pose {
             translation %<= -(outer.x+inner.x)/4 >%  0 %<= (outer.z + bottom)/2 >%
             children [
               USE FRONT

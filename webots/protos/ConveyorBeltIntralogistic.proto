@@ -37,7 +37,7 @@ Transform {
   translation IS translation
   rotation IS rotation
   children [
-    Transform {
+    Pose {
       children IS children
     }
 
@@ -72,7 +72,7 @@ Transform {
   translation 0 7.5 0
   rotation 1 0 0 1.5707963267948966
   children [
-    Transform {
+    Pose {
       translation 0 0 2.93
       rotation 1 0 0 -1.5707953071795862
       children [
@@ -550,7 +550,7 @@ Transform {
     }
     DEF Logo Group {
       children [
-        Transform {
+        Pose {
           translation 3.5 0.8 15.941
           rotation -9.35756806098907e-07 -0.9999999999973123 -2.12132118707526e-06 3.1415907724399137
           children [
@@ -570,7 +570,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 3.5 0.799984 -9.941
           rotation 0.9588110733935237 0.2018711219572352 -0.19982336114099916 8.9803699588894e-06
           children [
@@ -590,7 +590,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -3.5 0.8 15.941
           rotation -9.35756806098907e-07 -0.9999999999973123 -2.12132118707526e-06 3.1415907724399137
           children [
@@ -610,7 +610,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -3.5 0.8 -9.941
           rotation 0.9588110733935237 0.2018711219572352 -0.19982336114099916 8.9803699588894e-06
           children [
@@ -630,7 +630,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -9.94 0.569999 10.17
           rotation 6.955834108456497e-07 0.9999999999982582 1.7320516149924155e-06 1.5707952903289715
           children [
@@ -650,7 +650,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 9.94 0.569999 10.17
           rotation 3.982332284383561e-06 -0.9999999999860707 -3.464103230208342e-06 1.5707968450380145
           children [

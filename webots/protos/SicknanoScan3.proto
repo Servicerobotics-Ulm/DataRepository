@@ -19,7 +19,7 @@ PROTO SicknanoScan3 [
     translation IS translation
     rotation IS rotation
     children [
-      Transform {
+      Pose {
         translation 0 0 0.018
         children [
           Shape {
@@ -39,7 +39,7 @@ PROTO SicknanoScan3 [
 for (let i=0; i<2; i++) {
   let z = (i ? 0.032 : 0.006);
 >%
-      Transform {
+      Pose {
         translation 0 0 %<= i ? -0.0285 : -0.0475 >%
         children [
           Shape {
@@ -72,7 +72,7 @@ for (let i=0; i<2; i++) {
   for (let x=-1; x<2; x+=2) {
     for (let y=-1; y<2; y+=2) {
 >%
-          Transform {
+          Pose {
             translation %<= x*0.0403 >% %<= y*0.0403 >% 0
             children [
               Shape {
@@ -93,7 +93,7 @@ for (let i=0; i<2; i++) {
 %<
 }
 >%
-      Transform {
+      Pose {
         translation 0 0 0.0247
         children [
           Shape {

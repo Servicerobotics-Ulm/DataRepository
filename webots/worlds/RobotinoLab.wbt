@@ -77,7 +77,7 @@ TexturedBackground {
 TexturedBackgroundLight {
   texture "entrance_hall"
 }
-DEF NavigationPoints Transform {
+DEF NavigationPoints Pose {
   rotation 1 0 0 -1.5708
   children [
     DEF home NavigationPoint {
@@ -85,6 +85,7 @@ DEF NavigationPoints Transform {
   ]
 }
 Robotino3 {
+  name "Robotino3"
   controller "<extern>"
   supervisor TRUE
   bodySlot [
@@ -94,7 +95,7 @@ Robotino3 {
     }
   ]
   cameraSlot [
-    DEF CoordinateSystemRobotino_3 Transform {
+    DEF CoordinateSystemRobotino_3 Pose {
       rotation 0 0 1 -1.5707953071795862
       children [
         Robot {
@@ -499,7 +500,7 @@ Transform {
     }
     DEF Box Solid {
       children [
-        Transform {
+        Pose {
           translation -2.35 0.1 -2.1
           children [
             Shape {
@@ -517,7 +518,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.32 0.05 -3.14
           children [
             Shape {
@@ -535,7 +536,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.06 0.8336 -3.125
           children [
             Shape {
@@ -555,7 +556,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.22 0.8336 -3.125
           children [
             Shape {
@@ -575,7 +576,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.96 0.8336 -3.32
           children [
             Shape {
@@ -595,7 +596,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.96 0.8336 -2.91
           children [
             Shape {
@@ -615,7 +616,7 @@ Transform {
             }
           ]
         }
-        DEF C1 Transform {
+        DEF C1 Pose {
           translation -6.87999 0.28 -1.57
           children [
             Shape {
@@ -631,7 +632,7 @@ Transform {
             }
           ]
         }
-        DEF C2 Transform {
+        DEF C2 Pose {
           translation -4.32999 0.26 -1.47
           children [
             Shape {
@@ -647,7 +648,7 @@ Transform {
             }
           ]
         }
-        DEF C3 Transform {
+        DEF C3 Pose {
           translation -4.32999 0.26 -3.05
           children [
             Shape {
@@ -663,7 +664,7 @@ Transform {
             }
           ]
         }
-        DEF C4 Transform {
+        DEF C4 Pose {
           translation -4.25999 0.26 1.79
           children [
             Shape {
@@ -679,7 +680,7 @@ Transform {
             }
           ]
         }
-        DEF C5 Transform {
+        DEF C5 Pose {
           translation -2.65999 0.26 1.79
           children [
             Shape {
@@ -695,7 +696,7 @@ Transform {
             }
           ]
         }
-        DEF C6 Transform {
+        DEF C6 Pose {
           translation 1.08001 0.26 1.79
           children [
             Shape {
@@ -711,7 +712,7 @@ Transform {
             }
           ]
         }
-        DEF C7 Transform {
+        DEF C7 Pose {
           translation 5.43001 0.26 1.79
           children [
             Shape {
@@ -727,7 +728,7 @@ Transform {
             }
           ]
         }
-        DEF C8 Transform {
+        DEF C8 Pose {
           translation 1.73001 0.26 1.24
           children [
             Shape {
@@ -743,7 +744,7 @@ Transform {
             }
           ]
         }
-        DEF C9 Transform {
+        DEF C9 Pose {
           translation 1.73001 0.26 -0.36
           children [
             Shape {
@@ -759,7 +760,7 @@ Transform {
             }
           ]
         }
-        DEF C10 Transform {
+        DEF C10 Pose {
           translation 1.73001 0.26 -1.97
           children [
             Shape {
@@ -775,7 +776,7 @@ Transform {
             }
           ]
         }
-        DEF C11 Transform {
+        DEF C11 Pose {
           translation -2.35 0.37 -2.1
           children [
             Shape {
@@ -791,7 +792,7 @@ Transform {
             }
           ]
         }
-        DEF C12 Transform {
+        DEF C12 Pose {
           translation 1.85006 0.4 1.78925
           children [
             Shape {
@@ -807,7 +808,7 @@ Transform {
             }
           ]
         }
-        DEF C13 Transform {
+        DEF C13 Pose {
           translation 4.7045 0.4 -2.72125
           children [
             Shape {
@@ -823,7 +824,7 @@ Transform {
             }
           ]
         }
-        DEF C14 Transform {
+        DEF C14 Pose {
           translation 6.9945 0.4 -2.22125
           children [
             Shape {
@@ -839,7 +840,7 @@ Transform {
             }
           ]
         }
-        DEF C15 Transform {
+        DEF C15 Pose {
           translation 0.94 0.45 -3.14
           children [
             Shape {
@@ -856,7 +857,7 @@ Transform {
             }
           ]
         }
-        DEF C16 Transform {
+        DEF C16 Pose {
           translation -1.53001 0.97 4.235
           children [
             Shape {
@@ -873,7 +874,7 @@ Transform {
       name "solid(1)"
       boundingObject Group {
         children [
-          Transform {
+          Pose {
             translation -2.35 0.1 -2.1
             children [
               Box {
@@ -881,7 +882,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.32 0.05 -3.14
             children [
               Box {
@@ -889,7 +890,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.06 0.8336 -3.125
             children [
               Box {
@@ -897,7 +898,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.22 0.8336 -3.125
             children [
               Box {
@@ -905,7 +906,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.96 0.8336 -3.32
             children [
               Box {
@@ -913,7 +914,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.96 0.8336 -2.91
             children [
               Box {
@@ -921,7 +922,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -6.87999 0.28 -1.57
             children [
               Box {
@@ -929,7 +930,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -4.32999 0.26 -3.05
             children [
               Box {
@@ -937,7 +938,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -4.32999 0.26 -1.47
             children [
               Box {
@@ -945,7 +946,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -4.25999 0.26 1.79
             children [
               Box {
@@ -953,7 +954,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -2.65999 0.26 1.79
             children [
               Box {
@@ -961,7 +962,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.08001 0.26 1.79
             children [
               Box {
@@ -969,7 +970,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 5.43001 0.26 1.79
             children [
               Box {
@@ -977,7 +978,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.73001 0.26 1.24
             children [
               Box {
@@ -985,7 +986,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.73001 0.26 -0.36
             children [
               Box {
@@ -993,7 +994,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.73001 0.26 -1.97
             children [
               Box {
@@ -1001,7 +1002,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -2.35 0.37 -2.1
             children [
               Box {
@@ -1009,7 +1010,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 1.85006 0.4 1.78925
             children [
               Box {
@@ -1017,7 +1018,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 4.7045 0.4 -2.72125
             children [
               Box {
@@ -1025,7 +1026,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 6.9945 0.4 -2.22125
             children [
               Box {
@@ -1033,7 +1034,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation 0.94 0.45 -3.14
             children [
               Box {
@@ -1041,7 +1042,7 @@ Transform {
               }
             ]
           }
-          Transform {
+          Pose {
             translation -1.53001 0.97 4.235
             children [
               Box {
@@ -2355,7 +2356,7 @@ Transform {
       rotation 0 1 0 0.261799
       name "fire extinguisher(1)"
     }
-    DEF First_AID_Box Transform {
+    DEF First_AID_Box Pose {
       translation 0.040011 1.23 4.4
       rotation 0 1 0 -3.1415853071795863
       children [
@@ -2388,7 +2389,7 @@ Transform {
             IBLStrength 3
           }
         }
-        Transform {
+        Pose {
           translation 0.01 0.2 0.162
           rotation 1 0 0 1.5708
           children [
@@ -2416,7 +2417,7 @@ Transform {
     }
     DEF Logo Solid {
       children [
-        Transform {
+        Pose {
           translation -4.39 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2436,7 +2437,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -4.39 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2456,7 +2457,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2476,7 +2477,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -0.95 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2496,7 +2497,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2516,7 +2517,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 1.38 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2536,7 +2537,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 -3.319
           rotation 1 0 0 1.5708
           children [
@@ -2556,7 +2557,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 4.4 2 3.901
           rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
           children [
@@ -2576,7 +2577,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation -3.4 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
@@ -2596,7 +2597,7 @@ Transform {
             }
           ]
         }
-        Transform {
+        Pose {
           translation 0.79 1.63997 4.61
           rotation 1 0 0 1.5708
           children [
