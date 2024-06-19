@@ -8,7 +8,6 @@
 PROTO Larry [
   field SFVec3f    translation     0 0 0                       
   field SFRotation rotation        0 0 1 0
-  field SFVec3f    scale           1 1 1                 
   field SFString   name            "Larry"                   # Is `Solid.name`.
   field  SFString  model           "Larry"
   field SFString   controller      ""                        # Is `Robot.controller`.
@@ -27,7 +26,6 @@ PROTO Larry [
   Robot {
     translation IS translation
     rotation IS rotation
-    scale IS scale
     name IS name
     model IS model
     controller IS controller

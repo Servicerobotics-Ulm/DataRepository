@@ -17,7 +17,7 @@ EXTERNPROTO "../protos/Larry.proto"
 EXTERNPROTO "../protos/SmallBoxB.proto"
 EXTERNPROTO "../protos/UR5.proto"
 EXTERNPROTO "../protos/InclinedShelf.proto"
-EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/VacuumGripper2.proto"
 EXTERNPROTO "../protos/SickLms100.proto"
 EXTERNPROTO "../protos/Kisten.proto"
 EXTERNPROTO "../protos/MobileRollerConveyor.proto"
@@ -739,7 +739,7 @@ Larry {
       supervisor TRUE
       staticBase FALSE
       toolSlot [
-        VacuumGripper {
+        VacuumGripper2 {
           strength 200
         }
       ]

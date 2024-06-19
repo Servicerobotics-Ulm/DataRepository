@@ -38,7 +38,7 @@ EXTERNPROTO "../protos/UR5.proto"
 EXTERNPROTO "../protos/Wall.proto"
 EXTERNPROTO "../protos/Radiator.proto"
 EXTERNPROTO "../protos/NavigationPoint.proto"
-EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/VacuumGripper2.proto"
 EXTERNPROTO "../protos/SickLms100.proto"
 EXTERNPROTO "../protos/StraightStairsRail.proto"
 EXTERNPROTO "../protos/kinect_v2.proto"
@@ -90,7 +90,7 @@ Larry {
       supervisor TRUE
       staticBase FALSE
       toolSlot [
-        VacuumGripper {
+        VacuumGripper2 {
         }
       ]
       shoulder_pan_position 2.69

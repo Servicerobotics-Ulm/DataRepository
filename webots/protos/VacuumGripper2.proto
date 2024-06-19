@@ -1,6 +1,6 @@
 #VRML_SIM R2023b utf8
 # (c) 2021 Thomas Feldmeier, http://www.servicerobotik-ulm.de, GPL 2.0
-PROTO VacuumGripper [
+PROTO VacuumGripper2 [
   field SFFloat    length              0.119
   field SFRotation rotation            0 1 0 0
   field SFString   name                "VacuumGripper"
@@ -51,7 +51,7 @@ Solid {
         }
       ]
     }
-    Pose {
+    Transform {
       translation 0 -0.06 0
       rotation 0 0 1 -1.5707953071795862
       scale 0.5 0.5 0.5

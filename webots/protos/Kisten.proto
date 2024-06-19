@@ -7,8 +7,7 @@
 # made by Wenzheng Cai 2020, www.servicerobotik-ulm.de
 PROTO Kisten [
   field SFVec3f      translation     0 0 0
-  field SFRotation   rotation        1 0 0 -1.5708
-  field SFVec3f      scale           1 1 1                        # Defines the size of the box.
+  field SFRotation   rotation        1 0 0 -1.5708                     # Defines the size of the box.
   field SFString     name            "Kisten"
   field SFString     model           "Kisten"
   field SFColor      baseColor       0.447059 0.623529 0.811765
@@ -20,7 +19,6 @@ PROTO Kisten [
 Solid {
   translation IS translation
   rotation IS rotation
-  scale IS scale
   children [
     Pose {
       rotation 1 0 0 1.5708

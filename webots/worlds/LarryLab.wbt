@@ -16,7 +16,7 @@ EXTERNPROTO "../protos/Location.proto"
 EXTERNPROTO "../protos/microphone.proto"
 EXTERNPROTO "../protos/UR5.proto"
 EXTERNPROTO "../protos/THU_RoboticsLab.proto"
-EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/VacuumGripper2.proto"
 EXTERNPROTO "../protos/SickLms100.proto"
 EXTERNPROTO "../protos/kinect_v2.proto"
 EXTERNPROTO "../protos/Editor.proto"
@@ -105,7 +105,7 @@ Larry {
       supervisor TRUE
       staticBase FALSE
       toolSlot [
-        VacuumGripper {
+        VacuumGripper2 {
           strength 200
         }
       ]

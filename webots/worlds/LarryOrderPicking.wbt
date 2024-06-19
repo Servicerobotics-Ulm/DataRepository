@@ -18,7 +18,7 @@ EXTERNPROTO "../protos/Location.proto"
 EXTERNPROTO "../protos/UR5.proto"
 EXTERNPROTO "../protos/InclinedShelf.proto"
 EXTERNPROTO "../protos/THU_RoboticsLab.proto"
-EXTERNPROTO "../protos/VacuumGripper.proto"
+EXTERNPROTO "../protos/VacuumGripper2.proto"
 EXTERNPROTO "../protos/SickLms100.proto"
 EXTERNPROTO "../protos/Kisten.proto"
 EXTERNPROTO "../protos/kinect_v2.proto"
@@ -139,7 +139,7 @@ Larry {
       supervisor TRUE
       staticBase FALSE
       toolSlot [
-        VacuumGripper {
+        VacuumGripper2 {
           strength 200
         }
       ]
@@ -170,7 +170,7 @@ Larry {
         SickLms100 {
         }
       ]
-      name "Sick LMS 100_Front"
+      name "Sick_LMS_100_Front"
       controller "<extern>"
     }
     Robot {
@@ -180,7 +180,7 @@ Larry {
         SickLms100 {
         }
       ]
-      name "Sick LMS 100_Back"
+      name "Sick_LMS_100_Back"
       controller "<none>"
     }
   ]
