@@ -137,7 +137,7 @@ Larry {
         SickLms100 {
         }
       ]
-      name "Sick LMS 100_Front"
+      name "Sick_LMS_100_Front"
       controller "<extern>"
     }
     Robot {

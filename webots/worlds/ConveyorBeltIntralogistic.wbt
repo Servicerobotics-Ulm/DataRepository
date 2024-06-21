@@ -9,7 +9,6 @@ IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/festo/robotino3/protos/Robotino3.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
 EXTERNPROTO "../protos/Location.proto"
 EXTERNPROTO "../protos/StationNumber.proto"
 EXTERNPROTO "../protos/SickLms100.proto"
@@ -19,6 +18,8 @@ EXTERNPROTO "../protos/RobotinoConveyorBelt.proto"
 EXTERNPROTO "../protos/OPC_UA_Station.proto"
 EXTERNPROTO "../protos/Editor.proto"
 EXTERNPROTO "../protos/ConveyorBeltIntralogistic.proto"
+EXTERNPROTO "../protos/Crate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/MattePaint.proto"
 
 WorldInfo {
   info [
@@ -192,18 +193,41 @@ Robotino3 {
     }
   ]
 }
-Kasten {
+Crate {
   translation -0.02 0 0.73
-  rotation 1 0 0 1.5708
-  name "Kasten(2)"
-  size 0.4 0.12 0.295
+  rotation 0 0 1 0
+  outerSize 0.4 0.3 0.12
+  innerSize 0.368 0.268 0.07
+  name "Crate1"
+  mass 0.92
+  appearance MattePaint {
+    baseColor 0.447059 0.623529 0.811765
+    textureTransform TextureTransform {
 }
-Kasten {
+  }
+  appearanceBottom MattePaint {
+    baseColor 0.447059 0.623529 0.811765
+    textureTransform TextureTransform {
+    }
+  }
+}
+Crate {
   translation -1.89214 2.12593 0.73
-  rotation 0.8172 -0.40746 -0.40746 1.771
-  name "Kasten(1)"
-  size 0.4 0.12 0.295
-  baseColor 0.94 0.16 0.16
+  rotation 0 0 1 -0.924965307179586
+  outerSize 0.4 0.3 0.12
+  innerSize 0.368 0.268 0.07
+  name "Crate2"
+  mass 0.92
+  appearance MattePaint {
+    baseColor 0.447059 0.623529 0.811765
+    textureTransform TextureTransform {
+    }
+  }
+  appearanceBottom MattePaint {
+    baseColor 0.447059 0.623529 0.811765
+    textureTransform TextureTransform {
+    }
+  }
 }
 ConveyorBeltIntralogistic {
 }

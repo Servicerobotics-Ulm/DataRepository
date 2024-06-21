@@ -6,7 +6,7 @@ IMPORTABLE EXTERNPROTO "../protos/Waypoint.proto"
 IMPORTABLE EXTERNPROTO "../protos/WaypointConnection.proto"
 IMPORTABLE EXTERNPROTO "../protos/TrailPoints.proto"
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/pal_robotics/tiago_iron/protos/TiagoIron.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/pal_robotics/tiago_lite/protos/TiagoLite.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "../protos/Location.proto"
 EXTERNPROTO "../protos/HokuyoUrg04lxug01.proto"
@@ -72,8 +72,9 @@ DEF Locations Group {
 }
 Editor {
 }
-TiagoIron {
+TiagoLite {
   controller "<extern>"
+  name "Tiago"
   supervisor TRUE
   lidarSlot [
     Robot {

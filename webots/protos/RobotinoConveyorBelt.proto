@@ -13,7 +13,6 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 PROTO RobotinoConveyorBelt [
   field  SFVec3f     translation      0 0 0
   field  SFRotation  rotation         1 0 0 -1.5708
-  field  SFVec3f     scale            1 1 1
   field  SFString    name             "Conveyor Belt"      # Is `Solid.name`.
   field  SFString    model            "Conveyor Belt"      # Is `Solid.model`.
   field  SFVec2f     BandAnimation    0.5 0                 # Defines the speed of the texture animation.
@@ -23,7 +22,6 @@ PROTO RobotinoConveyorBelt [
   Solid {
     translation IS translation
     rotation IS rotation
-    scale IS scale
     children [
         DEF IR10 SharpGP2Y0A41SK0F {
           translation 0.207 0 0.33

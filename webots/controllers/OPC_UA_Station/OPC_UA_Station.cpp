@@ -2,6 +2,8 @@
 // is used by SeRoNet Tooling system, THU Ulm 2021, Thomas Feldmeier
 
 /* to compile this:
+
+ mkdir build
  cd build
  cmake ..
  make
